@@ -2,15 +2,8 @@
   "week": "week1",
   "start": "2026-08-10",
   "mediaHost": "azure",
-  "scheduledAt": "2026-08-08T11:06:31.225499Z",
+  "scheduledAt": "2026-08-08T11:26:51.051369Z",
   "posts": [
-    {
-      "day": "01_mon",
-      "channel": "tiktok",
-      "postId": "6a770c109d53ca86efadb5fd",
-      "dueAt": "2026-08-10T10:35:00.000Z",
-      "status": "scheduled"
-    },
     {
       "day": "01_mon",
       "channel": "instagram",
@@ -23,13 +16,6 @@
       "channel": "facebook",
       "postId": "6a770c3a8aa5e1393fb29bea",
       "dueAt": "2026-08-10T17:45:00.000Z",
-      "status": "scheduled"
-    },
-    {
-      "day": "02_tue",
-      "channel": "tiktok",
-      "postId": "6a770c438363eb6949a4ea31",
-      "dueAt": "2026-08-11T10:35:00.000Z",
       "status": "scheduled"
     },
     {
@@ -48,13 +34,6 @@
     },
     {
       "day": "03_wed",
-      "channel": "tiktok",
-      "postId": "6a770cbdeb086b1202d65497",
-      "dueAt": "2026-08-12T10:35:00.000Z",
-      "status": "scheduled"
-    },
-    {
-      "day": "03_wed",
       "channel": "instagram",
       "postId": "6a770cc6eb086b1202d65624",
       "dueAt": "2026-08-12T15:20:00.000Z",
@@ -65,13 +44,6 @@
       "channel": "facebook",
       "postId": "6a770cceeb086b1202d65716",
       "dueAt": "2026-08-12T17:45:00.000Z",
-      "status": "scheduled"
-    },
-    {
-      "day": "04_thu",
-      "channel": "tiktok",
-      "postId": "6a770cf0eb086b1202d65bde",
-      "dueAt": "2026-08-13T10:35:00.000Z",
       "status": "scheduled"
     },
     {
@@ -90,13 +62,6 @@
     },
     {
       "day": "05_fri",
-      "channel": "tiktok",
-      "postId": "6a770d092c3e8e5fce73b13f",
-      "dueAt": "2026-08-14T10:35:00.000Z",
-      "status": "scheduled"
-    },
-    {
-      "day": "05_fri",
       "channel": "instagram",
       "postId": "6a770d129d53ca86efadd884",
       "dueAt": "2026-08-14T15:20:00.000Z",
@@ -107,13 +72,6 @@
       "channel": "facebook",
       "postId": "6a770d609d53ca86efaddca2",
       "dueAt": "2026-08-14T17:45:00.000Z",
-      "status": "scheduled"
-    },
-    {
-      "day": "06_sat",
-      "channel": "tiktok",
-      "postId": "6a770d829d53ca86efaddf87",
-      "dueAt": "2026-08-15T10:35:00.000Z",
       "status": "scheduled"
     },
     {
@@ -132,13 +90,6 @@
     },
     {
       "day": "07_sun",
-      "channel": "tiktok",
-      "postId": "6a770d9b018a9e80fc8cb1bd",
-      "dueAt": "2026-08-16T10:35:00.000Z",
-      "status": "scheduled"
-    },
-    {
-      "day": "07_sun",
       "channel": "instagram",
       "postId": "6a770da4018a9e80fc8cb20b",
       "dueAt": "2026-08-16T15:20:00.000Z",
@@ -149,6 +100,55 @@
       "channel": "facebook",
       "postId": "6a770daf8363eb6949a51c24",
       "dueAt": "2026-08-16T17:45:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "01_mon",
+      "channel": "tiktok",
+      "postId": "6a7711aa8363eb6949a55568",
+      "dueAt": "2026-08-10T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "02_tue",
+      "channel": "tiktok",
+      "postId": "6a7711cc8aa5e1393fb30069",
+      "dueAt": "2026-08-11T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "03_wed",
+      "channel": "tiktok",
+      "postId": "6a7711d5eb086b1202d6b1e5",
+      "dueAt": "2026-08-12T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "04_thu",
+      "channel": "tiktok",
+      "postId": "6a7711f72c3e8e5fce73f387",
+      "dueAt": "2026-08-13T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "05_fri",
+      "channel": "tiktok",
+      "postId": "6a7712198aa5e1393fb3051b",
+      "dueAt": "2026-08-14T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "06_sat",
+      "channel": "tiktok",
+      "postId": "6a77126a018a9e80fc8d019b",
+      "dueAt": "2026-08-15T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "07_sun",
+      "channel": "tiktok",
+      "postId": "6a7712722c3e8e5fce73fddb",
+      "dueAt": "2026-08-16T10:35:00.000Z",
       "status": "scheduled"
     }
   ]
