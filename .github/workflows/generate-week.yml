@@ -61,17 +61,18 @@ jobs:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          claude_args: '--allowedTools "Read,Write,Edit,Glob,Grep,Bash(python3 *),Bash(ls *),Bash(cat *),Bash(curl *)"'
+          claude_args: '--allowedTools "Skill,Read,Write,Edit,Glob,Grep,Bash(python3 *),Bash(ls *),Bash(cat *),Bash(curl *)"'
           prompt: |
             Write the next week of Beyond Horizon carousels into
             content/${{ steps.cfg.outputs.week }}/ as seven files named
             01_mon.json through 07_sun.json.
 
             Read CLAUDE.md first — it has the format, the hard rules and the
-            gotchas. Then read docs/writing/carousel-format.md,
-            docs/writing/brand.md and docs/writing/format-playbook.md for the
-            voice and the performance evidence. Use content/week1/ as a worked
-            example of the exact JSON shape.
+            gotchas. Then use the beyond-horizon-carousels skill — and read
+            .claude/skills/beyond-horizon-carousels/SKILL.md plus both files in
+            its references/ folder directly, so the guidance is loaded whether or
+            not skill discovery fires. Use content/week1/ as a worked example of
+            the exact JSON shape.
 
             Before writing, read every existing content/week*/*.json and list the
             personas, cities, income levels and content wells already used. Do

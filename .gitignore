@@ -2,4 +2,5 @@
 .DS_Store
 __pycache__/
 ci/
+docs/writing/
 node_modules/

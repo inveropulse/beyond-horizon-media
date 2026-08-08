@@ -21,15 +21,16 @@ media/weekN/<day>/slide_NN.jpg            rendered output (gitignored on Azure)
 renderer/                                 Remotion project, 1080x1350 stills
 scripts/validate.py                       spec gates — run before committing anything
 scripts/publish.py                        uploads media, schedules in Buffer
-docs/writing/                             the writing guidance the generator uses
+.claude/skills/                           the craft: how to write and how to render
 config.json                               channels, times, media host
 ```
 
 ## Writing a week of content
 
-Seven pieces, one per day, `01_mon.json` through `07_sun.json`. Read
-`docs/writing/carousel-format.md`, `docs/writing/brand.md` and
-`docs/writing/format-playbook.md` first — they carry the brand voice, the compliance limits
+Seven pieces, one per day, `01_mon.json` through `07_sun.json`. Use the
+`beyond-horizon-carousels` skill, and read
+`.claude/skills/beyond-horizon-carousels/SKILL.md` and both files in its
+`references/` folder first — they carry the brand voice, the compliance limits
 and the performance evidence. The format is not negotiable; it was derived from
 a 268-post sample in this exact niche.
 
@@ -74,14 +75,25 @@ Buffer's GraphQL API is at `https://api.buffer.com` with
 or query posts with `includeMetrics` to see which hooks and income bands landed,
 and let that steer the next week's angles.
 
-## Updating a workflow from a remote session
+## Skills in this repo
+
+| Skill | Covers |
+|---|---|
+| `beyond-horizon-carousels` | what to write — voice, format, compliance, the 268-post evidence base |
+| `beyond-horizon-rendering` | how it gets rendered — layout, motion, brand, platform limits |
+
+Any Claude Code session opened in this repo picks these up automatically, so the
+approach travels with the code rather than living in someone's account.
+
+## Updating a workflow or skill from a remote session
 
 Remote tools cannot write to `.github/workflows/` or `.claude/` — both are
-protected. Stage the file at `ci/<name>.yml` instead (that path is gitignored),
-then copy it across from a shell:
+protected. Stage the files under `ci/` instead (gitignored), then copy them
+across from a shell:
 
 ```bash
 cp ci/generate-week.yml .github/workflows/generate-week.yml
+cp -R ci/skills/. .claude/skills/
 ```
 
 ## Gotchas that have already bitten
