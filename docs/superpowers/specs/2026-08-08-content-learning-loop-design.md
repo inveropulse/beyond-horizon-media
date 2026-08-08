@@ -151,9 +151,10 @@ mix.
 
 ### Ranking rules
 
-- **Metric:** mean engagement rate, `(reactions + comments + shares) /
-  impressions`. Scale-free, so a TikTok post and a Facebook post are comparable
-  and one viral outlier does not dominate a well's average.
+- **Metric:** mean engagement rate — Buffer's own `engagementRate` percentage,
+  falling back to `100 * (reactions + comments + shares) / reach` where Buffer
+  omits it. Scale-free, so a TikTok post and a Facebook post are comparable and
+  one viral outlier does not dominate a well's average.
 - **Minimum sample:** a well needs **≥3 posts with usable metrics** before it can
   be champion or challenger. Below that it is "unproven" and ranked by the
   playbook's prior order instead. This is the main defence against locking onto a
