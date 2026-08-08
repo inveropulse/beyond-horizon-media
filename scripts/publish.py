@@ -120,8 +120,9 @@ def graphql(query, variables):
 
 def metadata_for(channel_key, image_count):
     if channel_key == "instagram":
-        return {"instagram": {"type": "carousel" if image_count > 1 else "post",
-                              "shouldShareToFeed": True}}
+        # "post" is verified against the live account for a 10-image carousel.
+        # The schema also lists "carousel" but it is rejected in practice.
+        return {"instagram": {"type": "post", "shouldShareToFeed": True}}
     if channel_key == "facebook":
         return {"facebook": {"type": "post"}}
     return None
@@ -218,9 +219,25 @@ def main():
             if md:
                 payload["metadata"] = md
 
-            data = graphql(CREATE_POST, {"input": payload})["createPost"]
-            if data["__typename"] != "PostActionSuccess":
-                raise SystemExit(f"{post}/{c['key']}: {data['__typename']} — {data.get('message')}")
+            # Buffer's media fetcher intermittently fails to read an image even
+            # when it is definitely served correctly. Retry before giving up.
+            data = None
+            for attempt in range(4):
+                try:
+                    data = graphql(CREATE_POST, {"input": payload})["createPost"]
+                except RuntimeError as e:
+                    if "could not be read" in str(e) and attempt < 3:
+                        time.sleep(20 * (attempt + 1))
+                        continue
+                    raise
+                if data["__typename"] == "PostActionSuccess":
+                    break
+                msg = data.get("message") or ""
+                if "could not be read" in msg and attempt < 3:
+                    time.sleep(20 * (attempt + 1))
+                    continue
+                raise SystemExit(f"{post}/{c['key']}: {data['__typename']} — {msg}")
+            time.sleep(8)  # pace so the host is not hammered
             p = data["post"]
             results.append({"day": post, "channel": c["key"], "postId": p["id"],
                             "dueAt": p["dueAt"], "status": p["status"]})
