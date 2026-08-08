@@ -286,3 +286,27 @@ def ingest():
                 print(f"analytics: row {post_id} rejected ({str(e)[:60]}) — skipping")
                 continue
     return written
+
+
+def main():
+    args = set(sys.argv[1:])
+    if "--ingest" in args:
+        print(f"ingested {ingest()} rows")
+
+    stats = rollup(fetch_rows())
+
+    if "--show" in args or not args:
+        print(f"\n{'well':<20} {'rate':>8} {'n':>4}  last")
+        print("-" * 52)
+        for well in rank(stats):
+            s = stats.get(well, {"rate": 0.0, "n": 0, "last": "never"})
+            flag = "" if s["n"] >= MIN_SAMPLE else "  (unproven)"
+            print(f"{well:<20} {s['rate']:>8.3f} {s['n']:>4}  {s['last'] or 'never'}{flag}")
+
+    if "--plan" in args:
+        for day, well in plan_week(stats).items():
+            print(f"{day}={well}")
+
+
+if __name__ == "__main__":
+    main()
