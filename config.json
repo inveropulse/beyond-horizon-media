@@ -1,0 +1,14 @@
+{
+  "timezone": "+02:00",
+  "channels": [
+    {"key": "tiktok",    "id": "6a500a7d40483446288b7d89", "time": "12:35"},
+    {"key": "instagram", "id": "6a500a9e40483446288b7df4", "time": "17:20"},
+    {"key": "facebook",  "id": "6a500bb240483446288b81a1", "time": "19:45"}
+  ],
+  "mediaHost": "github",
+  "github": {
+    "owner": "inveropulse",
+    "repo": "beyond-horizon-media",
+    "branch": "main"
+  }
+}

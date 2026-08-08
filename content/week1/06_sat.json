@@ -1,0 +1,84 @@
+{
+  "income": 78000,
+  "audio": "bed_03.wav",
+  "caption": "Everyone assumes R78 000 means sorted. I still hit zero before payday. What does yours actually leave you?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R78 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Cape Town",
+      "body": "Male, 32\nLiving with my partner, no kids\nJob: Software engineer\nNet salary: R78 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R19 500 p/m",
+      "includes": "2 bed in Sea Point, parking bay, levies",
+      "body": "Cape Town rent is its own tax. I pay more for this flat than my brother pays on his bond in Bloem."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out & delivery",
+      "amount": "R7 100 p/m",
+      "includes": "Lunches, weekends, and the delivery apps",
+      "body": "I guessed R3 000. It was R7 100. Nine hundred rand of that was delivery fees alone."
+    },
+    {
+      "kind": "line",
+      "title": "Retirement annuity & TFSA",
+      "amount": "R7 000 p/m",
+      "includes": "RA R4 500, tax-free savings R2 500",
+      "body": "This is the number I lead with when someone asks if I am responsible with money."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R6 400 p/m",
+      "includes": "2023 Golf, 44 months left",
+      "body": "I bought it the month I got promoted. That is the whole reasoning, written down honestly."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R5 400 p/m",
+      "includes": "Woolworths mostly, Checkers when I plan ahead",
+      "body": "I do not plan ahead often. The convenience shop on the corner knows me by name."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R24 300 p/m",
+      "includes": "Family support, credit card & personal loan, medical aid & gym, petrol & tolls, electricity & levies, phone & subscriptions, funeral policy",
+      "body": "R24 300 on things I have never once looked at as a group. That is nearly a third of my salary."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R8 300",
+      "body": "Out of R78 000. On paper that is a good month. In practice the account is at zero by the 27th and I cannot tell you where it went."
+    },
+    {
+      "kind": "cta",
+      "title": "A bigger salary did not make it clearer",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe delivery fees on their own came to R900 a month.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

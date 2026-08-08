@@ -1,0 +1,84 @@
+{
+  "income": 47000,
+  "audio": "bed_02.wav",
+  "caption": "We argued about the takeaways number for a full evening. How much do you two actually spend?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#budgeting",
+    "#couplebudget",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R47 000\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Johannesburg",
+      "body": "Him 34, her 31\nMarried, one toddler\nJobs: Fleet controller & school administrator\nCombined net: R47 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R9 800 p/m",
+      "includes": "3 bed townhouse in Roodepoort, 19 years left",
+      "body": "We bought at the top of the rate cycle. Every drop takes months to show up here."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R7 000 p/m",
+      "includes": "Checkers, Makro run once a month, nappies",
+      "body": "Two adults and a two year old. The nappies alone are R700 of this."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalments",
+      "amount": "R6 200 p/m",
+      "includes": "His bakkie R3 900, her Polo R2 300",
+      "body": "Two cars in one house feels ridiculous until you look at where we both work."
+    },
+    {
+      "kind": "line",
+      "title": "Petrol & insurance",
+      "amount": "R4 300 p/m",
+      "includes": "Petrol R2 900, insurance on both cars R1 400",
+      "body": "He does Roodepoort to Isando daily. That drive is most of this number."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & delivery",
+      "amount": "R2 800 p/m",
+      "includes": "Weeknight delivery, Sunday KFC, work lunches",
+      "body": "We told each other it was maybe R1 200. It is R2 800. Both of us were wrong and neither of us was surprised."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R15 900 p/m",
+      "includes": "Creche, medical aid, rates & levies, electricity, phone & fibre, black tax, funeral policies, stokvel",
+      "body": "None of these felt big on their own. Together they're R15 900 and we have never once sat down and discussed them."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 000",
+      "body": "Out of R47 000. That is about R33 a day between two adults, and we still call ourselves the responsible ones."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped guessing",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nIt found four delivery orders in one week we both swore never happened.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

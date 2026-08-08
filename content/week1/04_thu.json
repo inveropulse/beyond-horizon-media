@@ -1,0 +1,84 @@
+{
+  "income": 32000,
+  "audio": "bed_01.wav",
+  "caption": "R10 650 of my salary goes to people I owe before I buy a loaf of bread. How long did yours take?",
+  "hashtags": [
+    "#southafrica",
+    "#debt",
+    "#debtfreesa",
+    "#salarybreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R32 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Polokwane",
+      "body": "Female, 38\nDivorced, one child at home\nJob: High school teacher\nNet salary: R32 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R6 500 p/m",
+      "includes": "2 bed in Bendor, water, refuse",
+      "body": "I moved here for the school run, not the address. It's ten minutes from the gate."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R4 100 p/m",
+      "includes": "2020 Polo sedan, R96 000 still owing",
+      "body": "27 months left on paper. It is the biggest single thing I owe and the one I can't sell my way out of."
+    },
+    {
+      "kind": "line",
+      "title": "Credit card",
+      "amount": "R2 800 p/m",
+      "includes": "R28 000 balance, 22% interest",
+      "body": "About 11 months if I don't touch it again. I've said that before."
+    },
+    {
+      "kind": "line",
+      "title": "Personal loan",
+      "amount": "R2 600 p/m",
+      "includes": "R48 000 balance, 24% interest, 24 months to go",
+      "body": "I took it to cover my mother's hospital bill in 2023. I don't regret it. I do watch the interest."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & tuckshop coffee",
+      "amount": "R1 700 p/m",
+      "includes": "Staffroom lunches, Friday chicken, delivery on report weeks",
+      "body": "I would have guessed R600. It is R1 700. That's the number I'm not proud of."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R12 700 p/m",
+      "includes": "Groceries, petrol & insurance, home running costs, medical aid, black tax, store accounts, funeral policy",
+      "body": "R12 700 that isn't debt and isn't rent. It's the only part I can actually move if a month goes wrong."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 600",
+      "body": "Out of R32 000. R10 650 of that went to R180 000 of debt — card, loan, store accounts, car. On this pace the accounts clear in 8 months, the card in 11, the loan in 24, the car in 27."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what I owe",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nSeeing the four debt repayments added up on one screen was worse, and more useful, than any of them alone.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

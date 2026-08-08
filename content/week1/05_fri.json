@@ -1,0 +1,84 @@
+{
+  "income": 21000,
+  "audio": "bed_02.wav",
+  "caption": "There is no medical aid on this list and that's the part that keeps me up. What did you cut first?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#salarybreakdown",
+    "#singlemomsa",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R21 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Bloemfontein",
+      "body": "Female, 34\nSingle mother, two boys (8 and 10)\nJob: Legal secretary\nNet salary: R21 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R5 600 p/m",
+      "includes": "2 bed in Universitas, water, refuse",
+      "body": "The boys share a room. It's walking distance from their school, which is worth more to me than the extra room."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 700 p/m",
+      "includes": "Monthly shop plus the bread and milk runs",
+      "body": "Two primary school lunchboxes, five days a week. That's where it goes."
+    },
+    {
+      "kind": "line",
+      "title": "School fees & aftercare",
+      "amount": "R2 700 p/m",
+      "includes": "Fees R700 each, aftercare R650 each",
+      "body": "Aftercare isn't a nice-to-have. I finish at five and they finish at one."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R2 100 p/m",
+      "includes": "2016 Picanto, 14 months left",
+      "body": "Second hand, small, paid monthly. Without it the school run is two taxis and an hour."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways",
+      "amount": "R600 p/m",
+      "includes": "Friday chicken, and the nights I've got nothing left",
+      "body": "I tell myself it's once a month. It's closer to three."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 500 p/m",
+      "includes": "Petrol & insurance, electricity & water, the kids' bits, phone & fibre, funeral policy, stokvel, clothing account, family support",
+      "body": "R5 500 of things I would struggle to cut. Most of it is for the children, not for me."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R800",
+      "body": "Out of R21 000. That's about R26 a day for anything I didn't plan for. There's no medical aid here — every doctor visit and every chemist run comes out of this R800."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing where it went",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe school-related debit orders I'd never counted as one number came to R2 700.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

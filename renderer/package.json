@@ -1,0 +1,25 @@
+{
+  "name": "beyond-horizon-renderer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/poppins": "^5.3.0",
+    "@remotion/cli": "^4.0.507",
+    "@remotion/layout-utils": "^4.0.507",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "remotion": "^4.0.507",
+    "@remotion/bundler": "^4.0.507",
+    "@remotion/renderer": "^4.0.507"
+  },
+  "private": true,
+  "scripts": {
+    "render": "node render-carousels.mjs"
+  },
+  "type": "commonjs"
+}

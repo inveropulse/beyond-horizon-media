@@ -1,0 +1,84 @@
+{
+  "income": 14800,
+  "audio": "bed_03.wav",
+  "caption": "The vending machine number broke me a little. What is yours, honestly?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#salarybreakdown",
+    "#howispendmysalary",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R14 800\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Gqeberha",
+      "body": "Female, 26\nSingle, no kids, lives alone\nJob: Call centre agent\nNet salary: R14 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 600 p/m",
+      "includes": "Bachelor flat in Newton Park, water and refuse",
+      "body": "It is one room. It is ten minutes from the office and that is the whole point."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 400 p/m",
+      "includes": "Shoprite, and the mid-month top-ups I do not plan for",
+      "body": "I cook for one and still throw food away. I have not figured that out yet."
+    },
+    {
+      "kind": "line",
+      "title": "Personal loan",
+      "amount": "R1 250 p/m",
+      "includes": "R18 000 taken out when my mom's fridge and my laptop went in the same month",
+      "body": "Fourteen months left. The interest on it is the number I actively avoid looking at."
+    },
+    {
+      "kind": "line",
+      "title": "Money home",
+      "amount": "R1 200 p/m",
+      "includes": "My mom's electricity, my brother's school shoes and transport",
+      "body": "She never asks. I send it anyway because I know what the month looks like there."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & vending machine",
+      "amount": "R1 150 p/m",
+      "includes": "Night shift snacks, Friday KFC, the office machine",
+      "body": "I said R400. I checked. It was R1 150. Most of it is R18 at a time on a bad shift."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R4 380 p/m",
+      "includes": "Taxi fare, electricity, airtime & data, clothing account, funeral policy, stokvel, hair & nails, savings",
+      "body": "R4 380 of small things. On R14 800 the small things are the whole problem."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R820",
+      "body": "Out of R14 800. That is R27 a day, and payday is never as close as I think it is."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe R18 vending machine taps added up to more than my electricity.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

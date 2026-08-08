@@ -1,0 +1,86 @@
+{
+  "income": 26500,
+  "audio": "bed_01.wav",
+  "caption": "I would have bet money the eating out was R900. What's the number you'd rather not check?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R26 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Durban",
+      "body": "Female, 31\nSingle, no kids\nJob: Registered nurse\nNet salary: R26 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R6 200 p/m",
+      "includes": "1 bed in Berea, water, refuse",
+      "body": "I could pay R4 500 in Phoenix, but I'd add two hours of driving to a job where I already do twelve hour shifts."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 400 p/m",
+      "includes": "2019 Polo Vivo, 31 months left",
+      "body": "Night shift and public transport don't mix. This one isn't negotiable for me."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 800 p/m",
+      "includes": "Checkers, and the Woolies top-ups I pretend don't count",
+      "body": "I shop once a month, then four more times because I forgot something."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out",
+      "amount": "R2 400 p/m",
+      "includes": "Hospital canteen, delivery after night shift",
+      "body": "I would have told you R900. I checked. It was R2 400. Night shift makes you buy things."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R2 000 p/m",
+      "includes": "My mom's electricity, my nephew's school transport",
+      "body": "It goes off the day after payday so I never have to treat it as a choice. I'd rather it that way."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R8 050 p/m",
+      "includes": "Petrol & insurance, medical aid, electricity, phone & fibre, funeral policy, stokvel, gym, savings",
+      "body": "Eight line items I never think about one at a time. Together they're almost a third of what I earn."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 650",
+      "body": "Out of R26 500. That's about R55 a day until payday, and payday is never as close as I think it is."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe eating out number was the one that got me.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

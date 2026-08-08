@@ -1,0 +1,84 @@
+{
+  "income": 38000,
+  "audio": "bed_01.wav",
+  "caption": "The van, the tools and the groceries all come out of one account. Anyone else running a business off their personal card?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#salarybreakdown",
+    "#budgetingforsouthafricans",
+    "#spendingbreakdown"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R38 000\np/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Durban",
+      "body": "Male, 39\nMarried, two kids\nJob: Qualified electrician, my own small operation\nNet salary: R38 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R7 600 p/m",
+      "includes": "3 bed in Queensburgh, rates included",
+      "body": "We bought in 2021 when the rate was kinder. The repayment has moved twice since then."
+    },
+    {
+      "kind": "line",
+      "title": "Van instalment",
+      "amount": "R4 900 p/m",
+      "includes": "2021 panel van, 28 months left",
+      "body": "The van is the business. If it stops, I stop. That is the whole risk in one line."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 900 p/m",
+      "includes": "Family of four, one big shop and the top-ups",
+      "body": "Two growing boys. This number goes one direction only."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel & van running costs",
+      "amount": "R3 400 p/m",
+      "includes": "Diesel, tyres, service, licence",
+      "body": "Some weeks I drive to Ballito and back for a job worth R1 400. I still take it."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & site lunches",
+      "amount": "R1 800 p/m",
+      "includes": "Garage pies, Nandos on the way home, weekend delivery",
+      "body": "I told my wife it was maybe R600. It is R1 800. Buying lunch on site every day adds up quietly."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R13 250 p/m",
+      "includes": "Tools & materials, medical aid, school fees & transport, utilities, business insurance, family support, funeral policy",
+      "body": "R13 250, and a good chunk of it is really the business paying itself out of my personal account."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 150",
+      "body": "Out of R38 000. That is meant to be the business float and the emergency money at the same time. It cannot be both."
+    },
+    {
+      "kind": "cta",
+      "title": "I could not tell the business from the household",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe van and the tools came to R12 000 a month, sitting in the same account as the groceries.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
