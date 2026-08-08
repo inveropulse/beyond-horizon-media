@@ -64,8 +64,10 @@ jobs:
             echo "nothing unscheduled to publish"; echo "skip=true" >> "$GITHUB_OUTPUT"; exit 0
           fi
           [ -n "$START" ] || START=$(date -u -d 'next monday' +%F)
+          HOST=$(python3 -c "import json;print(json.load(open('config.json'))['mediaHost'])")
           echo "week=$WEEK"   >> "$GITHUB_OUTPUT"
           echo "start=$START" >> "$GITHUB_OUTPUT"
+          echo "host=$HOST"   >> "$GITHUB_OUTPUT"
           echo "Publishing $WEEK starting $START"
 
       - name: Validate specs
@@ -87,16 +89,20 @@ jobs:
         working-directory: renderer
         run: node render-carousels.mjs "../content/${{ steps.cfg.outputs.week }}" "../media/${{ steps.cfg.outputs.week }}"
 
-      # With mediaHost "github" the images ARE the CDN, so they must be pushed
-      # before Buffer is told about their URLs.
+      # Only needed when the repo itself is the CDN (mediaHost "github"), where
+      # the images must be pushed before Buffer is told their URLs.
+      # With Azure the images live in blob storage, so committing them here
+      # adds nothing and can only lose a race against another push.
       - name: Commit rendered images
-        if: steps.cfg.outputs.skip != 'true' && github.event.inputs.dry_run != 'true'
+        if: steps.cfg.outputs.skip != 'true' && github.event.inputs.dry_run != 'true' && steps.cfg.outputs.host == 'github'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -f "media/${{ steps.cfg.outputs.week }}"
-          git diff --cached --quiet || git commit -m "Render ${{ steps.cfg.outputs.week }}"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "Render ${{ steps.cfg.outputs.week }}"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Schedule in Buffer
         if: steps.cfg.outputs.skip != 'true'
@@ -117,7 +123,10 @@ jobs:
         run: |
           RECEIPT="content/${{ steps.cfg.outputs.week }}/SCHEDULED.json"
           if [ -f "$RECEIPT" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
             git add "$RECEIPT"
             git commit -m "Scheduled ${{ steps.cfg.outputs.week }}" || exit 0
-            git push
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
