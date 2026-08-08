@@ -19,7 +19,7 @@
 - **Editorial caps:** `ranking-listicle` at most 1 day/week; `product-led` at most 2 days/week. Applied regardless of rank.
 - **Minimum sample:** a well needs ≥3 posts with usable metrics to be champion or challenger.
 - **Only `status == "sent"` posts are ingested.** Buffer returns zeroed metrics for merely-scheduled posts, shaped identically to real results. Ingesting them scores every well at 0%.
-- **Engagement rate is Buffer's own `engagementRate`** (a percentage), falling back to `100 * (reactions + comments + shares) / reach` only where Buffer omits it. There is no `impressions` field in Buffer's API.
+- **Engagement rate is Buffer's own `engagementRate`** (a percentage), falling back to `100 * (reactions + comments + shares) / reach` only where Buffer omits it. Buffer's `PostMetricType` enum does include `impressions` (alongside `clicks`, `comments`, `engagementRate`, `follows`, `likes`, `postCount`, `quotes`, `reach`, `reactions`, `reposts`, `saves`, `shares`, `totalTimeWatched`, `viewers`, `views`), but we do not rank on it — `reach` is the unique-account denominator `engagementRate` is built from, while `impressions` counts repeat views.
 - **Playbook prior order** for cold start, verbatim: `salary-breakdown`, `household-budget`, `comparison`, `debt-journey`, `one-off-event`, `cost-of-ownership`, `money-leak`, `month-in-review`, `ranking-listicle`, `product-led`.
 - **Secrets are never printed.** `AZURE_TABLE_SAS` must not appear in logs or in any printed URL.
 - **Commit style:** Conventional Commits per `.claude/skills/conventional-commits/SKILL.md`. Scopes available: `publish`, `validate`, `renderer`, `content`, `media`, `config`, `ci`. This work introduces `performance` as a new scope.

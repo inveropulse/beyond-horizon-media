@@ -65,9 +65,16 @@ anonymous access mode, so constraint 2 cannot recur here.
 | `updatedAt` | string | ISO 8601, Buffer's `metricsUpdatedAt` |
 
 **Verified against the live API, 2026-08-08.** Buffer returns `metrics` as an
-array of `{type, name, value, unit}` objects, not an object of named fields, and
-the available types are `reactions`, `comments`, `engagementRate`, `views`,
-`shares`, `reach`. There is no `impressions` field.
+array of `PostMetric` objects, not an object of named fields. `PostMetric` has
+five fields: `description`, `name`, `type`, `unit`, `value`. `type` is the
+`PostMetricType` enum, which has sixteen values: `clicks`, `comments`,
+`engagementRate`, `follows`, `impressions`, `likes`, `postCount`, `quotes`,
+`reach`, `reactions`, `reposts`, `saves`, `shares`, `totalTimeWatched`,
+`viewers`, `views`. We store the six above. `impressions` exists but is not what
+we rank on: `reach` (unique accounts) is the denominator `engagementRate` is
+built from, whereas `impressions` counts repeat views and inflates with feed
+churn rather than audience. Any given type may be absent for a channel that has
+no concept of it, and `metrics` itself is nullable.
 
 Buffer computes `engagementRate` itself, normalised per platform, so we store and
 rank on theirs rather than deriving our own — a locally-computed

@@ -274,9 +274,16 @@ def plan_week(stats):
 # print N "metrics unavailable" lines and return 0, indistinguishable from
 # "nothing has sent yet". Do not "simplify" this back to post(id: $id).
 #
-# metrics is an ARRAY of typed objects, not an object of named fields. Types
-# seen: reactions, comments, engagementRate, views, shares, reach. There is
-# no impressions field. `metrics` itself is nullable in the schema.
+# metrics is an ARRAY of typed objects, not an object of named fields. Each
+# PostMetric has five fields: description, name, type, unit, value. The type is
+# a 16-value PostMetricType enum: clicks, comments, engagementRate, follows,
+# impressions, likes, postCount, quotes, reach, reactions, reposts, saves,
+# shares, totalTimeWatched, viewers, views. We ask for the six we rank or
+# reconcile on. impressions DOES exist — it is simply not what we rank on,
+# because reach (unique accounts) is the denominator engagementRate is built
+# from, while impressions counts repeat views. `metrics` itself is nullable in
+# the schema, and any given type may be absent for a channel that has no
+# concept of it.
 POST_METRICS = """
 query Post($id: PostId!) {
   post(input: {id: $id}) {
