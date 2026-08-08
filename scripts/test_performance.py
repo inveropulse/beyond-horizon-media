@@ -47,6 +47,32 @@ def test_well_required():
     assert any("well" in p for p in check(unknown)), "unknown well must be reported"
 
 
+import performance
+
+
+def test_fetch_rows_without_credentials_is_blind_not_fatal():
+    """Analytics must never block generation — no SAS means empty, not an exception."""
+    saved = {k: os.environ.pop(k, None) for k in ("AZURE_ACCOUNT", "AZURE_TABLE_SAS")}
+    try:
+        assert performance.fetch_rows() == []
+    finally:
+        for k, v in saved.items():
+            if v is not None:
+                os.environ[k] = v
+
+
+def test_table_url_excludes_the_sas():
+    """The SAS must never end up in a printed or logged URL."""
+    os.environ["AZURE_ACCOUNT"] = "acct"
+    os.environ["AZURE_TABLE_SAS"] = "sig=SECRETVALUE"
+    try:
+        url = performance.table_url()
+        assert "SECRETVALUE" not in url, "table_url() must not embed the SAS"
+        assert url.startswith("https://acct.table.core.windows.net/postmetrics")
+    finally:
+        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_") and callable(fn):
