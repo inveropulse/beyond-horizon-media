@@ -75,10 +75,16 @@ reconciles.
 
 ## Checking what performed
 
-Buffer's GraphQL API is at `https://api.buffer.com` with
+During a generation run, the per-day well assignment in the prompt already
+encodes what performed — it comes from `scripts/performance.py`, which reads
+measured Buffer engagement. Do not separately query Buffer for angles during
+generation; write within the assigned well instead.
+
+The manual check below is for a human session, not something to run as part of
+generating a week. Buffer's GraphQL API is at `https://api.buffer.com` with
 `Authorization: Bearer $BUFFER_ACCESS_TOKEN`. Use `get_aggregated_post_metrics`
-or query posts with `includeMetrics` to see which hooks and income bands landed,
-and let that steer the next week's angles.
+or query posts with `includeMetrics` to see which hooks and income bands
+landed.
 
 ## Skills in this repo
 

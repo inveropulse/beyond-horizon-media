@@ -57,15 +57,17 @@ jobs:
       - name: Plan the topic mix
         id: plan
         if: steps.cfg.outputs.skip != 'true'
+        continue-on-error: true
         env:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
           AZURE_ACCOUNT: ${{ secrets.AZURE_ACCOUNT }}
           AZURE_TABLE_SAS: ${{ secrets.AZURE_TABLE_SAS }}
         run: |
-          python3 scripts/performance.py --ingest --show
+          python3 scripts/performance.py --ingest --show || true
+          PLAN=$(python3 scripts/performance.py --plan) || PLAN=""
           {
             echo 'assignment<<PLAN_EOF'
-            python3 scripts/performance.py --plan
+            printf '%s\n' "$PLAN"
             echo PLAN_EOF
           } >> "$GITHUB_OUTPUT"
 
@@ -95,9 +97,9 @@ jobs:
             the exact JSON shape.
 
             Before writing, read every existing content/week*/*.json and list the
-            personas, cities, income levels and content wells already used. Do
-            not repeat any of them. Vary income level, life stage and content
-            well deliberately across the seven days, and skew below R40 000 —
+            personas, cities and income levels already used. Do
+            not repeat any of them. Vary income level and life stage
+            deliberately across the seven days, and skew below R40 000 —
             lower incomes perform materially better in this niche.
 
             Each day has an assigned content well. Write that day's post in that
@@ -105,7 +107,8 @@ jobs:
 
             ${{ steps.plan.outputs.assignment }}
 
-            The wells are defined in
+            The ten valid well slugs are the source of truth in
+            scripts/wells.py; what each well means editorially is in
             .claude/skills/beyond-horizon-carousels/references/format-playbook.md.
             Set the matching "well" value in each spec's JSON. Four days share a
             well and two share another, so vary persona, city, income and hook
