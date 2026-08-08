@@ -8,14 +8,24 @@
  */
 import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition} from '@remotion/renderer';
-import {copyFileSync, mkdirSync, readFileSync, readdirSync, writeFileSync} from 'node:fs';
+import {copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync} from 'node:fs';
 import {basename, extname, join, resolve} from 'node:path';
 
 const specDir = resolve(process.argv[2]);
 const outRoot = resolve(process.argv[3]);
+// Only use an explicit browser path if it actually exists. On a GitHub Actions
+// runner it will not, and `npx remotion browser ensure` has already fetched
+// Remotion's own headless shell -- passing null tells Remotion to use that.
+// A stale hardcoded path here fails the whole run at composition select.
 const browserExecutable =
-  process.env.REMOTION_BROWSER_EXECUTABLE ??
-  '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell';
+  [
+    process.env.REMOTION_BROWSER_EXECUTABLE,
+    '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell',
+  ].find((p) => p && existsSync(p)) ?? null;
+
+console.log(browserExecutable
+  ? `browser: ${browserExecutable}`
+  : "browser: Remotion's own headless shell");
 
 const specs = readdirSync(specDir).filter((f) => f.endsWith('.json')).sort();
 if (!specs.length) throw new Error(`no specs in ${specDir}`);
