@@ -1,0 +1,84 @@
+{
+  "income": 33500,
+  "audio": "bed_01.wav",
+  "caption": "I budgeted R1 500 for nappies and formula. It's R2 800 and she's not even on solids yet. What did nobody warn you about?",
+  "hashtags": [
+    "#southafrica",
+    "#budgeting",
+    "#babybudgetsa",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R33 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Pietermaritzburg",
+      "body": "Male, 33\nMarried, one baby (3 months)\nJob: Warehouse supervisor\nNet salary: R33 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R7 200 p/m",
+      "includes": "2 bed in Hayfields, rates included",
+      "body": "We bought before she was pregnant. Good timing we didn't plan for."
+    },
+    {
+      "kind": "line",
+      "title": "Baby costs",
+      "amount": "R2 800 p/m",
+      "includes": "Nappies, formula top-ups, clinic visits, the clothes she's already grown out of",
+      "body": "I budgeted R1 500 for this. It's R2 800, and she's not even on solids yet."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 600 p/m",
+      "includes": "2021 Corolla, 22 months left",
+      "body": "The one thing on this list that hasn't changed since the baby."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 400 p/m",
+      "includes": "Big monthly shop plus the pharmacy runs that never used to happen",
+      "body": "It's still two adults eating, but somehow the trolley is fuller every time."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R2 700 p/m",
+      "includes": "Family plan, upgraded the week we found out",
+      "body": "Worth every rand at 2am with a screaming three month old. I still felt the jump on the payslip."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R9 000 p/m",
+      "includes": "Petrol & insurance, electricity & water, phone & fibre, funeral policy, stokvel, new life cover, black tax",
+      "body": "R9 000 of things that all quietly grew the month she arrived."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R3 800",
+      "body": "Out of R33 500. She's on unpaid leave until October, so this is the whole household running on one salary for now."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what the baby cost",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe baby line alone had grown by R1 300 in eight weeks, and I hadn't noticed until I saw it in one place.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "income": 24500,
+  "audio": "bed_02.wav",
+  "caption": "The app found R980 a month leaking out on things I'd forgotten I was paying for. What's hiding in yours?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#moneyleakssa",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R24 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in East London",
+      "body": "Female, 27\nSingle, lives alone\nJob: Marketing coordinator\nNet salary: R24 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R6 000 p/m",
+      "includes": "1 bed in Bunkers Hill, water, refuse",
+      "body": "I got a raise in January and moved somewhere I could actually park."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 600 p/m",
+      "includes": "Woolworths mostly, Checkers when I'm being sensible",
+      "body": "I know exactly which shop costs more. I go there anyway."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 100 p/m",
+      "includes": "2020 Polo Vivo, 19 months left",
+      "body": "The most boring line on this list, and the one I never think about."
+    },
+    {
+      "kind": "line",
+      "title": "Subscriptions & streaming",
+      "amount": "R980 p/m",
+      "includes": "Four streaming apps, a gym I haven't been to since March, one app I didn't recognise the name of",
+      "body": "I thought this was maybe R300. It's R980, and one of those is a subscription I have never used."
+    },
+    {
+      "kind": "line",
+      "title": "Delivery & takeaways",
+      "amount": "R1 700 p/m",
+      "includes": "Weeknight delivery, Sunday not-cooking",
+      "body": "It's not the amount that gets me, it's how many separate orders it takes to reach it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R7 500 p/m",
+      "includes": "Petrol & insurance, phone & fibre, medical aid, funeral policy, stokvel, electricity, clothing account",
+      "body": "R7 500 that I could mostly describe without looking, which is worse than not knowing."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 620",
+      "body": "Out of R24 500. The raise was supposed to change this number. It moved it by about R400."
+    },
+    {
+      "kind": "cta",
+      "title": "The app found what I couldn't see",
+      "body": "I uploaded three months of statements to Beyond Horizon and it flagged the subscriptions on its own.\n\nOne of them I genuinely didn't recognise until I saw the merchant name.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

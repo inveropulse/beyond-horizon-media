@@ -1,0 +1,84 @@
+{
+  "income": 17500,
+  "audio": "bed_01.wav",
+  "caption": "The Uber Eats number nearly broke me and I only just started earning properly. What's yours?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#livingcostsSA",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R17 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Pretoria",
+      "body": "Male, 24\nSingle, renting a room\nJob: IT support technician\nNet salary: R17 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 200 p/m",
+      "includes": "Backyard room in Sunnyside, water and wifi included",
+      "body": "It's one room and a kettle. It's also ten minutes from work, which is the only reason I can afford to be here."
+    },
+    {
+      "kind": "line",
+      "title": "Transport (Uber & taxi)",
+      "amount": "R1 800 p/m",
+      "includes": "Uber to work most days, taxi when the app surges",
+      "body": "No car yet. Some months this line costs more than a car instalment would."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 100 p/m",
+      "includes": "Checkers, and the Pick n Pay top-ups when I run out mid-month",
+      "body": "I cook for one and still buy too much bread."
+    },
+    {
+      "kind": "line",
+      "title": "Personal loan",
+      "amount": "R2 400 p/m",
+      "includes": "R19 500 taken out for a laptop and a phone, both needed for the job",
+      "body": "Sixteen months left. I needed both just to start earning this salary."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & delivery",
+      "amount": "R2 000 p/m",
+      "includes": "Uber Eats after late shifts, weekend takeaways",
+      "body": "I guessed R700. I checked. It was R2 000. Ordering in feels smaller each time than it is in total."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 250 p/m",
+      "includes": "Airtime & data, electricity, funeral policy, stokvel, clothing account, black tax, savings",
+      "body": "Seven small debit orders I've never added up in one sitting. Together they're almost a third of what I earn."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R750",
+      "body": "Out of R17 500. That's about R25 a day until payday, and I've only been earning like this for four months."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing where it went",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe Uber Eats and delivery apps alone came to R2 000 — I would have guessed R700.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "income": 29500,
+  "audio": "bed_03.wav",
+  "caption": "R7 150 of my salary goes to people I owe before I buy anything for myself. How long did it take you to clear yours?",
+  "hashtags": [
+    "#southafrica",
+    "#debt",
+    "#debtfreesa",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R29 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Nelspruit",
+      "body": "Female, 30\nSingle, no kids\nJob: Retail assistant manager\nNet salary: R29 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R6 200 p/m",
+      "includes": "1 bed in Sonpark, water, refuse",
+      "body": "I moved here after the store transfer. Not glamorous, but it's five minutes from the till."
+    },
+    {
+      "kind": "line",
+      "title": "Credit card",
+      "amount": "R2 300 p/m",
+      "includes": "R23 000 balance, 24% interest, 11 months left",
+      "body": "I know exactly what I bought with this. I don't love remembering."
+    },
+    {
+      "kind": "line",
+      "title": "Store account",
+      "amount": "R1 450 p/m",
+      "includes": "Edgars and Foschini combined, R9 800 owing",
+      "body": "It felt like nothing at R299 a month per account. It's R1 450 together."
+    },
+    {
+      "kind": "line",
+      "title": "Personal loan",
+      "amount": "R3 400 p/m",
+      "includes": "R64 000 balance, 24% interest, 24 months left, taken for a car repair and a family funeral in the same month",
+      "body": "Two emergencies, one loan. I don't regret it. I do watch the interest."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & coffee",
+      "amount": "R1 050 p/m",
+      "includes": "Till-side coffee, Friday lunch with the team, delivery on closing shifts",
+      "body": "I guessed R500. It was R1 050. Closing shifts make you buy things."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R12 800 p/m",
+      "includes": "Groceries, petrol & insurance, medical aid, phone & fibre, funeral policy, stokvel, electricity, black tax",
+      "body": "R12 800 that isn't debt and isn't rent. It's the only part of this I can actually move."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 300",
+      "body": "Out of R29 500. R7 150 of that went to the card, the store account and the loan. At this pace the store account clears in 7 months, the card in 11, the loan in 24."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped avoiding what I owe",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nSeeing the three debt repayments added up on one screen was worse, and more useful, than any of them alone.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

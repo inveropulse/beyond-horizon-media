@@ -1,0 +1,84 @@
+{
+  "income": 52000,
+  "audio": "bed_02.wav",
+  "caption": "We're saving for the wedding and still fighting about the takeaway number. Anyone else budgeting for two things at once?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#couplebudget",
+    "#budgeting",
+    "#weddingbudgetsa"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R52 000\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Kimberley",
+      "body": "Him 29, her 27\nEngaged, no kids yet\nJobs: Mine surveyor & pharmacist assistant\nCombined net: R52 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R10 500 p/m",
+      "includes": "2 bed in Monument Heights, water, refuse",
+      "body": "We're renting together for the first time. Neither of us wants to admit how much bigger this is than either of our old places."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R5 500 p/m",
+      "includes": "His bakkie, 2022 model, 37 months left",
+      "body": "One car, one instalment. Her Uber costs are technically cheaper — technically."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R6 200 p/m",
+      "includes": "Checkers big shop, Spar top-ups, his protein habit",
+      "body": "He eats like he's still playing club rugby. He is not."
+    },
+    {
+      "kind": "line",
+      "title": "Wedding fund",
+      "amount": "R8 400 p/m",
+      "includes": "Venue deposit paid off, now saving for catering and her dress",
+      "body": "November next year. At this rate we'll make it, provided nothing else breaks."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & date nights",
+      "amount": "R3 200 p/m",
+      "includes": "Friday sushi, Sunday not-cooking, the odd delivery",
+      "body": "We told each other it was maybe R1 500. It's R3 200. Neither of us was surprised, both of us were annoyed."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R15 600 p/m",
+      "includes": "Medical aid x2, petrol & insurance, phone & fibre, funeral policies x2, stokvel, black tax, gym",
+      "body": "Fifteen thousand six hundred rand of things we've never once budgeted for as a couple, only separately."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 600",
+      "body": "Out of R52 000, between two salaries. On paper that sounds like a lot. After the wedding fund it's R43 a day, each."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped guessing what the wedding was costing us",
+      "body": "I uploaded both our statements to Beyond Horizon and it sorted every transaction into one place.\n\nSeeing both our takeaway spending on one screen ended the argument, if not the habit.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

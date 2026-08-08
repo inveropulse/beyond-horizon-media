@@ -1,0 +1,84 @@
+{
+  "income": 45500,
+  "audio": "bed_03.wav",
+  "caption": "I budgeted R2 500 for a service. The gearbox needed R7 800 and it needed it this month. Anyone else's month get hijacked like that?",
+  "hashtags": [
+    "#southafrica",
+    "#budgeting",
+    "#spendingbreakdown",
+    "#salarybreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R45 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Rustenburg",
+      "body": "Male, 36\nMarried, one child\nJob: Quantity surveyor\nNet salary: R45 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R11 500 p/m",
+      "includes": "3 bed in Safarituine, rates included",
+      "body": "Bought four years ago. The rate has moved twice and the repayment still surprises me each time."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R5 400 p/m",
+      "includes": "2022 Fortuner, 31 months left",
+      "body": "Bought for the mine road, used mostly for school drop-off."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R6 200 p/m",
+      "includes": "Family of three, one big shop and the mid-week top-ups",
+      "body": "The number that grows every year and never seems to shrink back."
+    },
+    {
+      "kind": "line",
+      "title": "Car repair",
+      "amount": "R7 800 p/m",
+      "includes": "Gearbox replacement, unplanned, paid in one instalment",
+      "body": "I budgeted R2 500 for a service. The gearbox had other plans and gave me no notice."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & stress spending",
+      "amount": "R2 100 p/m",
+      "includes": "Two weeks of not cooking after the car news",
+      "body": "I don't usually spend like this. This was not a usual month."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R10 500 p/m",
+      "includes": "Petrol & insurance, medical aid, electricity & rates, phone & fibre, funeral policy, school fees, stokvel",
+      "body": "R10 500 that runs every month regardless of what else goes wrong."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 000",
+      "body": "Out of R45 500. On a normal month this is a comfortable number. This was not a normal month."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped assuming and started checking",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nSeeing the car repair against the actual budget was the first time I understood how far off the month really went.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

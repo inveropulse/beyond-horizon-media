@@ -1,0 +1,84 @@
+{
+  "income": 24000,
+  "audio": "bed_01.wav",
+  "caption": "Between my dad's funeral loan and keeping my mom's lights on, R4 450 leaves before I've spent a cent on myself. Is this just what your forties look like too?",
+  "hashtags": [
+    "#southafrica",
+    "#family",
+    "#blacktaxsa",
+    "#budgetingforsouthafricans",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R24 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Witbank",
+      "body": "Female, 45\nMarried, grown children\nJob: Bookkeeper\nNet salary: R24 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R6 800 p/m",
+      "includes": "3 bed in Del Judor, rates included",
+      "body": "Nearly paid off, which is the only reason the rest of this still balances."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 200 p/m",
+      "includes": "Big shop plus my mother's top-ups",
+      "body": "Half of this trolley isn't for my own house anymore."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral loan repayment",
+      "amount": "R1 950 p/m",
+      "includes": "R30 000 borrowed in February for my father's funeral, 18 months left",
+      "body": "I don't regret the loan. I do the sum in my head every payday."
+    },
+    {
+      "kind": "line",
+      "title": "My mother's support",
+      "amount": "R2 500 p/m",
+      "includes": "Her electricity, her groceries top-up, a caregiver two days a week",
+      "body": "Nobody asked me to do this in writing. I just started, and now it's a line item."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & comfort food",
+      "amount": "R950 p/m",
+      "includes": "The nights since February I haven't wanted to cook",
+      "body": "I would have said R400. It's R950. Grief makes you order in more than you think."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 900 p/m",
+      "includes": "Car instalment, petrol & insurance, medical aid, phone & fibre, electricity, my own funeral policy, stokvel",
+      "body": "R6 900 that has to run whether or not the year has been kind."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 700",
+      "body": "Out of R24 000. Between the loan and my mother's account, R4 450 is gone before I've spent a cent on myself."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what care was costing me",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nSeeing my mother's support and the funeral loan on one screen was the first time I'd added them together.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
