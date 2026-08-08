@@ -283,6 +283,36 @@ def test_explore_slot_prefers_untried_then_least_recently_used():
         f"got {chosen}"
 
 
+def test_explore_rotation_is_keyed_on_when_posts_went_out():
+    """updatedAt is Buffer's metricsUpdatedAt, and ingest() re-upserts every
+    past week on every run, so it tracks "least recently metrics-refreshed",
+    not "least recently posted". Keyed on it, the rotation freezes as those
+    timestamps converge — defeating the whole point of the explore slot. dueAt
+    is the field that means what the rule needs, so a well posted long ago must
+    explore even when its metrics were refreshed most recently of all."""
+    stats = {w: {"rate": 0.1, "n": 5,
+                 # dueAt ascending down WELLS, updatedAt deliberately reversed
+                 "due": f"2026-01-{10 + i:02d}T09:00:00Z",
+                 "last": f"2026-08-{30 - i:02d}T00:00:00Z"}
+             for i, w in enumerate(WELLS)}
+    plan = performance.plan_week(stats)
+    champion, challenger = plan["01_mon"], plan["03_wed"]
+    expected = next(w for w in WELLS if w not in (champion, challenger))
+    assert plan["07_sun"] == expected, \
+        f"the earliest-POSTED candidate should explore, expected {expected}, " \
+        f"got {plan['07_sun']}"
+
+
+def test_rollup_tracks_the_newest_due_at_per_well():
+    rows = [_row("money-leak", 100, 10), _row("money-leak", 100, 20)]
+    rows[0]["dueAt"] = "2026-08-11T09:00:00Z"
+    rows[1]["dueAt"] = "2026-08-18T09:00:00Z"
+    out = performance.rollup(rows)
+    assert out["money-leak"]["due"] == "2026-08-18T09:00:00Z", out["money-leak"]
+    assert performance.rollup([_row("money-leak", 100, 10)])["money-leak"]["due"] == "", \
+        "a row with no dueAt must not blow up the rollup"
+
+
 def test_ranking_listicle_capped_at_one_day():
     stats = {"ranking-listicle": {"rate": 0.9, "n": 9, "last": "2026-08-20"},
              "comparison": {"rate": 0.2, "n": 5, "last": "2026-08-20"}}

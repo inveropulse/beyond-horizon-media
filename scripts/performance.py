@@ -151,19 +151,30 @@ def engagement_rate(row):
 
 
 def rollup(rows):
-    """well -> {rate: mean engagement, n: scoreable posts, last: newest updatedAt}."""
+    """well -> {rate, n, last: newest updatedAt, due: newest dueAt}.
+
+    `last` and `due` answer different questions and the explore rotation needs
+    the second one. updatedAt is Buffer's metricsUpdatedAt, and ingest()
+    re-upserts every row of every past week on every run, so it refreshes as
+    Buffer refreshes its metrics — "least recently updated" therefore means
+    "least recently metrics-refreshed", not "least recently posted". As those
+    timestamps converge the ordering collapses and the explore slot freezes on
+    one well, which is exactly what the rotation exists to prevent. dueAt is
+    when the post actually went out and never moves.
+    """
     acc = {}
     for row in rows:
         well = row.get("well")
         if not well:
             continue
-        slot = acc.setdefault(well, {"rates": [], "last": ""})
+        slot = acc.setdefault(well, {"rates": [], "last": "", "due": ""})
         slot["last"] = max(slot["last"], row.get("updatedAt") or "")
+        slot["due"] = max(slot["due"], row.get("dueAt") or "")
         rate = engagement_rate(row)
         if rate is not None:
             slot["rates"].append(rate)
     return {w: {"rate": sum(s["rates"]) / len(s["rates"]) if s["rates"] else 0.0,
-                "n": len(s["rates"]), "last": s["last"]}
+                "n": len(s["rates"]), "last": s["last"], "due": s["due"]}
             for w, s in acc.items()}
 
 
@@ -244,7 +255,11 @@ def plan_week(stats):
     if untried:
         explore = untried[0]
     else:
-        explore = min(candidates, key=lambda w: (stats[w]["last"], _well_rank(w)))
+        # Least recently POSTED, not least recently metrics-refreshed — see
+        # rollup(). `last` and the prior order stay on as tiebreaks only.
+        explore = min(candidates, key=lambda w: (stats[w].get("due", ""),
+                                                 stats[w].get("last", ""),
+                                                 _well_rank(w)))
 
     slots = {EXPLORE_DAY: explore}
     slots.update({d: champion for d in CHAMPION_DAYS})
