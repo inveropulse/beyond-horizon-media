@@ -54,6 +54,13 @@ jobs:
           echo "week=$WEEK" >> "$GITHUB_OUTPUT"
           echo "Writing content/$WEEK"
 
+      # The planner decides what every day of the week is about, so a broken
+      # planner must not get to write one. This is the one analytics step that
+      # SHOULD fail the job: it makes no network calls and needs no secrets.
+      - name: Test the planner
+        if: steps.cfg.outputs.skip != 'true'
+        run: python3 scripts/test_performance.py
+
       - name: Plan the topic mix
         id: plan
         if: steps.cfg.outputs.skip != 'true'
@@ -65,6 +72,14 @@ jobs:
         run: |
           python3 scripts/performance.py --ingest --show || true
           PLAN=$(python3 scripts/performance.py --plan) || PLAN=""
+          # main() wraps every branch and falls back to the playbook prior, so
+          # this should now be unreachable. It stays because the alternative —
+          # an empty string interpolated after "the assignment is measured, not
+          # a suggestion:" — leaves the prompt dangling into nothing.
+          if [ -z "$PLAN" ]; then
+            echo "planner produced no assignment — telling Claude to choose" >&2
+            PLAN="(no measured assignment is available this run — choose the wells yourself from scripts/wells.py and vary them across the seven days)"
+          fi
           {
             echo 'assignment<<PLAN_EOF'
             printf '%s\n' "$PLAN"
@@ -129,6 +144,51 @@ jobs:
         if: steps.cfg.outputs.skip != 'true'
         run: python3 scripts/validate.py "content/${{ steps.cfg.outputs.week }}"
 
+      # validate.py only checks that `well` is A known slug, never that it is
+      # THE assigned one, so drift would silently revert the whole feature to
+      # the old behaviour with every run still green. Warn loudly, never fail:
+      # content that exists beats content that doesn't. The table has not
+      # changed since the plan step, so re-running --plan reproduces it.
+      - name: Check the week honoured the plan
+        if: steps.cfg.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          AZURE_ACCOUNT: ${{ secrets.AZURE_ACCOUNT }}
+          AZURE_TABLE_SAS: ${{ secrets.AZURE_TABLE_SAS }}
+        run: |
+          python3 scripts/performance.py --plan > /tmp/plan.txt || true
+          python3 - "content/${{ steps.cfg.outputs.week }}" /tmp/plan.txt <<'PY' | tee -a "$GITHUB_STEP_SUMMARY"
+          import json, os, sys
+          week_dir, plan_path = sys.argv[1], sys.argv[2]
+          plan = dict(line.strip().split("=", 1)
+                      for line in open(plan_path) if "=" in line)
+          rows = []
+          for day, want in sorted(plan.items()):
+              path = os.path.join(week_dir, f"{day}.json")
+              try:
+                  got = json.load(open(path)).get("well")
+              except Exception as e:
+                  got = f"unreadable: {e}"
+              rows.append((day, want, got))
+          bad = [r for r in rows if r[1] != r[2]]
+          if not plan:
+              print("### Plan adherence: no plan to compare against\n")
+          elif bad:
+              print(f"### Plan adherence: {len(bad)} of {len(rows)} days IGNORED "
+                    "their assigned well\n")
+              print("| Day | Assigned | Written |")
+              print("|---|---|---|")
+              for day, want, got in bad:
+                  print(f"| `{day}` | `{want}` | `{got}` |")
+              print("\nThe week was still committed. Check that "
+                    "`.claude/skills/beyond-horizon-carousels/SKILL.md` and the "
+                    "workflow prompt still agree that a supplied assignment wins.")
+          else:
+              print(f"### Plan adherence: all {len(rows)} days match their "
+                    "assigned well\n")
+          PY
+          exit 0
+
       - name: Commit the week
         if: steps.cfg.outputs.skip != 'true'
         run: |
@@ -147,11 +207,12 @@ jobs:
           import glob, json, os, sys
           d = sys.argv[1]
           print(f"### Wrote {d}\n")
-          print("| File | Net income | Hook |")
-          print("|---|---|---|")
+          print("| File | Well | Net income | Hook |")
+          print("|---|---|---|---|")
           for f in sorted(glob.glob(os.path.join(d, "[0-9]*.json"))):
               s = json.load(open(f))
               hook = next(x for x in s["slides"] if x.get("kind") == "hook")["title"]
               inc = f"R{s['income']:,}".replace(",", " ")
-              print(f"| `{os.path.basename(f)}` | {inc} | {hook.replace(chr(10), ' ')} |")
+              well = s.get("well") or "—"
+              print(f"| `{os.path.basename(f)}` | `{well}` | {inc} | {hook.replace(chr(10), ' ')} |")
           PY
