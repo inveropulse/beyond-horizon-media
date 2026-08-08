@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Assert-based tests. No framework, no network. Run: python3 scripts/test_performance.py"""
 
+import io
 import json
 import os
 import re
@@ -95,6 +96,116 @@ def test_fetch_rows_swallows_a_stalled_read_timeout():
     finally:
         performance._request = original
         del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
+def _with_azure_env(sas="sig=dummy", account="acct"):
+    """Set the Azure vars and return a restorer, so a test can be blind or not."""
+    saved = {k: os.environ.get(k) for k in ("AZURE_ACCOUNT", "AZURE_TABLE_SAS")}
+    os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"] = account, sas
+
+    def restore():
+        for k, v in saved.items():
+            if v is None:
+                os.environ.pop(k, None)
+            else:
+                os.environ[k] = v
+    return restore
+
+
+def test_blank_credentials_are_treated_as_missing():
+    """An absent GitHub secret interpolates as "" rather than being unset, so
+    os.environ[k] does not raise — which is the state of the very first live
+    runs. Left unhandled it produced a confusing "row rejected" line per row,
+    42+ of them, instead of one honest "not set"."""
+    restore = _with_azure_env(account="", sas="   ")
+    try:
+        assert performance.fetch_rows() == [], "a blank SAS must read as blind"
+        for fn in (performance.table_url, performance._sas):
+            try:
+                fn()
+            except KeyError:
+                pass
+            else:
+                raise AssertionError(f"{fn.__name__}() accepted a blank secret")
+    finally:
+        restore()
+
+
+def test_sas_is_stripped_of_whitespace_and_a_leading_question_mark():
+    """Whitespace in a pasted secret is what turns a valid SAS into an
+    unencodable URL."""
+    restore = _with_azure_env(sas="  ?sig=abc\n")
+    try:
+        assert performance._sas() == "sig=abc", performance._sas()
+    finally:
+        restore()
+
+
+def test_fetch_rows_degrades_on_a_sas_that_cannot_go_in_a_url():
+    """http.client.InvalidURL is NOT a ValueError — it descends from
+    HTTPException — so the old allow-list let it escape fetch_rows() entirely,
+    carrying the whole SAS in its message. A mis-pasted secret with an embedded
+    space is the realistic trigger. It must degrade, and it must not leak."""
+    restore = _with_azure_env(sas="sig=A B\x01C")
+    err = io.StringIO()
+    saved_stderr, sys.stderr = sys.stderr, err
+    try:
+        assert performance.fetch_rows() == []
+    finally:
+        sys.stderr = saved_stderr
+        restore()
+    assert "A B" not in err.getvalue(), \
+        f"the SAS leaked into the log: {err.getvalue()!r}"
+
+
+def _paging_request(pages, seen):
+    """A _request stand-in that serves `pages` as (body, headers) in order."""
+    def fake(url, method="GET", body=None):
+        seen.append(url)
+        return pages[min(len(seen) - 1, len(pages) - 1)]
+    return fake
+
+
+def test_fetch_rows_follows_the_continuation_headers():
+    """Azure Table returns at most 1000 entities per response. At 21 posts a
+    week that ceiling lands inside the first year, and because PartitionKey
+    sorts lexicographically a truncated read silently drops week2, week20...
+    while keeping week1, week10, week11 — confident, plausible, wrong numbers."""
+    seen = []
+    pages = [({"value": [{"well": "money-leak"}]},
+              {"x-ms-continuation-NextPartitionKey": "week2",
+               "x-ms-continuation-NextRowKey": "row1"}),
+             ({"value": [{"well": "comparison"}]}, {})]
+    restore_env = _with_azure_env()
+    restore_req = _stub("_request", _paging_request(pages, seen))
+    try:
+        rows = performance.fetch_rows()
+    finally:
+        restore_req()
+        restore_env()
+    assert len(rows) == 2, f"both pages must be collected, got {rows}"
+    assert len(seen) == 2, f"expected exactly two requests, got {seen}"
+    assert "NextPartitionKey=week2" in seen[1] and "NextRowKey=row1" in seen[1], \
+        f"the continuation token must be carried into the next request: {seen[1]}"
+    assert "sig=dummy" in seen[1], "the SAS must survive onto the follow-up URL"
+
+
+def test_fetch_rows_caps_continuation_following():
+    """A service that kept handing back a token would hang the generate job,
+    and a hung job writes no content."""
+    seen = []
+    forever = [({"value": [{"well": "money-leak"}]},
+                {"x-ms-continuation-NextPartitionKey": "always"})]
+    restore_env = _with_azure_env()
+    restore_req = _stub("_request", _paging_request(forever, seen))
+    try:
+        rows = performance.fetch_rows()
+    finally:
+        restore_req()
+        restore_env()
+    assert len(seen) == performance.MAX_PAGES, \
+        f"paging must stop at MAX_PAGES, made {len(seen)} requests"
+    assert len(rows) == performance.MAX_PAGES, "the partial read is still returned"
 
 
 def _row(well, reach, reactions=0, comments=0, shares=0, rate=None,
@@ -343,6 +454,114 @@ def test_ingest_skips_malformed_post_entries():
         assert performance.ingest() == 0
     _with_fake_receipt(
         {"posts": [{"day": "01_mon"}, {"postId": "abc"}, "garbage", None]}, run)
+
+
+def test_ingest_survives_wrong_shape_receipts():
+    """The docstring promises "every failure mode here degrades, never raises",
+    but every wrong-SHAPE receipt raises TypeError, which the old
+    (OSError, ValueError, KeyError) tuple let straight out of ingest():
+    [1,2,3] -> "list indices must be integers"; {"posts": 5} -> "'int' object
+    is not iterable"; 5 -> "'int' object is not subscriptable"."""
+    for shape in ([1, 2, 3], {"posts": 5}, 5, "just a string", {"posts": {"a": 1}}):
+        def run():
+            assert performance.ingest() == 0, f"receipt shape {shape!r} was not skipped"
+        _with_fake_receipt(shape, run)
+
+
+def test_ingest_survives_a_corrupt_spec_file():
+    """well_for() sat outside every try, so a truncated or hand-edited
+    content/<week>/<day>.json raised JSONDecodeError straight out of
+    ingest()."""
+    def boom(week, day):
+        raise json.JSONDecodeError("Expecting value", "", 0)
+
+    restore = _stub("well_for", boom)
+    try:
+        def run():
+            assert performance.ingest() == 0
+        _with_fake_receipt(
+            {"posts": [{"day": "01_mon", "postId": "p1", "channel": "tiktok",
+                        "dueAt": "2026-08-20T09:00:00Z"}]}, run)
+    finally:
+        restore()
+
+
+def test_ingest_stops_asking_once_buffer_rejects_the_key():
+    """A dead Azure credential short-circuits; a dead Buffer key used to be
+    retried and logged once per post, 42+ times. Same situation, so same
+    handling."""
+    restore_env = _with_azure_env()
+    calls = []
+
+    def _raise(*a, **k):
+        calls.append(1)
+        raise SystemExit("Buffer rejected the API key (401)")
+
+    restore = _stub("graphql", _raise)
+    try:
+        assert performance.ingest() == 0
+        assert len(calls) == 1, \
+            f"a 401 must stop the run after the first attempt, got {len(calls)}"
+    finally:
+        restore()
+        restore_env()
+
+
+def _run_main(argv):
+    """Run performance.main() with argv, returning captured stdout."""
+    out, err = io.StringIO(), io.StringIO()
+    saved = sys.argv, sys.stdout, sys.stderr
+    sys.argv, sys.stdout, sys.stderr = ["performance.py"] + argv, out, err
+    try:
+        performance.main()
+    finally:
+        sys.argv, sys.stdout, sys.stderr = saved
+    return out.getvalue()
+
+
+def _assert_seven_assignments(stdout):
+    lines = [line for line in stdout.splitlines() if line]
+    assert len(lines) == 7, f"expected exactly 7 stdout lines, got {lines}"
+    for line in lines:
+        day, _, well = line.partition("=")
+        assert day in DAYS and well in WELLS, f"bad assignment line {line!r}"
+
+
+def test_main_plan_emits_a_plan_even_when_the_planner_raises():
+    """The workflow interpolates --plan's stdout straight into the generator
+    prompt after "the assignment is measured, not a suggestion:". An empty
+    plan leaves that sentence dangling into nothing, so the never-blocks
+    property has to be structural here rather than left to the shell's
+    `|| PLAN=""`."""
+    restore = _stub("rollup", lambda rows: {"salary-breakdown": "not a dict at all"})
+    try:
+        _assert_seven_assignments(_run_main(["--plan"]))
+    finally:
+        restore()
+
+
+def test_main_plan_emits_a_plan_even_when_the_table_read_explodes():
+    def boom(*a, **k):
+        raise RuntimeError("something nobody enumerated")
+
+    restore = _stub("fetch_rows", boom)
+    try:
+        _assert_seven_assignments(_run_main(["--plan"]))
+    finally:
+        restore()
+
+
+def test_main_ingest_never_escapes():
+    def boom(*a, **k):
+        raise RuntimeError("ingest exploded")
+
+    restore_ingest = _stub("ingest", boom)
+    restore_fetch = _stub("fetch_rows", lambda: [])
+    try:
+        _assert_seven_assignments(_run_main(["--ingest", "--plan"]))
+    finally:
+        restore_fetch()
+        restore_ingest()
 
 
 def _stub(module_attr, replacement):

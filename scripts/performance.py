@@ -17,7 +17,7 @@ import glob
 import json
 import os
 import sys
-import urllib.error
+import urllib.parse
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -26,18 +26,58 @@ from publish import ROOT, graphql  # noqa: E402
 
 TABLE = "postmetrics"
 
+# Azure Table returns at most 1000 entities per response. At 21 posts a week
+# that ceiling arrives inside the first year, so fetch_rows() follows the
+# continuation headers — but never forever: a service that kept handing back a
+# token would hang the generate job, and a hung job writes no content.
+MAX_PAGES = 50
+
+
+def _env(name):
+    """A required environment value, or KeyError.
+
+    An unset GitHub secret interpolates as the empty string rather than being
+    absent, so os.environ[name] would hand back "" and the failure would surface
+    much later as a malformed URL — once per row, dozens of times. That is the
+    state of the very first live runs. Treat blank as missing.
+    """
+    value = (os.environ.get(name) or "").strip()
+    if not value:
+        raise KeyError(name)
+    return value
+
 
 def table_url():
     """Base URL with no SAS attached — safe to print. Callers add auth separately."""
-    account = os.environ["AZURE_ACCOUNT"]
-    return f"https://{account}.table.core.windows.net/{TABLE}"
+    return f"https://{_env('AZURE_ACCOUNT')}.table.core.windows.net/{TABLE}"
 
 
 def _sas():
-    return os.environ["AZURE_TABLE_SAS"].lstrip("?")
+    # .strip() is load-bearing: a secret pasted with a trailing newline or a
+    # stray space produces http.client.InvalidURL ("URL can't contain control
+    # characters"), whose message echoes the whole SAS back into the log.
+    return _env("AZURE_TABLE_SAS").lstrip("?")
+
+
+def _safe(e):
+    """Error text with the SAS redacted and truncated — messages can echo the URL.
+
+    http.client.InvalidURL quotes the offending path with repr(), so the SAS can
+    appear backslash-escaped rather than literally; redact both forms.
+    """
+    text = str(e)
+    try:
+        sas = _sas()
+    except KeyError:
+        return text[:80]
+    for form in (sas, repr(sas)[1:-1]):
+        if form:
+            text = text.replace(form, "<sas-redacted>")
+    return text[:80]
 
 
 def _request(url, method="GET", body=None):
+    """Returns (parsed body, response headers). Headers carry the continuation."""
     req = urllib.request.Request(url, data=body, method=method)
     req.add_header("Accept", "application/json;odata=nometadata")
     req.add_header("x-ms-version", "2019-02-02")
@@ -45,20 +85,41 @@ def _request(url, method="GET", body=None):
         req.add_header("Content-Type", "application/json")
     with urllib.request.urlopen(req, timeout=60) as r:
         raw = r.read()
-    return json.loads(raw) if raw else {}
+        headers = r.headers
+    return (json.loads(raw) if raw else {}), headers
 
 
 def fetch_rows():
-    """Every stored post row. [] when blind — missing credentials or a bad service."""
+    """Every stored post row. [] when blind — missing credentials or a bad service.
+
+    `except Exception` is deliberate, not laziness. The entire contract of this
+    function is "degrade to the playbook prior", so an allow-list can only ever
+    be wrong: http.client.InvalidURL, for instance, is not a ValueError (it
+    descends from HTTPException) and escaped the old tuple with the SAS in its
+    message. Anything that goes wrong here means the same thing — run blind.
+    """
     try:
-        url = f"{table_url()}()?{_sas()}"
+        base, sas = table_url(), _sas()
     except KeyError as e:
         print(f"analytics: {e.args[0]} not set — running blind on the playbook prior", file=sys.stderr)
         return []
+    rows = []
     try:
-        return _request(url).get("value", [])
-    except (urllib.error.URLError, ValueError, TimeoutError) as e:
-        print(f"analytics: table unreadable ({str(e)[:80]}) — running blind", file=sys.stderr)
+        query = ""
+        for _ in range(MAX_PAGES):
+            payload, headers = _request(f"{base}(){query}&{sas}" if query else f"{base}()?{sas}")
+            rows.extend(payload.get("value", []))
+            token = {k: headers.get(f"x-ms-continuation-{k}")
+                     for k in ("NextPartitionKey", "NextRowKey")}
+            token = {k: v for k, v in token.items() if v}
+            if not token:
+                return rows
+            query = "?" + urllib.parse.urlencode(token)
+        print(f"analytics: stopped following continuations after {MAX_PAGES} pages "
+              f"({len(rows)} rows) — ranking on a partial table", file=sys.stderr)
+        return rows
+    except Exception as e:
+        print(f"analytics: table unreadable ({_safe(e)}) — running blind", file=sys.stderr)
         return []
 
 
@@ -166,7 +227,10 @@ def _first_fitting(order, days_needed, exclude):
             continue
         if CAPS.get(well, 7) >= days_needed:
             return well
-    return WELLS[0]
+    # Unreachable while `order` covers every well, but it must not become a trap:
+    # a bare WELLS[0] would ignore both the exclude set and the cap being filtered
+    # on, and could hand the same well two slots.
+    return next((w for w in WELLS if w not in exclude), WELLS[0])
 
 
 def plan_week(stats):
@@ -241,10 +305,16 @@ def ingest():
     Every failure mode here degrades, never raises: a malformed receipt, a
     malformed post entry, a Buffer error, a null post, a scheduled-not-sent
     post, or a single bad row must all be skippable without aborting the rest
-    of the week. The sole exception is a KeyError out of upsert_row, which
-    means the Azure credentials themselves are missing — every later write
-    would fail identically, so that alone stops the run instead of logging
-    the same failure dozens of times.
+    of the week. The guards are `except Exception` rather than allow-lists
+    because that claim has to hold for failures nobody enumerated — every
+    wrong-SHAPE receipt ([1,2,3], {"posts": 5}, a bare 5) raises TypeError,
+    which the original tuple of (OSError, ValueError, KeyError) let straight
+    out.
+
+    Two things deliberately stop the run early, because they mean every
+    remaining iteration would fail identically and log the same line forty-odd
+    times: a KeyError out of upsert_row (the Azure credentials are missing) and
+    a Buffer 401 (publish.graphql raises SystemExit; the API key is dead).
     """
     written = 0
     for receipt in sorted(glob.glob(os.path.join(ROOT, "content", "week*", "SCHEDULED.json"))):
@@ -252,23 +322,33 @@ def ingest():
         try:
             with open(receipt) as f:
                 posts = json.load(f)["posts"]
-        except (OSError, ValueError, KeyError) as e:
+            if not isinstance(posts, list):
+                raise TypeError(f'"posts" is {type(posts).__name__}, not a list')
+        except Exception as e:
             print(f"analytics: cannot read {receipt} ({str(e)[:60]}) — skipping receipt", file=sys.stderr)
             continue
         for post in posts:
             try:
                 day, post_id, channel, due_at = (
                     post["day"], post["postId"], post["channel"], post["dueAt"])
-            except (KeyError, TypeError) as e:
+            except Exception as e:
                 print(f"analytics: malformed post entry in {receipt} ({str(e)[:60]}) — skipping", file=sys.stderr)
                 continue
-            well = well_for(week, day)
+            try:
+                well = well_for(week, day)
+            except Exception as e:
+                print(f"analytics: cannot read the {week}/{day} spec ({str(e)[:60]}) — skipping", file=sys.stderr)
+                continue
             if not well:
                 continue
             try:
                 data = graphql(POST_METRICS, {"id": post_id})["post"]
-            except (RuntimeError, KeyError, SystemExit, urllib.error.URLError,
-                    TimeoutError, ValueError) as e:
+            except SystemExit as e:
+                # publish.graphql raises this only on a 401. The key is dead;
+                # asking forty more times changes nothing and buries the cause.
+                print(f"analytics: Buffer rejected the API key ({str(e)[:60]}) — stopping", file=sys.stderr)
+                return written
+            except Exception as e:
                 print(f"analytics: metrics unavailable for {post_id} ({str(e)[:60]})", file=sys.stderr)
                 continue
             if not data:
@@ -296,29 +376,51 @@ def ingest():
             except KeyError as e:
                 print(f"analytics: Azure credentials missing ({str(e)[:60]}) — stopping", file=sys.stderr)
                 return written
-            except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError) as e:
-                print(f"analytics: row {post_id} rejected ({str(e)[:60]}) — skipping", file=sys.stderr)
+            except Exception as e:
+                print(f"analytics: row {post_id} rejected ({_safe(e)}) — skipping", file=sys.stderr)
                 continue
     return written
 
 
 def main():
+    """Every branch is wrapped, so "analytics never blocks generation" is a
+    structural property of this file rather than something the workflow's
+    `|| true` has to rescue. In particular --plan always emits seven day=well
+    lines on stdout and exits 0: the workflow interpolates that output straight
+    into the generator prompt after the words "the assignment is measured", and
+    a blank there leaves the prompt dangling mid-sentence."""
     args = set(sys.argv[1:])
     if "--ingest" in args:
-        print(f"ingested {ingest()} rows", file=sys.stderr)
+        try:
+            print(f"ingested {ingest()} rows", file=sys.stderr)
+        except Exception as e:
+            print(f"analytics: ingest failed ({_safe(e)}) — continuing", file=sys.stderr)
 
-    stats = rollup(fetch_rows())
+    try:
+        stats = rollup(fetch_rows())
+    except Exception as e:
+        print(f"analytics: rollup failed ({_safe(e)}) — running blind", file=sys.stderr)
+        stats = {}
 
     if "--show" in args or not args:
-        print(f"\n{'well':<20} {'rate':>8} {'n':>4}  last")
-        print("-" * 52)
-        for well in rank(stats):
-            s = stats.get(well, {"rate": 0.0, "n": 0, "last": "never"})
-            flag = "" if s["n"] >= MIN_SAMPLE else "  (unproven)"
-            print(f"{well:<20} {s['rate']:>8.3f} {s['n']:>4}  {s['last'] or 'never'}{flag}")
+        try:
+            print(f"\n{'well':<20} {'rate':>8} {'n':>4}  last")
+            print("-" * 52)
+            for well in rank(stats):
+                s = stats.get(well, {"rate": 0.0, "n": 0, "last": "never"})
+                flag = "" if s["n"] >= MIN_SAMPLE else "  (unproven)"
+                print(f"{well:<20} {s['rate']:>8.3f} {s['n']:>4}  {s['last'] or 'never'}{flag}")
+        except Exception as e:
+            print(f"analytics: cannot render the ranking ({_safe(e)})", file=sys.stderr)
 
     if "--plan" in args:
-        for day, well in plan_week(stats).items():
+        try:
+            plan = plan_week(stats)
+        except Exception as e:
+            print(f"analytics: planner failed ({_safe(e)}) — falling back to the "
+                  f"playbook prior", file=sys.stderr)
+            plan = plan_week({})
+        for day, well in plan.items():
             print(f"{day}={well}")
 
 
