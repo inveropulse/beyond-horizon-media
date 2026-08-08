@@ -84,7 +84,9 @@ def check(spec, name="spec"):
 
 def main():
     target = sys.argv[1] if len(sys.argv) > 1 else "content/week1"
-    files = sorted(glob.glob(os.path.join(target, "*.json")))
+    # day specs are 01_mon.json .. 07_sun.json; the same glob publish.py uses, so
+    # SCHEDULED.json and any other sidecar in the folder is left alone
+    files = sorted(glob.glob(os.path.join(target, "[0-9]*.json")))
     if not files:
         sys.exit(f"no specs found in {target}")
 
