@@ -12,6 +12,10 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from wells import WELLS, is_well
+
 BUFFER_IMAGE_CAP = 10       # TikTok and Instagram, via Buffer
 MAX_CAPTION = 2200
 HASHTAGS = 5
@@ -33,6 +37,13 @@ def check(spec, name="spec"):
 
     if not slides:
         return [f"{name}: no slides"]
+
+    well = spec.get("well")
+    if not well:
+        p.append(f"{name}: no 'well' — set one of {', '.join(WELLS)}")
+    elif not is_well(well):
+        p.append(f"{name}: unknown well '{well}' — must be one of {', '.join(WELLS)}")
+
     if len(slides) > BUFFER_IMAGE_CAP:
         p.append(f"{name}: {len(slides)} slides, Buffer caps carousels at {BUFFER_IMAGE_CAP}")
     if len(slides) < 8:

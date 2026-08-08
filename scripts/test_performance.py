@@ -19,6 +19,34 @@ def test_wells():
     assert not is_well("nonsense")
 
 
+from validate import check
+
+
+def _spec(**over):
+    """A minimal spec that passes every existing gate, so tests isolate one rule."""
+    slides = [{"kind": "hook", "title": "How I spend my R26 500 p/m salary"},
+              {"kind": "persona"}]
+    slides += [{"kind": "line", "amount": "R1 000"} for _ in range(6)]
+    slides += [{"kind": "reckoning", "amount": "R500"}, {"kind": "cta"}]
+    spec = {"income": 6500, "well": "salary-breakdown", "slides": slides,
+            "caption": "What would you cut?",
+            "hashtags": ["#a", "#b", "#c", "#d", "#e"]}
+    spec.update(over)
+    return spec
+
+
+def test_well_required():
+    clean = _spec()
+    assert check(clean) == [], f"baseline spec should pass, got {check(clean)}"
+
+    missing = _spec()
+    del missing["well"]
+    assert any("well" in p for p in check(missing)), "missing well must be reported"
+
+    unknown = _spec(well="salary breakdown")
+    assert any("well" in p for p in check(unknown)), "unknown well must be reported"
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_") and callable(fn):
