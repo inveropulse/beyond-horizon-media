@@ -46,7 +46,7 @@ a 268-post sample in this exact niche.
 slide → reckoning → close.
 
 **Variety across the week** matters as much as any single post. Vary income
-level (skew below R40k — it performs better), life stage, and content well. Do
+level (skew below R40k — it performs better) and life stage. Do
 not reuse a persona, city or hook that appears in any recent `content/week*/`
 file. Read them before writing.
 
