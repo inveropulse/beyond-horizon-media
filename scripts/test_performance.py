@@ -204,6 +204,24 @@ def test_explore_never_duplicates_champion_or_challenger_and_caps_hold():
         assert n <= cap, f"{well} scheduled {n} days but capped at {cap}"
 
 
+def test_well_for_reads_the_spec():
+    assert performance.well_for("week1", "01_mon") is not None, \
+        "week1/01_mon.json must carry a well after the backfill"
+    assert performance.well_for("week1", "99_xxx") is None, \
+        "a missing spec yields None rather than raising"
+
+
+def test_ingest_without_credentials_is_blind_not_fatal():
+    saved = {k: os.environ.pop(k, None)
+             for k in ("BUFFER_ACCESS_TOKEN", "AZURE_ACCOUNT", "AZURE_TABLE_SAS")}
+    try:
+        assert performance.ingest() == 0
+    finally:
+        for k, v in saved.items():
+            if v is not None:
+                os.environ[k] = v
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_") and callable(fn):

@@ -13,6 +13,7 @@ playbook prior and exits 0.
   python3 scripts/performance.py --ingest    refresh metrics from Buffer
 """
 
+import glob
 import json
 import os
 import sys
@@ -21,6 +22,7 @@ import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from wells import CAPS, WELLS  # noqa: E402
+from publish import ROOT, graphql  # noqa: E402
 
 TABLE = "postmetrics"
 
@@ -170,3 +172,76 @@ def plan_week(stats):
     slots.update({d: champion for d in CHAMPION_DAYS})
     slots.update({d: challenger for d in CHALLENGER_DAYS})
     return {day: slots[day] for day in DAY_ORDER}
+
+
+# Verified against the live API on 2026-08-08: metrics is an ARRAY of typed
+# objects, not an object of named fields. Types seen: reactions, comments,
+# engagementRate, views, shares, reach. There is no impressions field.
+POST_METRICS = """
+query Post($id: String!) {
+  post(id: $id) {
+    id
+    status
+    metricsUpdatedAt
+    metrics { type value unit }
+  }
+}
+"""
+
+# Buffer returns a full array of zeros for merely-scheduled posts, with
+# metricsUpdatedAt populated — shaped identically to a real result. Ingesting
+# those would score every scheduled post at 0% and make every well look dead.
+SENT = "sent"
+
+
+def metrics_map(post):
+    """The metrics array flattened to {type: value}."""
+    return {m["type"]: m["value"] for m in (post.get("metrics") or [])}
+
+
+def well_for(week, day):
+    """The well a given day's spec belongs to, or None if there is no such spec."""
+    path = os.path.join(ROOT, "content", week, f"{day}.json")
+    if not os.path.exists(path):
+        return None
+    return json.load(open(path)).get("well")
+
+
+def ingest():
+    """Refresh every scheduled post's metrics into the table. Returns rows written."""
+    written = 0
+    for receipt in sorted(glob.glob(os.path.join(ROOT, "content", "week*", "SCHEDULED.json"))):
+        week = os.path.basename(os.path.dirname(receipt))
+        for post in json.load(open(receipt))["posts"]:
+            well = well_for(week, post["day"])
+            if not well:
+                continue
+            try:
+                data = graphql(POST_METRICS, {"id": post["postId"]})["post"]
+            except (RuntimeError, KeyError, SystemExit, urllib.error.URLError, TimeoutError) as e:
+                print(f"analytics: metrics unavailable for {post['postId']} ({str(e)[:60]})")
+                continue
+            if data.get("status") != SENT:
+                continue
+            m = metrics_map(data)
+            try:
+                upsert_row({
+                    "PartitionKey": week,
+                    "RowKey": post["postId"],
+                    "well": well,
+                    "channel": post["channel"],
+                    "day": post["day"],
+                    "dueAt": post["dueAt"],
+                    "reach": m.get("reach") or 0,
+                    "views": m.get("views") or 0,
+                    "reactions": m.get("reactions") or 0,
+                    "comments": m.get("comments") or 0,
+                    "shares": m.get("shares") or 0,
+                    "engagementRate": m.get("engagementRate"),
+                    "updatedAt": data.get("metricsUpdatedAt") or post["dueAt"],
+                })
+                written += 1
+            except (KeyError, urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
+                print(f"analytics: cannot write row ({str(e)[:60]}) — running blind")
+                return written
+    return written
