@@ -191,6 +191,42 @@ def test_unknown_well_slug_does_not_crash():
     assert list(plan) == DAYS, f"plan must still cover all seven days, got {list(plan)}"
 
 
+def test_unknown_well_slug_never_reaches_the_plan():
+    """Not crashing is not enough. A retired or renamed slug still sitting on
+    historical table rows can out-score everything real, and rank() used to
+    merely sort it last among equals — so it took all four champion days and
+    was interpolated into the generator prompt as a mandatory assignment that
+    validate.py then rejects. Unsatisfiable instruction: either the run
+    silently substitutes something else (the plan becomes a lie) or it burns
+    the 30-minute timeout. Drop unknown slugs outright."""
+    stats = {"tiktok-hacks": {"rate": 9.9, "n": 5, "last": "2026-08-20"},
+             "comparison": {"rate": 0.2, "n": 5, "last": "2026-08-20"}}
+    plan = performance.plan_week(stats)
+    assert "tiktok-hacks" not in plan.values(), \
+        f"a slug not in wells.py must never be assigned, got {plan}"
+    for day, well in plan.items():
+        assert well in WELLS, f"{day} assigned unknown well {well!r}"
+    assert plan["01_mon"] == "comparison", \
+        "the best REAL qualifying well should lead, not the prior's first"
+
+
+def test_rank_excludes_unknown_slugs_entirely():
+    stats = {"tiktok-hacks": {"rate": 9.9, "n": 9, "last": "2026-08-20"}}
+    order = performance.rank(stats)
+    assert "tiktok-hacks" not in order, f"unknown slug leaked into rank(): {order}"
+    assert list(order) == list(WELLS), \
+        "with no usable data the ranking is exactly the playbook prior"
+
+
+def test_day_order_is_derived_from_the_slot_tuples():
+    """DAY_ORDER used to be a hand-written duplicate of the three slot tuples;
+    any desync gives a KeyError out of plan_week."""
+    assert set(performance.DAY_ORDER) == set(
+        performance.CHAMPION_DAYS + performance.CHALLENGER_DAYS
+        + (performance.EXPLORE_DAY,))
+    assert list(performance.DAY_ORDER) == DAYS
+
+
 def test_explore_never_duplicates_champion_or_challenger_and_caps_hold():
     """Regression pin for the all-tried case: the LRU fallback used to range
     over every well including champion/challenger, which could hand one topic

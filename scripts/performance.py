@@ -115,10 +115,9 @@ EXPLORE_DAY = "07_sun"
 def _well_rank(well):
     """WELLS position, or last place for a slug that isn't one of ours.
 
-    rollup() passes through whatever `well` string is on the Azure row with no
-    validation, so a stale or hand-edited row can carry a slug WELLS has never
-    heard of. That must degrade gracefully, not crash the planner — nothing here
-    may block content generation.
+    Used only as a deterministic tiebreak between wells of equal score. Unknown
+    slugs are excluded before they reach here (see rank()), but the ValueError
+    branch stays: sorting must never be the thing that raises.
     """
     try:
         return WELLS.index(well)
@@ -131,13 +130,28 @@ def rank(stats):
 
     The sample floor is the main defence against locking onto a false winner: one
     lucky post should not decide a month of content.
+
+    Only slugs that are currently in WELLS may qualify. rollup() passes through
+    whatever `well` string sits on the Azure row, so renaming or removing a slug
+    in wells.py — normal maintenance — leaves historical rows carrying the old
+    one. Sorting such a slug merely last is not enough: with a high rate and
+    enough samples it would win the champion days, be interpolated into the
+    generator prompt as a mandatory assignment, and then be rejected by
+    validate.py. That is an unsatisfiable instruction, and the run either
+    silently substitutes something else (making the plan a lie) or burns the
+    30-minute timeout. Drop them instead, and say so on stderr so the cause is
+    visible in the step log.
     """
-    qualified = [w for w in stats if stats[w]["n"] >= MIN_SAMPLE]
+    unknown = sorted(w for w in stats if w not in WELLS)
+    if unknown:
+        print(f"analytics: ignoring {len(unknown)} table slug(s) not in wells.py "
+              f"({', '.join(unknown)}) — renamed or retired?", file=sys.stderr)
+    qualified = [w for w in stats if w in WELLS and stats[w]["n"] >= MIN_SAMPLE]
     qualified.sort(key=lambda w: (-stats[w]["rate"], _well_rank(w)))
     return qualified + [w for w in WELLS if w not in qualified]
 
 
-DAY_ORDER = ("01_mon", "02_tue", "03_wed", "04_thu", "05_fri", "06_sat", "07_sun")
+DAY_ORDER = tuple(sorted(CHAMPION_DAYS + CHALLENGER_DAYS + (EXPLORE_DAY,)))
 
 
 def _first_fitting(order, days_needed, exclude):
