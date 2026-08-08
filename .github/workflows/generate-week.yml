@@ -61,6 +61,11 @@ jobs:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Without this the action swaps its OIDC token for a Claude Code
+          # GitHub App token, which 401s unless the app is installed on the
+          # repo. This job only writes files and commits, so the runner's own
+          # token is enough and there is nothing to install.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           claude_args: '--allowedTools "Skill,Read,Write,Edit,Glob,Grep,Bash(python3 *),Bash(ls *),Bash(cat *),Bash(curl *)"'
           prompt: |
             Write the next week of Beyond Horizon carousels into
