@@ -27,7 +27,9 @@ console.log(browserExecutable
   ? `browser: ${browserExecutable}`
   : "browser: Remotion's own headless shell");
 
-const specs = readdirSync(specDir).filter((f) => f.endsWith('.json')).sort();
+// day specs are 01_mon.json .. 07_sun.json; anything else in the folder
+// (SCHEDULED.json, notes) is not a spec and must not be rendered
+const specs = readdirSync(specDir).filter((f) => /^\d.*\.json$/.test(f)).sort();
 if (!specs.length) throw new Error(`no specs in ${specDir}`);
 
 for (const file of specs) {
