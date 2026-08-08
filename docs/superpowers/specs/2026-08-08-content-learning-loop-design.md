@@ -56,12 +56,24 @@ anonymous access mode, so constraint 2 cannot recur here.
 | `channel` | string | `tiktok` / `instagram` / `facebook` |
 | `day` | string | spec basename, e.g. `01_mon` |
 | `dueAt` | string | ISO 8601 |
-| `impressions` | int | may be absent; see "Missing metrics" |
+| `reach` | int | unique people; may be absent, see "Missing metrics" |
+| `views` | int | video watches; TikTok/IG only |
 | `reactions` | int | |
 | `comments` | int | |
 | `shares` | int | |
-| `engagementRate` | double | `(reactions + comments + shares) / impressions` |
-| `updatedAt` | string | ISO 8601, when the row was last refreshed |
+| `engagementRate` | double | Buffer's own, as a percentage |
+| `updatedAt` | string | ISO 8601, Buffer's `metricsUpdatedAt` |
+
+**Verified against the live API, 2026-08-08.** Buffer returns `metrics` as an
+array of `{type, name, value, unit}` objects, not an object of named fields, and
+the available types are `reactions`, `comments`, `engagementRate`, `views`,
+`shares`, `reach`. There is no `impressions` field.
+
+Buffer computes `engagementRate` itself, normalised per platform, so we store and
+rank on theirs rather than deriving our own — a locally-computed
+`engaged / reach` would use a denominator that means something different on each
+channel. Where Buffer omits it, fall back to
+`(reactions + comments + shares) / reach`.
 
 **No aggregate table.** Well rankings are computed in memory from these rows on
 every run. At 21 posts/week that is ~1 100 rows after a year — a trivial scan,
@@ -168,9 +180,18 @@ These caps are domain knowledge the metric cannot see, and removing them means
 trusting engagement rate as a complete proxy for audience quality, which it is
 not.
 
+### Only sent posts count
+
+Buffer returns a full metrics array of zeros for posts that are merely
+*scheduled*, with `metricsUpdatedAt` populated — indistinguishable in shape from
+a real result. Ingest must therefore filter on `status == "sent"`. Without that
+filter the 42 posts currently scheduled would each score 0%, and every well would
+look dead. This is the single most dangerous failure mode in the design, because
+it produces plausible numbers rather than an error.
+
 ### Missing metrics
 
-A post with absent or zero impressions yields no engagement rate. Such posts are
+A sent post with absent or zero `reach` yields no engagement rate. Such posts are
 stored (so the row exists and refreshes later) but excluded from rollups and from
 sample counts. A post sent yesterday whose metrics have not landed must not drag
 a well's average toward zero.

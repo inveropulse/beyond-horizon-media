@@ -18,6 +18,8 @@
 - **The ten canonical wells**, verbatim, are the only legal values: `salary-breakdown`, `household-budget`, `comparison`, `debt-journey`, `one-off-event`, `cost-of-ownership`, `money-leak`, `month-in-review`, `ranking-listicle`, `product-led`.
 - **Editorial caps:** `ranking-listicle` at most 1 day/week; `product-led` at most 2 days/week. Applied regardless of rank.
 - **Minimum sample:** a well needs ≥3 posts with usable metrics to be champion or challenger.
+- **Only `status == "sent"` posts are ingested.** Buffer returns zeroed metrics for merely-scheduled posts, shaped identically to real results. Ingesting them scores every well at 0%.
+- **Engagement rate is Buffer's own `engagementRate`** (a percentage), falling back to `100 * (reactions + comments + shares) / reach` only where Buffer omits it. There is no `impressions` field in Buffer's API.
 - **Playbook prior order** for cold start, verbatim: `salary-breakdown`, `household-budget`, `comparison`, `debt-journey`, `one-off-event`, `cost-of-ownership`, `money-leak`, `month-in-review`, `ranking-listicle`, `product-led`.
 - **Secrets are never printed.** `AZURE_TABLE_SAS` must not appear in logs or in any printed URL.
 - **Commit style:** Conventional Commits per `.claude/skills/conventional-commits/SKILL.md`. Scopes available: `publish`, `validate`, `renderer`, `content`, `media`, `config`, `ci`. This work introduces `performance` as a new scope.
@@ -460,28 +462,38 @@ analytics must never block content generation."
 Append to `scripts/test_performance.py`:
 
 ```python
-def _row(well, impressions, reactions=0, comments=0, shares=0, updated="2026-08-20"):
-    return {"PartitionKey": "week1", "RowKey": f"{well}{impressions}{reactions}",
-            "well": well, "impressions": impressions, "reactions": reactions,
-            "comments": comments, "shares": shares, "updatedAt": updated}
+def _row(well, reach, reactions=0, comments=0, shares=0, rate=None,
+         updated="2026-08-20"):
+    row = {"PartitionKey": "week1", "RowKey": f"{well}{reach}{reactions}",
+           "well": well, "reach": reach, "reactions": reactions,
+           "comments": comments, "shares": shares, "updatedAt": updated}
+    if rate is not None:
+        row["engagementRate"] = rate
+    return row
 
 
-def test_engagement_rate():
-    assert performance.engagement_rate(_row("money-leak", 100, 5, 3, 2)) == 0.10
+def test_engagement_rate_prefers_buffers_own():
+    """Buffer computes this per platform; ours is only a fallback."""
+    assert performance.engagement_rate(_row("money-leak", 100, 5, rate=7.5)) == 7.5
+
+
+def test_engagement_rate_falls_back_to_computed():
+    # (5 + 3 + 2) / 100 = 10%
+    assert performance.engagement_rate(_row("money-leak", 100, 5, 3, 2)) == 10.0
     assert performance.engagement_rate(_row("money-leak", 0, 5)) is None, \
-        "zero impressions has no rate"
+        "zero reach has no rate"
     assert performance.engagement_rate({"well": "money-leak"}) is None, \
         "absent metrics have no rate"
 
 
 def test_rollup_excludes_unusable_posts():
-    rows = [_row("money-leak", 100, 10),      # 0.10
-            _row("money-leak", 100, 20),      # 0.20
+    rows = [_row("money-leak", 100, 10),      # 10.0
+            _row("money-leak", 100, 20),      # 20.0
             _row("money-leak", 0, 999)]       # no rate, must not count
     out = performance.rollup(rows)
-    assert out["money-leak"]["n"] == 2, "zero-impression post must not count toward n"
-    assert abs(out["money-leak"]["rate"] - 0.15) < 1e-9, \
-        f"mean should be 0.15, got {out['money-leak']['rate']}"
+    assert out["money-leak"]["n"] == 2, "zero-reach post must not count toward n"
+    assert abs(out["money-leak"]["rate"] - 15.0) < 1e-9, \
+        f"mean should be 15.0, got {out['money-leak']['rate']}"
 ```
 
 - [ ] **Step 2: Run test to verify it fails**
@@ -495,16 +507,23 @@ Append to `scripts/performance.py`:
 
 ```python
 def engagement_rate(row):
-    """None when the post cannot be scored — absent metrics or no impressions.
+    """Percentage. None when the post cannot be scored.
 
-    A post sent yesterday whose numbers have not landed yet must not drag its
-    well's average toward zero, so 'unscoreable' and 'scored zero' stay distinct.
+    Buffer computes engagementRate itself, normalised per platform, so prefer
+    theirs — a local engaged/reach uses a denominator meaning something different
+    on each channel. Fall back to computing it only where Buffer omits it.
+
+    A post whose numbers have not landed yet must not drag its well's average
+    toward zero, so 'unscoreable' and 'scored zero' stay distinct.
     """
-    impressions = row.get("impressions") or 0
-    if impressions <= 0:
+    own = row.get("engagementRate")
+    if own is not None:
+        return float(own)
+    reach = row.get("reach") or 0
+    if reach <= 0:
         return None
     engaged = (row.get("reactions") or 0) + (row.get("comments") or 0) + (row.get("shares") or 0)
-    return engaged / impressions
+    return 100.0 * engaged / reach
 
 
 def rollup(rows):
@@ -737,15 +756,29 @@ import glob  # add to the imports at the top of the file
 
 from publish import ROOT, graphql  # noqa: E402  add beside the wells import
 
+# Verified against the live API on 2026-08-08: metrics is an ARRAY of typed
+# objects, not an object of named fields. Types seen: reactions, comments,
+# engagementRate, views, shares, reach. There is no impressions field.
 POST_METRICS = """
 query Post($id: String!) {
   post(id: $id) {
     id
     status
-    metrics { impressions reactions comments shares }
+    metricsUpdatedAt
+    metrics { type value unit }
   }
 }
 """
+
+# Buffer returns a full array of zeros for merely-scheduled posts, with
+# metricsUpdatedAt populated — shaped identically to a real result. Ingesting
+# those would score every scheduled post at 0% and make every well look dead.
+SENT = "sent"
+
+
+def metrics_map(post):
+    """The metrics array flattened to {type: value}."""
+    return {m["type"]: m["value"] for m in (post.get("metrics") or [])}
 
 
 def well_for(week, day):
@@ -770,7 +803,9 @@ def ingest():
             except (RuntimeError, KeyError, SystemExit, urllib.error.URLError) as e:
                 print(f"analytics: metrics unavailable for {post['postId']} ({str(e)[:60]})")
                 continue
-            m = data.get("metrics") or {}
+            if data.get("status") != SENT:
+                continue
+            m = metrics_map(data)
             try:
                 upsert_row({
                     "PartitionKey": week,
@@ -779,12 +814,13 @@ def ingest():
                     "channel": post["channel"],
                     "day": post["day"],
                     "dueAt": post["dueAt"],
-                    "impressions": m.get("impressions") or 0,
+                    "reach": m.get("reach") or 0,
+                    "views": m.get("views") or 0,
                     "reactions": m.get("reactions") or 0,
                     "comments": m.get("comments") or 0,
                     "shares": m.get("shares") or 0,
-                    "engagementRate": engagement_rate(m) or 0.0,
-                    "updatedAt": post["dueAt"],
+                    "engagementRate": m.get("engagementRate"),
+                    "updatedAt": data.get("metricsUpdatedAt") or post["dueAt"],
                 })
                 written += 1
             except (KeyError, urllib.error.URLError, urllib.error.HTTPError) as e:
@@ -793,7 +829,7 @@ def ingest():
     return written
 ```
 
-**Verify the metrics field names against the live schema before trusting them.** Run `introspect_schema` against Buffer, or inspect one sent post, and correct `POST_METRICS` if the shape differs. Guessing here produces silent zeros, which look exactly like genuinely unengaged posts.
+The metrics shape above was verified against the live API on 2026-08-08 — do not "simplify" `metrics { type value unit }` back into named fields, and do not drop the `status != SENT` guard. Both were corrected from an earlier wrong guess in this plan.
 
 - [ ] **Step 4: Run test to verify it passes**
 
