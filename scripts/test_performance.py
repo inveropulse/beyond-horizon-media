@@ -73,6 +73,24 @@ def test_table_url_excludes_the_sas():
         del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
 
 
+def test_fetch_rows_swallows_a_stalled_read_timeout():
+    """A stalled response (TimeoutError from r.read(), not wrapped by URLError)
+    must degrade to blind too — see review finding for the reproduction."""
+    os.environ["AZURE_ACCOUNT"] = "acct"
+    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    original = performance._request
+
+    def _raise(*a, **k):
+        raise TimeoutError("timed out")
+
+    performance._request = _raise
+    try:
+        assert performance.fetch_rows() == []
+    finally:
+        performance._request = original
+        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_") and callable(fn):

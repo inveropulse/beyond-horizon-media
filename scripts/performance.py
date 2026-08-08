@@ -55,7 +55,7 @@ def fetch_rows():
         return []
     try:
         return _request(url).get("value", [])
-    except (urllib.error.URLError, urllib.error.HTTPError, ValueError) as e:
+    except (urllib.error.URLError, ValueError, TimeoutError) as e:
         print(f"analytics: table unreadable ({str(e)[:80]}) — running blind")
         return []
 
