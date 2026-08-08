@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Assert-based tests. No framework, no network. Run: python3 scripts/test_performance.py"""
 
+import json
 import os
+import shutil
 import sys
+import tempfile
+import urllib.error
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -220,6 +224,276 @@ def test_ingest_without_credentials_is_blind_not_fatal():
         for k, v in saved.items():
             if v is not None:
                 os.environ[k] = v
+
+
+def test_post_metrics_query_uses_the_verified_shape():
+    """Query.post takes `input: PostInput!` with an id of `PostId!`, not
+    `id: String!` — verified against the live schema by introspection on
+    2026-08-08. Regression pin so this doesn't get "simplified" back to the
+    wrong, 400-ing shape."""
+    assert "$id: PostId!" in performance.POST_METRICS
+    assert "input: {id: $id}" in performance.POST_METRICS
+
+
+def test_metrics_map_survives_malformed_entries():
+    """`metrics` is nullable, and individual entries are not guaranteed to be
+    well-formed dicts — one bad element must not raise KeyError through
+    ingest()."""
+    assert performance.metrics_map({"metrics": None}) == {}
+    assert performance.metrics_map({}) == {}
+    assert performance.metrics_map(
+        {"metrics": [{"type": "reach", "value": 10}, {"unit": "count"}, "garbage", None]}
+    ) == {"reach": 10}
+
+
+class _FakeGlob:
+    """Stands in for the `glob` module inside performance.ingest() so tests
+    can hand it synthetic receipt paths without touching the real content/
+    tree or its real (valid) SCHEDULED.json files."""
+
+    def __init__(self, paths):
+        self._paths = paths
+
+    def glob(self, _pattern):
+        return self._paths
+
+
+def _with_fake_receipt(posts_value, assertion):
+    """Write `posts_value` (or raw text if a str) as a lone SCHEDULED.json,
+    point performance.ingest() at only that receipt, run the assertion, and
+    always clean up — including env vars ingest() needs to reach the receipt
+    loop at all."""
+    tmpdir = tempfile.mkdtemp()
+    try:
+        weekdir = os.path.join(tmpdir, "week9")
+        os.makedirs(weekdir)
+        path = os.path.join(weekdir, "SCHEDULED.json")
+        with open(path, "w") as f:
+            if isinstance(posts_value, str):
+                f.write(posts_value)
+            else:
+                json.dump(posts_value, f)
+
+        original_glob = performance.glob
+        performance.glob = _FakeGlob([path])
+        try:
+            assertion()
+        finally:
+            performance.glob = original_glob
+    finally:
+        shutil.rmtree(tmpdir)
+
+
+def test_ingest_skips_unparseable_receipt_json():
+    """A truncated or hand-edited SCHEDULED.json must not abort the whole
+    ingest run — just that receipt."""
+    def run():
+        assert performance.ingest() == 0
+    _with_fake_receipt("{not valid json", run)
+
+
+def test_ingest_skips_receipt_missing_posts_key():
+    def run():
+        assert performance.ingest() == 0
+    _with_fake_receipt({"week": "week9"}, run)
+
+
+def test_ingest_skips_malformed_post_entries():
+    """Posts missing "day"/"postId"/"channel"/"dueAt", or that are not dicts
+    at all, must each be skipped rather than raising out of ingest()."""
+    def run():
+        assert performance.ingest() == 0
+    _with_fake_receipt(
+        {"posts": [{"day": "01_mon"}, {"postId": "abc"}, "garbage", None]}, run)
+
+
+def _stub(module_attr, replacement):
+    """Monkeypatch a name on the performance module and return a restorer."""
+    original = getattr(performance, module_attr)
+    setattr(performance, module_attr, replacement)
+    return lambda: setattr(performance, module_attr, original)
+
+
+def test_ingest_skips_scheduled_not_sent_posts():
+    """The most dangerous failure mode in the design: Buffer returns a full,
+    non-zero-looking metrics array for posts that are merely scheduled. A
+    missing or mutated status guard must be caught here, not in production
+    numbers."""
+    os.environ["AZURE_ACCOUNT"] = "acct"
+    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    calls = []
+    restore_graphql = _stub("graphql", lambda q, v: {"post": {
+        "status": "scheduled",
+        "metricsUpdatedAt": "2026-08-20T00:00:00Z",
+        "metrics": [{"type": "reach", "value": 1000, "unit": "count"},
+                    {"type": "reactions", "value": 50, "unit": "count"}],
+    }})
+    restore_upsert = _stub("upsert_row", lambda entity: calls.append(entity))
+    try:
+        performance.ingest()
+        assert calls == [], f"a merely-scheduled post must never be upserted, got {calls}"
+    finally:
+        restore_graphql()
+        restore_upsert()
+        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
+def test_ingest_survives_post_null_response():
+    """GraphQL can answer with {"post": None} for a deleted/unknown id — that
+    must be skipped, not raise AttributeError out of ingest()."""
+    os.environ["AZURE_ACCOUNT"] = "acct"
+    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    restore = _stub("graphql", lambda q, v: {"post": None})
+    try:
+        assert performance.ingest() == 0
+    finally:
+        restore()
+        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
+def test_ingest_survives_a_stalled_graphql_call():
+    """A read-phase timeout from graphql() (raw TimeoutError, not wrapped in
+    URLError) must not escape ingest() and abort the run."""
+    os.environ["AZURE_ACCOUNT"] = "acct"
+    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+
+    def _raise(*a, **k):
+        raise TimeoutError("timed out")
+
+    restore = _stub("graphql", _raise)
+    try:
+        assert performance.ingest() == 0
+    finally:
+        restore()
+        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
+def test_ingest_survives_buffer_rejecting_the_api_key():
+    """publish.graphql raises SystemExit on a 401 — that must degrade like
+    every other Buffer failure here, not tear down the whole run."""
+    os.environ["AZURE_ACCOUNT"] = "acct"
+    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+
+    def _raise(*a, **k):
+        raise SystemExit("Buffer rejected the API key")
+
+    restore = _stub("graphql", _raise)
+    try:
+        assert performance.ingest() == 0
+    finally:
+        restore()
+        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
+def test_ingest_survives_a_non_json_graphql_body():
+    """A non-JSON response body (proxy error page, truncated stream) surfaces
+    as ValueError from json.loads inside publish.graphql — that must degrade
+    too, not escape."""
+    os.environ["AZURE_ACCOUNT"] = "acct"
+    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+
+    def _raise(*a, **k):
+        raise ValueError("Expecting value: line 1 column 1 (char 0)")
+
+    restore = _stub("graphql", _raise)
+    try:
+        assert performance.ingest() == 0
+    finally:
+        restore()
+        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
+def test_ingest_skips_a_stalled_upsert_and_keeps_going():
+    """A read-phase timeout writing one row (raw TimeoutError out of
+    upsert_row's _request, not wrapped in URLError — the same shape of bug
+    fixed in fetch_rows() during Task 4) must not abort the rest of the
+    week."""
+    os.environ["AZURE_ACCOUNT"] = "acct"
+    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    calls = []
+
+    def fake_upsert(entity):
+        calls.append(entity)
+        if len(calls) == 1:
+            raise TimeoutError("timed out")
+
+    restore_graphql = _stub("graphql", lambda q, v: {"post": {
+        "status": "sent",
+        "metricsUpdatedAt": "2026-08-20T00:00:00Z",
+        "metrics": [{"type": "reach", "value": 100, "unit": "count"},
+                    {"type": "reactions", "value": 10, "unit": "count"}],
+    }})
+    restore_upsert = _stub("upsert_row", fake_upsert)
+    try:
+        written = performance.ingest()
+        assert len(calls) > 1, \
+            "later rows must still be attempted after the stalled first one"
+        assert written == len(calls) - 1, \
+            f"the stalled row must be skipped, not counted: written={written} calls={len(calls)}"
+    finally:
+        restore_graphql()
+        restore_upsert()
+        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
+def test_ingest_skips_one_bad_row_and_keeps_going():
+    """A single poison row (e.g. an HTTP 413 on one post) must not block the
+    rest of the week — only a credentials failure should stop the run."""
+    os.environ["AZURE_ACCOUNT"] = "acct"
+    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    calls = []
+
+    def fake_upsert(entity):
+        calls.append(entity)
+        if len(calls) == 1:
+            raise urllib.error.HTTPError("url", 413, "too large", {}, None)
+
+    restore_graphql = _stub("graphql", lambda q, v: {"post": {
+        "status": "sent",
+        "metricsUpdatedAt": "2026-08-20T00:00:00Z",
+        "metrics": [{"type": "reach", "value": 100, "unit": "count"},
+                    {"type": "reactions", "value": 10, "unit": "count"}],
+    }})
+    restore_upsert = _stub("upsert_row", fake_upsert)
+    try:
+        written = performance.ingest()
+        assert len(calls) > 1, \
+            "later rows must still be attempted after the poisoned first one"
+        assert written == len(calls) - 1, \
+            f"the poisoned row must be skipped, not counted: written={written} calls={len(calls)}"
+    finally:
+        restore_graphql()
+        restore_upsert()
+        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
+def test_ingest_stops_immediately_on_missing_azure_credentials():
+    """Unlike a single bad row, a KeyError out of upsert_row means every
+    later write will fail identically (missing AZURE_ACCOUNT/SAS) — stop on
+    the first one rather than log the same failure dozens of times."""
+    os.environ["AZURE_ACCOUNT"] = "acct"
+    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    calls = []
+
+    def fake_upsert(entity):
+        calls.append(entity)
+        raise KeyError("AZURE_ACCOUNT")
+
+    restore_graphql = _stub("graphql", lambda q, v: {"post": {
+        "status": "sent",
+        "metricsUpdatedAt": "2026-08-20T00:00:00Z",
+        "metrics": [{"type": "reach", "value": 100, "unit": "count"}],
+    }})
+    restore_upsert = _stub("upsert_row", fake_upsert)
+    try:
+        written = performance.ingest()
+        assert written == 0
+        assert len(calls) == 1, \
+            f"a KeyError must stop the run after the first attempt, got {len(calls)}"
+    finally:
+        restore_graphql()
+        restore_upsert()
+        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
 
 
 if __name__ == "__main__":

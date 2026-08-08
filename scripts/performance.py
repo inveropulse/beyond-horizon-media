@@ -174,12 +174,19 @@ def plan_week(stats):
     return {day: slots[day] for day in DAY_ORDER}
 
 
-# Verified against the live API on 2026-08-08: metrics is an ARRAY of typed
-# objects, not an object of named fields. Types seen: reactions, comments,
-# engagementRate, views, shares, reach. There is no impressions field.
+# Verified against the live API on 2026-08-08 by introspection: Query.post
+# takes `input: PostInput!`, not `id:`, and the id itself is `PostId!`, not
+# `String!`. Either wrong shape fails with an HTTP 400 that publish.graphql
+# turns into a RuntimeError — which ingest() swallows, so every run would
+# print N "metrics unavailable" lines and return 0, indistinguishable from
+# "nothing has sent yet". Do not "simplify" this back to post(id: $id).
+#
+# metrics is an ARRAY of typed objects, not an object of named fields. Types
+# seen: reactions, comments, engagementRate, views, shares, reach. There is
+# no impressions field. `metrics` itself is nullable in the schema.
 POST_METRICS = """
-query Post($id: String!) {
-  post(id: $id) {
+query Post($id: PostId!) {
+  post(input: {id: $id}) {
     id
     status
     metricsUpdatedAt
@@ -195,8 +202,14 @@ SENT = "sent"
 
 
 def metrics_map(post):
-    """The metrics array flattened to {type: value}."""
-    return {m["type"]: m["value"] for m in (post.get("metrics") or [])}
+    """The metrics array flattened to {type: value}.
+
+    Defensive by construction: `metrics` is nullable, and a single malformed
+    entry (missing "type", or not a dict at all) must not take down the whole
+    ingest run over one bad element.
+    """
+    return {m["type"]: m.get("value") for m in (post.get("metrics") or [])
+            if isinstance(m, dict) and "type" in m}
 
 
 def well_for(week, day):
@@ -204,22 +217,47 @@ def well_for(week, day):
     path = os.path.join(ROOT, "content", week, f"{day}.json")
     if not os.path.exists(path):
         return None
-    return json.load(open(path)).get("well")
+    with open(path) as f:
+        return json.load(f).get("well")
 
 
 def ingest():
-    """Refresh every scheduled post's metrics into the table. Returns rows written."""
+    """Refresh every scheduled post's metrics into the table. Returns rows written.
+
+    Every failure mode here degrades, never raises: a malformed receipt, a
+    malformed post entry, a Buffer error, a null post, a scheduled-not-sent
+    post, or a single bad row must all be skippable without aborting the rest
+    of the week. The sole exception is a KeyError out of upsert_row, which
+    means the Azure credentials themselves are missing — every later write
+    would fail identically, so that alone stops the run instead of logging
+    the same failure dozens of times.
+    """
     written = 0
     for receipt in sorted(glob.glob(os.path.join(ROOT, "content", "week*", "SCHEDULED.json"))):
         week = os.path.basename(os.path.dirname(receipt))
-        for post in json.load(open(receipt))["posts"]:
-            well = well_for(week, post["day"])
+        try:
+            with open(receipt) as f:
+                posts = json.load(f)["posts"]
+        except (OSError, ValueError, KeyError) as e:
+            print(f"analytics: cannot read {receipt} ({str(e)[:60]}) — skipping receipt")
+            continue
+        for post in posts:
+            try:
+                day, post_id, channel, due_at = (
+                    post["day"], post["postId"], post["channel"], post["dueAt"])
+            except (KeyError, TypeError) as e:
+                print(f"analytics: malformed post entry in {receipt} ({str(e)[:60]}) — skipping")
+                continue
+            well = well_for(week, day)
             if not well:
                 continue
             try:
-                data = graphql(POST_METRICS, {"id": post["postId"]})["post"]
-            except (RuntimeError, KeyError, SystemExit, urllib.error.URLError, TimeoutError) as e:
-                print(f"analytics: metrics unavailable for {post['postId']} ({str(e)[:60]})")
+                data = graphql(POST_METRICS, {"id": post_id})["post"]
+            except (RuntimeError, KeyError, SystemExit, urllib.error.URLError,
+                    TimeoutError, ValueError) as e:
+                print(f"analytics: metrics unavailable for {post_id} ({str(e)[:60]})")
+                continue
+            if not data:
                 continue
             if data.get("status") != SENT:
                 continue
@@ -227,21 +265,24 @@ def ingest():
             try:
                 upsert_row({
                     "PartitionKey": week,
-                    "RowKey": post["postId"],
+                    "RowKey": post_id,
                     "well": well,
-                    "channel": post["channel"],
-                    "day": post["day"],
-                    "dueAt": post["dueAt"],
+                    "channel": channel,
+                    "day": day,
+                    "dueAt": due_at,
                     "reach": m.get("reach") or 0,
                     "views": m.get("views") or 0,
                     "reactions": m.get("reactions") or 0,
                     "comments": m.get("comments") or 0,
                     "shares": m.get("shares") or 0,
                     "engagementRate": m.get("engagementRate"),
-                    "updatedAt": data.get("metricsUpdatedAt") or post["dueAt"],
+                    "updatedAt": data.get("metricsUpdatedAt") or due_at,
                 })
                 written += 1
-            except (KeyError, urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
-                print(f"analytics: cannot write row ({str(e)[:60]}) — running blind")
+            except KeyError as e:
+                print(f"analytics: Azure credentials missing ({str(e)[:60]}) — stopping")
                 return written
+            except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError) as e:
+                print(f"analytics: row {post_id} rejected ({str(e)[:60]}) — skipping")
+                continue
     return written
