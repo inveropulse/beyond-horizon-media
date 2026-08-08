@@ -338,6 +338,17 @@ def ingest():
     times: a KeyError out of upsert_row (the Azure credentials are missing) and
     a Buffer 401 (publish.graphql raises SystemExit; the API key is dead).
     """
+    try:
+        _env("BUFFER_ACCESS_TOKEN")
+    except KeyError:
+        # Same reason as the 401 short-circuit: without a token every one of the
+        # 42-odd posts fails identically. An absent GitHub secret renders as ""
+        # rather than being unset, so publish.graphql would not even raise — it
+        # would send 42 doomed requests with an empty Bearer header.
+        print("analytics: BUFFER_ACCESS_TOKEN not set — skipping the metrics refresh",
+              file=sys.stderr)
+        return 0
+
     written = 0
     for receipt in sorted(glob.glob(os.path.join(ROOT, "content", "week*", "SCHEDULED.json"))):
         week = os.path.basename(os.path.dirname(receipt))

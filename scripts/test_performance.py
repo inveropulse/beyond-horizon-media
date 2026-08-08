@@ -70,21 +70,19 @@ def test_fetch_rows_without_credentials_is_blind_not_fatal():
 
 def test_table_url_excludes_the_sas():
     """The SAS must never end up in a printed or logged URL."""
-    os.environ["AZURE_ACCOUNT"] = "acct"
-    os.environ["AZURE_TABLE_SAS"] = "sig=SECRETVALUE"
+    restore_env = _with_azure_env(sas="sig=SECRETVALUE")
     try:
         url = performance.table_url()
         assert "SECRETVALUE" not in url, "table_url() must not embed the SAS"
         assert url.startswith("https://acct.table.core.windows.net/postmetrics")
     finally:
-        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+        restore_env()
 
 
 def test_fetch_rows_swallows_a_stalled_read_timeout():
     """A stalled response (TimeoutError from r.read(), not wrapped by URLError)
     must degrade to blind too — see review finding for the reproduction."""
-    os.environ["AZURE_ACCOUNT"] = "acct"
-    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    restore_env = _with_azure_env()
     original = performance._request
 
     def _raise(*a, **k):
@@ -95,13 +93,23 @@ def test_fetch_rows_swallows_a_stalled_read_timeout():
         assert performance.fetch_rows() == []
     finally:
         performance._request = original
-        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+        restore_env()
 
 
-def _with_azure_env(sas="sig=dummy", account="acct"):
-    """Set the Azure vars and return a restorer, so a test can be blind or not."""
-    saved = {k: os.environ.get(k) for k in ("AZURE_ACCOUNT", "AZURE_TABLE_SAS")}
+def _with_azure_env(sas="sig=dummy", account="acct", buffer_token="tok"):
+    """Set the credential vars and return a restorer, so a test can be blind or not.
+
+    BUFFER_ACCESS_TOKEN is included because ingest() refuses to make 42 doomed
+    requests without one; a test driving the ingest loop must therefore look
+    credentialed even when it stubs graphql out entirely.
+    """
+    keys = ("AZURE_ACCOUNT", "AZURE_TABLE_SAS", "BUFFER_ACCESS_TOKEN")
+    saved = {k: os.environ.get(k) for k in keys}
     os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"] = account, sas
+    if buffer_token is None:
+        os.environ.pop("BUFFER_ACCESS_TOKEN", None)
+    else:
+        os.environ["BUFFER_ACCESS_TOKEN"] = buffer_token
 
     def restore():
         for k, v in saved.items():
@@ -516,6 +524,22 @@ def test_ingest_survives_a_corrupt_spec_file():
         restore()
 
 
+def test_ingest_makes_no_request_without_a_buffer_token():
+    """An absent GitHub secret renders as "" rather than unset, so
+    publish.graphql would not raise on the missing key — it would send 42
+    doomed requests with an empty Bearer header and log 42 identical failures.
+    Refuse once, before the loop."""
+    calls = []
+    restore_env = _with_azure_env(buffer_token="")
+    restore = _stub("graphql", lambda q, v: calls.append(1))
+    try:
+        assert performance.ingest() == 0
+        assert calls == [], "no Buffer request may be attempted without a token"
+    finally:
+        restore()
+        restore_env()
+
+
 def test_ingest_stops_asking_once_buffer_rejects_the_key():
     """A dead Azure credential short-circuits; a dead Buffer key used to be
     retried and logged once per post, 42+ times. Same situation, so same
@@ -606,8 +630,7 @@ def test_ingest_skips_scheduled_not_sent_posts():
     non-zero-looking metrics array for posts that are merely scheduled. A
     missing or mutated status guard must be caught here, not in production
     numbers."""
-    os.environ["AZURE_ACCOUNT"] = "acct"
-    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    restore_env = _with_azure_env()
     calls = []
     restore_graphql = _stub("graphql", lambda q, v: {"post": {
         "status": "scheduled",
@@ -622,27 +645,25 @@ def test_ingest_skips_scheduled_not_sent_posts():
     finally:
         restore_graphql()
         restore_upsert()
-        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+        restore_env()
 
 
 def test_ingest_survives_post_null_response():
     """GraphQL can answer with {"post": None} for a deleted/unknown id — that
     must be skipped, not raise AttributeError out of ingest()."""
-    os.environ["AZURE_ACCOUNT"] = "acct"
-    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    restore_env = _with_azure_env()
     restore = _stub("graphql", lambda q, v: {"post": None})
     try:
         assert performance.ingest() == 0
     finally:
         restore()
-        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+        restore_env()
 
 
 def test_ingest_survives_a_stalled_graphql_call():
     """A read-phase timeout from graphql() (raw TimeoutError, not wrapped in
     URLError) must not escape ingest() and abort the run."""
-    os.environ["AZURE_ACCOUNT"] = "acct"
-    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    restore_env = _with_azure_env()
 
     def _raise(*a, **k):
         raise TimeoutError("timed out")
@@ -652,14 +673,13 @@ def test_ingest_survives_a_stalled_graphql_call():
         assert performance.ingest() == 0
     finally:
         restore()
-        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+        restore_env()
 
 
 def test_ingest_survives_buffer_rejecting_the_api_key():
     """publish.graphql raises SystemExit on a 401 — that must degrade like
     every other Buffer failure here, not tear down the whole run."""
-    os.environ["AZURE_ACCOUNT"] = "acct"
-    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    restore_env = _with_azure_env()
 
     def _raise(*a, **k):
         raise SystemExit("Buffer rejected the API key")
@@ -669,15 +689,14 @@ def test_ingest_survives_buffer_rejecting_the_api_key():
         assert performance.ingest() == 0
     finally:
         restore()
-        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+        restore_env()
 
 
 def test_ingest_survives_a_non_json_graphql_body():
     """A non-JSON response body (proxy error page, truncated stream) surfaces
     as ValueError from json.loads inside publish.graphql — that must degrade
     too, not escape."""
-    os.environ["AZURE_ACCOUNT"] = "acct"
-    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    restore_env = _with_azure_env()
 
     def _raise(*a, **k):
         raise ValueError("Expecting value: line 1 column 1 (char 0)")
@@ -687,7 +706,7 @@ def test_ingest_survives_a_non_json_graphql_body():
         assert performance.ingest() == 0
     finally:
         restore()
-        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+        restore_env()
 
 
 def test_ingest_skips_a_stalled_upsert_and_keeps_going():
@@ -695,8 +714,7 @@ def test_ingest_skips_a_stalled_upsert_and_keeps_going():
     upsert_row's _request, not wrapped in URLError — the same shape of bug
     fixed in fetch_rows() during Task 4) must not abort the rest of the
     week."""
-    os.environ["AZURE_ACCOUNT"] = "acct"
-    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    restore_env = _with_azure_env()
     calls = []
 
     def fake_upsert(entity):
@@ -720,14 +738,13 @@ def test_ingest_skips_a_stalled_upsert_and_keeps_going():
     finally:
         restore_graphql()
         restore_upsert()
-        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+        restore_env()
 
 
 def test_ingest_skips_one_bad_row_and_keeps_going():
     """A single poison row (e.g. an HTTP 413 on one post) must not block the
     rest of the week — only a credentials failure should stop the run."""
-    os.environ["AZURE_ACCOUNT"] = "acct"
-    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    restore_env = _with_azure_env()
     calls = []
 
     def fake_upsert(entity):
@@ -751,15 +768,14 @@ def test_ingest_skips_one_bad_row_and_keeps_going():
     finally:
         restore_graphql()
         restore_upsert()
-        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+        restore_env()
 
 
 def test_ingest_stops_immediately_on_missing_azure_credentials():
     """Unlike a single bad row, a KeyError out of upsert_row means every
     later write will fail identically (missing AZURE_ACCOUNT/SAS) — stop on
     the first one rather than log the same failure dozens of times."""
-    os.environ["AZURE_ACCOUNT"] = "acct"
-    os.environ["AZURE_TABLE_SAS"] = "sig=dummy"
+    restore_env = _with_azure_env()
     calls = []
 
     def fake_upsert(entity):
@@ -780,7 +796,7 @@ def test_ingest_stops_immediately_on_missing_azure_credentials():
     finally:
         restore_graphql()
         restore_upsert()
-        del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+        restore_env()
 
 
 def test_plan_stdout_is_pure_payload_when_blind():
