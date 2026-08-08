@@ -53,12 +53,12 @@ def fetch_rows():
     try:
         url = f"{table_url()}()?{_sas()}"
     except KeyError as e:
-        print(f"analytics: {e.args[0]} not set — running blind on the playbook prior")
+        print(f"analytics: {e.args[0]} not set — running blind on the playbook prior", file=sys.stderr)
         return []
     try:
         return _request(url).get("value", [])
     except (urllib.error.URLError, ValueError, TimeoutError) as e:
-        print(f"analytics: table unreadable ({str(e)[:80]}) — running blind")
+        print(f"analytics: table unreadable ({str(e)[:80]}) — running blind", file=sys.stderr)
         return []
 
 
@@ -239,14 +239,14 @@ def ingest():
             with open(receipt) as f:
                 posts = json.load(f)["posts"]
         except (OSError, ValueError, KeyError) as e:
-            print(f"analytics: cannot read {receipt} ({str(e)[:60]}) — skipping receipt")
+            print(f"analytics: cannot read {receipt} ({str(e)[:60]}) — skipping receipt", file=sys.stderr)
             continue
         for post in posts:
             try:
                 day, post_id, channel, due_at = (
                     post["day"], post["postId"], post["channel"], post["dueAt"])
             except (KeyError, TypeError) as e:
-                print(f"analytics: malformed post entry in {receipt} ({str(e)[:60]}) — skipping")
+                print(f"analytics: malformed post entry in {receipt} ({str(e)[:60]}) — skipping", file=sys.stderr)
                 continue
             well = well_for(week, day)
             if not well:
@@ -255,7 +255,7 @@ def ingest():
                 data = graphql(POST_METRICS, {"id": post_id})["post"]
             except (RuntimeError, KeyError, SystemExit, urllib.error.URLError,
                     TimeoutError, ValueError) as e:
-                print(f"analytics: metrics unavailable for {post_id} ({str(e)[:60]})")
+                print(f"analytics: metrics unavailable for {post_id} ({str(e)[:60]})", file=sys.stderr)
                 continue
             if not data:
                 continue
@@ -280,10 +280,10 @@ def ingest():
                 })
                 written += 1
             except KeyError as e:
-                print(f"analytics: Azure credentials missing ({str(e)[:60]}) — stopping")
+                print(f"analytics: Azure credentials missing ({str(e)[:60]}) — stopping", file=sys.stderr)
                 return written
             except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError) as e:
-                print(f"analytics: row {post_id} rejected ({str(e)[:60]}) — skipping")
+                print(f"analytics: row {post_id} rejected ({str(e)[:60]}) — skipping", file=sys.stderr)
                 continue
     return written
 
@@ -291,7 +291,7 @@ def ingest():
 def main():
     args = set(sys.argv[1:])
     if "--ingest" in args:
-        print(f"ingested {ingest()} rows")
+        print(f"ingested {ingest()} rows", file=sys.stderr)
 
     stats = rollup(fetch_rows())
 

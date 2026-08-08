@@ -3,7 +3,9 @@
 
 import json
 import os
+import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import urllib.error
@@ -494,6 +496,28 @@ def test_ingest_stops_immediately_on_missing_azure_credentials():
         restore_graphql()
         restore_upsert()
         del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
+
+
+def test_plan_stdout_is_pure_payload_when_blind():
+    """The workflow captures --plan's stdout verbatim as the day->well plan
+    (see .github/workflows/generate-week.yml), then feeds it straight into a
+    prompt with each line treated as an assignment. Any diagnostic printed to
+    stdout — such as the blind-mode notice that fires on every credential-less
+    run — would be swallowed as a bogus eighth assignment. Diagnostics must go
+    to stderr; stdout must carry only the seven day=well lines."""
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    env = {k: v for k, v in os.environ.items()
+           if k not in ("AZURE_ACCOUNT", "AZURE_TABLE_SAS", "BUFFER_ACCESS_TOKEN")}
+    result = subprocess.run(
+        [sys.executable, "scripts/performance.py", "--plan"],
+        capture_output=True, text=True, cwd=repo_root, env=env,
+    )
+    assert result.returncode == 0, f"blind run must exit 0, got {result.returncode}"
+    lines = [line for line in result.stdout.splitlines() if line]
+    assert len(lines) == 7, f"expected exactly 7 stdout lines, got {len(lines)}: {lines}"
+    for line in lines:
+        assert re.fullmatch(r"\d{2}_[a-z]{3}=[a-z-]+", line), \
+            f"line does not match day=well shape: {line!r}"
 
 
 if __name__ == "__main__":
