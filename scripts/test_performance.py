@@ -125,6 +125,54 @@ def test_rollup_excludes_unusable_posts():
         f"mean should be 15.0, got {out['money-leak']['rate']}"
 
 
+DAYS = ["01_mon", "02_tue", "03_wed", "04_thu", "05_fri", "06_sat", "07_sun"]
+
+
+def test_cold_start_uses_the_prior():
+    plan = performance.plan_week({})
+    assert list(plan) == DAYS, f"plan must cover all seven days, got {list(plan)}"
+    assert plan["01_mon"] == "salary-breakdown", "cold-start champion is the prior's first"
+    assert plan["03_wed"] == "household-budget", "cold-start challenger is the prior's second"
+    assert plan["07_sun"] not in ("salary-breakdown", "household-budget"), \
+        "the explore slot must differ from champion and challenger"
+
+
+def test_minimum_sample_blocks_a_lucky_well():
+    stats = {"money-leak": {"rate": 0.9, "n": 2, "last": "2026-08-20"},
+             "comparison": {"rate": 0.1, "n": 5, "last": "2026-08-20"}}
+    plan = performance.plan_week(stats)
+    assert plan["01_mon"] == "comparison", \
+        "a 2-post well must not be champion however good its rate"
+
+
+def test_champion_is_the_best_qualifying_well():
+    stats = {"money-leak": {"rate": 0.5, "n": 4, "last": "2026-08-20"},
+             "comparison": {"rate": 0.2, "n": 5, "last": "2026-08-20"}}
+    plan = performance.plan_week(stats)
+    assert plan["01_mon"] == "money-leak"
+    assert plan["03_wed"] == "comparison"
+
+
+def test_explore_slot_prefers_untried_then_least_recently_used():
+    tried = {w: {"rate": 0.1, "n": 5, "last": "2026-08-20"} for w in WELLS[:9]}
+    assert performance.plan_week(tried)["07_sun"] == WELLS[9], \
+        "the one untried well must take the explore slot"
+
+    all_tried = {w: {"rate": 0.1, "n": 5, "last": f"2026-08-{10 + i:02d}"}
+                 for i, w in enumerate(WELLS)}
+    chosen = performance.plan_week(all_tried)["07_sun"]
+    assert chosen == WELLS[0], \
+        f"with everything tried, the oldest should explore, got {chosen}"
+
+
+def test_ranking_listicle_capped_at_one_day():
+    stats = {"ranking-listicle": {"rate": 0.9, "n": 9, "last": "2026-08-20"},
+             "comparison": {"rate": 0.2, "n": 5, "last": "2026-08-20"}}
+    plan = performance.plan_week(stats)
+    used = list(plan.values()).count("ranking-listicle")
+    assert used <= 1, f"ranking-listicle capped at 1 day, got {used}"
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_") and callable(fn):

@@ -102,3 +102,56 @@ def rollup(rows):
     return {w: {"rate": sum(s["rates"]) / len(s["rates"]) if s["rates"] else 0.0,
                 "n": len(s["rates"]), "last": s["last"]}
             for w, s in acc.items()}
+
+
+MIN_SAMPLE = 3
+CHAMPION_DAYS = ("01_mon", "02_tue", "04_thu", "06_sat")
+CHALLENGER_DAYS = ("03_wed", "05_fri")
+EXPLORE_DAY = "07_sun"
+
+
+def rank(stats):
+    """Wells good enough to lead, best first, then everything else in prior order.
+
+    The sample floor is the main defence against locking onto a false winner: one
+    lucky post should not decide a month of content.
+    """
+    qualified = [w for w in stats if stats[w]["n"] >= MIN_SAMPLE]
+    qualified.sort(key=lambda w: (-stats[w]["rate"], WELLS.index(w)))
+    return qualified + [w for w in WELLS if w not in qualified]
+
+
+DAY_ORDER = ("01_mon", "02_tue", "03_wed", "04_thu", "05_fri", "06_sat", "07_sun")
+
+
+def _first_fitting(order, days_needed, exclude):
+    """Best-ranked well that can legally fill a slot needing `days_needed` days.
+
+    A well capped below the slot size simply cannot hold it — ranking-listicle
+    (cap 1) can never be champion or challenger however well it scores. That is
+    the cap doing its job, not a special case.
+    """
+    for well in order:
+        if well in exclude:
+            continue
+        if CAPS.get(well, 7) >= days_needed:
+            return well
+    return WELLS[0]
+
+
+def plan_week(stats):
+    """day -> well for the seven days, in calendar order, honouring the caps."""
+    order = rank(stats)
+    champion = _first_fitting(order, len(CHAMPION_DAYS), set())
+    challenger = _first_fitting(order, len(CHALLENGER_DAYS), {champion})
+
+    untried = [w for w in WELLS if w not in stats and w not in (champion, challenger)]
+    if untried:
+        explore = untried[0]
+    else:
+        explore = min(WELLS, key=lambda w: (stats[w]["last"], WELLS.index(w)))
+
+    slots = {EXPLORE_DAY: explore}
+    slots.update({d: champion for d in CHAMPION_DAYS})
+    slots.update({d: challenger for d in CHALLENGER_DAYS})
+    return {day: slots[day] for day in DAY_ORDER}
