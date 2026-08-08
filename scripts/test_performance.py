@@ -161,8 +161,9 @@ def test_explore_slot_prefers_untried_then_least_recently_used():
     all_tried = {w: {"rate": 0.1, "n": 5, "last": f"2026-08-{10 + i:02d}"}
                  for i, w in enumerate(WELLS)}
     chosen = performance.plan_week(all_tried)["07_sun"]
-    assert chosen == WELLS[0], \
-        f"with everything tried, the oldest should explore, got {chosen}"
+    assert chosen == WELLS[2], \
+        "the oldest well that isn't already scheduled should explore, " \
+        f"got {chosen}"
 
 
 def test_ranking_listicle_capped_at_one_day():
@@ -171,6 +172,36 @@ def test_ranking_listicle_capped_at_one_day():
     plan = performance.plan_week(stats)
     used = list(plan.values()).count("ranking-listicle")
     assert used <= 1, f"ranking-listicle capped at 1 day, got {used}"
+
+
+def test_unknown_well_slug_does_not_crash():
+    """rollup() passes through whatever `well` string sits on the Azure row with
+    no validation, so a stale or hand-edited row can carry a slug WELLS has
+    never heard of. The planner must degrade, not brick — same contract as a
+    missing SAS token."""
+    stats = {"totally-made-up-well": {"rate": 0.9, "n": 9, "last": "2026-08-20"},
+             "comparison": {"rate": 0.2, "n": 5, "last": "2026-08-20"}}
+    plan = performance.plan_week(stats)
+    assert list(plan) == DAYS, f"plan must still cover all seven days, got {list(plan)}"
+
+
+def test_explore_never_duplicates_champion_or_challenger_and_caps_hold():
+    """Regression pin for the all-tried case: the LRU fallback used to range
+    over every well including champion/challenger, which could hand one topic
+    5 of 7 days and let a capped well (e.g. product-led) blow past its cap."""
+    all_tried = {w: {"rate": 0.1, "n": 5, "last": f"2026-08-{10 + i:02d}"}
+                 for i, w in enumerate(WELLS)}
+    plan = performance.plan_week(all_tried)
+    champion, challenger, explore = plan["01_mon"], plan["03_wed"], plan["07_sun"]
+    assert explore != champion and explore != challenger, \
+        f"explore must be a third, distinct well: champion={champion} " \
+        f"challenger={challenger} explore={explore}"
+
+    from collections import Counter
+    counts = Counter(plan.values())
+    for well, n in counts.items():
+        cap = performance.CAPS.get(well, 7)
+        assert n <= cap, f"{well} scheduled {n} days but capped at {cap}"
 
 
 if __name__ == "__main__":

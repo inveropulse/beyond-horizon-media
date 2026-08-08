@@ -110,6 +110,20 @@ CHALLENGER_DAYS = ("03_wed", "05_fri")
 EXPLORE_DAY = "07_sun"
 
 
+def _well_rank(well):
+    """WELLS position, or last place for a slug that isn't one of ours.
+
+    rollup() passes through whatever `well` string is on the Azure row with no
+    validation, so a stale or hand-edited row can carry a slug WELLS has never
+    heard of. That must degrade gracefully, not crash the planner — nothing here
+    may block content generation.
+    """
+    try:
+        return WELLS.index(well)
+    except ValueError:
+        return len(WELLS)
+
+
 def rank(stats):
     """Wells good enough to lead, best first, then everything else in prior order.
 
@@ -117,7 +131,7 @@ def rank(stats):
     lucky post should not decide a month of content.
     """
     qualified = [w for w in stats if stats[w]["n"] >= MIN_SAMPLE]
-    qualified.sort(key=lambda w: (-stats[w]["rate"], WELLS.index(w)))
+    qualified.sort(key=lambda w: (-stats[w]["rate"], _well_rank(w)))
     return qualified + [w for w in WELLS if w not in qualified]
 
 
@@ -145,11 +159,12 @@ def plan_week(stats):
     champion = _first_fitting(order, len(CHAMPION_DAYS), set())
     challenger = _first_fitting(order, len(CHALLENGER_DAYS), {champion})
 
-    untried = [w for w in WELLS if w not in stats and w not in (champion, challenger)]
+    candidates = [w for w in WELLS if w not in (champion, challenger)]
+    untried = [w for w in candidates if w not in stats]
     if untried:
         explore = untried[0]
     else:
-        explore = min(WELLS, key=lambda w: (stats[w]["last"], WELLS.index(w)))
+        explore = min(candidates, key=lambda w: (stats[w]["last"], _well_rank(w)))
 
     slots = {EXPLORE_DAY: explore}
     slots.update({d: champion for d in CHAMPION_DAYS})
