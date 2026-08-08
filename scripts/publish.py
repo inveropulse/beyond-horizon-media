@@ -31,7 +31,10 @@ from validate import check  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG = json.load(open(os.path.join(ROOT, "config.json")))
-GRAPHQL = os.environ.get("BUFFER_GRAPHQL_URL", "https://graph.buffer.com")
+# Buffer's GraphQL endpoint for API-key auth is api.buffer.com. graph.buffer.com
+# also exists and answers GraphQL, but rejects API keys with UNAUTHENTICATED --
+# it expects a session/OAuth token. See developers.buffer.com/guides/authentication
+GRAPHQL = os.environ.get("BUFFER_GRAPHQL_URL", "https://api.buffer.com")
 
 CREATE_POST = """
 mutation CreatePost($input: CreatePostInput!) {
@@ -114,6 +117,11 @@ def graphql(query, variables):
             if e.code in (429, 500, 502, 503) and attempt < 2:
                 time.sleep(3 * (attempt + 1))
                 continue
+            if e.code == 401:
+                raise SystemExit(
+                    f"\nBuffer rejected the API key (401) at {GRAPHQL}.\n"
+                    "  Check the BUFFER_ACCESS_TOKEN secret against a fresh key from\n"
+                    "  https://publish.buffer.com/settings/api\n")
             raise RuntimeError(f"HTTP {e.code}: {detail}")
     raise RuntimeError("unreachable")
 
