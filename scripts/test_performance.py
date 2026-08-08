@@ -449,7 +449,7 @@ def _with_fake_receipt(posts_value, assertion):
     """Write `posts_value` (or raw text if a str) as a lone SCHEDULED.json,
     point performance.ingest() at only that receipt, run the assertion, and
     always clean up — including env vars ingest() needs to reach the receipt
-    loop at all."""
+    loop at all (via _with_azure_env, which sets BUFFER_ACCESS_TOKEN)."""
     tmpdir = tempfile.mkdtemp()
     try:
         weekdir = os.path.join(tmpdir, "week9")
@@ -461,12 +461,14 @@ def _with_fake_receipt(posts_value, assertion):
             else:
                 json.dump(posts_value, f)
 
+        restore_env = _with_azure_env()
         original_glob = performance.glob
         performance.glob = _FakeGlob([path])
         try:
             assertion()
         finally:
             performance.glob = original_glob
+            restore_env()
     finally:
         shutil.rmtree(tmpdir)
 
