@@ -1,7 +1,10 @@
 # Content learning loop — design
 
 Date: 2026-08-08
-Status: approved, not yet implemented
+Status: implemented on branch `feat/content-learning-loop`. The shipped code
+(`scripts/performance.py`, `scripts/wells.py`, `.github/workflows/generate-week.yml`)
+is the authority; this document is the design record and has been reconciled
+with what actually shipped.
 
 ## Problem
 
@@ -138,7 +141,9 @@ off a readable file in the repo.
 ### 3. Workflow wiring
 
 `generate-week.yml` runs `performance.py` before the Claude step, with
-`AZURE_ACCOUNT` and `AZURE_TABLE_SAS` in the environment. The computed plan is
+`AZURE_ACCOUNT`, `AZURE_TABLE_SAS` **and `BUFFER_ACCESS_TOKEN`** in the
+environment — the same step also runs `--ingest`, which reads post metrics from
+Buffer and therefore needs the Buffer credential too. The computed plan is
 passed into the prompt as an explicit per-day well assignment. No ledger commit
 step — nothing performance-related enters the repo.
 
@@ -170,7 +175,12 @@ mix.
   playbook prior — `salary-breakdown`, then `household-budget`.
 - **Explore slot:** prefer a well never tried. Once all ten have been tried,
   rotate to least-recently-used, so the system keeps re-testing rather than
-  freezing on early winners.
+  freezing on early winners. The candidate pool **excludes the champion and the
+  challenger** — otherwise one topic could take five of seven days and a capped
+  well could blow past its cap. "Least recently used" means least recently
+  *posted* (`dueAt`), not least recently metrics-refreshed (`updatedAt`):
+  `--ingest` re-upserts every past week on every run, so `updatedAt` converges
+  and the rotation would freeze on it.
 
 ### Editorial caps
 
@@ -247,8 +257,12 @@ runs offline with no credentials:
 4. Explore slot — never assigns an already-tried well while untried ones remain;
    falls back to least-recently-used once all are tried.
 5. Editorial caps — `ranking-listicle` never exceeds 1 day even when ranked top.
-6. Rollup arithmetic — engagement rate computed correctly; zero-impression posts
-   excluded from both the mean and the sample count.
+6. Rollup arithmetic — engagement rate computed correctly; posts with no usable
+   denominator excluded from both the mean and the sample count. The code keys
+   that on `reach`, not impressions: a post with `reach <= 0` and no
+   `engagementRate` of Buffer's own is unscoreable, and "unscoreable" stays
+   distinct from "scored zero" so metrics that have not landed yet cannot drag
+   a well's average toward zero.
 
 ## Setup required before this does anything
 
@@ -275,3 +289,9 @@ data may show most posts clustered in one or two wells. If the backfill shows
 fewer than three wells represented, the first few "champions" will be decided by
 a very thin field, and the prior may be the better guide for longer than two
 weeks. Worth re-checking once the backfill is done.
+
+Relatedly: convergence is slow by construction. In simulation the ranking takes
+roughly 23 weeks to settle, because a well needs three scoreable posts before it
+can lead and only one new well is tried per week. Slow early progress is the
+design working, not a fault — resist the urge to lower `MIN_SAMPLE` or widen the
+explore slot on the strength of the first month.

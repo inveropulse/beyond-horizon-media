@@ -1,5 +1,7 @@
 # Content Learning Loop Implementation Plan
 
+> **Status: IMPLEMENTED (branch `feat/content-learning-loop`).** `scripts/performance.py`, `scripts/wells.py`, `scripts/test_performance.py` and `.github/workflows/generate-week.yml` are the authority; this plan is the design record. Several code blocks below were wrong as written and have been corrected in place with a `CORRECTED DURING IMPLEMENTATION` note explaining what the bug was — follow the shipped source, not a snippet, and read the notes before "restoring" anything that looks simpler.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Make the weekly content generator pick topics from measured Buffer engagement instead of guessing, while always testing one new topic.
@@ -378,26 +380,46 @@ playbook prior and exits 0.
 import json
 import os
 import sys
-import urllib.error
+import urllib.parse
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from wells import CAPS, WELLS  # noqa: E402
 
 TABLE = "postmetrics"
+MAX_PAGES = 50
+
+
+def _env(name):
+    """A required environment value, or KeyError.
+
+    CORRECTED DURING IMPLEMENTATION. An unset GitHub secret interpolates as ""
+    rather than being absent, so os.environ[name] does not raise in CI — which
+    is the state of the very first live runs. Treat blank as missing.
+    """
+    value = (os.environ.get(name) or "").strip()
+    if not value:
+        raise KeyError(name)
+    return value
 
 
 def table_url():
     """Base URL with no SAS attached — safe to print. Callers add auth separately."""
-    account = os.environ["AZURE_ACCOUNT"]
-    return f"https://{account}.table.core.windows.net/{TABLE}"
+    return f"https://{_env('AZURE_ACCOUNT')}.table.core.windows.net/{TABLE}"
 
 
 def _sas():
-    return os.environ["AZURE_TABLE_SAS"].lstrip("?")
+    # .strip() is load-bearing: a secret pasted with trailing whitespace makes
+    # an unencodable URL, and http.client.InvalidURL echoes the whole SAS back.
+    return _env("AZURE_TABLE_SAS").lstrip("?")
+
+
+def _safe(e):
+    """Error text with the SAS redacted (both literal and repr-escaped) and cut to 80."""
 
 
 def _request(url, method="GET", body=None):
+    """Returns (parsed body, response headers). Headers carry the continuation."""
     req = urllib.request.Request(url, data=body, method=method)
     req.add_header("Accept", "application/json;odata=nometadata")
     req.add_header("x-ms-version", "2019-02-02")
@@ -405,20 +427,50 @@ def _request(url, method="GET", body=None):
         req.add_header("Content-Type", "application/json")
     with urllib.request.urlopen(req, timeout=60) as r:
         raw = r.read()
-    return json.loads(raw) if raw else {}
+        headers = r.headers
+    return (json.loads(raw) if raw else {}), headers
 
 
 def fetch_rows():
-    """Every stored post row. [] when blind — missing credentials or a bad service."""
+    """Every stored post row. [] when blind — missing credentials or a bad service.
+
+    CORRECTED DURING IMPLEMENTATION, twice over.
+
+    1. The allow-list was wrong in principle. This function's entire contract is
+       "degrade to the playbook prior", so any enumeration can only be
+       incomplete: TimeoutError from r.read() is not a URLError, and
+       http.client.InvalidURL is not a ValueError (it descends from
+       HTTPException). Use `except Exception`.
+    2. Diagnostics go to STDERR. The workflow captures --plan's stdout verbatim
+       as the day->well assignment, so anything printed to stdout is swallowed
+       as a bogus eighth assignment.
+    3. Azure Table caps a response at 1000 entities, so follow the
+       x-ms-continuation-NextPartitionKey / NextRowKey headers — bounded by
+       MAX_PAGES, because a hung job writes no content.
+    """
     try:
-        url = f"{table_url()}()?{_sas()}"
+        base, sas = table_url(), _sas()
     except KeyError as e:
-        print(f"analytics: {e.args[0]} not set — running blind on the playbook prior")
+        print(f"analytics: {e.args[0]} not set — running blind on the playbook prior",
+              file=sys.stderr)
         return []
+    rows = []
     try:
-        return _request(url).get("value", [])
-    except (urllib.error.URLError, urllib.error.HTTPError, ValueError) as e:
-        print(f"analytics: table unreadable ({str(e)[:80]}) — running blind")
+        query = ""
+        for _ in range(MAX_PAGES):
+            payload, headers = _request(f"{base}(){query}&{sas}" if query else f"{base}()?{sas}")
+            rows.extend(payload.get("value", []))
+            token = {k: headers.get(f"x-ms-continuation-{k}")
+                     for k in ("NextPartitionKey", "NextRowKey")}
+            token = {k: v for k, v in token.items() if v}
+            if not token:
+                return rows
+            query = "?" + urllib.parse.urlencode(token)
+        print(f"analytics: stopped following continuations after {MAX_PAGES} pages "
+              f"({len(rows)} rows) — ranking on a partial table", file=sys.stderr)
+        return rows
+    except Exception as e:
+        print(f"analytics: table unreadable ({_safe(e)}) — running blind", file=sys.stderr)
         return []
 
 
@@ -614,8 +666,11 @@ def test_explore_slot_prefers_untried_then_least_recently_used():
     all_tried = {w: {"rate": 0.1, "n": 5, "last": f"2026-08-{10 + i:02d}"}
                  for i, w in enumerate(WELLS)}
     chosen = performance.plan_week(all_tried)["07_sun"]
-    assert chosen == WELLS[0], \
-        f"with everything tried, the oldest should explore, got {chosen}"
+    # CORRECTED DURING IMPLEMENTATION: WELLS[0] and WELLS[1] are champion and
+    # challenger here, so the oldest *candidate* is WELLS[2], not WELLS[0].
+    assert chosen == WELLS[2], \
+        "the oldest well that isn't already scheduled should explore, " \
+        f"got {chosen}"
 
 
 def test_ranking_listicle_capped_at_one_day():
@@ -642,18 +697,40 @@ CHALLENGER_DAYS = ("03_wed", "05_fri")
 EXPLORE_DAY = "07_sun"
 
 
+def _well_rank(well):
+    """WELLS position, or last place for a slug that isn't one of ours."""
+    try:
+        return WELLS.index(well)
+    except ValueError:
+        return len(WELLS)
+
+
 def rank(stats):
     """Wells good enough to lead, best first, then everything else in prior order.
 
     The sample floor is the main defence against locking onto a false winner: one
     lucky post should not decide a month of content.
+
+    CORRECTED DURING IMPLEMENTATION. `WELLS.index(w)` raises ValueError on any
+    slug not in WELLS, and rollup() passes through whatever `well` string sits
+    on the Azure row — which is what a rename or removal in wells.py leaves on
+    historical rows. Sorting such a slug merely last is NOT enough either: with
+    a high rate it wins the champion days and is interpolated into the generator
+    prompt as a mandatory assignment that validate.py then rejects. Filter on
+    membership; _well_rank stays only as a total-order tiebreak.
     """
-    qualified = [w for w in stats if stats[w]["n"] >= MIN_SAMPLE]
-    qualified.sort(key=lambda w: (-stats[w]["rate"], WELLS.index(w)))
+    unknown = sorted(w for w in stats if w not in WELLS)
+    if unknown:
+        print(f"analytics: ignoring {len(unknown)} table slug(s) not in wells.py "
+              f"({', '.join(unknown)}) — renamed or retired?", file=sys.stderr)
+    qualified = [w for w in stats if w in WELLS and stats[w]["n"] >= MIN_SAMPLE]
+    qualified.sort(key=lambda w: (-stats[w]["rate"], _well_rank(w)))
     return qualified + [w for w in WELLS if w not in qualified]
 
 
-DAY_ORDER = ("01_mon", "02_tue", "03_wed", "04_thu", "05_fri", "06_sat", "07_sun")
+# CORRECTED DURING IMPLEMENTATION: derived, not a hand-written duplicate of the
+# three slot tuples. Any desync between them is a KeyError out of plan_week.
+DAY_ORDER = tuple(sorted(CHAMPION_DAYS + CHALLENGER_DAYS + (EXPLORE_DAY,)))
 
 
 def _first_fitting(order, days_needed, exclude):
@@ -668,20 +745,34 @@ def _first_fitting(order, days_needed, exclude):
             continue
         if CAPS.get(well, 7) >= days_needed:
             return well
-    return WELLS[0]
+    # CORRECTED DURING IMPLEMENTATION: a bare WELLS[0] ignored both the exclude
+    # set and the cap it was filtering on, and could hand one well two slots.
+    return next((w for w in WELLS if w not in exclude), WELLS[0])
 
 
 def plan_week(stats):
-    """day -> well for the seven days, in calendar order, honouring the caps."""
+    """day -> well for the seven days, in calendar order, honouring the caps.
+
+    CORRECTED DURING IMPLEMENTATION on two counts. The explore candidates must
+    EXCLUDE champion and challenger — ranging over all of WELLS could hand one
+    topic five of seven days and let a capped well blow past its cap. And the
+    LRU key is dueAt, not updatedAt: ingest() re-upserts every past week on
+    every run, so updatedAt (Buffer's metricsUpdatedAt) tracks "least recently
+    metrics-refreshed", and as those converge the rotation freezes — exactly
+    what the explore slot exists to prevent.
+    """
     order = rank(stats)
     champion = _first_fitting(order, len(CHAMPION_DAYS), set())
     challenger = _first_fitting(order, len(CHALLENGER_DAYS), {champion})
 
-    untried = [w for w in WELLS if w not in stats]
+    candidates = [w for w in WELLS if w not in (champion, challenger)]
+    untried = [w for w in candidates if w not in stats]
     if untried:
         explore = untried[0]
     else:
-        explore = min(WELLS, key=lambda w: (stats[w]["last"], WELLS.index(w)))
+        explore = min(candidates, key=lambda w: (stats[w].get("due", ""),
+                                                 stats[w].get("last", ""),
+                                                 _well_rank(w)))
 
     slots = {EXPLORE_DAY: explore}
     slots.update({d: champion for d in CHAMPION_DAYS})
@@ -756,12 +847,22 @@ import glob  # add to the imports at the top of the file
 
 from publish import ROOT, graphql  # noqa: E402  add beside the wells import
 
-# Verified against the live API on 2026-08-08: metrics is an ARRAY of typed
-# objects, not an object of named fields. Types seen: reactions, comments,
-# engagementRate, views, shares, reach. There is no impressions field.
+# CORRECTED DURING IMPLEMENTATION. The query SHAPE below was a guess and was
+# wrong: introspection on 2026-08-08 shows Query.post takes `input: PostInput!`,
+# not `id:`, and the id itself is `PostId!`, not `String!`. Either wrong shape
+# 400s, publish.graphql turns that into a RuntimeError, and ingest() swallows it
+# — so every run printed N "metrics unavailable" lines and returned 0,
+# indistinguishable from "nothing has sent yet". Do not simplify it back.
+#
+# metrics is an ARRAY of PostMetric objects, not an object of named fields.
+# PostMetric has five fields: description, name, type, unit, value. `type` is
+# the 16-value PostMetricType enum: clicks, comments, engagementRate, follows,
+# impressions, likes, postCount, quotes, reach, reactions, reposts, saves,
+# shares, totalTimeWatched, viewers, views. impressions DOES exist; we simply
+# do not rank on it. `metrics` itself is nullable.
 POST_METRICS = """
-query Post($id: String!) {
-  post(id: $id) {
+query Post($id: PostId!) {
+  post(input: {id: $id}) {
     id
     status
     metricsUpdatedAt
@@ -777,8 +878,14 @@ SENT = "sent"
 
 
 def metrics_map(post):
-    """The metrics array flattened to {type: value}."""
-    return {m["type"]: m["value"] for m in (post.get("metrics") or [])}
+    """The metrics array flattened to {type: value}.
+
+    CORRECTED DURING IMPLEMENTATION: individual entries are not guaranteed to be
+    well-formed dicts, and one bad element must not raise KeyError through the
+    whole ingest run.
+    """
+    return {m["type"]: m.get("value") for m in (post.get("metrics") or [])
+            if isinstance(m, dict) and "type" in m}
 
 
 def well_for(week, day):
@@ -790,46 +897,82 @@ def well_for(week, day):
 
 
 def ingest():
-    """Refresh every scheduled post's metrics into the table. Returns rows written."""
+    """Refresh every scheduled post's metrics into the table. Returns rows written.
+
+    CORRECTED DURING IMPLEMENTATION. The version originally written here had no
+    guard at all around the receipt read, the post entry, the spec read or the
+    null-post case, and its allow-lists let every wrong-SHAPE receipt through as
+    a TypeError. Every failure mode has to degrade — hence `except Exception`,
+    not an enumeration. Only two things stop the run early, because every
+    remaining iteration would fail identically: a KeyError out of upsert_row
+    (Azure credentials missing) and a Buffer 401 (SystemExit; dead API key).
+    A single poison row must NOT stop it — that was the third correction here.
+    """
     written = 0
     for receipt in sorted(glob.glob(os.path.join(ROOT, "content", "week*", "SCHEDULED.json"))):
         week = os.path.basename(os.path.dirname(receipt))
-        for post in json.load(open(receipt))["posts"]:
-            well = well_for(week, post["day"])
+        try:
+            with open(receipt) as f:
+                posts = json.load(f)["posts"]
+            if not isinstance(posts, list):
+                raise TypeError(f'"posts" is {type(posts).__name__}, not a list')
+        except Exception as e:
+            print(f"analytics: cannot read {receipt} ({str(e)[:60]}) — skipping receipt",
+                  file=sys.stderr)
+            continue
+        for post in posts:
+            try:
+                day, post_id, channel, due_at = (
+                    post["day"], post["postId"], post["channel"], post["dueAt"])
+            except Exception as e:
+                print(f"analytics: malformed post entry in {receipt} ({str(e)[:60]}) — skipping",
+                      file=sys.stderr)
+                continue
+            try:
+                well = well_for(week, day)
+            except Exception as e:
+                print(f"analytics: cannot read the {week}/{day} spec ({str(e)[:60]}) — skipping",
+                      file=sys.stderr)
+                continue
             if not well:
                 continue
             try:
-                data = graphql(POST_METRICS, {"id": post["postId"]})["post"]
-            except (RuntimeError, KeyError, SystemExit, urllib.error.URLError) as e:
-                print(f"analytics: metrics unavailable for {post['postId']} ({str(e)[:60]})")
+                data = graphql(POST_METRICS, {"id": post_id})["post"]
+            except SystemExit as e:
+                print(f"analytics: Buffer rejected the API key ({str(e)[:60]}) — stopping",
+                      file=sys.stderr)
+                return written
+            except Exception as e:
+                print(f"analytics: metrics unavailable for {post_id} ({str(e)[:60]})",
+                      file=sys.stderr)
+                continue
+            if not data:
                 continue
             if data.get("status") != SENT:
                 continue
             m = metrics_map(data)
             try:
-                upsert_row({
-                    "PartitionKey": week,
-                    "RowKey": post["postId"],
-                    "well": well,
-                    "channel": post["channel"],
-                    "day": post["day"],
-                    "dueAt": post["dueAt"],
-                    "reach": m.get("reach") or 0,
-                    "views": m.get("views") or 0,
-                    "reactions": m.get("reactions") or 0,
-                    "comments": m.get("comments") or 0,
-                    "shares": m.get("shares") or 0,
-                    "engagementRate": m.get("engagementRate"),
-                    "updatedAt": data.get("metricsUpdatedAt") or post["dueAt"],
-                })
+                upsert_row({...})   # as in scripts/performance.py
                 written += 1
-            except (KeyError, urllib.error.URLError, urllib.error.HTTPError) as e:
-                print(f"analytics: cannot write row ({str(e)[:60]}) — running blind")
+            except KeyError as e:
+                print(f"analytics: Azure credentials missing ({str(e)[:60]}) — stopping",
+                      file=sys.stderr)
                 return written
+            except Exception as e:
+                print(f"analytics: row {post_id} rejected ({_safe(e)}) — skipping",
+                      file=sys.stderr)
+                continue
     return written
 ```
 
-The metrics shape above was verified against the live API on 2026-08-08 — do not "simplify" `metrics { type value unit }` back into named fields, and do not drop the `status != SENT` guard. Both were corrected from an earlier wrong guess in this plan.
+**The query SHAPE in this plan was NOT verified — it was a guess, and it was
+wrong.** Introspection on 2026-08-08 corrected it to
+`query Post($id: PostId!) { post(input: {id: $id}) ... }`, which is what
+`scripts/performance.py` ships and what `test_post_metrics_query_uses_the_verified_shape`
+pins. What WAS verified against the live API is the metrics *payload* shape:
+`metrics` is an array of typed objects, so do not "simplify"
+`metrics { type value unit }` back into named fields, and do not drop the
+`status != SENT` guard.
 
 - [ ] **Step 4: Run test to verify it passes**
 
@@ -865,24 +1008,42 @@ helper rather than growing a second one."
 
 Append to `scripts/performance.py`:
 
+CORRECTED DURING IMPLEMENTATION on two counts. Every diagnostic moved to
+STDERR — the workflow captures `--plan`'s stdout verbatim as the day→well
+assignment, so a line printed to stdout is swallowed as a bogus eighth
+assignment. And every branch is wrapped, so "analytics never blocks generation"
+is a property of this file rather than something the workflow's `|| true` has
+to rescue: `--plan` always emits seven lines and exits 0.
+
 ```python
 def main():
     args = set(sys.argv[1:])
     if "--ingest" in args:
-        print(f"ingested {ingest()} rows")
+        try:
+            print(f"ingested {ingest()} rows", file=sys.stderr)
+        except Exception as e:
+            print(f"analytics: ingest failed ({_safe(e)}) — continuing", file=sys.stderr)
 
-    stats = rollup(fetch_rows())
+    try:
+        stats = rollup(fetch_rows())
+    except Exception as e:
+        print(f"analytics: rollup failed ({_safe(e)}) — running blind", file=sys.stderr)
+        stats = {}
 
     if "--show" in args or not args:
-        print(f"\n{'well':<20} {'rate':>8} {'n':>4}  last")
-        print("-" * 52)
-        for well in rank(stats):
-            s = stats.get(well, {"rate": 0.0, "n": 0, "last": "never"})
-            flag = "" if s["n"] >= MIN_SAMPLE else "  (unproven)"
-            print(f"{well:<20} {s['rate']:>8.3f} {s['n']:>4}  {s['last'] or 'never'}{flag}")
+        try:
+            ...   # the ranking table, as in scripts/performance.py
+        except Exception as e:
+            print(f"analytics: cannot render the ranking ({_safe(e)})", file=sys.stderr)
 
     if "--plan" in args:
-        for day, well in plan_week(stats).items():
+        try:
+            plan = plan_week(stats)
+        except Exception as e:
+            print(f"analytics: planner failed ({_safe(e)}) — falling back to the "
+                  f"playbook prior", file=sys.stderr)
+            plan = plan_week({})
+        for day, well in plan.items():
             print(f"{day}={well}")
 
 
@@ -928,22 +1089,45 @@ ledger has moved out of the repo and into a private table."
 
 In `.github/workflows/generate-week.yml`, immediately before the `Write the week with Claude Code` step:
 
+CORRECTED DURING IMPLEMENTATION. The step as first written had no
+`continue-on-error`, no `|| true` on the ingest, and piped `--plan` straight
+into `$GITHUB_OUTPUT` — so any non-zero exit from the analytics step failed the
+job and no content was written, which is the exact opposite of the design
+constraint. It is also preceded now by a test step, which is the one analytics
+step that SHOULD gate the job: a broken planner must not get to write a week.
+
 ```yaml
+      - name: Test the planner
+        if: steps.cfg.outputs.skip != 'true'
+        run: python3 scripts/test_performance.py
+
       - name: Plan the topic mix
         id: plan
         if: steps.cfg.outputs.skip != 'true'
+        continue-on-error: true
         env:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
           AZURE_ACCOUNT: ${{ secrets.AZURE_ACCOUNT }}
           AZURE_TABLE_SAS: ${{ secrets.AZURE_TABLE_SAS }}
         run: |
-          python3 scripts/performance.py --ingest --show
+          python3 scripts/performance.py --ingest --show || true
+          PLAN=$(python3 scripts/performance.py --plan) || PLAN=""
+          if [ -z "$PLAN" ]; then
+            PLAN="(no measured assignment is available this run — choose the wells yourself from scripts/wells.py and vary them across the seven days)"
+          fi
           {
             echo 'assignment<<PLAN_EOF'
-            python3 scripts/performance.py --plan
+            printf '%s\n' "$PLAN"
             echo PLAN_EOF
           } >> "$GITHUB_OUTPUT"
 ```
+
+A further step added after `Validate before committing` re-runs `--plan` and
+diffs it against the `well` actually written in each `content/<week>/<day>.json`,
+reporting mismatches to the step log and `$GITHUB_STEP_SUMMARY`. It never fails
+the job — `validate.py` only checks that `well` is A known slug, never that it
+is THE assigned slug, so without this check drift would silently revert the
+feature with every run still green.
 
 - [ ] **Step 2: Feed the plan into the prompt**
 
@@ -955,7 +1139,8 @@ In the `prompt:` block, replace the paragraph beginning `If BUFFER_ACCESS_TOKEN 
 
             ${{ steps.plan.outputs.assignment }}
 
-            The wells are defined in
+            The ten valid well slugs are the source of truth in
+            scripts/wells.py; what each well means editorially is in
             .claude/skills/beyond-horizon-carousels/references/format-playbook.md.
             Set the matching "well" value in each spec's JSON. Four days share a
             well and two share another, so vary persona, city, income and hook
@@ -1018,6 +1203,6 @@ wells, which is what it is actually good at."
 
 **Not covered by any task, by design:** creating the Azure table and minting the SAS. That is manual account setup, recorded in the spec's "Setup required" section and handed to the user separately.
 
-**Known soft spot.** Task 7's `POST_METRICS` GraphQL shape is unverified — Buffer's metrics field names must be confirmed against the live schema. The task says so explicitly rather than pretending otherwise, because wrong field names yield zeros indistinguishable from real ones.
+**Known soft spot — RESOLVED.** Task 7's `POST_METRICS` GraphQL shape was a guess, and it was wrong; two places in this document disagreed about whether it had been verified. Introspection against the live schema on 2026-08-08 settled it: `Query.post` takes `input: PostInput!` with an id of `PostId!`, giving `query Post($id: PostId!) { post(input: {id: $id}) … }`. That is what ships, and `test_post_metrics_query_uses_the_verified_shape` pins it — wrong field names yield zeros indistinguishable from real ones, so the pin matters more than the prose.
 
-**Type consistency.** `rollup()` returns `{well: {"rate", "n", "last"}}`, consumed with those exact keys by `rank()`, `plan_week()`, and `main()`. `plan_week()` returns day→well keyed `01_mon`…`07_sun`, matching the spec filenames `well_for()` reads and the `DAYS` list in the tests.
+**Type consistency.** `rollup()` returns `{well: {"rate", "n", "last", "due"}}` (`due` was added during implementation — see `plan_week()` above), consumed with those exact keys by `rank()`, `plan_week()`, and `main()`. `plan_week()` returns day→well keyed `01_mon`…`07_sun`, matching the spec filenames `well_for()` reads and the `DAYS` list in the tests.
