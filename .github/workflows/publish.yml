@@ -14,6 +14,11 @@ on:
       start:
         description: 'Monday of the posting week, YYYY-MM-DD'
         required: true
+      channels:
+        description: 'Which account(s) to schedule to'
+        type: choice
+        default: 'all'
+        options: ['all', 'tiktok', 'instagram', 'facebook']
       dry_run:
         description: 'Validate and render only — schedule nothing'
         type: boolean
@@ -115,6 +120,7 @@ jobs:
           python3 scripts/publish.py \
             --week "${{ steps.cfg.outputs.week }}" \
             --start "${{ steps.cfg.outputs.start }}" \
+            --channels "${{ github.event.inputs.channels || 'all' }}" \
             ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }} \
             ${{ github.event.inputs.force  == 'true' && '--force'   || '' }}
 

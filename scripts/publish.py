@@ -13,6 +13,7 @@ Two media hosts, selected by config.json -> mediaHost:
             access level is set to Blob.
 
   python3 scripts/publish.py --week week1 --start 2026-08-10 [--dry-run]
+  python3 scripts/publish.py --week week1 --start 2026-08-10 --channels instagram
 """
 
 import argparse
@@ -140,17 +141,40 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--week", default="week1")
     ap.add_argument("--start", required=True, help="Monday of the posting week, YYYY-MM-DD")
+    ap.add_argument("--channels", default="all",
+                    help="comma-separated channel keys from config.json, or 'all'")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force", action="store_true")
     a = ap.parse_args()
+
+    known = {c["key"]: c for c in CONFIG["channels"]}
+    if a.channels.strip().lower() in ("", "all"):
+        channels = CONFIG["channels"]
+    else:
+        wanted = [k.strip() for k in a.channels.split(",") if k.strip()]
+        unknown = [k for k in wanted if k not in known]
+        if unknown:
+            sys.exit(f"unknown channel(s) {unknown} — config.json has {sorted(known)}")
+        channels = [known[k] for k in wanted]
 
     host = CONFIG["mediaHost"]
     content_dir = os.path.join(ROOT, "content", a.week)
     media_dir = os.path.join(ROOT, "media", a.week)
     receipt = os.path.join(content_dir, "SCHEDULED.json")
 
-    if os.path.exists(receipt) and not a.force and not a.dry_run:
-        sys.exit(f"content/{a.week}/SCHEDULED.json exists — already scheduled. Use --force.")
+    # The receipt records which channels a week was scheduled to, so a later run
+    # can add a channel that was left out without re-posting the ones already done.
+    prior = json.load(open(receipt)) if os.path.exists(receipt) else {"posts": []}
+    done = {p["channel"] for p in prior["posts"]}
+    if not a.force and not a.dry_run:
+        todo = [c for c in channels if c["key"] not in done]
+        if not todo:
+            sys.exit(f"content/{a.week}/SCHEDULED.json already covers "
+                     f"{sorted(c['key'] for c in channels)} — use --force.")
+        if len(todo) != len(channels):
+            print("already scheduled, skipping:",
+                  ", ".join(c["key"] for c in channels if c["key"] in done))
+        channels = todo
 
     specs = sorted(glob.glob(os.path.join(content_dir, "[0-9]*.json")))
     if not specs:
@@ -169,7 +193,8 @@ def main():
         for x in problems:
             print("  -", x)
         sys.exit(1)
-    print(f"validated {len(specs)} specs, media host = {host}")
+    print(f"validated {len(specs)} specs, media host = {host}, "
+          f"channels = {', '.join(c['key'] for c in channels)}")
 
     # 2. resolve media
     urls = {}
@@ -189,7 +214,7 @@ def main():
     if a.dry_run:
         for f in specs:
             post = os.path.splitext(os.path.basename(f))[0]
-            for i, c in enumerate(CONFIG["channels"]):
+            for c in channels:
                 day = start + timedelta(days=specs.index(f))
                 print(f"DRY  {post} -> {c['key']:<9} {day}T{c['time']} ({len(urls[post])} images)")
         print(f"\nfirst URL would be:\n  {urls[list(urls)[0]][0]}")
@@ -214,7 +239,7 @@ def main():
                        "altText": f"{alt} — slide {n} of {len(urls[post])}"}}}
                   for n, u in enumerate(urls[post], 1)]
 
-        for c in CONFIG["channels"]:
+        for c in channels:
             payload = {
                 "channelId": c["id"],
                 "mode": "customScheduled",
@@ -251,9 +276,10 @@ def main():
                             "dueAt": p["dueAt"], "status": p["status"]})
             print(f"scheduled {post} -> {c['key']:<9} {payload['dueAt']}  id={p['id']}")
 
+    kept = [p for p in prior["posts"] if p["channel"] not in {c["key"] for c in channels}]
     json.dump({"week": a.week, "start": a.start, "mediaHost": host,
                "scheduledAt": datetime.utcnow().isoformat() + "Z",
-               "posts": results}, open(receipt, "w"), indent=2)
+               "posts": kept + results}, open(receipt, "w"), indent=2)
     print(f"\n{len(results)} posts scheduled — receipt at content/{a.week}/SCHEDULED.json")
 
 
