@@ -1,0 +1,128 @@
+name: Generate next week's content
+
+# Claude Code writes the next week of carousels and commits them. The publish
+# workflow (05:15 UTC) then renders and schedules whatever is unscheduled, so
+# the two are each other's safety net.
+
+on:
+  workflow_dispatch:
+    inputs:
+      week:
+        description: 'Week folder to create (blank = next unused, e.g. week2)'
+        required: false
+      notes:
+        description: 'Optional steer for this batch, e.g. "lean into debt stories"'
+        required: false
+
+  schedule:
+    - cron: '30 3 * * 0'   # Sunday 03:30 UTC = 05:30 SAST, before publish
+
+concurrency:
+  group: generate
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Decide which week to write
+        id: cfg
+        run: |
+          WEEK="${{ github.event.inputs.week }}"
+          if [ -z "$WEEK" ]; then
+            N=$(ls -1d content/week* 2>/dev/null | sed 's/.*week//' | sort -n | tail -1)
+            N=${N:-0}
+            WEEK="week$((N + 1))"
+          fi
+          if [ -d "content/$WEEK" ]; then
+            echo "content/$WEEK already exists — nothing to do"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo "week=$WEEK" >> "$GITHUB_OUTPUT"
+          echo "Writing content/$WEEK"
+
+      - name: Write the week with Claude Code
+        if: steps.cfg.outputs.skip != 'true'
+        uses: anthropics/claude-code-action@v1
+        env:
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          claude_args: '--allowedTools "Read,Write,Edit,Glob,Grep,Bash(python3 *),Bash(ls *),Bash(cat *),Bash(curl *)"'
+          prompt: |
+            Write the next week of Beyond Horizon carousels into
+            content/${{ steps.cfg.outputs.week }}/ as seven files named
+            01_mon.json through 07_sun.json.
+
+            Read CLAUDE.md first — it has the format, the hard rules and the
+            gotchas. Then read docs/writing/carousel-format.md,
+            docs/writing/brand.md and docs/writing/format-playbook.md for the
+            voice and the performance evidence. Use content/week1/ as a worked
+            example of the exact JSON shape.
+
+            Before writing, read every existing content/week*/*.json and list the
+            personas, cities, income levels and content wells already used. Do
+            not repeat any of them. Vary income level, life stage and content
+            well deliberately across the seven days, and skew below R40 000 —
+            lower incomes perform materially better in this niche.
+
+            If BUFFER_ACCESS_TOKEN is set, query https://api.buffer.com
+            (Authorization: Bearer $BUFFER_ACCESS_TOKEN, POST GraphQL) for the
+            metrics on recently sent posts, and let what actually performed
+            steer this week's angles. If that fails, carry on without it — it is
+            a nice-to-have, not a blocker.
+
+            The single most important rule: for each post the "line" slide
+            amounts must sum EXACTLY to income minus the reckoning amount.
+            Verify with python3, not mentally.
+
+            When all seven are written, run:
+              python3 scripts/validate.py content/${{ steps.cfg.outputs.week }}
+            and fix anything it reports until it passes with zero problems. Do
+            not stop until it passes. Do not commit — a later step does that.
+
+            ${{ github.event.inputs.notes }}
+
+      - name: Validate before committing
+        if: steps.cfg.outputs.skip != 'true'
+        run: python3 scripts/validate.py "content/${{ steps.cfg.outputs.week }}"
+
+      - name: Commit the week
+        if: steps.cfg.outputs.skip != 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "content/${{ steps.cfg.outputs.week }}"
+          git diff --cached --quiet && { echo "nothing written"; exit 1; }
+          git commit -m "Write content/${{ steps.cfg.outputs.week }}"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Summary
+        if: steps.cfg.outputs.skip != 'true'
+        run: |
+          python3 - "content/${{ steps.cfg.outputs.week }}" >> "$GITHUB_STEP_SUMMARY" <<'PY'
+          import glob, json, os, sys
+          d = sys.argv[1]
+          print(f"### Wrote {d}\n")
+          print("| File | Net income | Hook |")
+          print("|---|---|---|")
+          for f in sorted(glob.glob(os.path.join(d, "[0-9]*.json"))):
+              s = json.load(open(f))
+              hook = next(x for x in s["slides"] if x.get("kind") == "hook")["title"]
+              inc = f"R{s['income']:,}".replace(",", " ")
+              print(f"| `{os.path.basename(f)}` | {inc} | {hook.replace(chr(10), ' ')} |")
+          PY
