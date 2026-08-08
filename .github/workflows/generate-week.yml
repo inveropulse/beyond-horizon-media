@@ -54,6 +54,21 @@ jobs:
           echo "week=$WEEK" >> "$GITHUB_OUTPUT"
           echo "Writing content/$WEEK"
 
+      - name: Plan the topic mix
+        id: plan
+        if: steps.cfg.outputs.skip != 'true'
+        env:
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+          AZURE_ACCOUNT: ${{ secrets.AZURE_ACCOUNT }}
+          AZURE_TABLE_SAS: ${{ secrets.AZURE_TABLE_SAS }}
+        run: |
+          python3 scripts/performance.py --ingest --show
+          {
+            echo 'assignment<<PLAN_EOF'
+            python3 scripts/performance.py --plan
+            echo PLAN_EOF
+          } >> "$GITHUB_OUTPUT"
+
       - name: Write the week with Claude Code
         if: steps.cfg.outputs.skip != 'true'
         uses: anthropics/claude-code-action@v1
@@ -85,11 +100,16 @@ jobs:
             well deliberately across the seven days, and skew below R40 000 —
             lower incomes perform materially better in this niche.
 
-            If BUFFER_ACCESS_TOKEN is set, query https://api.buffer.com
-            (Authorization: Bearer $BUFFER_ACCESS_TOKEN, POST GraphQL) for the
-            metrics on recently sent posts, and let what actually performed
-            steer this week's angles. If that fails, carry on without it — it is
-            a nice-to-have, not a blocker.
+            Each day has an assigned content well. Write that day's post in that
+            well and no other — the assignment is measured, not a suggestion:
+
+            ${{ steps.plan.outputs.assignment }}
+
+            The wells are defined in
+            .claude/skills/beyond-horizon-carousels/references/format-playbook.md.
+            Set the matching "well" value in each spec's JSON. Four days share a
+            well and two share another, so vary persona, city, income and hook
+            hard within them — same topic must not mean same post.
 
             The single most important rule: for each post the "line" slide
             amounts must sum EXACTLY to income minus the reckoning amount.

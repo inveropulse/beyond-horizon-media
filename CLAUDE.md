@@ -50,6 +50,11 @@ level (skew below R40k — it performs better), life stage, and content well. Do
 not reuse a persona, city or hook that appears in any recent `content/week*/`
 file. Read them before writing.
 
+**Every spec needs a `well`** — one of the ten slugs in `scripts/wells.py`. It is
+how a post's performance is attributed to a topic, and `validate.py` rejects
+anything unknown. When the generator assigns you a well for a day, write in that
+well; vary persona, city, income and hook instead.
+
 **Always include** at least one number the persona is not proud of, and the
 lines most budget content omits — black tax, stokvel, funeral policy. They are
 the strongest authenticity signals in this niche.
