@@ -4,3 +4,4 @@ __pycache__/
 ci/
 docs/writing/
 node_modules/
+media/
