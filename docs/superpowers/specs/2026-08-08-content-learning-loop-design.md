@@ -1,7 +1,10 @@
 # Content learning loop — design
 
 Date: 2026-08-08
-Status: approved, not yet implemented
+Status: implemented on branch `feat/content-learning-loop`. The shipped code
+(`scripts/performance.py`, `scripts/wells.py`, `.github/workflows/generate-week.yml`)
+is the authority; this document is the design record and has been reconciled
+with what actually shipped.
 
 ## Problem
 
@@ -56,12 +59,31 @@ anonymous access mode, so constraint 2 cannot recur here.
 | `channel` | string | `tiktok` / `instagram` / `facebook` |
 | `day` | string | spec basename, e.g. `01_mon` |
 | `dueAt` | string | ISO 8601 |
-| `impressions` | int | may be absent; see "Missing metrics" |
+| `reach` | int | unique people; may be absent, see "Missing metrics" |
+| `views` | int | video watches; TikTok/IG only |
 | `reactions` | int | |
 | `comments` | int | |
 | `shares` | int | |
-| `engagementRate` | double | `(reactions + comments + shares) / impressions` |
-| `updatedAt` | string | ISO 8601, when the row was last refreshed |
+| `engagementRate` | double | Buffer's own, as a percentage |
+| `updatedAt` | string | ISO 8601, Buffer's `metricsUpdatedAt` |
+
+**Verified against the live API, 2026-08-08.** Buffer returns `metrics` as an
+array of `PostMetric` objects, not an object of named fields. `PostMetric` has
+five fields: `description`, `name`, `type`, `unit`, `value`. `type` is the
+`PostMetricType` enum, which has sixteen values: `clicks`, `comments`,
+`engagementRate`, `follows`, `impressions`, `likes`, `postCount`, `quotes`,
+`reach`, `reactions`, `reposts`, `saves`, `shares`, `totalTimeWatched`,
+`viewers`, `views`. We store the six above. `impressions` exists but is not what
+we rank on: `reach` (unique accounts) is the denominator `engagementRate` is
+built from, whereas `impressions` counts repeat views and inflates with feed
+churn rather than audience. Any given type may be absent for a channel that has
+no concept of it, and `metrics` itself is nullable.
+
+Buffer computes `engagementRate` itself, normalised per platform, so we store and
+rank on theirs rather than deriving our own — a locally-computed
+`engaged / reach` would use a denominator that means something different on each
+channel. Where Buffer omits it, fall back to
+`(reactions + comments + shares) / reach`.
 
 **No aggregate table.** Well rankings are computed in memory from these rows on
 every run. At 21 posts/week that is ~1 100 rows after a year — a trivial scan,
@@ -119,7 +141,9 @@ off a readable file in the repo.
 ### 3. Workflow wiring
 
 `generate-week.yml` runs `performance.py` before the Claude step, with
-`AZURE_ACCOUNT` and `AZURE_TABLE_SAS` in the environment. The computed plan is
+`AZURE_ACCOUNT`, `AZURE_TABLE_SAS` **and `BUFFER_ACCESS_TOKEN`** in the
+environment — the same step also runs `--ingest`, which reads post metrics from
+Buffer and therefore needs the Buffer credential too. The computed plan is
 passed into the prompt as an explicit per-day well assignment. No ledger commit
 step — nothing performance-related enters the repo.
 
@@ -139,9 +163,10 @@ mix.
 
 ### Ranking rules
 
-- **Metric:** mean engagement rate, `(reactions + comments + shares) /
-  impressions`. Scale-free, so a TikTok post and a Facebook post are comparable
-  and one viral outlier does not dominate a well's average.
+- **Metric:** mean engagement rate — Buffer's own `engagementRate` percentage,
+  falling back to `100 * (reactions + comments + shares) / reach` where Buffer
+  omits it. Scale-free, so a TikTok post and a Facebook post are comparable and
+  one viral outlier does not dominate a well's average.
 - **Minimum sample:** a well needs **≥3 posts with usable metrics** before it can
   be champion or challenger. Below that it is "unproven" and ranked by the
   playbook's prior order instead. This is the main defence against locking onto a
@@ -150,7 +175,12 @@ mix.
   playbook prior — `salary-breakdown`, then `household-budget`.
 - **Explore slot:** prefer a well never tried. Once all ten have been tried,
   rotate to least-recently-used, so the system keeps re-testing rather than
-  freezing on early winners.
+  freezing on early winners. The candidate pool **excludes the champion and the
+  challenger** — otherwise one topic could take five of seven days and a capped
+  well could blow past its cap. "Least recently used" means least recently
+  *posted* (`dueAt`), not least recently metrics-refreshed (`updatedAt`):
+  `--ingest` re-upserts every past week on every run, so `updatedAt` converges
+  and the rotation would freeze on it.
 
 ### Editorial caps
 
@@ -168,9 +198,18 @@ These caps are domain knowledge the metric cannot see, and removing them means
 trusting engagement rate as a complete proxy for audience quality, which it is
 not.
 
+### Only sent posts count
+
+Buffer returns a full metrics array of zeros for posts that are merely
+*scheduled*, with `metricsUpdatedAt` populated — indistinguishable in shape from
+a real result. Ingest must therefore filter on `status == "sent"`. Without that
+filter the 42 posts currently scheduled would each score 0%, and every well would
+look dead. This is the single most dangerous failure mode in the design, because
+it produces plausible numbers rather than an error.
+
 ### Missing metrics
 
-A post with absent or zero impressions yields no engagement rate. Such posts are
+A sent post with absent or zero `reach` yields no engagement rate. Such posts are
 stored (so the row exists and refreshes later) but excluded from rollups and from
 sample counts. A post sent yesterday whose metrics have not landed must not drag
 a well's average toward zero.
@@ -218,8 +257,12 @@ runs offline with no credentials:
 4. Explore slot — never assigns an already-tried well while untried ones remain;
    falls back to least-recently-used once all are tried.
 5. Editorial caps — `ranking-listicle` never exceeds 1 day even when ranked top.
-6. Rollup arithmetic — engagement rate computed correctly; zero-impression posts
-   excluded from both the mean and the sample count.
+6. Rollup arithmetic — engagement rate computed correctly; posts with no usable
+   denominator excluded from both the mean and the sample count. The code keys
+   that on `reach`, not impressions: a post with `reach <= 0` and no
+   `engagementRate` of Buffer's own is unscoreable, and "unscoreable" stays
+   distinct from "scored zero" so metrics that have not landed yet cannot drag
+   a well's average toward zero.
 
 ## Setup required before this does anything
 
@@ -246,3 +289,9 @@ data may show most posts clustered in one or two wells. If the backfill shows
 fewer than three wells represented, the first few "champions" will be decided by
 a very thin field, and the prior may be the better guide for longer than two
 weeks. Worth re-checking once the backfill is done.
+
+Relatedly: convergence is slow by construction. In simulation the ranking takes
+roughly 23 weeks to settle, because a well needs three scoreable posts before it
+can lead and only one new well is tried per week. Slow early progress is the
+design working, not a fault — resist the urge to lower `MIN_SAMPLE` or widen the
+explore slot on the strength of the first month.

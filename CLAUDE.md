@@ -46,9 +46,14 @@ a 268-post sample in this exact niche.
 slide → reckoning → close.
 
 **Variety across the week** matters as much as any single post. Vary income
-level (skew below R40k — it performs better), life stage, and content well. Do
+level (skew below R40k — it performs better) and life stage. Do
 not reuse a persona, city or hook that appears in any recent `content/week*/`
 file. Read them before writing.
+
+**Every spec needs a `well`** — one of the ten slugs in `scripts/wells.py`. It is
+how a post's performance is attributed to a topic, and `validate.py` rejects
+anything unknown. When the generator assigns you a well for a day, write in that
+well; vary persona, city, income and hook instead.
 
 **Always include** at least one number the persona is not proud of, and the
 lines most budget content omits — black tax, stokvel, funeral policy. They are
@@ -70,10 +75,16 @@ reconciles.
 
 ## Checking what performed
 
-Buffer's GraphQL API is at `https://api.buffer.com` with
+During a generation run, the per-day well assignment in the prompt already
+encodes what performed — it comes from `scripts/performance.py`, which reads
+measured Buffer engagement. Do not separately query Buffer for angles during
+generation; write within the assigned well instead.
+
+The manual check below is for a human session, not something to run as part of
+generating a week. Buffer's GraphQL API is at `https://api.buffer.com` with
 `Authorization: Bearer $BUFFER_ACCESS_TOKEN`. Use `get_aggregated_post_metrics`
-or query posts with `includeMetrics` to see which hooks and income bands landed,
-and let that steer the next week's angles.
+or query posts with `includeMetrics` to see which hooks and income bands
+landed.
 
 ## Skills in this repo
 

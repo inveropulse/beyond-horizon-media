@@ -19,7 +19,7 @@ Read `references/brand.md` before writing — it has the product facts, the voic
 
 ## Workflow
 
-**1. Establish the brief.** You need a subject (a salary level, a life event, a debt situation, a spending category) and a persona. If the user gave you a vague ask ("posts for this week"), propose 3–5 concrete angles and let them pick rather than guessing. Pull from the content wells in `references/format-playbook.md` — there are more than enough there for months of posting.
+**1. Establish the brief.** You need a subject (a salary level, a life event, a debt situation, a spending category) and a persona. If the user gave you a vague ask ("posts for this week"), propose 3–5 concrete angles and let them pick rather than guessing. When you are choosing the topic yourself, pull from the content wells in `references/format-playbook.md` — there are more than enough there for months of posting. **If a content well has already been assigned to the day you are writing** (the automated weekly run supplies a per-day `day=well` assignment from measured engagement), that assignment overrides this step: write in the well you were given and use the playbook only to understand what that well means editorially.
 
 **2. Build the numbers before the words.** This is the step that's tempting to skip and shouldn't be. Write out the persona's full monthly budget as a table: income, every line item, what's left. Make it add up. South African readers will do the arithmetic in the comments, and a carousel where the numbers don't reconcile gets torn apart — which is engagement, but the wrong kind. Ground the figures in real SA costs (see the cost reference in `references/format-playbook.md`); rent in Sandton is not rent in Polokwane.
 
@@ -96,6 +96,8 @@ These aren't legal boilerplate — getting them wrong creates real problems for 
 
 ## Working in batches
 
-For a week or month of content, vary three axes deliberately so the feed doesn't read as one post repeated: **income level** (mix below and above R40k — lower incomes are more relatable and tend to travel further), **life stage** (single, couple, family, student, retiree), and **content well** (don't post three salary breakdowns in a row).
+For a week or month of content, vary three axes deliberately so the feed doesn't read as one post repeated: **income level** (mix below and above R40k — lower incomes are more relatable and tend to travel further), **life stage** (single, couple, family, student, retiree), and — **when you are choosing the topics yourself** — **content well** (don't post three salary breakdowns in a row).
 
-Keep a running list of personas used so figures stay consistent if one recurs. If the user posts daily, batching 15–20 at a time is realistic; propose a posting order that alternates wells.
+**When a per-day well assignment is supplied, honour it exactly and do not vary the well.** The automated weekly run assigns wells from measured engagement (`python3 scripts/performance.py --plan`), deliberately concentrating four days on the best-performing well and two on a challenger, and `scripts/validate.py` checks each spec's `well` against that vocabulary. Four salary breakdowns in a week is then the correct output, not a mistake. Vary **persona, city, income level and hook** hard instead — same well must never mean same post.
+
+Keep a running list of personas used so figures stay consistent if one recurs. If the user posts daily, batching 15–20 at a time is realistic; when you are picking the topics yourself, propose a posting order that alternates wells.
