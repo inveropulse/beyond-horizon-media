@@ -65,3 +65,40 @@ def upsert_row(entity):
     pk, rk = entity["PartitionKey"], entity["RowKey"]
     url = f"{table_url()}(PartitionKey='{pk}',RowKey='{rk}')?{_sas()}"
     _request(url, method="MERGE", body=json.dumps(entity).encode())
+
+
+def engagement_rate(row):
+    """Percentage. None when the post cannot be scored.
+
+    Buffer computes engagementRate itself, normalised per platform, so prefer
+    theirs — a local engaged/reach uses a denominator meaning something different
+    on each channel. Fall back to computing it only where Buffer omits it.
+
+    A post whose numbers have not landed yet must not drag its well's average
+    toward zero, so 'unscoreable' and 'scored zero' stay distinct.
+    """
+    own = row.get("engagementRate")
+    if own is not None:
+        return float(own)
+    reach = row.get("reach") or 0
+    if reach <= 0:
+        return None
+    engaged = (row.get("reactions") or 0) + (row.get("comments") or 0) + (row.get("shares") or 0)
+    return 100.0 * engaged / reach
+
+
+def rollup(rows):
+    """well -> {rate: mean engagement, n: scoreable posts, last: newest updatedAt}."""
+    acc = {}
+    for row in rows:
+        well = row.get("well")
+        if not well:
+            continue
+        slot = acc.setdefault(well, {"rates": [], "last": ""})
+        slot["last"] = max(slot["last"], row.get("updatedAt") or "")
+        rate = engagement_rate(row)
+        if rate is not None:
+            slot["rates"].append(rate)
+    return {w: {"rate": sum(s["rates"]) / len(s["rates"]) if s["rates"] else 0.0,
+                "n": len(s["rates"]), "last": s["last"]}
+            for w, s in acc.items()}

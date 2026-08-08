@@ -91,6 +91,40 @@ def test_fetch_rows_swallows_a_stalled_read_timeout():
         del os.environ["AZURE_ACCOUNT"], os.environ["AZURE_TABLE_SAS"]
 
 
+def _row(well, reach, reactions=0, comments=0, shares=0, rate=None,
+         updated="2026-08-20"):
+    row = {"PartitionKey": "week1", "RowKey": f"{well}{reach}{reactions}",
+           "well": well, "reach": reach, "reactions": reactions,
+           "comments": comments, "shares": shares, "updatedAt": updated}
+    if rate is not None:
+        row["engagementRate"] = rate
+    return row
+
+
+def test_engagement_rate_prefers_buffers_own():
+    """Buffer computes this per platform; ours is only a fallback."""
+    assert performance.engagement_rate(_row("money-leak", 100, 5, rate=7.5)) == 7.5
+
+
+def test_engagement_rate_falls_back_to_computed():
+    # (5 + 3 + 2) / 100 = 10%
+    assert performance.engagement_rate(_row("money-leak", 100, 5, 3, 2)) == 10.0
+    assert performance.engagement_rate(_row("money-leak", 0, 5)) is None, \
+        "zero reach has no rate"
+    assert performance.engagement_rate({"well": "money-leak"}) is None, \
+        "absent metrics have no rate"
+
+
+def test_rollup_excludes_unusable_posts():
+    rows = [_row("money-leak", 100, 10),      # 10.0
+            _row("money-leak", 100, 20),      # 20.0
+            _row("money-leak", 0, 999)]       # no rate, must not count
+    out = performance.rollup(rows)
+    assert out["money-leak"]["n"] == 2, "zero-reach post must not count toward n"
+    assert abs(out["money-leak"]["rate"] - 15.0) < 1e-9, \
+        f"mean should be 15.0, got {out['money-leak']['rate']}"
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_") and callable(fn):
