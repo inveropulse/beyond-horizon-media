@@ -1,0 +1,84 @@
+{
+  "income": 22800,
+  "audio": "bed_03.wav",
+  "caption": "I still grocery shop like there are two of us. Does that ever stop, or do you just get used to the leftovers?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#livingcostsSA",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R22 800\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Vanderbijlpark",
+      "body": "Female, 52\nWidow, living alone since last year\nJob: HR clerk, ArcelorMittal\nNet salary: R22 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R6 500 p/m",
+      "includes": "The house we bought together, now paid by me alone",
+      "body": "It was always going to be my name eventually. I didn't expect it to be this soon."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R2 800 p/m",
+      "includes": "Still driving his bakkie, couldn't bring myself to sell it",
+      "body": "I don't need it. I'm keeping it anyway."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R2 400 p/m",
+      "includes": "Just my own plan now, downgraded from the family option",
+      "body": "The paperwork to change it took longer than I expected. Everything admin-related did."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 900 p/m",
+      "includes": "Pick n Pay, still buying two of everything half the time",
+      "body": "I catch myself reaching for his brand of coffee most weeks."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral policy",
+      "amount": "R550 p/m",
+      "includes": "Increased mine after his passing, added a small one for my son too",
+      "body": "Wasn't planning on thinking about this again so soon. Did it anyway."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 550 p/m",
+      "includes": "Electricity, phone & fibre, petrol, a stokvel I kept up even this year, savings I've started again",
+      "body": "Rebuilding this part slowly. Some months better than others."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 100",
+      "body": "Out of R22 800. On paper there's more room now than there used to be. It doesn't feel that way."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what the house actually costs alone",
+      "body": "I uploaded a year of statements to Beyond Horizon to see what changed since it became just me.\n\nGroceries barely dropped. Everything else did.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

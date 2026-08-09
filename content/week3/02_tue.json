@@ -1,0 +1,84 @@
+{
+  "income": 38500,
+  "audio": "bed_02.wav",
+  "caption": "Three kids between us and a maintenance payment neither of us says out loud at dinner. Does blending finances get easier, or do you just get used to it?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#blendedfamilysa",
+    "#budgeting",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R38 500\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Richards Bay",
+      "body": "Him 38, her 35\nBlended family, three kids between us\nJobs: Boilermaker at the smelter & admin clerk\nCombined net: R38 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R9 500 p/m",
+      "includes": "3 bed, bought before we got together, now home to all three kids",
+      "body": "He owned it first. My name went on it the year we moved in properly."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 800 p/m",
+      "includes": "Feeding five most weeks, three every other weekend",
+      "body": "The trolley changes size depending on whose custody weekend it is."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 200 p/m",
+      "includes": "Bakkie for his shift changeovers at the smelter",
+      "body": "Non-negotiable when the shift starts at 5am and the taxis haven't."
+    },
+    {
+      "kind": "line",
+      "title": "School fees & stationery",
+      "amount": "R3 900 p/m",
+      "includes": "Three kids across two schools",
+      "body": "Two school terms, two uniform lists, one budget that pretends it's one family."
+    },
+    {
+      "kind": "line",
+      "title": "Maintenance to his ex",
+      "amount": "R2 500 p/m",
+      "includes": "Goes to his two kids' mother every month, on top of what they cost here",
+      "body": "Nobody posts this line. It's real and it's not going anywhere."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R13 400 p/m",
+      "includes": "Electricity, medical aid for three kids, petrol, phone & fibre, funeral policy, a stokvel we can't miss a month on, savings",
+      "body": "Eight small debit orders between two households. We only added them up properly for this."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 200",
+      "body": "Out of R38 500, across five people some weekends and three the rest of the time. Thinner than either of our old single budgets."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped assuming our numbers matched",
+      "body": "We uploaded both our statements to Beyond Horizon and split the categories properly for the first time.\n\nThe maintenance line had never been in either of our old budgets — now it's just a line, not a surprise.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

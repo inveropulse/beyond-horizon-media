@@ -1,0 +1,84 @@
+{
+  "income": 13800,
+  "audio": "bed_01.wav",
+  "caption": "Some months it's R18 000, some months it's R9 000, and this was one of the thin ones. Whose income never looks the same twice?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#selfemployedsa",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R13 800\np/m income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Soweto",
+      "body": "Female, 24\nSingle, renting a room from her aunt\nJob: Hairdresser, rents a chair\nNet income: R13 800 p/m (this month)"
+    },
+    {
+      "kind": "line",
+      "title": "Chair rental",
+      "amount": "R2 200 p/m",
+      "includes": "Booth rent at the salon, paid whether I have clients or not",
+      "body": "It comes out first, before I know what the month even looks like."
+    },
+    {
+      "kind": "line",
+      "title": "Room rent",
+      "amount": "R2 500 p/m",
+      "includes": "One room in my aunt's house in Soweto, water and lights included",
+      "body": "Cheaper than my own place, and I still hand over half of it some weeks without blinking."
+    },
+    {
+      "kind": "line",
+      "title": "Stock",
+      "amount": "R2 800 p/m",
+      "includes": "Relaxer, weaves, colour, bought from my own pocket before I earn a cent back",
+      "body": "I over-bought last month and I'm still working through it. Bad month for stock, worse month for cash flow."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R900 p/m",
+      "includes": "To the salon and to the wholesalers for stock runs",
+      "body": "No car yet. This is the one that surprises people most."
+    },
+    {
+      "kind": "line",
+      "title": "Stokvel",
+      "amount": "R500 p/m",
+      "includes": "Twelve of us, payout comes round every December",
+      "body": "Non-negotiable. I've missed rent before I've missed this."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R4 000 p/m",
+      "includes": "Airtime & data, electricity, groceries, funeral policy, takeaways, product touch-ups between clients",
+      "body": "Six small things I never add up in one sitting. Together they're almost a third of what I bring in."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R900",
+      "body": "Out of R13 800 this month. Last month it was closer to R17 000. I never know which one I'm getting until it's over."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing between good months and bad ones",
+      "body": "I upload my banking app statement to Beyond Horizon every month now, even the thin ones.\n\nSeeing the stock spend against the quiet weeks finally made sense of why some months feel impossible.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

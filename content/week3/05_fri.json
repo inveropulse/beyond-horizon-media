@@ -1,0 +1,84 @@
+{
+  "income": 19500,
+  "audio": "bed_02.wav",
+  "caption": "Two gym memberships since March and I only just caught it. What's quietly leaving your account right now?",
+  "hashtags": [
+    "#southafrica",
+    "#moneyleakssa",
+    "#salary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R19 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Upington",
+      "body": "Female, 27\nSingle, lives alone\nJob: Traffic officer, metro police\nNet salary: R19 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 200 p/m",
+      "includes": "1 bed, small-town rent is the one thing that doesn't stress me here",
+      "body": "This is the cheapest part of living out here. Everything else makes up for it."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R2 900 p/m",
+      "includes": "Have to have my own car for shift changeovers",
+      "body": "The job doesn't run on taxi hours. Neither does my car payment."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 600 p/m",
+      "includes": "Shoprite, plus the Spar top-ups when I'm working late",
+      "body": "Small town, big grocery bill. Nobody warns you about that trade."
+    },
+    {
+      "kind": "line",
+      "title": "Forgotten subscriptions & debit orders",
+      "amount": "R1 150 p/m",
+      "includes": "A gym I haven't been to since March, a doubled data bundle, an insurance add-on I never cancelled",
+      "body": "Found out about the second gym membership by accident. Cancelled it the same day, still annoyed about it."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral policy",
+      "amount": "R380 p/m",
+      "includes": "My own, plus a small top-up for my gran",
+      "body": "Cheapest line on this list and the one I'd never cut."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 270 p/m",
+      "includes": "Medical aid, electricity, phone & data, savings, a stokvel with the girls I trained with",
+      "body": "Once the leaks came out, this line finally looked like what it should."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 000",
+      "body": "Out of R19 500. More than I expected once the leaks were gone."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped paying for things I'd forgotten about",
+      "body": "Beyond Horizon flagged the second gym membership as a recurring charge before I'd even noticed it myself.\n\nCancelling it put R450 back in the account every single month.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

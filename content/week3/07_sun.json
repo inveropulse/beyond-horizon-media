@@ -1,0 +1,84 @@
+{
+  "income": 61500,
+  "audio": "bed_01.wav",
+  "caption": "R61 500 between us and people assume that means loose money. It doesn't. Is a bigger combined income actually easier to manage, or just easier to hide behind?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#couplebudget",
+    "#salary",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R61 500\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Ballito",
+      "body": "Him 36, her 34\nMarried, no kids\nJobs: Structural engineer & physiotherapist\nCombined net: R61 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R14 500 p/m",
+      "includes": "New build, moved up from Durban for the beach lifestyle",
+      "body": "The commute got longer. Neither of us minds enough to move back."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R6 200 p/m",
+      "includes": "Woolies more than either of us will admit to, plus the weekly padkos habit",
+      "body": "We could easily spend a third less here. We've just never had to."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalments",
+      "amount": "R7 800 p/m",
+      "includes": "Two cars, for two people who both work from home three days a week",
+      "body": "We know. We've had this conversation and bought the second car anyway."
+    },
+    {
+      "kind": "line",
+      "title": "Retirement annuity & TFSA",
+      "amount": "R6 500 p/m",
+      "includes": "Both of us contribute, split roughly down the middle",
+      "body": "Not saving as much as the internet says we should. We've made peace with that."
+    },
+    {
+      "kind": "line",
+      "title": "Domestic worker & garden service",
+      "amount": "R3 200 p/m",
+      "includes": "Twice a week each, non-negotiable with both of us working full time",
+      "body": "The one line where more money genuinely bought us back time."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R18 500 p/m",
+      "includes": "Medical aid, both car insurances, electricity, fibre & phones, gym, holiday savings, TFSA top-ups, funeral policies",
+      "body": "Nine small line items between two people who both earn well. Still adds up faster than either of us expects."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R4 800",
+      "body": "Out of R61 500 between us. Most people assume Ballito money means loose money. It doesn't."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped assuming a bigger income meant a bigger cushion",
+      "body": "We put both our statements into Beyond Horizon and split the budget by category instead of by guesswork.\n\nThe two car instalments next to each other were the number that actually made us pause.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

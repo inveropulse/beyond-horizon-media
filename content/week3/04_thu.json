@@ -1,0 +1,84 @@
+{
+  "income": 27500,
+  "audio": "bed_01.wav",
+  "caption": "Fourteen months left on a loan I took out just to get through the divorce. Would you have done it differently?",
+  "hashtags": [
+    "#southafrica",
+    "#debt",
+    "#singledadsa",
+    "#debtfreesa",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R27 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in George",
+      "body": "Male, 34\nSingle dad, one son (7) lives with him full time\nJob: Diesel mechanic, logistics depot\nNet salary: R27 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R7 800 p/m",
+      "includes": "2 bed in Blanco, needed the extra room once he moved in with me full time",
+      "body": "One bedroom would have been cheaper. It wasn't really an option."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 600 p/m",
+      "includes": "Bakkie, needed something reliable once I was doing school runs alone",
+      "body": "Can't be the parent whose car doesn't start on a Monday."
+    },
+    {
+      "kind": "line",
+      "title": "Personal loan",
+      "amount": "R1 700 p/m",
+      "includes": "R21 000 taken out for legal fees during the custody process, 14 months left",
+      "body": "I don't love that a custody fight is still costing me monthly. I'd do it again."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries & school lunches",
+      "amount": "R3 200 p/m",
+      "includes": "Shoprite run, plus the lunchbox stuff that runs out faster than the trolley suggests",
+      "body": "He's seven. He eats like he's seventeen."
+    },
+    {
+      "kind": "line",
+      "title": "Aftercare & school fees",
+      "amount": "R2 900 p/m",
+      "includes": "Aftercare until I'm off shift, plus the school's extras",
+      "body": "The aftercare bill is basically a second rent."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R7 200 p/m",
+      "includes": "Medical aid, electricity, phone, insurance, funeral policy, savings, and the loan interest on top of the instalment",
+      "body": "This is where the loan actually bites — the interest is buried in here, not in the line above."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 100",
+      "body": "Out of R27 500. Once the loan's done in fourteen months this gets a lot less tight."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped ignoring the loan repayment date",
+      "body": "I added the personal loan to Beyond Horizon's debt tracker and watched the payoff date for the first time.\n\nFourteen months left. Seeing it counted down made it feel like it's actually ending.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

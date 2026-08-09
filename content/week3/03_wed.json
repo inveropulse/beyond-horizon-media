@@ -1,0 +1,84 @@
+{
+  "income": 9200,
+  "audio": "bed_03.wav",
+  "caption": "NSFAS covers the big stuff. Nobody warns you about the printing. What's the cost that caught you out first year?",
+  "hashtags": [
+    "#southafrica",
+    "#studentbudgetsa",
+    "#spendingbreakdown",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R9 200\np/m income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Potchefstroom",
+      "body": "Female, 21\nSingle, university student\nNSFAS allowance + part-time retail job\nNet income: R9 200 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Res top-up",
+      "amount": "R2 800 p/m",
+      "includes": "NSFAS covers most of it, this is what's left to pay myself",
+      "body": "The allowance is generous. It still doesn't cover all of it."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R1 400 p/m",
+      "includes": "Res kitchen, mostly instant meals and Sunday cooking",
+      "body": "I eat well exactly one day a week, and it's not by accident."
+    },
+    {
+      "kind": "line",
+      "title": "Data & wifi",
+      "amount": "R650 p/m",
+      "includes": "Online modules, group project calls, the res wifi that drops during load shedding",
+      "body": "Non-negotiable. My degree runs on data more than it runs on textbooks."
+    },
+    {
+      "kind": "line",
+      "title": "Textbooks & printing",
+      "amount": "R500 p/m",
+      "includes": "Secondhand textbooks, printing readings I forget to budget for",
+      "body": "I've never once budgeted enough for printing. Every single semester."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R550 p/m",
+      "includes": "Home for holidays, the odd trip into town for groceries",
+      "body": "Campus is walkable. Home for the holidays isn't."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 700 p/m",
+      "includes": "Toiletries, the odd meal deal, a small amount home to my younger sister, a stokvel with my res friends, my mom's insistence on a funeral policy",
+      "body": "Small things, but there are a lot of them for a student income."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R600",
+      "body": "Out of R9 200. That's tight, but it's mine, and I've never once run out before month end."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped losing track between allowance drops",
+      "body": "I upload my statement to Beyond Horizon the day the NSFAS allowance lands.\n\nThe printing costs were the thing I never once accounted for until I could actually see them.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
