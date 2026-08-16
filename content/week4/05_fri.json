@@ -1,0 +1,84 @@
+{
+  "income": 34500,
+  "audio": "bed_02.wav",
+  "caption": "R2 100 on the generator this month, more than we spent on medical aid. Is load shedding costing you more than you've actually added up?",
+  "hashtags": [
+    "#southafrica",
+    "#budgeting",
+    "#loadsheddingsa",
+    "#spendingbreakdown",
+    "#money"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R34 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Mthatha",
+      "body": "Male, 30\nMarried, no kids yet\nJob: Municipal town planner\nNet salary: R34 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R8 200 p/m",
+      "includes": "3 bed in Mthatha, rates included",
+      "body": "We bought two years ago. The bond hasn't moved as much as everything around it has."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 200 p/m",
+      "includes": "Big monthly shop, plus the load shedding stockpile of non-perishables",
+      "body": "We buy more tinned food than we used to. It's cheaper than losing a freezer full of meat."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 800 p/m",
+      "includes": "2022 Hilux, 33 months left",
+      "body": "Bought before the fuel price moved twice. I'd think harder about it now."
+    },
+    {
+      "kind": "line",
+      "title": "Generator fuel & maintenance",
+      "amount": "R2 100 p/m",
+      "includes": "Petrol for the generator, a service after eight months of daily use",
+      "body": "I didn't budget for this at all a year ago. Now it's just a line item."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways during outages",
+      "amount": "R1 200 p/m",
+      "includes": "The nights the stove's off for six hours and we give up on cooking",
+      "body": "We told each other it was maybe R500. It's R1 200. Load shedding makes you buy things."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R13 600 p/m",
+      "includes": "Medical aid, petrol, phone & fibre, funeral policy, stokvel, insurance, savings",
+      "body": "Thirteen thousand six hundred rand of things that run whether or not the power does."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 400",
+      "body": "Out of R34 500. On paper this is a comfortable salary. The generator line makes it feel less comfortable than it used to."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what load shedding was actually costing us",
+      "body": "I uploaded three months of statements to Beyond Horizon and watched the generator fuel line grow month on month.\n\nR2 100 this month, more than we spend on medical aid.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

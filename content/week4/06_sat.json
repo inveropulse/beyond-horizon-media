@@ -1,0 +1,84 @@
+{
+  "income": 38700,
+  "audio": "bed_03.wav",
+  "caption": "R7 000 a month toward lobola on top of what I send my parents. Anyone else saving for two futures at once?",
+  "hashtags": [
+    "#southafrica",
+    "#family",
+    "#blacktaxsa",
+    "#lobolasavingssa",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R38 700\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Kathu",
+      "body": "Male, 33\nSingle, saving toward lobola for his fiancée\nJob: Mine control room operator\nNet salary: R38 700 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 500 p/m",
+      "includes": "Company-linked flat, top-up over the housing allowance",
+      "body": "Cheaper than town rent, still not free."
+    },
+    {
+      "kind": "line",
+      "title": "Lobola savings",
+      "amount": "R7 000 p/m",
+      "includes": "Into a separate account, talks with her family started this year",
+      "body": "It's the biggest thing I've ever saved toward on purpose."
+    },
+    {
+      "kind": "line",
+      "title": "Parents' support",
+      "amount": "R3 000 p/m",
+      "includes": "My parents' electricity, groceries top-up, my youngest brother's school fees",
+      "body": "Nobody asked me to take this on in writing. I just started, and it's not going anywhere."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 800 p/m",
+      "includes": "2021 double cab, 21 months left",
+      "body": "Needed for the drive out to the mine gate every shift."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 400 p/m",
+      "includes": "Big shop plus the extra when I'm cooking for my parents' visit",
+      "body": "It stretches further than it used to, which tells you something about the rest of this list."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R16 700 p/m",
+      "includes": "Medical aid, insurance, phone & data, funeral policies for both households, a stokvel with the guys from shift, savings for the wedding itself",
+      "body": "Sixteen thousand seven hundred rand of things running at once, on top of the lobola and my parents."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 300",
+      "body": "Out of R38 700. Saving for two futures — my parents' and my own wedding — at the same time is the part nobody warns you about."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped losing track of what I'm actually saving for",
+      "body": "I've got the lobola savings as its own goal in Beyond Horizon, separate from my parents' support and my everyday spending.\n\nSeeing them as three different lines instead of one blur made the number feel possible instead of endless.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

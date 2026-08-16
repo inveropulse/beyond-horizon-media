@@ -1,0 +1,84 @@
+{
+  "income": 15500,
+  "audio": "bed_01.wav",
+  "caption": "The online shopping came to R1 300 and I would have sworn it was R500. Is your clothing account this bad too?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R15 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Springs",
+      "body": "Female, 23\nSingle, shares a 2 bed flat with a varsity friend\nJob: Junior graphic designer\nNet salary: R15 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 200 p/m",
+      "includes": "Half of a 2 bed in Springs, water, refuse",
+      "body": "It's the only way either of us could afford somewhere close to the office. I still put my headphones on the second I get home."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R1 900 p/m",
+      "includes": "Checkers, plus the days I forget lunch and buy it at work",
+      "body": "I cook properly maybe twice a week. The rest is whatever's fastest."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R1 600 p/m",
+      "includes": "Taxi most days, Uber when I'm running late",
+      "body": "No car yet. Some months this line costs nearly as much as rent."
+    },
+    {
+      "kind": "line",
+      "title": "Clothing account & online shopping",
+      "amount": "R1 300 p/m",
+      "includes": "Mr Price account, plus the online carts I don't remember filling",
+      "body": "I told myself it was maybe R500. It's R1 300. I don't fully know where the rest went."
+    },
+    {
+      "kind": "line",
+      "title": "Family support",
+      "amount": "R900 p/m",
+      "includes": "Airtime for my gran, extra when my mom's short",
+      "body": "It's not a lot, but it's the one debit order I've never once questioned."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 900 p/m",
+      "includes": "Electricity, phone & data, funeral policy, a stokvel with two friends from res, savings, a gym I go to twice a month",
+      "body": "Six small things I'd never added up before this. Together they're more than my rent."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R700",
+      "body": "Out of R15 500. That's about R23 a day until payday, and this is only my second year earning a proper salary."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing where it went",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe online shopping alone came to R1 300 — I would have guessed R500.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

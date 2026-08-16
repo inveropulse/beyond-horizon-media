@@ -1,0 +1,84 @@
+{
+  "income": 30800,
+  "audio": "bed_02.wav",
+  "caption": "We've never combined our accounts before this. Would you actually want to see your partner's full budget?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#couplebudget",
+    "#budgeting",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R30 800\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Worcester",
+      "body": "Him 26, her 25\nLiving together, not married\nJobs: Farm production assistant & ECD teacher\nCombined net: R30 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R7 500 p/m",
+      "includes": "3 bed cottage outside town, water, refuse",
+      "body": "Neither of us could have afforded this alone. Together it still felt like a jump."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 600 p/m",
+      "includes": "Checkers big shop, Spar top-ups, his protein shakes",
+      "body": "We shop together now. It hasn't made the trolley any cheaper."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 500 p/m",
+      "includes": "His bakkie, needed for the farm roads",
+      "body": "Her car sits at her mom's. His bakkie is the only one that gets us both to work."
+    },
+    {
+      "kind": "line",
+      "title": "Petrol & insurance",
+      "amount": "R2 000 p/m",
+      "includes": "Farm roads and the daily run into town",
+      "body": "The dirt roads eat tyres faster than either of us expected."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & Friday drinks",
+      "amount": "R1 400 p/m",
+      "includes": "Friday night out, the odd delivery when neither of us can face cooking",
+      "body": "We guessed R600 between us. It's R1 400. Neither of us wants to be the one who admits that first."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R12 000 p/m",
+      "includes": "Electricity, phone & fibre, both funeral policies, a stokvel he's in, black tax to both families, savings",
+      "body": "Twelve thousand rand of things we'd only ever budgeted for separately before this."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R800",
+      "body": "Out of R30 800 between us. First time we've actually seen the whole picture side by side."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped guessing about each other's numbers",
+      "body": "We put both our statements into Beyond Horizon and split the budget by category for the first time.\n\nNeither of us knew the other was still paying black tax to two households until we saw it on one screen.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

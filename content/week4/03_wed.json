@@ -1,0 +1,84 @@
+{
+  "income": 18200,
+  "audio": "bed_03.wav",
+  "caption": "Fuel alone was R3 400 this month, more than the car instalment. Does the maths still work if you're driving full time?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#spendingbreakdown",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R18 200\np/m income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Newcastle",
+      "body": "Male, 41\nDivorced, daughter (15) every second weekend\nJob: Full-time Bolt driver, owns his car\nNet income: R18 200 p/m (this month)"
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 200 p/m",
+      "includes": "2019 sedan, bought specifically for the platform",
+      "body": "This is the one bill that doesn't care whether it was a good week or a bad one."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel",
+      "amount": "R3 400 p/m",
+      "includes": "Six days a week, mostly Newcastle and the run out to Ladysmith",
+      "body": "Some weeks this is bigger than the instalment. This was one of them."
+    },
+    {
+      "kind": "line",
+      "title": "Insurance & tracking device",
+      "amount": "R1 100 p/m",
+      "includes": "Comprehensive cover, required to stay on the platform",
+      "body": "Non-negotiable if I want to keep driving at all."
+    },
+    {
+      "kind": "line",
+      "title": "Maintenance & tyres",
+      "amount": "R1 500 p/m",
+      "includes": "A tyre replacement and a service, both due the same week",
+      "body": "I budget for this every month and it still catches me every time."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways between shifts",
+      "amount": "R700 p/m",
+      "includes": "Garage food, the odd KFC between fares",
+      "body": "I told myself it was R300. It's R700. Eating properly isn't easy on this schedule."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R7 700 p/m",
+      "includes": "Room rent, groceries, phone & data, my daughter's things on my weekends, funeral policy, stokvel",
+      "body": "Everything that isn't the car, in one line. On an income that changes every week, this is the part I can't move."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R600",
+      "body": "Out of R18 200 this month. Last month it was closer to R23 000. I never know which one I'm getting until the week's over."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing between the good weeks and the bad ones",
+      "body": "I upload my statement to Beyond Horizon every time the payouts land, even the thin weeks.\n\nSeeing the fuel and maintenance against the actual fares finally showed me what I'm really taking home.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

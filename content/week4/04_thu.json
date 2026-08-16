@@ -1,0 +1,84 @@
+{
+  "income": 25800,
+  "audio": "bed_01.wav",
+  "caption": "The store account for furniture still has four months left and I didn't budget for that part of moving out. What did nobody warn you about?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#spendingbreakdown",
+    "#firstflatsa",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R25 800\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Centurion",
+      "body": "Female, 27\nSingle, just moved into her first own flat\nJob: Radiographer, private hospital\nNet salary: R25 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R7 200 p/m",
+      "includes": "1 bed in Centurion, water, refuse",
+      "body": "First place with my name on the lease. It's smaller than I pictured and I still love it."
+    },
+    {
+      "kind": "line",
+      "title": "Furniture & moving store account",
+      "amount": "R1 800 p/m",
+      "includes": "Bed, couch and a fridge, on a 6 month store account",
+      "body": "Four months left. I underestimated how much a place costs before you've even lived in it."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 400 p/m",
+      "includes": "Woolworths mostly, Checkers when I'm being sensible",
+      "body": "Cooking for one still feels like a waste some nights."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R2 800 p/m",
+      "includes": "2021 Polo, 26 months left",
+      "body": "The one bill that hasn't changed since I moved."
+    },
+    {
+      "kind": "line",
+      "title": "Streaming & a gym I haven't used",
+      "amount": "R950 p/m",
+      "includes": "Three streaming apps, a gym membership from January",
+      "body": "I told myself it was maybe R400. It's R950, and I've been to the gym twice since March."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R9 900 p/m",
+      "includes": "Petrol, medical aid, phone & fibre, funeral policy, stokvel, insurance, savings",
+      "body": "Seven things I'd never once had to think about together while I still lived at home."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R750",
+      "body": "Out of R25 800. Living alone costs more than I budgeted for, in ways I hadn't priced in before I moved."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what living alone actually costs",
+      "body": "I uploaded my first two months of statements as a tenant to Beyond Horizon and it sorted every transaction for me.\n\nThe streaming apps and the gym I hadn't used since March were the numbers that got me.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

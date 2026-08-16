@@ -1,0 +1,84 @@
+{
+  "income": 29000,
+  "audio": "bed_01.wav",
+  "caption": "Forty days into my Money Rhythm streak and it's the reason I caught the school fees jump before the debit order did. What would catch you out this month?",
+  "hashtags": [
+    "#southafrica",
+    "#budgeting",
+    "#moneyrhythmsa",
+    "#salarybreakdown",
+    "#spendingbreakdown"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R29 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Stellenbosch",
+      "body": "Female, 36\nMarried, two kids (6 and 9)\nJob: Hospitality manager, wine estate\nNet salary: R29 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond contribution",
+      "amount": "R6 500 p/m",
+      "includes": "Our share of the family home bond",
+      "body": "We split it roughly by income. This is my half."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 200 p/m",
+      "includes": "Family of four, big monthly shop plus the school lunch top-ups",
+      "body": "Two growing kids. This number only moves one way."
+    },
+    {
+      "kind": "line",
+      "title": "School fees & aftercare",
+      "amount": "R3 200 p/m",
+      "includes": "Fees for both kids, aftercare for the younger one",
+      "body": "Aftercare isn't optional when my shifts run past five most days."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 100 p/m",
+      "includes": "2020 Corolla, 18 months left",
+      "body": "The most boring line on this list and the one I never think about."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R2 200 p/m",
+      "includes": "Family plan, upgraded when our youngest started school",
+      "body": "Worth it every time someone comes home with a note from the school nurse."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R8 900 p/m",
+      "includes": "Petrol, phone & fibre, funeral policies, a stokvel with the estate staff, black tax to my side of the family, savings",
+      "body": "Eight thousand nine hundred rand of things I'd never once tracked in one place before this year."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R900",
+      "body": "Out of R29 000. Forty days into checking in on Money Rhythm every morning, and this is the first month I've actually seen this number coming."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped being surprised by my own month",
+      "body": "Forty days into a daily check-in streak on Beyond Horizon's Money Rhythm, and it's the first time I've noticed a bill creeping up before the debit order hit.\n\nThe school fees jump was one I caught three days early instead of finding out on payday.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
