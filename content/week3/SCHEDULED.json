@@ -1,0 +1,155 @@
+{
+  "week": "week3",
+  "start": "2026-08-17",
+  "mediaHost": "azure",
+  "scheduledAt": "2026-08-16T05:27:42.128958Z",
+  "posts": [
+    {
+      "day": "01_mon",
+      "channel": "tiktok",
+      "postId": "6a81499b1dbfebd7710f1296",
+      "dueAt": "2026-08-17T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "01_mon",
+      "channel": "instagram",
+      "postId": "6a8149a47a8d0e804d5f39c2",
+      "dueAt": "2026-08-17T15:20:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "01_mon",
+      "channel": "facebook",
+      "postId": "6a8149ac5afed12f716bf0ed",
+      "dueAt": "2026-08-17T17:45:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "02_tue",
+      "channel": "tiktok",
+      "postId": "6a8149b55afed12f716bf11d",
+      "dueAt": "2026-08-18T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "02_tue",
+      "channel": "instagram",
+      "postId": "6a8149bd454568f3b46acf63",
+      "dueAt": "2026-08-18T15:20:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "02_tue",
+      "channel": "facebook",
+      "postId": "6a8149c65afed12f716bf17f",
+      "dueAt": "2026-08-18T17:45:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "03_wed",
+      "channel": "tiktok",
+      "postId": "6a8149ce13afe87ec8aba08f",
+      "dueAt": "2026-08-19T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "03_wed",
+      "channel": "instagram",
+      "postId": "6a8149d7211938b6e64895da",
+      "dueAt": "2026-08-19T15:20:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "03_wed",
+      "channel": "facebook",
+      "postId": "6a8149df211938b6e6489600",
+      "dueAt": "2026-08-19T17:45:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "04_thu",
+      "channel": "tiktok",
+      "postId": "6a8149e87a8d0e804d5f3b23",
+      "dueAt": "2026-08-20T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "04_thu",
+      "channel": "instagram",
+      "postId": "6a8149f0211938b6e648962a",
+      "dueAt": "2026-08-20T15:20:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "04_thu",
+      "channel": "facebook",
+      "postId": "6a8149f9454568f3b46ad00f",
+      "dueAt": "2026-08-20T17:45:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "05_fri",
+      "channel": "tiktok",
+      "postId": "6a814a0113afe87ec8aba3f1",
+      "dueAt": "2026-08-21T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "05_fri",
+      "channel": "instagram",
+      "postId": "6a814a0a5afed12f716bf2f5",
+      "dueAt": "2026-08-21T15:20:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "05_fri",
+      "channel": "facebook",
+      "postId": "6a814a12211938b6e6489721",
+      "dueAt": "2026-08-21T17:45:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "06_sat",
+      "channel": "tiktok",
+      "postId": "6a814a1b211938b6e6489767",
+      "dueAt": "2026-08-22T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "06_sat",
+      "channel": "instagram",
+      "postId": "6a814a23211938b6e64897b4",
+      "dueAt": "2026-08-22T15:20:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "06_sat",
+      "channel": "facebook",
+      "postId": "6a814a2c13afe87ec8aba519",
+      "dueAt": "2026-08-22T17:45:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "07_sun",
+      "channel": "tiktok",
+      "postId": "6a814a341dbfebd7710f19d2",
+      "dueAt": "2026-08-23T10:35:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "07_sun",
+      "channel": "instagram",
+      "postId": "6a814a3d454568f3b46ad480",
+      "dueAt": "2026-08-23T15:20:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "day": "07_sun",
+      "channel": "facebook",
+      "postId": "6a814a451dbfebd7710f1a19",
+      "dueAt": "2026-08-23T17:45:00.000Z",
+      "status": "scheduled"
+    }
+  ]
+}
