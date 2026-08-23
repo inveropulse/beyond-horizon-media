@@ -1,0 +1,84 @@
+{
+  "income": 23500,
+  "audio": "bed_03.wav",
+  "caption": "R5 000 of my salary goes to a mistake I made in one bad week online. How long did it take you to admit you'd been scammed?",
+  "hashtags": [
+    "#southafrica",
+    "#debt",
+    "#debtfreesa",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R23 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Vryheid",
+      "body": "Female, 26\nSingle, no kids\nJob: Office administrator\nNet salary: R23 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 800 p/m",
+      "includes": "1 bed in town, water, refuse",
+      "body": "Small town rent. It still eats a third of what I actually get to keep after debt."
+    },
+    {
+      "kind": "line",
+      "title": "Credit card",
+      "amount": "R1 900 p/m",
+      "includes": "R19 000 balance, 23% interest, 12 months left",
+      "body": "Started as one online order. It didn't stay that way."
+    },
+    {
+      "kind": "line",
+      "title": "Personal loan",
+      "amount": "R2 200 p/m",
+      "includes": "R32 000 balance, 25% interest, 18 months left, taken out after I paid a 'supplier' that turned out to be a scam",
+      "body": "I still feel stupid saying it out loud. The loan doesn't care how it happened."
+    },
+    {
+      "kind": "line",
+      "title": "Store account",
+      "amount": "R900 p/m",
+      "includes": "Furniture City, R6 200 owing",
+      "body": "Felt like nothing at R299 a month. It's R900 once you add the second item."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & coffee",
+      "amount": "R750 p/m",
+      "includes": "Office coffee runs, Friday lunch with the team",
+      "body": "I guessed R400. It was R750. Bad months make you buy more coffee."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R12 150 p/m",
+      "includes": "Groceries, petrol & insurance, medical aid, phone & fibre, funeral policy, stokvel, savings",
+      "body": "R12 150 that isn't debt and isn't rent. It's the only part of this I can actually move."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 800",
+      "body": "Out of R23 500. R5 000 of that goes to the card, the loan and the store account. At this pace the store account clears in 7 months, the card in 12, the loan in 18."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped avoiding what I owe",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nSeeing the three repayments added up on one screen was worse, and more useful, than any of them alone.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

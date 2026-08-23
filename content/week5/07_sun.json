@@ -1,0 +1,84 @@
+{
+  "income": 48000,
+  "audio": "bed_01.wav",
+  "caption": "We finally worked out which account to pay off first instead of just guessing. Avalanche or snowball — which camp are you in?",
+  "hashtags": [
+    "#southafrica",
+    "#debt",
+    "#householdbudget",
+    "#debtfreesa",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R48 000\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Middelburg",
+      "body": "Him 32, her 30\nMarried, one toddler\nJobs: Boiler technician at the power station & pharmacy assistant\nCombined net: R48 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R10 200 p/m",
+      "includes": "3 bed near the power station, rates included",
+      "body": "Bought before the last two rate hikes. Feels tighter than it did on paper."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R5 200 p/m",
+      "includes": "Family of three, plus the toddler's specific yoghurt demands",
+      "body": "He eats three different brands of the same yoghurt depending on his mood."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalments",
+      "amount": "R6 100 p/m",
+      "includes": "His sedan, her hatchback",
+      "body": "Shift start times an hour apart. Neither of us can share the one car."
+    },
+    {
+      "kind": "line",
+      "title": "Credit card & store accounts",
+      "amount": "R2 600 p/m",
+      "includes": "R21 000 combined, 22% and 26% interest, both opened before the wedding",
+      "body": "We're paying off two accounts neither of us fully remembers filling."
+    },
+    {
+      "kind": "line",
+      "title": "Creche",
+      "amount": "R2 900 p/m",
+      "includes": "Full day, five days a week",
+      "body": "Almost a third of what the car instalments cost, and non-negotiable either way."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R18 500 p/m",
+      "includes": "Medical aid, petrol & insurance, phone & fibre, funeral policies, stokvel, black tax, savings",
+      "body": "Eighteen thousand five hundred rand of things we'd only ever tracked separately before this."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 500",
+      "body": "Out of R48 000 between us. R2 600 of that is the card and the store accounts — we finally ran the avalanche vs snowball numbers instead of guessing which to pay off first."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped guessing which account to attack first",
+      "body": "We added both accounts to Beyond Horizon's debt tracker and compared the interest cost of avalanche vs snowball.\n\nSnowball wins on momentum. Avalanche saved us the most in interest, so that's the one we picked.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

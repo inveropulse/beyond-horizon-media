@@ -1,0 +1,84 @@
+{
+  "income": 9800,
+  "audio": "bed_01.wav",
+  "caption": "Some months it's R13 000, some months it's this. Losing one household for two weeks is the whole difference. Whose income changes just as much as mine?",
+  "hashtags": [
+    "#southafrica",
+    "#spendingbreakdown",
+    "#livingcostsSA",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R9 800\np/m income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Kuruman",
+      "body": "Female, 44\nMarried, three kids (16, 12, 8)\nJob: Domestic worker, cleans for three households on different days\nNet income: R9 800 p/m (this month)"
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R1 400 p/m",
+      "includes": "Two taxis each way, all three households across town",
+      "body": "Some weeks the taxi costs more than what one of the households pays me that week."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 200 p/m",
+      "includes": "Staples, plus what I pick up on the way home",
+      "body": "My husband covers the rest. This is just what comes from my side."
+    },
+    {
+      "kind": "line",
+      "title": "School uniforms & stationery",
+      "amount": "R900 p/m",
+      "includes": "Saving toward three sets of school shoes before December",
+      "body": "I put a little aside every payout so January doesn't wreck us."
+    },
+    {
+      "kind": "line",
+      "title": "Stokvel",
+      "amount": "R500 p/m",
+      "includes": "With the other domestic workers on the same street",
+      "body": "We've never missed a month between the six of us."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral policy",
+      "amount": "R380 p/m",
+      "includes": "My own, plus a small top-up for my mother",
+      "body": "The one thing I'd go without groceries before I'd cancel."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 970 p/m",
+      "includes": "Airtime & data, electricity contribution, clothing account, my mother's support, taxi fare to church",
+      "body": "Small things, but on this income there's no such thing as a small thing."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R450",
+      "body": "Out of R9 800 this month. Some months it's closer to R13 000 when nobody cancels. This was one of the thin ones."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing between the good weeks and the thin ones",
+      "body": "I upload my statement to Beyond Horizon whenever a job pays out, even the small ones.\n\nSeeing the thin months next to the good ones finally made sense of why some Decembers feel impossible.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "income": 33000,
+  "audio": "bed_03.wav",
+  "caption": "I costed the vet plan and the food before I got him. Nobody warned me about the couch. What did your pet actually end up costing?",
+  "hashtags": [
+    "#southafrica",
+    "#petcostssa",
+    "#spendingbreakdown",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R33 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Hermanus",
+      "body": "Male, 29\nSingle, no kids\nJob: Junior architect\nNet salary: R33 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R7 800 p/m",
+      "includes": "1 bed in town, small garden for the dog",
+      "body": "Paid R1 200 more than the flat without a garden. Worth it, mostly for him."
+    },
+    {
+      "kind": "line",
+      "title": "Dog costs",
+      "amount": "R1 450 p/m",
+      "includes": "Food, vet plan, the couch he's slowly destroying",
+      "body": "I costed the food and the vet care before I got him. I did not cost the couch."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R4 200 p/m",
+      "includes": "2022 Ranger, 30 months left",
+      "body": "Bought for site visits. Now mostly used to drive the dog to the beach."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 700 p/m",
+      "includes": "Woolworths mostly, the occasional big Spar shop",
+      "body": "Cooking for one, still buying like there might be guests."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out & coffee",
+      "amount": "R2 100 p/m",
+      "includes": "Work lunches, weekend breakfast spots",
+      "body": "I guessed R900. It's R2 100. Hermanus makes it very easy to eat out."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R12 550 p/m",
+      "includes": "Petrol & insurance, medical aid, phone & fibre, funeral policy, gym, savings, professional body fees",
+      "body": "R12 550 of things I've never once looked at as a group. That's more than a third of what I earn."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 200",
+      "body": "Out of R33 000. On paper that's a comfortable salary for one person. A dog and a Hermanus postcode use up more of it than either should."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what he actually cost me",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe couch didn't show up as a line item, but the vet visits after did.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

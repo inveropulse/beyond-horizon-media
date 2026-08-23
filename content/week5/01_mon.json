@@ -1,0 +1,84 @@
+{
+  "income": 16800,
+  "audio": "bed_01.wav",
+  "caption": "I guessed R400 for garage food after night shift. It was R850. What's the number your schedule makes you spend without noticing?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R16 800\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Tzaneen",
+      "body": "Female, 25\nSingle, shares a flat\nJob: Paramedic, EMS\nNet salary: R16 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 200 p/m",
+      "includes": "Half of a 2 bed, water, wifi",
+      "body": "Shift work means I want a flatmate who's asleep when I need quiet. It's ten minutes from the station."
+    },
+    {
+      "kind": "line",
+      "title": "Petrol & vehicle costs",
+      "amount": "R2 100 p/m",
+      "includes": "Fuel for 24 hour shifts, tyres, basic service",
+      "body": "The ambulance runs on the department's fuel. My own car runs on mine, and the callout radius is bigger than people think."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 050 p/m",
+      "includes": "Shoprite, the vending machine at the base",
+      "body": "I meal prep on my days off. On shift days it's whatever's fastest."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & garage food",
+      "amount": "R850 p/m",
+      "includes": "Garage pies after night shift, the base vending machine, Friday KFC",
+      "body": "I guessed R400. It was R850. Night shift makes you buy things."
+    },
+    {
+      "kind": "line",
+      "title": "Family support",
+      "amount": "R1 200 p/m",
+      "includes": "My mom's electricity, airtime for my gran",
+      "body": "It goes off two days after payday. I've never once thought of it as optional."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 700 p/m",
+      "includes": "Electricity, phone & data, medical aid top-up, funeral policy, stokvel, kit & uniform top-ups, savings",
+      "body": "Seven small debit orders I've never added up in one sitting. Together they're most of what's left."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R700",
+      "body": "Out of R16 800. That's about R23 a day until payday, and shift work doesn't leave much room to notice when it runs out."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing where it went",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe garage food number was the one I didn't see coming.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

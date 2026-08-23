@@ -1,0 +1,84 @@
+{
+  "income": 27000,
+  "audio": "bed_02.wav",
+  "caption": "The photographer alone came to R1 200 and I hadn't even budgeted for hair. What did matric dance actually cost your family?",
+  "hashtags": [
+    "#southafrica",
+    "#family",
+    "#matricdancesa",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R27 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Klerksdorp",
+      "body": "Female, 43\nMarried, one teen (18) finishing matric this year\nJob: Occupational therapist, public hospital\nNet salary: R27 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R6 800 p/m",
+      "includes": "3 bed in Flamwood, rates included",
+      "body": "Nearly paid off. That's the only reason this month still balances."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 600 p/m",
+      "includes": "Family of three, plus the extra with a matriculant who's never home to eat it",
+      "body": "I buy for three and cook for two most nights."
+    },
+    {
+      "kind": "line",
+      "title": "Matric dance costs",
+      "amount": "R2 800 p/m",
+      "includes": "Dress alterations, a hired suit for her date, hair and make-up, photos",
+      "body": "I budgeted R1 500. The photographer alone was R1 200 of that."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 400 p/m",
+      "includes": "2021 Kia, 20 months left",
+      "body": "The school run ends this year. I haven't worked out what replaces it in the budget."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R2 600 p/m",
+      "includes": "Family plan, one hospital admission excess still being paid off",
+      "body": "Working in a hospital doesn't make the medical aid bill any smaller."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 600 p/m",
+      "includes": "Petrol & insurance, electricity, phone & fibre, funeral policy, stokvel, savings",
+      "body": "Six things that keep running whether or not it's a matric year."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 200",
+      "body": "Out of R27 000. The matric dance was one month's spend. The relief afterwards was worth more than the number."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what the year would actually cost",
+      "body": "I uploaded three months of statements to Beyond Horizon and budgeted the matric dance as its own category.\n\nSeeing the photographer against the dress against the suit hire made the number make sense instead of just hurting.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

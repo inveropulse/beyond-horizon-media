@@ -1,0 +1,84 @@
+{
+  "income": 44000,
+  "audio": "bed_02.wav",
+  "caption": "We didn't realise until we did this exercise that we're both quietly sending money home every month. Do you and your partner actually know each other's full numbers?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#couplebudget",
+    "#budgeting",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R44 000\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Paarl",
+      "body": "Him 28, her 27\nMarried, no kids yet\nJobs: Viticulture technician & preschool teacher\nCombined net: R44 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R9 500 p/m",
+      "includes": "2 bed starter home outside Paarl, rates included",
+      "body": "We bought before prices in the winelands went mad. Glad we didn't wait another year."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalments",
+      "amount": "R5 200 p/m",
+      "includes": "His bakkie for the farm roads, her Fiesta",
+      "body": "Two cars because the farm and the school run in opposite directions every morning."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 300 p/m",
+      "includes": "Checkers big shop, Spar top-ups, his padkos for the farm",
+      "body": "We planned meals properly for about a month. We've since given up and just shop twice a week."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & date night",
+      "amount": "R1 800 p/m",
+      "includes": "Friday dinner out, the odd delivery",
+      "body": "We told each other it was maybe R900. It's R1 800. Neither of us is surprised."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R2 400 p/m",
+      "includes": "Both of us on the farm's group scheme",
+      "body": "Cheaper through his employer than either of us could get alone."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R18 700 p/m",
+      "includes": "Electricity, phone & fibre, funeral policies x2, stokvel, black tax to both families, savings, gym",
+      "body": "Eighteen thousand seven hundred rand of things we'd only ever budgeted for separately before this."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 100",
+      "body": "Out of R44 000 between us. On paper that's comfortable. After the bond and two cars, it doesn't feel like it some months."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped assuming our numbers matched",
+      "body": "We put both our statements into Beyond Horizon and split the budget by category for the first time.\n\nNeither of us knew the other was still sending money home until we saw it on one screen.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
