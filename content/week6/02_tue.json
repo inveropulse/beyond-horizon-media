@@ -1,0 +1,84 @@
+{
+  "income": 41500,
+  "audio": "bed_02.wav",
+  "caption": "Between the two of us we still argue about who forgot the furniture account had interest. Would you budget jointly with your partner?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#couplebudget",
+    "#budgeting",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R41 500\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Sasolburg",
+      "body": "Him 28, her 26\nMarried, no kids yet\nJobs: Sasol plant operator & Shoprite supervisor\nCombined net: R41 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R7 800 p/m",
+      "includes": "3 bed starter home, bought two years ago",
+      "body": "We got in before the rate hikes. I don't know how anyone starts now."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 700 p/m",
+      "includes": "Boxer for basics, Spar for what Boxer doesn't stock",
+      "body": "Two trolleys, two different shops, every single month."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 600 p/m",
+      "includes": "One car between us, a 2021 Polo",
+      "body": "She drops me at the plant gate at five, then it's hers for the day."
+    },
+    {
+      "kind": "line",
+      "title": "Petrol & insurance",
+      "amount": "R2 300 p/m",
+      "includes": "The commute to the plant, comprehensive cover on one car",
+      "body": "Sasolburg isn't big, but shift work still empties a tank fast."
+    },
+    {
+      "kind": "line",
+      "title": "Store account",
+      "amount": "R1 900 p/m",
+      "includes": "The furniture account from when we moved in, eleven months left",
+      "body": "We financed a lounge suite and a fridge and I still wince at the interest."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R18 900 p/m",
+      "includes": "Medical aid, cellphone & fibre, retirement annuity, stokvel, funeral policy, gym, subscriptions",
+      "body": "None of these feels big alone. Add them up and it's nearly half of what we bring in."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 300",
+      "body": "Out of R41 500 combined. We call it savings. Most months it becomes whatever breaks first."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped guessing",
+      "body": "We uploaded both our statements to Beyond Horizon and finally saw the household picture in one place.\n\nThe furniture account was worse than either of us admitted alone.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

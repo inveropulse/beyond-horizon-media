@@ -1,0 +1,84 @@
+{
+  "income": 16500,
+  "audio": "bed_02.wav",
+  "caption": "People see the delivery fee and assume it's all profit. It really isn't — what's your real take-home after costs?",
+  "hashtags": [
+    "#southafrica",
+    "#gigworksa",
+    "#spendingbreakdown",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R16 500\np/m income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Makhanda",
+      "body": "Male, 26\nSingle, lives alone\nJob: Delivery rider, Mr D and Uber Eats\nNet income: R16 500 p/m (this month)"
+    },
+    {
+      "kind": "line",
+      "title": "Bike instalment",
+      "amount": "R2 400 p/m",
+      "includes": "Financed a 125cc after my first bike was stolen",
+      "body": "Second bike, better alarm, still not fully paid off."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R2 600 p/m",
+      "includes": "A room close to the CBD so I'm near the busiest orders",
+      "body": "I could pay less further out, but then I'm not first to the good areas."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel",
+      "amount": "R1 300 p/m",
+      "includes": "Petrol for eight, sometimes ten hour days on the road",
+      "body": "The app doesn't pay for the fuel between drop-offs, only the ones with an order attached."
+    },
+    {
+      "kind": "line",
+      "title": "Phone data",
+      "amount": "R900 p/m",
+      "includes": "Three apps running at once, all day, every day",
+      "body": "This is basically my second-biggest work cost after the bike."
+    },
+    {
+      "kind": "line",
+      "title": "Bike insurance & tracking",
+      "amount": "R750 p/m",
+      "includes": "Theft cover, since it happened once already",
+      "body": "Non-negotiable after last time."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R7 900 p/m",
+      "includes": "Bike maintenance & tyres, groceries, funeral policy, airtime top-ups for the apps, a stokvel with two other riders",
+      "body": "The maintenance alone spikes some months and wrecks the whole plan."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R650",
+      "body": "Out of R16 500, on a decent month. A bad weather week or a stolen bike and this number goes negative fast."
+    },
+    {
+      "kind": "cta",
+      "title": "I finally know what this job actually costs me",
+      "body": "I put three months of statements into Beyond Horizon and saw that the bike, fuel and data together eat almost a third of what I make.\n\nI didn't realise how thin the margin actually was until I saw it.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

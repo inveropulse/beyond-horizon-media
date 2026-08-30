@@ -1,0 +1,84 @@
+{
+  "income": 33000,
+  "audio": "bed_03.wav",
+  "caption": "I work in food and I was still paying for a meal kit I cancelled over a year ago. What's hiding in your statement?",
+  "hashtags": [
+    "#southafrica",
+    "#moneyleakssa",
+    "#spendingbreakdown",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R33 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Vredenburg",
+      "body": "Female, 32\nSingle, no kids\nJob: Chef at a West Coast restaurant\nNet salary: R33 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R6 200 p/m",
+      "includes": "1 bed close to the harbour",
+      "body": "I picked this place for the view. Worth it, mostly."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 400 p/m",
+      "includes": "2020 Yaris, three years left",
+      "body": "Standard, nothing surprising here."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 800 p/m",
+      "includes": "I cook all day at work and still buy takeaways at home",
+      "body": "Chefs apparently don't cook for themselves. Who knew."
+    },
+    {
+      "kind": "line",
+      "title": "Forgotten subscriptions",
+      "amount": "R1 450 p/m",
+      "includes": "Two streaming services I don't watch, a cancelled meal kit still billing me, a gym I haven't been to since March",
+      "body": "I found this by accident going through three months of statements. It's been happening for over a year."
+    },
+    {
+      "kind": "line",
+      "title": "Bank fees & interest",
+      "amount": "R680 p/m",
+      "includes": "Monthly account fee, one card that's never fully paid off",
+      "body": "Small enough to ignore every single month. Big enough to notice over a year."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R15 670 p/m",
+      "includes": "Medical aid, retirement annuity, cellphone & fibre, funeral policy, stokvel, eating out at other people's restaurants on my day off",
+      "body": "This is the responsible half of the budget. It just doesn't feel as satisfying to talk about."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 800",
+      "body": "Out of R33 000. Before I found the subscriptions, I would have told you this number was smaller."
+    },
+    {
+      "kind": "cta",
+      "title": "The leaks were the real story",
+      "body": "Beyond Horizon flagged three charges I didn't recognise the first week I uploaded a statement — two of them turned out to be the cancelled meal kit still billing me.\n\nR1 450 a month I wasn't even using.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

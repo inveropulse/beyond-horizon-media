@@ -1,0 +1,84 @@
+{
+  "income": 14500,
+  "audio": "bed_01.wav",
+  "caption": "My pension was calculated for one person. I'm feeding three. Any other grandparents doing the sums like this?",
+  "hashtags": [
+    "#southafrica",
+    "#family",
+    "#pensionbudgetsa",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I live on\nmy R14 500\np/m pension",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Graaff-Reinet",
+      "body": "Female, 68\nWidowed, two grandchildren live with her\nIncome: Government pension & late husband's annuity\nNet income: R14 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 600 p/m",
+      "includes": "Feeding three of us, growing boys eat like men now",
+      "body": "My pension was calculated for one person. Life had other plans."
+    },
+    {
+      "kind": "line",
+      "title": "Grandchildren's school costs",
+      "amount": "R2 400 p/m",
+      "includes": "Uniforms, stationery, the school trip nobody warns you about",
+      "body": "Their mother, my daughter, works in Cape Town and sends what she can. It isn't always enough."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid top-up & medication",
+      "amount": "R2 100 p/m",
+      "includes": "My blood pressure tablets, my hip, the boys' check-ups",
+      "body": "This is the one that only ever goes up."
+    },
+    {
+      "kind": "line",
+      "title": "Electricity & water",
+      "amount": "R1 300 p/m",
+      "includes": "Prepaid electricity, municipal water and rates",
+      "body": "Karoo winters are longer than people think."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral policy",
+      "amount": "R850 p/m",
+      "includes": "Cover for all three of us now, increased after my husband passed",
+      "body": "I paid his out in full. I'm not leaving that burden on anyone else."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 500 p/m",
+      "includes": "Cellphone, transport to the clinic, church, the stokvel I've kept since 1994, a little pocket money for the boys",
+      "body": "The stokvel is the one thing I refuse to give up, pension or not."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R750",
+      "body": "Out of R14 500 for three of us. It works, most months, because it has to."
+    },
+    {
+      "kind": "cta",
+      "title": "I wanted to know I wasn't overspending on them",
+      "body": "I uploaded my pension statements to Beyond Horizon once the boys moved in, just to see the real picture.\n\nIt turns out I wasn't overspending — I was supporting more people on the same pension.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

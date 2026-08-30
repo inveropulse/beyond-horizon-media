@@ -1,0 +1,84 @@
+{
+  "income": 7800,
+  "audio": "bed_01.wav",
+  "caption": "I know exactly what's due and when. I still couldn't tell you where the R450 in airtime goes. Is that normal on a security guard's salary?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R7 800\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Tembisa",
+      "body": "Female, 29\nSingle, staying with her mother\nJob: Security officer, night shift\nNet salary: R7 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R950 p/m",
+      "includes": "Taxi to the mall in Kempton Park and back, six nights a week",
+      "body": "Night shift taxis cost more and there's no way around it."
+    },
+    {
+      "kind": "line",
+      "title": "Family support",
+      "amount": "R1 200 p/m",
+      "includes": "My mother's electricity, my little brother's school shoes",
+      "body": "I'm the only one working full time, so it's not really a choice."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R1 700 p/m",
+      "includes": "Maize meal, veg, whatever my mom doesn't grow in the yard",
+      "body": "I shop at month end, then again a week later when the money's already gone."
+    },
+    {
+      "kind": "line",
+      "title": "Airtime & data",
+      "amount": "R450 p/m",
+      "includes": "WhatsApp, TikTok, calling my mom when I'm on shift",
+      "body": "I could probably halve this. I don't want to."
+    },
+    {
+      "kind": "line",
+      "title": "Uniform & work costs",
+      "amount": "R380 p/m",
+      "includes": "Dry cleaning, shoe polish, a torch that keeps dying",
+      "body": "Nobody warns you a security job has its own running costs."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 600 p/m",
+      "includes": "Funeral policy, stokvel, toiletries, prepaid electricity for my own room, church offering",
+      "body": "Six small things. None of them optional, all of them due before the fifteenth."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R520",
+      "body": "Out of R7 800. That's under R20 a day until the 25th. I've learned not to plan anything in that window."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded three months of bank statements to Beyond Horizon and finally saw where the R7 800 actually goes.\n\nThe airtime number was the one I didn't want to see.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

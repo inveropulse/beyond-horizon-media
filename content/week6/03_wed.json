@@ -1,0 +1,84 @@
+{
+  "income": 21500,
+  "audio": "bed_03.wav",
+  "caption": "Turns out the store cards weren't my real problem — the 27% loan was. Anyone else paying off the wrong debt first?",
+  "hashtags": [
+    "#southafrica",
+    "#debt",
+    "#debtfreesa",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R21 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Kroonstad",
+      "body": "Male, 30\nSingle, no kids\nJob: Panel beater at a body shop\nNet salary: R21 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Personal loan",
+      "amount": "R3 800 p/m",
+      "includes": "R42 000 taken out for a paint job on my own car that turned into more",
+      "body": "This is the expensive one, 27% interest. It's first in line."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 200 p/m",
+      "includes": "Room in a shared house near the workshop",
+      "body": "Cheap by choice. Every spare rand is going to the debt right now."
+    },
+    {
+      "kind": "line",
+      "title": "Store cards",
+      "amount": "R1 600 p/m",
+      "includes": "Two clothing accounts, both almost closed",
+      "body": "I opened these at 19 for outfits I don't even remember."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 100 p/m",
+      "includes": "Basics, meat on payday only",
+      "body": "I've cut this harder than anything else to speed up the loan."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R1 400 p/m",
+      "includes": "Taxi and the odd Uber on late finishes",
+      "body": "The workshop's outside town, there's no way around this one."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R8 200 p/m",
+      "includes": "Cellphone, funeral policy, work boots & overalls, insurance on my own car, a small stokvel",
+      "body": "Ordinary life still costs money while you're paying off the extraordinary stuff."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 200",
+      "body": "Out of R21 500. Whatever's left goes straight onto the loan, not into my pocket. Eleven months to go."
+    },
+    {
+      "kind": "cta",
+      "title": "I can finally see the finish line",
+      "body": "I put every debt into Beyond Horizon and it worked out that clearing the personal loan first, not the store cards, saves me the most in interest.\n\nEleven months, not the sixteen I was on track for.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "income": 29000,
+  "audio": "bed_01.wav",
+  "caption": "Nobody warns you that a funeral has a monthly instalment. How long did yours take to pay off?",
+  "hashtags": [
+    "#southafrica",
+    "#family",
+    "#funeralcostsa",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R29 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Phalaborwa",
+      "body": "Female, 35\nSingle, supporting her mother\nJob: Mine plant administrator\nNet salary: R29 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 400 p/m",
+      "includes": "Feeding four people now instead of one",
+      "body": "Nobody tells you a death changes your grocery bill too."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 200 p/m",
+      "includes": "2 bed near the mine, my mother stays with me now",
+      "body": "She moved in after the funeral. I haven't had the heart to bring up rent."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral loan repayment",
+      "amount": "R3 500 p/m",
+      "includes": "Catering, tent hire and the coffin, split over 18 months",
+      "body": "My father died in April. This is the one that still catches me some months."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R2 200 p/m",
+      "includes": "My two younger siblings' school fees, since my father can't anymore",
+      "body": "I didn't exactly choose this. I'm just the one with a job."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 100 p/m",
+      "includes": "The Etios I financed the month before he passed",
+      "body": "Bad timing. I don't regret it, I just felt it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R11 300 p/m",
+      "includes": "Medical aid, a second funeral policy for the rest of us, electricity, cellphone, stokvel, transport",
+      "body": "I took out my own funeral policy the week after his. I'm not doing this twice unprepared."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 300",
+      "body": "Out of R29 000. Grief has a monthly instalment plan now, same as everything else."
+    },
+    {
+      "kind": "cta",
+      "title": "I needed to see the whole picture",
+      "body": "I uploaded my statements to Beyond Horizon once the loan repayments started, just to know I could still cover everything.\n\nSeeing it laid out made the eighteen months feel possible instead of endless.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
