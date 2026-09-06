@@ -1,0 +1,84 @@
+{
+  "income": 19800,
+  "audio": "bed_01.wav",
+  "caption": "I spend my days helping other families apply for grants. My own family's support isn't a grant, it's a line item I've never once skipped. Is this what your twenties look like too?",
+  "hashtags": [
+    "#southafrica",
+    "#family",
+    "#blacktaxsa",
+    "#salarybreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R19 800\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Thohoyandou",
+      "body": "Female, 28\nSingle, no kids of her own\nJob: Social worker, Department of Social Development\nNet salary: R19 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 700 p/m",
+      "includes": "Backyard room near the office, water and lights",
+      "body": "I could live at home for free. I need four walls that are only mine at the end of a work day."
+    },
+    {
+      "kind": "line",
+      "title": "Family support",
+      "amount": "R4 900 p/m",
+      "includes": "My mother's disability grant top-up, her medication, my two younger siblings' school transport and lunch money",
+      "body": "It's the line that grows every time something goes wrong at home, and something always does."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 400 p/m",
+      "includes": "My own shop, plus what I take home on weekends",
+      "body": "I buy for one and leave with bags for four."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R1 800 p/m",
+      "includes": "Taxi to the office, plus the trip home to the village most weekends",
+      "body": "The weekend trip home costs more than most of my week combined."
+    },
+    {
+      "kind": "line",
+      "title": "Airtime & data",
+      "amount": "R500 p/m",
+      "includes": "Calling my mother every day, coordinating her clinic appointments",
+      "body": "Non-negotiable. Some weeks it's the only check-in she gets."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 300 p/m",
+      "includes": "Funeral policy for the family, a stokvel with three colleagues, electricity, clothing account, savings",
+      "body": "Five small things that all quietly assume there's a version of me with money left over."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 200",
+      "body": "Out of R19 800. I help other families access grants all day at work. Budgeting my own family's support is the part nobody trained me for."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what home actually cost me",
+      "body": "I uploaded three months of statements to Beyond Horizon and finally saw my own family support as one number instead of a blur of small transfers.\n\nR4 900 a month, most months more.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

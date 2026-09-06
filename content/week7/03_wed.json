@@ -1,0 +1,84 @@
+{
+  "income": 26800,
+  "audio": "bed_03.wav",
+  "caption": "I sell funeral policies for a living and the app still found R1 380 a month leaking out of my own account on things I'd forgotten I was paying for. What's hiding in yours?",
+  "hashtags": [
+    "#southafrica",
+    "#moneyleakssa",
+    "#salary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R26 800\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Welkom",
+      "body": "Female, 34\nSingle, no kids\nJob: Funeral parlour administrator\nNet salary: R26 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R5 200 p/m",
+      "includes": "1 bed in Naudeville, water, refuse",
+      "body": "Quiet street, five minutes from the parlour. I need the quiet after some of the days I have."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 900 p/m",
+      "includes": "Shoprite, and the top-ups I do not plan for",
+      "body": "I cook properly maybe three nights a week. The rest is whatever's fastest."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 300 p/m",
+      "includes": "2021 Polo Vivo, 20 months left",
+      "body": "The most boring line on this list, and the one that never surprises me."
+    },
+    {
+      "kind": "line",
+      "title": "Forgotten subscriptions & debit orders",
+      "amount": "R1 380 p/m",
+      "includes": "An insurance add-on from 2019, doubled cellphone insurance, a subscription box I never cancelled",
+      "body": "I thought this was maybe R400. It's R1 380. I found the doubled insurance by accident."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral policy",
+      "amount": "R420 p/m",
+      "includes": "My own family's cover, staff rate and all",
+      "body": "I sell this exact product all day and still pay close to full price for my own."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R12 200 p/m",
+      "includes": "Petrol & insurance, medical aid, phone & data, electricity, stokvel, savings",
+      "body": "R12 200 that isn't rent and isn't debt. It's the only part of this I can actually move."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 400",
+      "body": "Out of R26 800. The leaks alone were most of the difference between a tight month and a fine one."
+    },
+    {
+      "kind": "cta",
+      "title": "The leaks were the real story",
+      "body": "Beyond Horizon flagged three debit orders I didn't recognise the first week I uploaded a statement.\n\nOne was doubled cellphone insurance I'd been paying since 2019.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

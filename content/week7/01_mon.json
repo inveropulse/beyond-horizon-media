@@ -1,0 +1,84 @@
+{
+  "income": 11200,
+  "audio": "bed_01.wav",
+  "caption": "I guessed the vending machine was costing me R300. It's R750, and I'm only in my first year of earning anything at all. What did your first payslip actually go on?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#firstjobsa",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R11 200\np/m stipend",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Benoni",
+      "body": "Male, 19\nSingle, lives with parents\nJob: First-year apprentice fitter and turner\nNet stipend: R11 200 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Board to parents",
+      "amount": "R3 200 p/m",
+      "includes": "Covers my share of groceries and electricity at home",
+      "body": "My dad wouldn't take a cent from me until I actually got paid. Now he won't take less than this."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R1 200 p/m",
+      "includes": "Taxi to the TVET college two days a week, workshop the rest",
+      "body": "Two different routes, two different fares, every single week."
+    },
+    {
+      "kind": "line",
+      "title": "Tools & PPE",
+      "amount": "R700 p/m",
+      "includes": "Steel-cap boots, overalls, replacing a socket set that grew legs",
+      "body": "Nobody tells you an apprenticeship has its own running costs before you've even qualified."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & vending machine",
+      "amount": "R750 p/m",
+      "includes": "The machine at the workshop, garage pies, Friday KFC with the other apprentices",
+      "body": "I guessed R300. It's R750. Turns out that machine takes cards now, which is worse for me."
+    },
+    {
+      "kind": "line",
+      "title": "Airtime & data",
+      "amount": "R350 p/m",
+      "includes": "The college portal, WhatsApp, calling my mom when I miss the taxi",
+      "body": "Small number, never once skipped."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R4 200 p/m",
+      "includes": "Funeral policy, a stokvel with two other apprentices, clothing account, savings toward my own place, extra for my mom's electricity",
+      "body": "Five small things I'd never added up before this. Together they're more than my board."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R800",
+      "body": "Out of R11 200. That's about R27 a day, and this is only my first year of earning a proper wage at all."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing where my stipend went",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction for me.\n\nThe vending machine and takeaways alone came to R750 — I would have guessed R300.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

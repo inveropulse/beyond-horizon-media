@@ -1,0 +1,84 @@
+{
+  "income": 41000,
+  "audio": "bed_02.wav",
+  "caption": "We budgeted for one baby's worth of everything. Everything turned out to be double. Anyone else do the twin math wrong the first time?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#babybudgetsa",
+    "#couplebudget",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R41 000\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Knysna",
+      "body": "Him 31, her 29\nMarried, newborn twins (3 months)\nJobs: Timber mill supervisor & tour guide, she's on reduced hours since the twins\nCombined net: R41 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R9 500 p/m",
+      "includes": "3 bed in Hornlee, bought a year before we knew there'd be two",
+      "body": "We picked this place for the spare room. We now use both spare rooms."
+    },
+    {
+      "kind": "line",
+      "title": "Baby costs",
+      "amount": "R4 200 p/m",
+      "includes": "Nappies, formula, two lots of everything, the clothes they've already grown out of",
+      "body": "We budgeted for one baby's worth of everything. Everything is double."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 600 p/m",
+      "includes": "Big monthly shop, plus the pharmacy runs that never used to happen",
+      "body": "Still two adults eating, but the trolley doesn't know that anymore."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 800 p/m",
+      "includes": "Traded her hatchback for a 7-seater once we knew there were two car seats coming",
+      "body": "Neither of us wanted an SUV. Two capsules don't fit side by side in anything smaller."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R3 100 p/m",
+      "includes": "Family plan, upgraded the week we found out it was twins",
+      "body": "The jump on the payslip was smaller than the jump in appointments."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R13 300 p/m",
+      "includes": "Petrol & insurance, electricity & water, phone & fibre, funeral policies, extra life cover, stokvel",
+      "body": "Thirteen thousand three hundred rand of things that all quietly grew the month they arrived."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 500",
+      "body": "Out of R41 000 between us, with her hours down since the twins. Thinner than either of our old single budgets combined."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped assuming double meant simple double",
+      "body": "We put both our statements into Beyond Horizon and finally saw the twins' costs against our own budget in one place.\n\nThe baby line alone was R4 200 — nearly double what friends with one baby had told us to expect.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

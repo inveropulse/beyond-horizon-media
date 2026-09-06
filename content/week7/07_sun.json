@@ -1,0 +1,84 @@
+{
+  "income": 24300,
+  "audio": "bed_01.wav",
+  "caption": "The stokvel payout landed this week and it's already spent on the roof and January's uniforms before I've even enjoyed it. What does your payout month actually go on?",
+  "hashtags": [
+    "#southafrica",
+    "#stokvelsa",
+    "#family",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R24 300\np/m income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Empangeni",
+      "body": "Female, 39\nMarried, three kids\nJob: Quality control assistant, sugar mill\nNet income: R24 300 p/m (this month, includes her annual stokvel payout)"
+    },
+    {
+      "kind": "line",
+      "title": "School fees & uniforms",
+      "amount": "R5 200 p/m",
+      "includes": "Three kids, new uniforms, the January stock-up I usually can't afford to do early",
+      "body": "The payout means I don't have to choose between January's costs and December's groceries this year."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 800 p/m",
+      "includes": "The festive season stock-up, plus the usual monthly shop",
+      "body": "I buy more than usual this month on purpose. It's the one time I can."
+    },
+    {
+      "kind": "line",
+      "title": "Roof repair",
+      "amount": "R2 600 p/m",
+      "includes": "Patched the leak in the back room before the rains, materials and labour",
+      "body": "I've been waiting for this money literally all year to fix this."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R2 900 p/m",
+      "includes": "3 bed near the mill, water, refuse",
+      "body": "The one bill that doesn't care whether the payout landed or not."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R1 600 p/m",
+      "includes": "Taxi to the mill, plus the school run when my husband's on the early shift",
+      "body": "Same every month, payout or not."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R7 400 p/m",
+      "includes": "Electricity, funeral policy, phone & data, restarting next year's stokvel contribution, clothing account",
+      "body": "Five things that keep running whether or not this was a payout month."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R800",
+      "body": "Out of R24 300 this month. Most months it's closer to R14 500. The payout is spoken for before it even lands."
+    },
+    {
+      "kind": "cta",
+      "title": "I finally saw the payout against the whole month",
+      "body": "I uploaded this month's statement to Beyond Horizon the day the stokvel paid out, just to see it against everything else due at the same time.\n\nSeeing the roof repair and the school fees on one screen made the number feel used well, not just spent.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

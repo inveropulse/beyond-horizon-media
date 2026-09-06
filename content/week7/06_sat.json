@@ -1,0 +1,84 @@
+{
+  "income": 24900,
+  "audio": "bed_03.wav",
+  "caption": "Swapped the car instalment for a motorbike to survive the Brits-to-Rosslyn commute. I didn't cost the gear properly and it still adds up faster than I expected. Would you make the same trade?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#spendingbreakdown",
+    "#livingcostsSA",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R24 900\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Brits",
+      "body": "Male, 26\nSingle, no kids\nJob: Production line operator, vehicle assembly plant in Rosslyn\nNet salary: R24 900 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 200 p/m",
+      "includes": "Room in Brits, close to the road out to Rosslyn",
+      "body": "Cheaper than living near the plant. The commute is the trade-off."
+    },
+    {
+      "kind": "line",
+      "title": "Motorbike instalment",
+      "amount": "R2 100 p/m",
+      "includes": "Financed a 250cc, chose it over a car for the commute",
+      "body": "Half of what a car instalment quote came to. That part of the maths held up."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel, maintenance & gear",
+      "amount": "R1 450 p/m",
+      "includes": "Fuel, tyres and chain, a helmet replaced after a crack, theft cover",
+      "body": "I didn't cost the gear properly when I switched. It adds up faster than the bike payment itself."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 900 p/m",
+      "includes": "Big shop plus the days I forget lunch",
+      "body": "Nothing unusual here, which is more than I can say for the rest of this list."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R1 800 p/m",
+      "includes": "Bought my own plan, since it isn't compulsory at my grade",
+      "body": "Necessary on two wheels in Gauteng traffic. I don't want to test it, but I sleep better having it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R11 450 p/m",
+      "includes": "Phone & data, funeral policy, stokvel, savings, electricity, insurance on the bike",
+      "body": "R11 450 of things I've never once looked at as a group. More than a third of what I earn."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 000",
+      "body": "Out of R24 900. Still better off than the car quote would have left me — just not by as much as I told people it was."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped assuming the bike was automatically cheaper",
+      "body": "I uploaded three months of statements to Beyond Horizon and weighed the bike's real running cost against what the car quote would have been.\n\nStill cheaper overall, just not by the margin I'd been telling people.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
