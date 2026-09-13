@@ -1,0 +1,84 @@
+{
+  "income": 16200,
+  "audio": "bed_02.wav",
+  "caption": "I budgeted R900 for eating out this month. It's R1 800. Low season does something to my willpower — anyone else eat their feelings when bookings are quiet?",
+  "hashtags": [
+    "#southafrica",
+    "#budgetvsactual",
+    "#salarybreakdown",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R16 200\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Mossel Bay",
+      "body": "Female, 34\nSingle, no kids\nJob: Guesthouse manager\nNet salary: R16 200 p/m (low season)"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 800 p/m",
+      "includes": "Cottage near the harbour, water, refuse",
+      "body": "Rent doesn't drop just because the tourists have."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R2 300 p/m",
+      "includes": "Needed for airport pickups and my own commute",
+      "body": "Fixed every month, high season or dead quiet like this one."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 100 p/m",
+      "includes": "Just for me, cooking more since the guesthouse kitchen's quiet",
+      "body": "Slightly up this month. Comfort eating apparently has a line item now."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R1 200 p/m",
+      "includes": "Hospital plan, no gap cover yet",
+      "body": "The one bill that doesn't care what season it is either."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out & coffee",
+      "amount": "R1 800 p/m",
+      "includes": "Takeaways on the slow days I couldn't face cooking for one",
+      "body": "I budgeted R900 for this at the start of the month. It's exactly double."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 400 p/m",
+      "includes": "Car insurance, cellphone & data, funeral policy, streaming, stokvel",
+      "body": "Five small debits that don't care that bookings are down."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 600",
+      "body": "Out of R16 200. High season me would laugh at this number. Low season me is just glad it's not negative."
+    },
+    {
+      "kind": "cta",
+      "title": "I finally saw where the plan and the month didn't match",
+      "body": "I set this month's budget in Beyond Horizon before it started, then let it compare that against my statement once the month ended. Eating out was exactly double what I'd planned.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "income": 20200,
+  "audio": "bed_01.wav",
+  "caption": "The funeral policy paid out. It still wasn't close to what the month actually cost once the whole family arrived to be fed. What did nobody warn you a funeral really costs?",
+  "hashtags": [
+    "#southafrica",
+    "#funeralcostsa",
+    "#family",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R20 200\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Ladysmith",
+      "body": "Male, 41\nMarried, two kids at home\nJob: Admin clerk, provincial hospital\nNet salary: R20 200 p/m (this month, we buried my father)"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 500 p/m",
+      "includes": "3 bedroom in town, water, refuse",
+      "body": "Didn't move, didn't downgrade. Some months you just can't touch the number that's already tight."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral costs",
+      "amount": "R6 000 p/m",
+      "includes": "Catering for 150 people, tent and chairs hire, our family's share after the policy payout",
+      "body": "The policy paid out. It never covers what an actual funeral costs once the whole family shows up to be fed."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 200 p/m",
+      "includes": "Feeding the house, plus relatives who stayed the week",
+      "body": "Double the normal amount, and I only worked that out while writing this down."
+    },
+    {
+      "kind": "line",
+      "title": "Transport & fuel",
+      "amount": "R1 500 p/m",
+      "includes": "Fetching family from three towns for the service",
+      "body": "Everyone needed a lift from somewhere. I was the one with the working car."
+    },
+    {
+      "kind": "line",
+      "title": "School fees & aftercare",
+      "amount": "R1 800 p/m",
+      "includes": "Both kids, doesn't pause for a death in the family",
+      "body": "The school doesn't do payment holidays for grief."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 200 p/m",
+      "includes": "Medical aid, funeral policy going forward, cellphone & data, stokvel",
+      "body": "Four ordinary lines that kept running quietly through the worst week of my year."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 000",
+      "body": "Out of R20 200. We buried my father and the month still had to add up to zero like any other."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what the month actually cost",
+      "body": "I uploaded my statement to Beyond Horizon afterwards, mostly to understand what had happened to the money. The catering bill was the number that shocked me.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

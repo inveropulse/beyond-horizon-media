@@ -1,0 +1,84 @@
+{
+  "income": 19800,
+  "audio": "bed_01.wav",
+  "caption": "Twenty-five years of night shifts and there's never once been a month with room for retirement savings. Is 55 too late, or does everyone feel that way?",
+  "hashtags": [
+    "#southafrica",
+    "#retirementsa",
+    "#salarybreakdown",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R19 800\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Komani (Queenstown)",
+      "body": "Male, 55\nDivorced, kids grown and moved out\nJob: Night security supervisor, retail complex\nNet salary: R19 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 200 p/m",
+      "includes": "Backroom, own entrance",
+      "body": "Downsized twice since the divorce. This is about as small as it gets before it's not worth it."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 200 p/m",
+      "includes": "Cooking for one now, still buy in bulk out of habit",
+      "body": "Habits from a bigger household don't disappear just because the household did."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R1 100 p/m",
+      "includes": "Taxi to the complex for night shift, six nights a week",
+      "body": "There's no late-night alternative that's cheaper or safer."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R1 400 p/m",
+      "includes": "Hospital plan only, no day-to-day cover",
+      "body": "At 55 I know exactly what this doesn't cover, and I've made peace with hoping I don't need it."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral policy",
+      "amount": "R350 p/m",
+      "includes": "Covers me and my two kids",
+      "body": "The one policy I've never missed a premium on, not even the year everything else was late."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R9 350 p/m",
+      "includes": "Cellphone & data, stokvel, money to my daughter and grandchild when I can, church, a uniform replacement now and then",
+      "body": "There's no line here for retirement. Twenty-five years of night shifts and I've never once had a spare amount to start one."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 200",
+      "body": "Out of R19 800. Enough to get through the month. Not enough, at 55, to feel like there's a plan underneath it."
+    },
+    {
+      "kind": "cta",
+      "title": "I finally looked at the whole picture, not just this month",
+      "body": "I uploaded my statements to Beyond Horizon to see the pattern, not just one payslip. Twenty-five years in, there was never a month with room for retirement savings — now at least I can see it clearly instead of guessing.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

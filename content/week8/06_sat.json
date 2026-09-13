@@ -1,0 +1,84 @@
+{
+  "income": 28000,
+  "audio": "bed_03.wav",
+  "caption": "We financed the inverter through the installer just to get the lights back on and never checked the rate. Did load shedding get you into a loan you didn't plan for either?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#loadsheddingsa",
+    "#couplebudget",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R28 000\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Lichtenburg",
+      "body": "Him 36, her 33\nMarried, two kids\nJobs: Irrigation technician & co-op till supervisor\nCombined net: R28 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R6 500 p/m",
+      "includes": "3 bedroom on the edge of town",
+      "body": "The one number that hasn't moved in five years, rates aside."
+    },
+    {
+      "kind": "line",
+      "title": "Inverter & solar loan",
+      "amount": "R2 200 p/m",
+      "includes": "Financed through the installer during the worst of load shedding, 41 months left",
+      "body": "We didn't shop around, we just wanted the lights back on. We're still paying for that decision."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 800 p/m",
+      "includes": "Family of four, one big monthly shop plus top-ups",
+      "body": "Two kids at the age where the trolley fills up faster than the payslip does."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 200 p/m",
+      "includes": "The one car between us, does both jobs and the school run",
+      "body": "It has to work for two households' worth of errands, and there's no backup if it doesn't."
+    },
+    {
+      "kind": "line",
+      "title": "School fees & stationery",
+      "amount": "R2 500 p/m",
+      "includes": "Both kids, primary school",
+      "body": "The stationery list gets longer every single year and nobody explains why."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 800 p/m",
+      "includes": "Medical aid, car insurance, cellphone & data, two funeral policies, stokvel, prepaid electricity",
+      "body": "Six things between us that we'd never once added up together until now."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 000",
+      "body": "Out of R28 000 combined. Split two ways, that's not the cushion either of us thought a double income would buy."
+    },
+    {
+      "kind": "cta",
+      "title": "We finally saw the solar loan next to everything else",
+      "body": "We imported both our statements into Beyond Horizon and saw the inverter instalment sitting right next to the bond for the first time. It's not the villain we expected, but it's not nothing either.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

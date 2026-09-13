@@ -1,0 +1,84 @@
+{
+  "income": 18500,
+  "audio": "bed_01.wav",
+  "caption": "I work in a bank and I was still paying off the cheapest debt first out of habit instead of the most expensive one. Anyone else finally check the actual interest rates?",
+  "hashtags": [
+    "#southafrica",
+    "#debt",
+    "#debtfreesa",
+    "#salarybreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R18 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Vereeniging",
+      "body": "Female, 29\nSingle, no kids\nJob: Bank teller\nNet salary: R18 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 200 p/m",
+      "includes": "1 bed in central Vereeniging, water, refuse",
+      "body": "I approve other people's home loans all day. Mine is a rented room with damp in the corner."
+    },
+    {
+      "kind": "line",
+      "title": "Credit card",
+      "amount": "R2 800 p/m",
+      "includes": "27.75% interest, balance from three Black Fridays ago",
+      "body": "I work in a bank and I still didn't check the actual rate until this year. It's the most expensive thing I own."
+    },
+    {
+      "kind": "line",
+      "title": "Personal loan",
+      "amount": "R2 200 p/m",
+      "includes": "Taken out to be a bridesmaid at a friend's wedding",
+      "body": "Eleven months left. I remember the dress. I don't remember enjoying the day as much as it's costing me."
+    },
+    {
+      "kind": "line",
+      "title": "Store account",
+      "amount": "R1 200 p/m",
+      "includes": "Furniture account, two years still to run",
+      "body": "The lowest interest rate of everything I owe, and I'd been paying it off first out of pure habit."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 600 p/m",
+      "includes": "Checkers, plus the days I'm too tired after a shift to cook",
+      "body": "Nothing dramatic here. Just the one line that never goes down no matter what else does."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R4 200 p/m",
+      "includes": "Transport, medical aid, funeral policy, stokvel, airtime & data",
+      "body": "Five small debits that leave before I've made a single decision about them."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 300",
+      "body": "Out of R18 500. I move money for a living and it still takes me a full evening to work out where mine went."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped paying off the wrong debt first",
+      "body": "Beyond Horizon compared avalanche against snowball on what I owe and showed me the credit card was costing more than the loan and the store account combined.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

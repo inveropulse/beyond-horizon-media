@@ -1,0 +1,84 @@
+{
+  "income": 23000,
+  "audio": "bed_02.wav",
+  "caption": "Everyone haggles over the R15 fare. Nobody asks what it costs to keep the taxi on the road every month. What would you guess a route like mine costs?",
+  "hashtags": [
+    "#southafrica",
+    "#minibustaxi",
+    "#costofownership",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R23 000\np/m income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Ermelo",
+      "body": "Male, 45\nMarried, kids grown and out the house\nJob: Minibus taxi owner-driver, local route\nNet income: R23 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Taxi association & route fees",
+      "amount": "R1 200 p/m",
+      "includes": "Rank fees, route permit, association dues",
+      "body": "Non-negotiable if I want a spot on the rank. I've watched drivers get pushed off the route for less than a month behind on this."
+    },
+    {
+      "kind": "line",
+      "title": "Diesel",
+      "amount": "R4 500 p/m",
+      "includes": "Full tank most days, six days a week on the route",
+      "body": "The biggest number on this whole list, and it moves with the fuel price, not with what I earn."
+    },
+    {
+      "kind": "line",
+      "title": "Insurance & tracking device",
+      "amount": "R1 300 p/m",
+      "includes": "Third party cover, tracker for the finance company",
+      "body": "The bank insists on the tracker until the vehicle's paid off. Another four years of this line."
+    },
+    {
+      "kind": "line",
+      "title": "Maintenance & tyres",
+      "amount": "R1 800 p/m",
+      "includes": "Brake pads, taxi-spec tyres, the mechanic who knows this exact model",
+      "body": "This route eats brakes. I budget for a service every month whether it needs one or not."
+    },
+    {
+      "kind": "line",
+      "title": "Driver's assistant wage",
+      "amount": "R1 500 p/m",
+      "includes": "My gaartjie, six days a week",
+      "body": "He counts the fares better than I do. Worth every cent of it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R9 500 p/m",
+      "includes": "Room in Ermelo, groceries, his mother's electricity, funeral policy, taxi association welfare fund, airtime",
+      "body": "Six things I used to lump together as 'home money.' Split out, my mother's electricity is bigger than I want to admit."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R3 200",
+      "body": "Out of R23 000. That's what's actually mine after the taxi's been fed first, every single day."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing what the taxi actually cost me",
+      "body": "I uploaded three months of statements to Beyond Horizon and it split my business costs from my own. Diesel was eating more than I'd ever added up.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

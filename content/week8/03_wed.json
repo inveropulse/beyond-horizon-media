@@ -1,0 +1,84 @@
+{
+  "income": 9500,
+  "audio": "bed_03.wav",
+  "caption": "Black tax comes before rent in my head, even though it leaves my account after. Is that just how it works in your family too?",
+  "hashtags": [
+    "#southafrica",
+    "#blacktaxsa",
+    "#salary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R9 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Giyani",
+      "body": "Female, 23\nSingle, lives alone\nJob: Till operator, local supermarket\nNet salary: R9 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R1 500 p/m",
+      "includes": "Backroom off the main road, shares a yard tap",
+      "body": "It's not much, but it's mine, and nobody can raise it on a whim like the last place did."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R2 000 p/m",
+      "includes": "My grandmother's groceries and my two younger siblings' school needs",
+      "body": "It goes before rent in my head even though it leaves after. There's no version of my budget without this line."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R1 800 p/m",
+      "includes": "My own food for the month, plus extra when I visit home",
+      "body": "I eat smaller than this number some weeks so the visit-home extra doesn't run out."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R900 p/m",
+      "includes": "Taxi fare to the till and back, six days a week",
+      "body": "The fare went up twice this year. My wage didn't."
+    },
+    {
+      "kind": "line",
+      "title": "Airtime & data",
+      "amount": "R400 p/m",
+      "includes": "Enough to check on the kids after school",
+      "body": "This is the one call I will never let lapse."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 000 p/m",
+      "includes": "Stokvel, funeral policy, toiletries, a savings attempt that keeps losing",
+      "body": "I promised myself R500 a month into savings. It's the first thing that disappears when black tax goes up."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R900",
+      "body": "Out of R9 500. That's about R30 a day, and payday at the till is the same date every month whether my family's needs are or not."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing where the R9 500 went",
+      "body": "I uploaded my statement to Beyond Horizon and it showed me black tax and groceries were nearly forty percent of my pay, every single month.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
