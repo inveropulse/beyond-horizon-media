@@ -1,0 +1,84 @@
+{
+  "income": 52000,
+  "audio": "bed_03.wav",
+  "caption": "Being away four days a week makes 'cooking at home' an expensive joke. Is R52 000 enough to justify the hours?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgeting"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R52 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Krugersdorp",
+      "body": "Male, 29\nSingle, no kids\nJob: First officer, regional airline, based at Lanseria\nNet salary: R52 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R11 000 p/m",
+      "includes": "2 bed near Lanseria, short commute for early check-ins",
+      "body": "I picked the suburb for the drive time, not the suburb. I've seen it in daylight maybe six times."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R6 500 p/m",
+      "includes": "Needed for 4am airport runs, no Uber does those reliably",
+      "body": "I did the maths on a cheaper car. The maths didn't account for missing a flight."
+    },
+    {
+      "kind": "line",
+      "title": "Retirement annuity & TFSA",
+      "amount": "R4 500 p/m",
+      "includes": "Split between the two",
+      "body": "Pilots don't get a company pension the way people assume. This is the whole plan."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 200 p/m",
+      "includes": "Whatever's still good after a four-day roster away",
+      "body": "I've thrown out more expired milk than most people buy in a year."
+    },
+    {
+      "kind": "line",
+      "title": "Medical certs & training renewals",
+      "amount": "R1 800 p/m",
+      "includes": "Annual medical, sim checks, licence renewals",
+      "body": "This one's not optional. No current medical, no flying, no salary."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R20 500 p/m",
+      "includes": "Medical aid, insurance, phone & fibre, eating out, subscriptions, savings, gym",
+      "body": "The roster makes routine expensive. Eating out isn't a treat when you're never home to cook."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R4 500",
+      "body": "Out of R52 000. Better than most months, mostly because I was away and couldn't spend it."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded a few months of statements to Beyond Horizon to see what an irregular roster actually does to spending. Eating out was the answer.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

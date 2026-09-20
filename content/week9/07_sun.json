@@ -1,0 +1,84 @@
+{
+  "income": 6800,
+  "audio": "bed_01.wav",
+  "caption": "The grant covers the basics. The beadwork is what pays for everything else. Is that a normal split for anyone else?",
+  "hashtags": [
+    "#southafrica",
+    "#budgetingforsouthafricans",
+    "#spendingbreakdown",
+    "#money",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I live on\nmy R6 800\np/m income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Bizana",
+      "body": "Female, 36\nLiving with two children (14 and 9)\nIncome: Disability grant plus beadwork sold at church markets\nNet income: R6 800 p/m (this month)"
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 800 p/m",
+      "includes": "Maize meal, vegetables, the basics for the three of us",
+      "body": "I plan this one first. Everything else fits around whatever's left of it."
+    },
+    {
+      "kind": "line",
+      "title": "School uniform & stationery",
+      "amount": "R700 p/m",
+      "includes": "Shoes for the older one, exercise books for both",
+      "body": "The school doesn't ask why it's late. It still means I have to find it somewhere."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R500 p/m",
+      "includes": "Taxi to town on market days to sell and to restock beads",
+      "body": "If I don't get to the market, there's no beadwork money that week. Simple as that."
+    },
+    {
+      "kind": "line",
+      "title": "Beadwork materials",
+      "amount": "R600 p/m",
+      "includes": "Beads, thread, wire from the craft supplier in town",
+      "body": "People pay R80 for a piece that costs me R25 to make. The rest is my time, which doesn't show up on a statement."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral policy",
+      "amount": "R150 p/m",
+      "includes": "Cover for myself and both children",
+      "body": "This one comes off no matter what. I decided that a long time ago."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R1 900 p/m",
+      "includes": "Electricity, airtime & data, stokvel, soap and toiletries",
+      "body": "Small amounts, but there are five of them and they all want to go first."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R150",
+      "body": "Out of R6 800. R150 some months, nothing in others. The beadwork is what makes the difference."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I use Money Rhythm to check in on the grant and the beadwork money on the days I actually have signal, so I can see the two together instead of guessing.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

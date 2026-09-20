@@ -1,0 +1,84 @@
+{
+  "income": 36000,
+  "audio": "bed_02.wav",
+  "caption": "Four months to the wedding and the deposit already ate a car payment. Did anyone's wedding actually come in on budget?",
+  "hashtags": [
+    "#southafrica",
+    "#wedding",
+    "#budgetingforsouthafricans",
+    "#spendingbreakdown",
+    "#salarybreakdown"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R36 000\nplanning our wedding",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Mahikeng",
+      "body": "Him 27, her 26\nEngaged, no kids yet\nJobs: Municipal library assistant & sales rep at a furniture store\nCombined net: R36 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R6 500 p/m",
+      "includes": "2 bed townhouse, we moved in together in January",
+      "body": "We priced venues before we priced this place. The venue lost."
+    },
+    {
+      "kind": "line",
+      "title": "Wedding savings",
+      "amount": "R8 000 p/m",
+      "includes": "Joint account, no withdrawals until the date",
+      "body": "We picked the date first and worked backward. Eight months of this and we're still short."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 800 p/m",
+      "includes": "Two of us, plus his mother most Sundays",
+      "body": "She comes for lunch and leaves with leftovers. We've stopped minding."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 200 p/m",
+      "includes": "Her car, his is paid off",
+      "body": "We argued about trading it in before the wedding. We're keeping it."
+    },
+    {
+      "kind": "line",
+      "title": "Catering deposit",
+      "amount": "R2 500 p/m",
+      "includes": "Paid this month, balance due a month before the day",
+      "body": "The deposit alone was more than either of our first month's rent ever was."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R10 500 p/m",
+      "includes": "Medical aid, car insurance, phone & fibre, electricity & water, gifts, entertainment",
+      "body": "This is the bucket that funds every Saturday we're not looking at venues."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 500",
+      "body": "Out of R36 000. Four months to go. The savings line needs to win a few more of these."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "We put both our statements into Beyond Horizon so we could see the wedding fund against everything else we're still paying for.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "income": 16900,
+  "audio": "bed_01.wav",
+  "caption": "I moved out for the job and my salary moved with me, just not very far. What's normal for a first posting?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#budgeting",
+    "#spendingbreakdown"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R16 900\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Kokstad",
+      "body": "Male, 23\nSingle, no kids\nJob: SAPS constable, first posting\nNet salary: R16 900 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R2 200 p/m",
+      "includes": "Room in a shared house with two other constables",
+      "body": "We rotate who does the grocery run based on whoever's off dayshift that week."
+    },
+    {
+      "kind": "line",
+      "title": "Personal loan",
+      "amount": "R2 800 p/m",
+      "includes": "Kit, boots and travel costs from training college",
+      "body": "Nobody told me the uniform allowance comes later than the uniform does."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 200 p/m",
+      "includes": "Shared house, split three ways",
+      "body": "Whoever's on nightshift eats the most. It's usually me."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel & transport",
+      "amount": "R1 800 p/m",
+      "includes": "My own car, since the station vehicles are for the job, not for me",
+      "body": "The station is 40km from anywhere I'd actually want to be off duty."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & data",
+      "amount": "R1 200 p/m",
+      "includes": "Garage food after nightshift, data for the group chat home",
+      "body": "I tell myself it's cheaper than cooking at 6am. I've never actually checked."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 000 p/m",
+      "includes": "Insurance, funeral policy, family support, phone contract, gym",
+      "body": "The family support line is new since I started earning. Nobody asked me to add it."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R700",
+      "body": "Out of R16 900. First posting pay. It gets better with rank, everyone keeps telling me."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded three months of statements to Beyond Horizon to see if the training loan was actually the problem. It wasn't — takeaways were.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

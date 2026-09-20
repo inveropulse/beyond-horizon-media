@@ -1,0 +1,84 @@
+{
+  "income": 15800,
+  "audio": "bed_03.wav",
+  "caption": "Fourteen months left on the debt review and I finally know where every rand goes. Would you have gone the same route?",
+  "hashtags": [
+    "#southafrica",
+    "#debtfreesa",
+    "#debt",
+    "#budgetingforsouthafricans",
+    "#spendingbreakdown"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R15 800\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Aliwal North",
+      "body": "Female, 33\nSingle mother, one daughter (10)\nJob: Cleaner, provincial hospital\nNet salary: R15 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Debt review instalment",
+      "amount": "R3 200 p/m",
+      "includes": "Medical bill from her hospital stay and a store account, consolidated",
+      "body": "She was in ICU for four days two years ago. I'm still paying for those four days."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R2 800 p/m",
+      "includes": "2 room backyard unit, shared yard",
+      "body": "Small, but it's five minutes from her school and ten from mine."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 400 p/m",
+      "includes": "Checkers on payday, spaza shop for the rest of the month",
+      "body": "The spaza is more expensive per item. It's also open when I've got R40 left and nothing else."
+    },
+    {
+      "kind": "line",
+      "title": "School fees & uniform",
+      "amount": "R1 100 p/m",
+      "includes": "Fees, shoes, the jersey she grew out of in June",
+      "body": "I work at the hospital that admitted her. I still can't get the fee waiver form right."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R900 p/m",
+      "includes": "Taxi fare, both of us, both directions",
+      "body": "We take the same taxi most mornings. The driver knows to hoot if we're running late."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R4 950 p/m",
+      "includes": "Electricity, medical aid top-up, phone & data, funeral policy, stokvel",
+      "body": "The debt review counsellor told me to list these separately. Together they're a third of my salary."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R450",
+      "body": "Out of R15 800. Fourteen months left on the debt review. I count them."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon when I started debt review, so I could actually see the instalment against everything else.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "income": 9400,
+  "audio": "bed_01.wav",
+  "caption": "Some weeks the stock costs more than my room. Is R9 400 even worth calling an income?",
+  "hashtags": [
+    "#southafrica",
+    "#spendingbreakdown",
+    "#howispendmysalary",
+    "#budgetingforsouthafricans",
+    "#hustle"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R9 400\np/m income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Bethlehem",
+      "body": "Female, 24\nSingle, no kids\nJob: Runs a fruit & veg stall at the taxi rank\nNet income: R9 400 p/m (a good month)"
+    },
+    {
+      "kind": "line",
+      "title": "Stock",
+      "amount": "R3 000 p/m",
+      "includes": "Fruit, veg and packaging from the wholesale market",
+      "body": "I go three times a week. If I skip a trip the stall looks empty and people walk past it."
+    },
+    {
+      "kind": "line",
+      "title": "Room rent",
+      "amount": "R1 800 p/m",
+      "includes": "Backroom, shared yard tap",
+      "body": "Cheaper than town, but I lose an hour walking to the rank and back every day."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R900 p/m",
+      "includes": "What doesn't come off my own stall",
+      "body": "I eat my unsold stock most nights. Groceries are really just the things a stall can't sell you."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R700 p/m",
+      "includes": "Taxi to the wholesale market and back",
+      "body": "This is the cost of buying the stock, before I've sold a single tomato."
+    },
+    {
+      "kind": "line",
+      "title": "Stokvel",
+      "amount": "R300 p/m",
+      "includes": "Twelve women, payout in December",
+      "body": "The one saving I never touch. Everything else gets renegotiated with myself first."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 200 p/m",
+      "includes": "Airtime & data, funeral policy, toiletries, bank fees, family support",
+      "body": "None of these feel big on their own. Together they're a quarter of what the stall makes me."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R500",
+      "body": "Out of R9 400. Most of that already turned into fruit and veg before I saw a rand of it."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I upload my bank statement to Beyond Horizon between market trips and it sorts every transaction for me.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "income": 22500,
+  "audio": "bed_02.wav",
+  "caption": "We lost R16 000 a month overnight and we're still here. What would you have cut first?",
+  "hashtags": [
+    "#southafrica",
+    "#retrenchment",
+    "#budgeting",
+    "#spendingbreakdown",
+    "#salarybreakdown"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R22 500\nsince his retrenchment",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Carletonville",
+      "body": "Him 34, her 31\nMarried, two kids (9 and 6)\nJobs: General labourer, was a mine machine operator until March & till supervisor at a hardware store\nCombined net: R22 500 p/m (down from R38 000)"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 500 p/m",
+      "includes": "3 bed flat, moved out of the house we bonded in April",
+      "body": "We sold the house before the bank could take it. Some weeks that still feels like the win."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 800 p/m",
+      "includes": "Two kids, one of them a teenager who eats like three",
+      "body": "This is the number I watch most closely now. It used to be the one I never checked."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R2 400 p/m",
+      "includes": "The one car we kept, the other went back to the bank",
+      "body": "He needs it for piece jobs. We decided food would move before the car did."
+    },
+    {
+      "kind": "line",
+      "title": "Transport & fuel",
+      "amount": "R1 200 p/m",
+      "includes": "Petrol for piece jobs, taxi fare for her shifts",
+      "body": "Piece jobs pay per site. Some weeks the petrol costs more than the job did."
+    },
+    {
+      "kind": "line",
+      "title": "Store account repayments",
+      "amount": "R2 000 p/m",
+      "includes": "Furniture and back-to-school accounts from before March",
+      "body": "We opened these when there was still a mine salary. They didn't get the memo when it ended."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R7 700 p/m",
+      "includes": "Electricity, water, medical aid, school fees, insurance, phone & data",
+      "body": "Same categories as before. Every single amount inside them got smaller this year."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R900",
+      "body": "Out of R22 500. Sixteen thousand less than we used to have, and we still made rent."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "We uploaded our statements to Beyond Horizon the month he was retrenched, just to see where we actually stood.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
