@@ -1,0 +1,84 @@
+{
+  "income": 33000,
+  "audio": "bed_02.wav",
+  "caption": "The stokvel is the one thing we've never skipped, even the tight months. What's yours?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#couplebudget",
+    "#stokvel",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R33 000\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Zeerust",
+      "body": "Him 35, her 32\nMarried, two kids (9 and 6)\nJobs: Farm equipment mechanic & Grade R classroom assistant\nCombined net: R33 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R6 500 p/m",
+      "includes": "3 bed on the edge of town, borehole water",
+      "body": "We bought here because the schools are close enough to walk. The borehole was a bonus we didn't plan for."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 800 p/m",
+      "includes": "Two adults, two growing boys, a bulk shop once a month",
+      "body": "Feeding two boys under ten costs more than either of us budgeted for two years ago."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 200 p/m",
+      "includes": "His single cab, used for farm call-outs",
+      "body": "One vehicle between us. It's tight, but a second instalment would be worse."
+    },
+    {
+      "kind": "line",
+      "title": "School fees & uniforms",
+      "amount": "R3 800 p/m",
+      "includes": "Two kids, fees, stationery, growing out of shoes",
+      "body": "Every January this number surprises us like it hasn't happened six times before."
+    },
+    {
+      "kind": "line",
+      "title": "Stokvel contribution",
+      "amount": "R1 200 p/m",
+      "includes": "A twelve-woman stokvel, payout due in December",
+      "body": "It's the one saving we've never once skipped, even in months this tight."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R11 000 p/m",
+      "includes": "Fuel, medical aid, borehole pump maintenance, phone & fibre, funeral policies, insurance, kids' extra-murals",
+      "body": "None of these feel optional and none of them are small once you add them up."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 500",
+      "body": "Out of R33 000, for a family of four. It goes further here than it would in Johannesburg, but not by much."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped guessing",
+      "body": "We uploaded our statements to Beyond Horizon and it sorted every transaction into categories for us.\n\nSeeing school costs and the farm fuel bill side by side changed how we plan for January.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

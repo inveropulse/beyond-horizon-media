@@ -1,0 +1,84 @@
+{
+  "income": 17800,
+  "audio": "bed_03.wav",
+  "caption": "Found a debit order I didn't recognise going off for eight months. Anyone else scared to actually check?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#salarybreakdown",
+    "#budgetvsactual",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R17 800\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Estcourt",
+      "body": "Female, 33\nSingle mother, one daughter (11)\nJob: Production line worker, the dairy factory\nNet salary: R17 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 800 p/m",
+      "includes": "2 bed in town, walking distance to the factory",
+      "body": "I picked it for the walk, not the size. Shift change is 6am and I don't own a car."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 200 p/m",
+      "includes": "Boxer, the fruit and veg stall for the rest",
+      "body": "Feeding a growing 11 year old costs more than the internet budgets ever mention."
+    },
+    {
+      "kind": "line",
+      "title": "School fees & uniform",
+      "amount": "R1 600 p/m",
+      "includes": "Fees, growing out of her shoes twice a year",
+      "body": "She's taller than me now. The shoe budget knows it before I do."
+    },
+    {
+      "kind": "line",
+      "title": "Store account",
+      "amount": "R1 400 p/m",
+      "includes": "Furniture account from when we moved in, two years left",
+      "body": "The interest on this thing is worse than I let myself calculate."
+    },
+    {
+      "kind": "line",
+      "title": "Forgotten debit order",
+      "amount": "R950 p/m",
+      "includes": "An insurance add-on I don't remember signing up for",
+      "body": "I genuinely didn't know this was still going off until I checked properly."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 200 p/m",
+      "includes": "Transport, airtime & data, funeral policy, electricity, stokvel",
+      "body": "Five small things that together are more than my rent."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 650",
+      "body": "Out of R17 800. It's tighter since I cancelled the debit order, but at least now it's tight on purpose."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and its anomaly check flagged the debit order in seconds.\n\nEight months of R950 I never signed up to pay.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

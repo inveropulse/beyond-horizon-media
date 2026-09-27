@@ -1,0 +1,84 @@
+{
+  "income": 26000,
+  "audio": "bed_02.wav",
+  "caption": "Summer pays for winter, in theory. Anyone else's income swing this hard with the season?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#couplebudget",
+    "#budgeting",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R26 000\nlow-season income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Jeffreys Bay",
+      "body": "Him 30, her 28\nMarried, no kids yet\nJobs: Surf instructor & guesthouse housekeeper\nCombined net: R26 000 p/m (low season)"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R7 000 p/m",
+      "includes": "2 bed cottage, two streets from Supertubes",
+      "body": "In December we'd fight the whole town for parking near this place. In winter it's just quiet, and the rent doesn't care."
+    },
+    {
+      "kind": "line",
+      "title": "Bakkie instalment",
+      "amount": "R3 200 p/m",
+      "includes": "Hauls boards and gear to lessons up and down the coast",
+      "body": "It's a work vehicle as much as a car, so neither of us feels bad about the payment. Most months."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 400 p/m",
+      "includes": "Spar, the farm stall on Fridays",
+      "body": "Two people who surf before breakfast eat like it. This one barely moves between seasons."
+    },
+    {
+      "kind": "line",
+      "title": "Board & gear maintenance",
+      "amount": "R1 200 p/m",
+      "includes": "Wax, leashes, a fin he lost off the point",
+      "body": "Small repairs he swears he'll stop paying for the day he stops teaching. He won't."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & braai supplies",
+      "amount": "R1 800 p/m",
+      "includes": "Fish and chips after a bad lesson day, braai packs for the weekend",
+      "body": "We told each other this was a summer habit. It is not."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R7 200 p/m",
+      "includes": "Fuel, medical aid, insurance, phone & fibre, funeral policies, stokvel",
+      "body": "None of these change with the season. Our income does, and that's the whole problem some months."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 200",
+      "body": "Out of R26 000, and that's a low-season month. December will look nothing like this, which is exactly the problem."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped guessing",
+      "body": "We uploaded three months of statements, the good ones and the quiet ones, to Beyond Horizon and it sorted every transaction for us.\n\nSeeing July next to December in one place changed how we plan.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

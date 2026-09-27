@@ -1,0 +1,84 @@
+{
+  "income": 13500,
+  "audio": "bed_01.wav",
+  "caption": "The queue food alone nearly doubled what I thought I spent. Is border-town living cheaper than the city, or does it just look that way?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R13 500\np/m income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Musina",
+      "body": "Female, 24\nSingle, shares a room with her cousin\nJob: Runner for a customs clearing agent, Beitbridge border post\nNet income: R13 500 p/m (this month)"
+    },
+    {
+      "kind": "line",
+      "title": "Room rent",
+      "amount": "R2 200 p/m",
+      "includes": "Shared 2 bed room with her cousin",
+      "body": "It's basic, but it's five minutes from the border post, and that saves me a taxi fare twice a day."
+    },
+    {
+      "kind": "line",
+      "title": "Transport to the border",
+      "amount": "R1 500 p/m",
+      "includes": "Lift club fare, six days a week",
+      "body": "The lift club driver raises the price every time diesel does, and I never argue."
+    },
+    {
+      "kind": "line",
+      "title": "Money home",
+      "amount": "R2 000 p/m",
+      "includes": "My mother and two younger brothers, across the border",
+      "body": "It goes over on a Friday, in cash. I've never once kept a slip."
+    },
+    {
+      "kind": "line",
+      "title": "Data & airtime",
+      "amount": "R600 p/m",
+      "includes": "Calls home, the family WhatsApp group, daily",
+      "body": "Signal drops the moment you're off the main road, so I buy more than I should just to stay reachable."
+    },
+    {
+      "kind": "line",
+      "title": "Food & tuckshop",
+      "amount": "R2 400 p/m",
+      "includes": "Border post tuckshop, cooldrinks, vetkoek between queues",
+      "body": "I would have guessed R1 000. Standing in a queue for six hours makes you buy things."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 200 p/m",
+      "includes": "Funeral policy, phone repayment, toiletries, a taxi to Louis Trichardt once a month",
+      "body": "Small things, but they're nearly a quarter of what I take home."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 600",
+      "body": "Out of R13 500. That's around R53 a day, and the border post doesn't care what day of the month it is."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my last few months to Beyond Horizon and it sorted every transaction for me.\n\nThe tuckshop total was the one I didn't want to see.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

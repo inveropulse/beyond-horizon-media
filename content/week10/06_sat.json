@@ -1,0 +1,84 @@
+{
+  "income": 56000,
+  "audio": "bed_03.wav",
+  "caption": "I make wine for a living and still pay to drink everyone else's. Is that a red flag or just the industry?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R56 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Swellendam",
+      "body": "Female, 37\nSingle, no kids\nJob: Assistant winemaker, family-owned wine estate\nNet salary: R56 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R11 500 p/m",
+      "includes": "3 bed farmhouse conversion outside town",
+      "body": "It needed everything redone. I don't regret it, but I underestimated the bond by a lot."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R6 200 p/m",
+      "includes": "Double cab, does harvest runs as much as errands",
+      "body": "It's technically for the farm. I use it to fetch groceries more than anything else."
+    },
+    {
+      "kind": "line",
+      "title": "Retirement annuity & TFSA",
+      "amount": "R5 500 p/m",
+      "includes": "RA R3 500, tax-free savings account R2 000",
+      "body": "I started this late, so I overcorrect on the amount now."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 800 p/m",
+      "includes": "Weekly shop, plus a standing order at the local butchery",
+      "body": "Living in wine country doesn't make groceries cheaper. It makes the wine cheaper."
+    },
+    {
+      "kind": "line",
+      "title": "Other estates' wine & tastings",
+      "amount": "R2 600 p/m",
+      "includes": "Membership at two neighbouring estates, tastings on weekends",
+      "body": "I make wine for a living and still pay to drink someone else's. I've stopped trying to justify it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R17 400 p/m",
+      "includes": "Medical aid, insurance, domestic worker, electricity, phone & fibre, gym, funeral policy, clothing",
+      "body": "This is the slide that made me actually open the app. Eight categories I'd never once added up."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R9 000",
+      "body": "Out of R56 000. Better than most months I complain about, and I still spend most of it before I notice."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction into categories in seconds.\n\nThe wine club total was the one that actually embarrassed me.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

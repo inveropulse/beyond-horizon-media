@@ -1,0 +1,84 @@
+{
+  "income": 24000,
+  "audio": "bed_01.wav",
+  "caption": "Distance is its own line item out here. Is anyone else's fuel bill basically a second rent?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#spendingbreakdown",
+    "#livingcostsSA",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R24 000\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Springbok",
+      "body": "Male, 48\nDivorced, kids grown and living in Cape Town\nJob: Water technician, local municipality\nNet salary: R24 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R4 200 p/m",
+      "includes": "2 bed house, bought after the divorce",
+      "body": "Small house, but it's mine and nobody else's name is on it."
+    },
+    {
+      "kind": "line",
+      "title": "Bakkie instalment",
+      "amount": "R3 600 p/m",
+      "includes": "Double cab, does 40 000km a year on service routes",
+      "body": "The municipality doesn't pay per kilometre, so half of this is me subsidising the job."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel",
+      "amount": "R3 800 p/m",
+      "includes": "Nearest big town is two hours away, and so is everything else",
+      "body": "People in the city spend this on rent. Out here it's just the cost of distance."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 600 p/m",
+      "includes": "One supermarket in town, no competition to keep prices down",
+      "body": "I pay city prices in a town with a fraction of the choice."
+    },
+    {
+      "kind": "line",
+      "title": "Phone & data",
+      "amount": "R900 p/m",
+      "includes": "Extra data because the signal drops on half my routes",
+      "body": "I pay more to be reachable out here than I did living in a city."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 900 p/m",
+      "includes": "Medical aid, funeral policy, insurance, electricity & water, support to his mother, a flight to see his kids twice a year",
+      "body": "The flights are the one I resent least. Everything else on this list I'd cut if I could."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 000",
+      "body": "Out of R24 000. Out here that's not bad, until the bakkie needs new tyres."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction, fuel included.\n\nSeeing the distance costs added up in one number was the wake-up call.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

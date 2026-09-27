@@ -1,0 +1,84 @@
+{
+  "income": 20500,
+  "audio": "bed_01.wav",
+  "caption": "Found out I was paying for the same cover twice for who knows how long. Ever checked and regretted it?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#money",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R20 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Colesberg",
+      "body": "Male, 34\nSingle, no kids\nJob: Manages a roadhouse on the N1\nNet salary: R20 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 200 p/m",
+      "includes": "Staff room behind the roadhouse, meals not included",
+      "body": "It's cheap because it's basically at work. I haven't had a proper day off in months."
+    },
+    {
+      "kind": "line",
+      "title": "Transport & fuel",
+      "amount": "R3 600 p/m",
+      "includes": "Own bakkie, runs between here and town most days",
+      "body": "Being on the N1 means everything is a long drive away, including my own groceries."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 800 p/m",
+      "includes": "One supermarket in town, the rest from the roadhouse fridge",
+      "body": "I sell food all day and still spend this much feeding myself. Make it make sense."
+    },
+    {
+      "kind": "line",
+      "title": "Duplicate debit order",
+      "amount": "R850 p/m",
+      "includes": "An insurance add-on running alongside the one I actually use",
+      "body": "I only found this because the app flagged two policies doing the same job."
+    },
+    {
+      "kind": "line",
+      "title": "Funeral policy",
+      "amount": "R380 p/m",
+      "includes": "Cover for myself and my mother",
+      "body": "The one line item I've never once thought about cancelling."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 870 p/m",
+      "includes": "Data & phone, electricity, medical aid, insurance, stokvel, clothing account",
+      "body": "Nothing dramatic on its own. Together it's a third of what I take home."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 800",
+      "body": "Out of R20 500. Better than last month, now that I'm not paying for the same thing twice."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and its anomaly check caught the duplicate policy in the first pass.\n\nR850 a month, gone, just like that.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
