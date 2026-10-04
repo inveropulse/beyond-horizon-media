@@ -1,0 +1,86 @@
+{
+  "income": 21800,
+  "audio": "bed_03.wav",
+  "caption": "Avalanche saves the interest, snowball gives you wins faster. Which one would you have picked?",
+  "hashtags": [
+    "#southafrica",
+    "#debtfreesa",
+    "#debt",
+    "#salarybreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I'm clearing\nR64 000 of debt\non R21 800 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Port Shepstone",
+      "body": "Male, 31\nSingle, no kids\nJob: Pharmacy dispensing assistant\nNet salary: R21 800 p/m\nDebt: R64 000 across four accounts"
+    },
+    {
+      "kind": "line",
+      "title": "Debt repayments",
+      "amount": "R6 800 p/m",
+      "includes": "Personal loan R2 900, credit card R1 800, clothing account R1 100, furniture R1 000",
+      "body": "Four accounts, four due dates. The personal loan is the biggest balance, the credit card has the highest interest."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R5 400 p/m",
+      "includes": "Flat in Marburg, water, refuse",
+      "body": "I could live cheaper but it's five minutes from work and I walk."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 600 p/m",
+      "includes": "Spar, Boxer, lunch packed from home",
+      "body": "I started packing lunch in March. It saves about R700 a month, which goes straight onto the card."
+    },
+    {
+      "kind": "line",
+      "title": "Scooter & taxi",
+      "amount": "R2 200 p/m",
+      "includes": "Petrol, insurance, taxi to Durban for visits",
+      "body": "The scooter is the best money I ever spent. It's also not paid off."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out",
+      "amount": "R1 700 p/m",
+      "includes": "Fish and chips Fridays, rugby with the boys",
+      "body": "I cut this from R3 000. It still hurts every Friday."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 400 p/m",
+      "includes": "Prepaid electricity, phone contract, funeral policy, stokvel, medical aid, gym",
+      "body": "The stokvel is R300 and I didn't pause it. The December payout is the one thing I'm not touching."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R700",
+      "body": "Out of R21 800. About R23 a day for the rest of the month. I've done the interest sums more times than I'd admit."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I put all four debts into Beyond Horizon and compared avalanche and snowball side by side.\n\nIt shows the total interest for each, so I could see the gap.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

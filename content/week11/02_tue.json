@@ -1,0 +1,84 @@
+{
+  "income": 34500,
+  "audio": "bed_02.wav",
+  "caption": "Two cars costing the same as the bond bothers me. Do couples really split these 50/50 or is that just us?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#couplesbudget",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend\nour R34 500\nhousehold income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Lephalale",
+      "body": "Him 30, her 28\nMarried, baby due in four months\nJobs: Scaffolder at the power station & clinic receptionist\nCombined net income: R34 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R8 900 p/m",
+      "includes": "2 bed townhouse, levies, rates",
+      "body": "We bought two years ago when it felt cheap. With a baby coming I check that number more often."
+    },
+    {
+      "kind": "line",
+      "title": "Cars",
+      "amount": "R7 200 p/m",
+      "includes": "Two instalments, fuel, insurance",
+      "body": "His is a Hilux for site, mine is a Picanto. They cost almost the same. I don't like that."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 300 p/m",
+      "includes": "Shoprite, Checkers, braai meat",
+      "body": "He eats like a scaffolder. I eat like a pregnant person. The trolley is a negotiation."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R3 800 p/m",
+      "includes": "Two members, hospital plan",
+      "body": "We upgraded the plan for the birth. It added R1 200 and I'm trying not to look at it."
+    },
+    {
+      "kind": "line",
+      "title": "Family support",
+      "amount": "R2 500 p/m",
+      "includes": "His mother in Mokopane, my sister's rent",
+      "body": "Split 50/50. We agreed on it before we got married, which helped."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 900 p/m",
+      "includes": "Funeral policies, stokvel, prepaid electricity, water, fibre, phones, baby fund, DStv",
+      "body": "R600 of that goes into a baby fund. The stokvel pays out in December and I'm already planning around it."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 900",
+      "body": "Out of R34 500. On paper it's fine. The nursery is still a spare room full of boxes."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped guessing",
+      "body": "We uploaded our statements to Beyond Horizon and it listed every recurring debit order.\n\nWe'd forgotten about two.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

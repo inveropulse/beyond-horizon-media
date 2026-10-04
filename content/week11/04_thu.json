@@ -1,0 +1,84 @@
+{
+  "income": 18600,
+  "audio": "bed_01.wav",
+  "caption": "Matric jacket deposit, extra lessons, uniforms. How much did your matric year actually cost?",
+  "hashtags": [
+    "#southafrica",
+    "#singlemom",
+    "#salary",
+    "#howispendmysalary",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R18 600\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Beaufort West",
+      "body": "Female, 42\nSingle mother, one son (16)\nJob: Post office clerk\nNet salary: R18 600 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 800 p/m",
+      "includes": "2 bed house, water, rates",
+      "body": "The landlord hasn't raised it in two years. I'm scared to mention it."
+    },
+    {
+      "kind": "line",
+      "title": "Matric year costs",
+      "amount": "R2 900 p/m",
+      "includes": "Uniform, transport, extra maths, matric jacket deposit",
+      "body": "He's in Grade 11. The jacket deposit alone was R1 100. I didn't see that coming."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 300 p/m",
+      "includes": "Shoprite, the butcher, a lot of bread",
+      "body": "A teenage boy eats everything. I buy in bulk and it's gone by Wednesday."
+    },
+    {
+      "kind": "line",
+      "title": "Family support",
+      "amount": "R1 800 p/m",
+      "includes": "My mother's medication and prepaid electricity",
+      "body": "She's in Prince Albert on a pension that stops short every month."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways",
+      "amount": "R1 500 p/m",
+      "includes": "Friday pizza, KFC after his rugby",
+      "body": "It's our one outing of the week. I'm not cutting it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 750 p/m",
+      "includes": "Prepaid electricity, funeral policy for two, cellphone, stokvel, school fund, Netflix, petrol",
+      "body": "The stokvel is my only savings. R500 in, one payout a year, and I always spend it before it lands."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R550",
+      "body": "Out of R18 600. About R18 a day. We're fine until something breaks."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and found the school costs I'd lost track of across three months.\n\nIt's all in one place now.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

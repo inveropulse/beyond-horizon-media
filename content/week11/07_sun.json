@@ -1,0 +1,86 @@
+{
+  "income": 10800,
+  "audio": "bed_01.wav",
+  "caption": "Child support is the one line I never question. What's the line you never question?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R10 800\np/m wages",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Piet Retief",
+      "body": "Male, 25\nSingle, one baby girl (1) who lives with her mom\nJob: Forestry worker, timber plantation\nNet wages: R10 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Child support",
+      "amount": "R2 800 p/m",
+      "includes": "My share of her mom's rent, nappies, formula",
+      "body": "I pay it on the 25th. I'd pay it even if no one asked."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R2 500 p/m",
+      "includes": "Room in a worker's hostel, prepaid electricity",
+      "body": "It's close to the plantation and I walk to work."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 000 p/m",
+      "includes": "Boxer, mostly pap, chicken and a bit of meat",
+      "body": "I'm on my feet from 5 am. I eat a lot."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R1 300 p/m",
+      "includes": "Weekends home to Wakkerstroom to see her",
+      "body": "Two taxis and a long wait. R1 300 for two days with my girl."
+    },
+    {
+      "kind": "line",
+      "title": "Cigarettes & drinks",
+      "amount": "R1 100 p/m",
+      "includes": "Packs, a few beers on Friday",
+      "body": "It's the number I don't want to look at."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R800 p/m",
+      "includes": "Funeral policy, stokvel, airtime & data, clothing account, boots, toiletries",
+      "body": "The stokvel is only R200 but the group has helped me twice already. I'm not skipping a month."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R300",
+      "body": "Out of R10 800. About R10 a day. Anything over that is borrowed from next month."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and saw the drinks and cigarettes added up.\n\nR1 100 was more than I thought.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

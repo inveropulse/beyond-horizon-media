@@ -1,0 +1,84 @@
+{
+  "income": 38000,
+  "audio": "bed_03.wav",
+  "caption": "R9 100 a month on a bakkie I need for work. Is that normal or am I paying for a lifestyle?",
+  "hashtags": [
+    "#southafrica",
+    "#costofownership",
+    "#salary",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#051D3B",
+    "fg": "#FFFFFF",
+    "muted": "#8FA6C4",
+    "accent": "#5BD748"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What my bakkie\nreally costs me\non R38 000 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Ceres",
+      "body": "Male, 37\nMarried, one daughter (5)\nJob: Packhouse manager, fruit\nHousehold net income: R38 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bakkie",
+      "amount": "R9 100 p/m",
+      "includes": "Instalment R5 400, insurance R1 650, fuel R1 400, tyres & services R650",
+      "body": "I need it for orchard roads. I'd still rather it didn't cost more than our bond."
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R8 400 p/m",
+      "includes": "3 bed house, rates, security",
+      "body": "We bought before the rate hikes. I try not to look at the interest part."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 800 p/m",
+      "includes": "Checkers, farm stall, the odd box of fruit",
+      "body": "Fruit is free in season. I'm still spending R4 800, which says something."
+    },
+    {
+      "kind": "line",
+      "title": "Daycare & school",
+      "amount": "R3 200 p/m",
+      "includes": "Aftercare, uniform, swimming lessons",
+      "body": "She started Grade R in January. The swimming lessons were her idea."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out",
+      "amount": "R2 300 p/m",
+      "includes": "Saturday lunches, takeaways on night shift",
+      "body": "Peak season means I eat in the car. R2 300 and half of it is petrol-station pies."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R8 500 p/m",
+      "includes": "Medical aid, electricity, water, funeral policies, stokvel, phones, DStv, savings",
+      "body": "Medical aid is R3 600 of that. The rest are small things I never think about one at a time."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 700",
+      "body": "Out of R38 000. It's what's left after the bakkie takes its share."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and its recurring expense detection showed the bakkie's costs in one place.\n\nI'd never seen it as one number.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

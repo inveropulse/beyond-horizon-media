@@ -1,0 +1,86 @@
+{
+  "income": 29000,
+  "audio": "bed_02.wav",
+  "caption": "Funerals cost more than most policies cover. What did the last one in your family really cost?",
+  "hashtags": [
+    "#southafrica",
+    "#monthinreview",
+    "#budgetvsactual",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "Where my R29 000\nwent the month\nmy gran passed",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Humansdorp",
+      "body": "Male, 28\nSingle, no kids\nJob: Wind farm technician\nNet salary: R29 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Funeral costs",
+      "amount": "R9 500 p/m",
+      "includes": "Tombstone deposit, catering, a cow, my share of the tent",
+      "body": "Her policy covered the coffin only. The family split the rest and I put in more than my share."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R5 200 p/m",
+      "includes": "Flat in Humansdorp, water, refuse",
+      "body": "It's R1 000 less than Jeffreys Bay and a twenty minute drive."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel & car",
+      "amount": "R4 100 p/m",
+      "includes": "Petrol, a new tyre, insurance",
+      "body": "I drove to Mthatha twice in one month. R1 800 in petrol alone."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 400 p/m",
+      "includes": "Spar, Pick n Pay",
+      "body": "I mostly ate what was left over at the funeral."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out",
+      "amount": "R2 200 p/m",
+      "includes": "Takeaways, drinks after the funeral",
+      "body": "This one has nothing to do with grief and everything to do with not cooking."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 450 p/m",
+      "includes": "Prepaid electricity, phone, medical aid, funeral policy, stokvel, black tax, gym",
+      "body": "Every other line was on autopilot. If you ask what happened this month, I'd say only the funeral."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R150",
+      "body": "Out of R29 000. I went into overdraft for two days before payday and I'm still not sure which line did it."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded the month's statement to Beyond Horizon and saw the exact day the account went red.\n\nIt was the day I paid the tombstone deposit.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

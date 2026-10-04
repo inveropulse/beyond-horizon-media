@@ -1,0 +1,86 @@
+{
+  "income": 12400,
+  "audio": "bed_01.wav",
+  "caption": "R1 400 on takeaways and data and I barely noticed. Is R2 500 for black tax normal where you're from?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#blacktax",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R12 400\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Ficksburg",
+      "body": "Female, 27\nSingle, no kids\nJob: Crèche teacher (ECD practitioner)\nNet salary: R12 400 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 200 p/m",
+      "includes": "Backroom in Meqheleng, water, prepaid electricity",
+      "body": "One room and a shared tap. I stopped pretending it's more than that and started enjoying the quiet."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R2 500 p/m",
+      "includes": "My gran's groceries, my brother's school fees",
+      "body": "I send it the day after payday. If I wait, I start negotiating with myself."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R1 500 p/m",
+      "includes": "Daily to the crèche, weekends home to Clocolan",
+      "body": "Two taxis each way on weekends. R1 500 and it still feels like a surprise."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R1 800 p/m",
+      "includes": "Pick n Pay, the spaza, a bag of mealie meal",
+      "body": "I buy snacks for the kids at work and end up eating half of them."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways & data",
+      "amount": "R1 400 p/m",
+      "includes": "Kota twice a week, data bundles",
+      "body": "R1 400 is the number I'm not proud of. Data alone is R650 and I'm on WhatsApp all day."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R1 550 p/m",
+      "includes": "Funeral policy, stokvel, phone contract, clothing account, toiletries, savings",
+      "body": "The stokvel and funeral policy go off my account before I can touch them. The rest is small things that add up."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R450",
+      "body": "Out of R12 400. It's gone by the 22nd most months, and then it's rice and eggs until the 25th."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and it sorted every transaction into categories.\n\nThe takeaways and data number made me go quiet.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
