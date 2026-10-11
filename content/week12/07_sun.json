@@ -1,0 +1,86 @@
+{
+  "income": 42000,
+  "audio": "bed_01.wav",
+  "caption": "Two homes, one marriage. What's the cost of distance in your household?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#couplebudget",
+    "#livingcostsSA",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend our\nR42 000 household\nincome across two towns\nSouth Africa",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Vryburg",
+      "body": "Him 38, her 36\nMarried, two kids (8 and 5)\nJobs: Mine electrician in Hotazel (away Mon–Thu) & Home Affairs clerk\nHousehold net income: R42 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R9 800 p/m",
+      "includes": "3 bed in Vryburg, rates and water",
+      "body": "He's home three nights a week. The kids still ask if he lives here."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R7 400 p/m",
+      "includes": "Two kitchens: ours, and his in Hotazel",
+      "body": "He buys his own food there. We don't talk about how much of it is takeaways."
+    },
+    {
+      "kind": "line",
+      "title": "School fees & aftercare",
+      "amount": "R4 600 p/m",
+      "includes": "Private primary and aftercare until five",
+      "body": "I work till half past four, so aftercare is the thing that makes my job possible."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel for the trip",
+      "amount": "R3 200 p/m",
+      "includes": "His Sunday night drive and the monthly family visit",
+      "body": "Two hundred and eighty kilometres each way. I did the sum once and then stopped."
+    },
+    {
+      "kind": "line",
+      "title": "His room in Hotazel",
+      "amount": "R2 800 p/m",
+      "includes": "Shared house, own room, rent only",
+      "body": "A second rent just so he can work. Neither of us thought of it when we got married."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R10 900 p/m",
+      "includes": "Car instalments, medical aid, electricity, phones, funeral policies, stokvel",
+      "body": "Two car instalments, because one of them lives on the road."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R3 300",
+      "body": "Out of R42 000. We're not struggling, but there's R2 800 that exists only because of the distance."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded both our statements to Beyond Horizon and the two kitchens finally showed up as one grocery number.\n\nThe second rent was easy to forget.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

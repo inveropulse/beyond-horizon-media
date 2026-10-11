@@ -1,0 +1,86 @@
+{
+  "income": 18300,
+  "audio": "bed_01.wav",
+  "caption": "I've never added up the small deposits until now. Have you ever checked yours?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#spendingbreakdown",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "The R3 400 I don't\ntell anyone about,\non R18 300 p/m\nSouth Africa",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Ga-Rankuwa",
+      "body": "Male, 27\nSingle, no kids\nJob: Laboratory technician at a provincial hospital\nNet salary: R18 300 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Betting",
+      "amount": "R3 400 p/m",
+      "includes": "Sports betting app deposits, mostly weekends",
+      "body": "Deposits, not losses. I won some back, which I know isn't how the arithmetic works."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 800 p/m",
+      "includes": "Backroom with its own entrance, water included",
+      "body": "Cheap, quiet, and my landlady waves when I come home late."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R1 900 p/m",
+      "includes": "Cooking for one, bulk buying maize meal and chicken",
+      "body": "The most disciplined line on this list, strangely."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R1 400 p/m",
+      "includes": "Ga-Rankuwa to the hospital, back late after shifts",
+      "body": "Night shift means no taxi after 9 and an e-hailing ride home."
+    },
+    {
+      "kind": "line",
+      "title": "Family support",
+      "amount": "R1 500 p/m",
+      "includes": "My mom's electricity and my sister's data",
+      "body": "Betting is more than I send home. I noticed that on my statement."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R4 600 p/m",
+      "includes": "Phone contract, clothing account, funeral policy, stokvel, haircuts, airtime",
+      "body": "Nothing in here surprises me. That's the problem: the other line does."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 700",
+      "body": "Out of R18 300. About R57 a day, and the betting line is bigger than my rent."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and the recurring deposits showed up grouped together.\n\nSeeing them as one number was different to seeing them as small ones.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

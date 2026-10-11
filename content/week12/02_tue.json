@@ -1,0 +1,86 @@
+{
+  "income": 31200,
+  "audio": "bed_02.wav",
+  "caption": "Three kids and R7 200 on groceries. What does your food bill look like with teenagers in the house?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#familybudget",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend our\nR31 200 household\nincome\nSouth Africa",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Secunda",
+      "body": "Him 42, her 39\nMarried, three kids (15, 13 and 10)\nJobs: Fitter at a plant contractor & school admin clerk\nHousehold net income: R31 200 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R8 400 p/m",
+      "includes": "3 bed in Embalenhle, rates and water included",
+      "body": "We bought when the kids were small. It felt huge then. Now it's three kids and one bathroom."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R7 200 p/m",
+      "includes": "Five people, packed lunches, a 15 year old who eats twice",
+      "body": "I used to budget R5 000. Then he turned 15."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 900 p/m",
+      "includes": "Family SUV, 22 months left",
+      "body": "Bought for the school run. We now do the school run in a different car because of the fuel."
+    },
+    {
+      "kind": "line",
+      "title": "School fees & uniforms",
+      "amount": "R2 600 p/m",
+      "includes": "Two government schools with fees, stationery, sports kit",
+      "body": "Every term there's a new levy nobody mentioned in January."
+    },
+    {
+      "kind": "line",
+      "title": "Friday takeaways",
+      "amount": "R1 800 p/m",
+      "includes": "Pizza night and the occasional Nando's",
+      "body": "We say it's for the kids. It's for us, honestly."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 400 p/m",
+      "includes": "Petrol, hospital plan, electricity, phones, funeral policies, stokvel",
+      "body": "Five funeral policies adds up quicker than you'd think. It's still the one bill I'd never cut."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 900",
+      "body": "Out of R31 200. About R63 a day for a family of five, and one school trip lands on the 15th."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded two months of statements to Beyond Horizon and it grouped the school costs I'd been scattering across three categories.\n\nFriday takeaways were R400 higher than we thought.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "income": 23800,
+  "audio": "bed_02.wav",
+  "caption": "Eleven presents, one bus ticket home. Is spreading December across the year the only way it works?",
+  "hashtags": [
+    "#southafrica",
+    "#festiveseason",
+    "#howispendmysalary",
+    "#blacktax",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I'm funding\nDecember on\nR23 800 p/m\nSouth Africa",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Alberton",
+      "body": "Female, 33\nSingle, no kids\nJob: Stock controller at a distribution centre\nNet salary: R23 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R6 400 p/m",
+      "includes": "1 bed in Alberton, water and refuse",
+      "body": "I moved here for the taxi rank. I stayed for the landlord who fixes things."
+    },
+    {
+      "kind": "line",
+      "title": "December travel fund",
+      "amount": "R2 400 p/m",
+      "includes": "Bus tickets home to Mthatha for me and my cousin",
+      "body": "Tickets double after the 15th. I put this aside every month since July."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R2 000 p/m",
+      "includes": "My mom's groceries and my brother's rent",
+      "body": "It goes up in December because everyone needs something at the same time."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 500 p/m",
+      "includes": "Checkers and the corner shop for bread",
+      "body": "I shop for one and cook for three on Sundays."
+    },
+    {
+      "kind": "line",
+      "title": "Gifts & festive groceries",
+      "amount": "R1 800 p/m",
+      "includes": "Presents for eleven people, meat for the family braai",
+      "body": "I swear I buy nothing for myself. The list is just long."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 300 p/m",
+      "includes": "Taxi fare, electricity, phone, funeral policy, clothing account, stokvel",
+      "body": "The stokvel pays out on the 5th of December. It's already spent on paper."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 400",
+      "body": "Out of R23 800. December only works because I started putting money aside in July."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I set up a budget in Beyond Horizon with a December line and imported my statement actuals.\n\nIt showed the travel and gift money was already moving.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

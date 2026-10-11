@@ -1,0 +1,86 @@
+{
+  "income": 38400,
+  "audio": "bed_03.wav",
+  "caption": "Everyone assumes a doctor's salary is sorted. Is R3 800 left over enough to call that comfortable?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#doctorsalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend my\nR38 400 p/m as a\ncommunity service doctor\nSouth Africa",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Pinetown",
+      "body": "Male, 29\nSingle, no kids\nJob: Community service doctor, provincial hospital\nNet salary: R38 400 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R8 500 p/m",
+      "includes": "1 bed in Westville, close to the highway",
+      "body": "I pay this so I can sleep in silence after a 30 hour call."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R4 000 p/m",
+      "includes": "My parents' bond contribution, my sister's university fees",
+      "body": "They paid for my degree. This line isn't a favour, it's the other half of the deal."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R4 400 p/m",
+      "includes": "Hatchback, 40 months left",
+      "body": "I bought it in my fifth year because the bus stopped feeling safe."
+    },
+    {
+      "kind": "line",
+      "title": "Study loan",
+      "amount": "R3 200 p/m",
+      "includes": "Repayment on the loan that covered what the bursary didn't",
+      "body": "Six years of loan and I'm only now paying more than the interest."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out",
+      "amount": "R3 100 p/m",
+      "includes": "Takeaways between shifts, one decent dinner a month",
+      "body": "I'm a doctor. I know what I'm eating. I eat it anyway."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R11 400 p/m",
+      "includes": "Groceries, petrol, medical aid, phone, HPCSA registration, indemnity, funeral policy, gym",
+      "body": "The registration fee is a yearly shock I've spread across the months."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R3 800",
+      "body": "Out of R38 400. Looks comfortable, until you add that I'm responsible for three households."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I put my statement into Beyond Horizon and the study loan and parent contributions sat next to my own spending for the first time.\n\nThe takeaway number was the awkward one.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

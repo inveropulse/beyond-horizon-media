@@ -1,0 +1,86 @@
+{
+  "income": 7400,
+  "audio": "bed_01.wav",
+  "caption": "My hair costs more than my data. Does the hustle count if it pays for itself?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#budgetingforsouthafricans",
+    "#youthsa"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R7 400\np/m stipend\nSouth Africa",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Mamelodi",
+      "body": "Female, 22\nSingle, lives with her gogo\nJob: Cashier at a Spar (youth programme) + weekend braiding\nNet income: R7 400 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R1 500 p/m",
+      "includes": "My mom's rent in Limpopo, my little brother's school shoes",
+      "body": "It's one fifth of what I make. I send it first so I can't talk myself out of it."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R1 450 p/m",
+      "includes": "Two taxis each way, six days a week",
+      "body": "The second taxi costs more than the first and goes half the distance. I've checked."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R1 300 p/m",
+      "includes": "My share of gogo's shopping, plus my own lunches",
+      "body": "Gogo says I eat like I'm paying for the whole house. I'm paying for a third of it."
+    },
+    {
+      "kind": "line",
+      "title": "Data & airtime",
+      "amount": "R650 p/m",
+      "includes": "Monthly bundle, top-ups when it runs out on the 20th",
+      "body": "Braiding bookings come in on WhatsApp, so this one is basically a work expense."
+    },
+    {
+      "kind": "line",
+      "title": "Hair, nails & lashes",
+      "amount": "R620 p/m",
+      "includes": "Mine, mostly. A client's hair is advertising",
+      "body": "I braid people for R350 and then spend R620 on myself. I know."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R1 280 p/m",
+      "includes": "Funeral policy, stokvel, clothing account, toiletries, work shoes",
+      "body": "The stokvel is R300 and pays out in December. Everything else in this slide is small and constant."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R600",
+      "body": "Out of R7 400. About R20 a day, and the braiding money is what makes the month balance."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and it split my braiding money from my Spar salary.\n\nThe hair spend was the line I'd been dodging.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

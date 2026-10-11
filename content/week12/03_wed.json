@@ -1,0 +1,86 @@
+{
+  "income": 27500,
+  "audio": "bed_03.wav",
+  "caption": "The bond was R7 900 but the house is R14 000. Did anyone warn you about the extras?",
+  "hashtags": [
+    "#southafrica",
+    "#firsthome",
+    "#livingcostsSA",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What my first home\nreally costs me\non R27 500 p/m\nSouth Africa",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Brakpan",
+      "body": "Female, 30\nSingle, bought her first home last year\nJob: Dental hygienist\nNet salary: R27 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R7 900 p/m",
+      "includes": "2 bed townhouse, R890 000 over 20 years",
+      "body": "The bank said I could afford more. I'm glad I didn't test it."
+    },
+    {
+      "kind": "line",
+      "title": "Rates, levies & water",
+      "amount": "R1 850 p/m",
+      "includes": "Municipal rates, body corporate levy, water",
+      "body": "The levy goes up every year and I'm told I'll love the new paving."
+    },
+    {
+      "kind": "line",
+      "title": "Repairs & fixing",
+      "amount": "R2 100 p/m",
+      "includes": "Geyser element, burglar bars, a leaking tap that wasn't just a tap",
+      "body": "Nobody told me a house charges you a surprise every month. Renting never did."
+    },
+    {
+      "kind": "line",
+      "title": "Electricity",
+      "amount": "R1 400 p/m",
+      "includes": "Prepaid, plus a small inverter for the fridge and router",
+      "body": "Load shedding taught me that the fibre router is the first thing I protect."
+    },
+    {
+      "kind": "line",
+      "title": "Security & home insurance",
+      "amount": "R750 p/m",
+      "includes": "Armed response, building and contents",
+      "body": "I read the policy twice. It's still confusing."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R11 200 p/m",
+      "includes": "Groceries, car instalment, petrol, medical aid, phone, funeral policy, stokvel",
+      "body": "The car is R3 300 of this. I'd love to say I'm paying the bond harder instead."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 300",
+      "body": "Out of R27 500. The house costs R14 000 a month before I've bought a single grocery."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I put the bond, levy and repairs into Beyond Horizon as one budget so I could see what the house really costs.\n\nThe repairs line is the one that kept growing.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
