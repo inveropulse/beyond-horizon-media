@@ -1,0 +1,86 @@
+{
+  "income": 48200,
+  "audio": "bed_01.wav",
+  "caption": "I earn R48 200 and have about R2 000 left. Does a bigger salary just mean a bigger version of the same problem?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#householdbudget",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend my R48 200\np/m salary\nand still run short",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Umhlanga",
+      "body": "Male, 37\nMarried, three kids (9, 7 and 2)\nJob: Sales manager, car dealership\nNet salary: R48 200 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R11 500 p/m",
+      "includes": "4 bed in a security estate",
+      "body": "We stretched for the estate. The bond is the reason I still say yes to overtime."
+    },
+    {
+      "kind": "line",
+      "title": "School fees",
+      "amount": "R8 400 p/m",
+      "includes": "Two at a private school, one at a crèche",
+      "body": "The fees went up 9% in January. I read it as a challenge."
+    },
+    {
+      "kind": "line",
+      "title": "Two cars",
+      "amount": "R7 600 p/m",
+      "includes": "Both instalments, both insurance premiums",
+      "body": "I need one for work. My wife needs one for the school run. Nobody likes the sum."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R6 200 p/m",
+      "includes": "Five people, the kids' lunch boxes, Woolies",
+      "body": "I tried the cheaper shop once. The kids found out."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R4 900 p/m",
+      "includes": "Family plan, with the in-hospital extras",
+      "body": "The one thing I won't touch. My younger brother's hospital bill taught me that."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R7 470 p/m",
+      "includes": "Petrol R2 400, Electricity R2 100, Fibre & phones R1 100, Golf club R650, Funeral policies R420, Black tax R800",
+      "body": "The golf club is the number I'm least proud of. I play once a month."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 130",
+      "body": "Out of R48 200. A bigger salary didn't make this section any simpler. It just moved the zeroes."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and it sorted every transaction for me.\n\nThe fixed costs were 80% of my pay before I'd bought a single extra thing.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

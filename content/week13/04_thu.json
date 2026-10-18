@@ -1,0 +1,86 @@
+{
+  "income": 22300,
+  "audio": "bed_01.wav",
+  "caption": "I planned for R3 000 left and ended with R400. Which line always betrays your budget?",
+  "hashtags": [
+    "#southafrica",
+    "#monthinreview",
+    "#budgetvsactual",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "I budgeted my R22 300\np/m salary.\nThen I checked.",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Roodepoort",
+      "body": "Female, 26\nSingle, no kids\nJob: Articled accountant\nNet salary: R22 300 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R6 500 p/m",
+      "includes": "Room in a 2 bed flat, water, wifi",
+      "body": "Budgeted R6 500. Spent R6 500. This is the only line where the plan survived."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 100 p/m",
+      "includes": "2021 Suzuki Swift, 38 months left",
+      "body": "Budgeted R3 100. Spent R3 100. The car is not the problem."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out",
+      "amount": "R3 200 p/m",
+      "includes": "Work lunches, weekends, delivery when I'm tired",
+      "body": "Budgeted R1 500. Spent R3 200. I had to read that number twice."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 400 p/m",
+      "includes": "Checkers, plus the Woolies treats that aren't groceries",
+      "body": "Budgeted R2 000. The extra R400 was all snacks."
+    },
+    {
+      "kind": "line",
+      "title": "Clothes & online shopping",
+      "amount": "R2 150 p/m",
+      "includes": "Shein, Zara sale, two returns I never did",
+      "body": "Budgeted R800. One bad Friday and a courier with my name on it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R4 550 p/m",
+      "includes": "Medical aid R1 100, Petrol R1 100, Car insurance R650, Phone R450, Black tax R800, Stokvel R300, Funeral policy R150",
+      "body": "These were all on budget. The overspending came from the lines I pretended were small."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R400",
+      "body": "Out of R22 300. I planned to have R3 000 left. I have R400."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I imported my actuals from my statement into Beyond Horizon and put them next to my budget.\n\nThe gap on eating out and shopping was R3 050.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

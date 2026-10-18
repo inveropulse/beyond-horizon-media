@@ -1,0 +1,86 @@
+{
+  "income": 19600,
+  "audio": "bed_02.wav",
+  "caption": "My leaks add up to more than what's left each month. How many subscriptions are you paying for and not using?",
+  "hashtags": [
+    "#southafrica",
+    "#moneyleaks",
+    "#money",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "The R3 760 that leaks\nout of my R19 600\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Boksburg",
+      "body": "Male, 28\nSingle, no kids\nJob: Dispatch clerk, courier depot\nNet salary: R19 600 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R5 800 p/m",
+      "includes": "1 bed in Boksburg North, water, refuse",
+      "body": "Rent is not a leak. I put it first so you can see how big the leaks look next to it."
+    },
+    {
+      "kind": "line",
+      "title": "Delivery app fees",
+      "amount": "R1 350 p/m",
+      "includes": "Delivery, service and tip fees only, not the food",
+      "body": "The food is a separate R1 900. These are the fees for someone to carry it 4 km."
+    },
+    {
+      "kind": "line",
+      "title": "Subscriptions",
+      "amount": "R1 240 p/m",
+      "includes": "Netflix, Showmax, DStv, Spotify, two apps I forgot I had",
+      "body": "I counted five. My statement counted seven."
+    },
+    {
+      "kind": "line",
+      "title": "Gym",
+      "amount": "R690 p/m",
+      "includes": "Contract with 7 months left",
+      "body": "I went twice last month. That's R345 a visit."
+    },
+    {
+      "kind": "line",
+      "title": "Bank fees",
+      "amount": "R480 p/m",
+      "includes": "Monthly fee, SMS notifications, cash withdrawal fees, one overdraft day",
+      "body": "A single day overdrawn cost me more than the notifications I never read."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R7 370 p/m",
+      "includes": "Groceries R2 600, Petrol R1 900, Phone & data R650, Electricity R700, Funeral policy R220, Black tax R800, Stokvel R500",
+      "body": "Nothing in here surprised me. That's the problem with the boring stuff."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 670",
+      "body": "Out of R19 600. The four leaks together come to R3 760, which is more than what's left."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and the recurring charges showed up grouped together.\n\nSeeing the gym and the two apps in one list was uncomfortable.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

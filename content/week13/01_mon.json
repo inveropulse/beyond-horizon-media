@@ -1,0 +1,86 @@
+{
+  "income": 8900,
+  "audio": "bed_01.wav",
+  "caption": "R550 left and a school form that needs R200 next week. Do you plan for that or just hope?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#singlemom",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R8 900\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Mdantsane",
+      "body": "Female, 35\nSingle mother, kids aged 12 and 4\nJob: Spaza shop assistant\nNet salary: R8 900 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 600 p/m",
+      "includes": "Maize meal, chicken, veg from the stall, Friday takeaway chicken",
+      "body": "The Friday chicken is R300 a month. I know. The kids look forward to it all week."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R1 800 p/m",
+      "includes": "Backyard room, shared tap and yard",
+      "body": "It is small. The landlord is fair and the room is safe, and in this price range that is rare."
+    },
+    {
+      "kind": "line",
+      "title": "School & crèche",
+      "amount": "R1 250 p/m",
+      "includes": "Uniform instalment, crèche fees, stationery",
+      "body": "The crèche fee is the one I pay first. Everything else can wait a week."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R1 000 p/m",
+      "includes": "My mother in Cofimvaba, her pension doesn't stretch",
+      "body": "I send it the day I get paid. If I wait, I find a reason to send less."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R700 p/m",
+      "includes": "Work and back, plus the kids' school run",
+      "body": "The fare went up again. Nobody asked me, but I keep paying it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R1 000 p/m",
+      "includes": "Prepaid electricity R450, Airtime & data R150, Funeral policy R200, Stokvel R200",
+      "body": "Four small things that each feel too small to count. Together they are a whole R1 000."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R550",
+      "body": "Out of R8 900. That is about R18 a day for the whole month, if nothing goes wrong. Something usually does."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and every transaction was sorted for me.\n\nThe takeaway chicken line was smaller than I feared, and the taxi line was bigger.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

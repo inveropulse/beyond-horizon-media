@@ -1,0 +1,86 @@
+{
+  "income": 16200,
+  "audio": "bed_03.wav",
+  "caption": "Medical aid takes nearly a quarter of our pension. What does it take from yours?",
+  "hashtags": [
+    "#southafrica",
+    "#retirement",
+    "#pension",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we live on\nour R16 200\np/m pension",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Margate",
+      "body": "Him 64, her 61\nMarried, own their house\nIncome: His pension R12 900 + her part-time work R3 300\nHousehold income: R16 200 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R3 900 p/m",
+      "includes": "Two people on a hospital plan, no savings account",
+      "body": "It's the biggest line and we both know it. Neither of us wants to be the one who drops it."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 100 p/m",
+      "includes": "Two adults, the grandchildren on Sundays",
+      "body": "Sunday lunch costs more than a normal Tuesday. We'd do it again."
+    },
+    {
+      "kind": "line",
+      "title": "Petrol & car",
+      "amount": "R1 850 p/m",
+      "includes": "One 2014 Corolla, services, licence",
+      "body": "The car is paid off. It's the only thing in this budget I enjoy owning."
+    },
+    {
+      "kind": "line",
+      "title": "Rates & water",
+      "amount": "R1 650 p/m",
+      "includes": "Municipal rates, water, refuse",
+      "body": "The house is ours but the council still sends an invoice every month."
+    },
+    {
+      "kind": "line",
+      "title": "Electricity",
+      "amount": "R1 300 p/m",
+      "includes": "Prepaid, geyser on a timer",
+      "body": "He thinks the timer saves money. I haven't checked."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 230 p/m",
+      "includes": "Funeral policies R480, Help for our son R1 000, Phone & TV R700, Medication co-payments R750, Church & stokvel R300",
+      "body": "Our son's R1 000 is supposed to be a loan. We both know how that goes."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 170",
+      "body": "Out of R16 200. I worked for thirty years and now I'm doing this sum every month."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "My wife uploaded our statements to Beyond Horizon and it sorted the transactions for us.\n\nThe medication co-payments were more than I would have guessed.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

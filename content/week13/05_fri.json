@@ -1,0 +1,86 @@
+{
+  "income": 24700,
+  "audio": "bed_02.wav",
+  "caption": "R4 800 a month on two dogs. Do you know what your pet costs you, or do you avoid looking?",
+  "hashtags": [
+    "#southafrica",
+    "#costofownership",
+    "#petcosts",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What my two dogs really\ncost me on R24 700\np/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Randburg",
+      "body": "Female, 32\nSingle, no kids, two dogs\nJob: Medical rep assistant\nNet salary: R24 700 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R7 400 p/m",
+      "includes": "2 bed house with a garden, R1 200 more than a flat",
+      "body": "Pet-friendly places cost more. Mine has a garden and a landlord who likes dogs."
+    },
+    {
+      "kind": "line",
+      "title": "Vet",
+      "amount": "R1 800 p/m",
+      "includes": "Allergy injections, tick treatments, one stitched paw this year",
+      "body": "The paw was R2 900 on its own. I averaged it across the year and the number is still scary."
+    },
+    {
+      "kind": "line",
+      "title": "Dog food",
+      "amount": "R1 450 p/m",
+      "includes": "Two big dogs, one on a special diet",
+      "body": "The special diet bag costs more than my own groceries for a week."
+    },
+    {
+      "kind": "line",
+      "title": "Grooming & daycare",
+      "amount": "R950 p/m",
+      "includes": "Monthly groom, daycare on office days",
+      "body": "Daycare is a luxury. I'd call it guilt in the mornings."
+    },
+    {
+      "kind": "line",
+      "title": "Chewed things",
+      "amount": "R600 p/m",
+      "includes": "A couch cushion, two pairs of shoes, a charger",
+      "body": "This one is not a budget line. It's what the statement taught me to call it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R9 450 p/m",
+      "includes": "Groceries R2 400, Car instalment R3 000, Medical aid R1 300, Petrol R1 100, Phone R450, Funeral policy R200, Stokvel R400, Black tax R600",
+      "body": "Nothing glamorous. If the dogs weren't here, this section would be the same."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R3 050",
+      "body": "Out of R24 700. The dogs are R4 800 a month if you leave out the extra rent. They are worth it. I think."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I put the vet bills and dog food into Beyond Horizon as one group so I could see the real number.\n\nR4 800 a month was higher than I'd said out loud.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
