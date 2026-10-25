@@ -1,0 +1,86 @@
+{
+  "income": 35200,
+  "audio": "bed_01.wav",
+  "caption": "The Woolies shop costs me about R800 more than Checkers would. Is that a fair price for being tired?",
+  "hashtags": [
+    "#southafrica",
+    "#debt",
+    "#debtfreesa",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I'm clearing\nR92 000 of debt\non R35 200 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Kempton Park",
+      "body": "Female, 33\nSingle, no kids\nJob: Court interpreter\nNet salary: R35 200 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R9 500 p/m",
+      "includes": "1 bed in a complex, water, parking",
+      "body": "I moved here for the short drive to work. The rent is the price of not sitting in traffic."
+    },
+    {
+      "kind": "line",
+      "title": "Debt payments",
+      "amount": "R7 400 p/m",
+      "includes": "Store accounts R2 100, credit card R2 300, personal loan R3 000",
+      "body": "Total owing is R92 000. I ran the avalanche and snowball maths side by side and the gap was R6 100 in interest."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R4 100 p/m",
+      "includes": "2020 Kia Picanto, 22 months left",
+      "body": "I wanted the Polo. The Picanto is what I could stretch to, and it's fine."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 200 p/m",
+      "includes": "Woolies food, because I'm tired when I shop",
+      "body": "Checkers would be R2 400. I know that. I still walk past it."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R3 000 p/m",
+      "includes": "My mother's rent, my cousin's college fees",
+      "body": "I haven't missed a month. I've never once told my mother how much of my debt this explains."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 800 p/m",
+      "includes": "Petrol, car insurance, medical aid, phone, electricity, funeral policy, stokvel, Netflix",
+      "body": "The stokvel is R500. It pays out in December and I know exactly where that money goes."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 200",
+      "body": "Out of R35 200. R1 200 is what is left to put towards the debt on top of the payments, if nothing breaks."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and it listed my debts and showed the avalanche and snowball payoff side by side.\n\nTotal interest was the number I'd never seen written down.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "income": 43500,
+  "audio": "bed_01.wav",
+  "caption": "R1 800 of takeaways because cooking for one feels pointless. Is that just me?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#spendingbreakdown",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend my\nR43 500 p/m\nafter my divorce",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Saldanha Bay",
+      "body": "Male, 41\nDivorced, two kids (12 and 9) with him every second weekend\nJob: Plant supervisor, steel works\nNet salary: R43 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Maintenance",
+      "amount": "R9 000 p/m",
+      "includes": "Court-ordered for the two kids, by debit order on the 1st",
+      "body": "I don't resent it. I resent how much of it I used to spend without noticing."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R8 500 p/m",
+      "includes": "3 bed house so the kids each have a room",
+      "body": "It's too big for me during the week. It isn't too big on the weekends they're here."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R5 200 p/m",
+      "includes": "Me and the two kids",
+      "body": "I kept the kids on mine. Their mother has her own."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R4 800 p/m",
+      "includes": "2021 Ford Ranger, 40 months left",
+      "body": "I bought it in the marriage. I'd have chosen differently on my own."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries & takeaways",
+      "amount": "R4 200 p/m",
+      "includes": "Weekdays alone, weekends with the kids",
+      "body": "Takeaways are R1 800 of that. Cooking for one is the thing I still haven't got the hang of."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R10 500 p/m",
+      "includes": "Petrol, electricity, phone, kids' activities, funeral policy, black tax, savings",
+      "body": "Black tax is R2 000 and nothing about the divorce changed it."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 300",
+      "body": "Out of R43 500. On paper I earn well. After the maintenance and the house I have about R1 300."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and it showed me the budget I was actually living, not the one I'd planned.\n\nTakeaways were the line I didn't see coming.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

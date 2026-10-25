@@ -1,0 +1,86 @@
+{
+  "income": 19400,
+  "audio": "bed_03.wav",
+  "caption": "R4 500 for one night because she asked and I said yes. Would you have done the same?",
+  "hashtags": [
+    "#southafrica",
+    "#matricdance",
+    "#salary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I'm paying for\nmy daughter's matric dance\non R19 400 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Thabazimbi",
+      "body": "Female, 45\nSingle mother, daughter (18) in matric\nJob: Enrolled nursing assistant, provincial clinic\nNet salary: R19 400 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 800 p/m",
+      "includes": "2 bed house, water",
+      "body": "We've been in the same house for nine years. My daughter's friends all know where the spare key is."
+    },
+    {
+      "kind": "line",
+      "title": "Matric dance",
+      "amount": "R4 500 p/m",
+      "includes": "Dress R2 200, hair and makeup R900, shoes R600, ticket R800",
+      "body": "The ticket alone was R800. I said yes before I looked at the list."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 400 p/m",
+      "includes": "For two, with a teenager who is always hungry",
+      "body": "She eats the way I did at her age. I just didn't have anyone to buy it."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R2 000 p/m",
+      "includes": "My mother in Mokopane, my younger brother's rent",
+      "body": "He's looking for work. I've stopped asking how long he'll be looking."
+    },
+    {
+      "kind": "line",
+      "title": "School costs",
+      "amount": "R1 700 p/m",
+      "includes": "Matric jacket, final exam fees, photos, stationery",
+      "body": "There is always one more form with an amount on it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 000 p/m",
+      "includes": "Electricity, funeral policy, burial society, stokvel, phone, transport to the clinic",
+      "body": "The stokvel pays out in December. I've already promised it to three things."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 000",
+      "body": "Out of R19 400. The dance was R4 500 on top of a normal month. I paid it from what was left and a little from December."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and it grouped the dance spending into one picture.\n\nI hadn't added up the dress, the hair and the shoes together.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

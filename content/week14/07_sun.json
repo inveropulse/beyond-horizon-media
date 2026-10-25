@@ -1,0 +1,86 @@
+{
+  "income": 12300,
+  "audio": "bed_02.wav",
+  "caption": "I budgeted R400 for eating out and spent R1 400. What's the line you always get wrong?",
+  "hashtags": [
+    "#southafrica",
+    "#budgeting",
+    "#salarybreakdown",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "I budgeted my\nR12 300 p/m.\nThen I checked.",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Lydenburg",
+      "body": "Male, 34\nSingle, no kids\nJob: Self-employed tyre fitter at a roadside stand\nNet income: R12 300 p/m (this month)"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 200 p/m",
+      "includes": "Room with its own entrance, water included",
+      "body": "This is exactly what I budgeted. The only line that is."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 300 p/m",
+      "includes": "I budgeted R1 500",
+      "body": "I forgot the bulk buy. I always forget the bulk buy."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R1 800 p/m",
+      "includes": "My gran's groceries, my niece's school shoes",
+      "body": "I budgeted R1 000. I never budget black tax right, because it isn't mine to decide."
+    },
+    {
+      "kind": "line",
+      "title": "Tools & stock",
+      "amount": "R1 500 p/m",
+      "includes": "Patches, valves, a new compressor hose",
+      "body": "The compressor hose was a surprise. The business pays for itself a day at a time."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out & drinks",
+      "amount": "R1 400 p/m",
+      "includes": "Friday lunches, weekend braai with friends",
+      "body": "I budgeted R400. I'm still not sure how this got to R1 400."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R1 400 p/m",
+      "includes": "Airtime, funeral policy, stokvel, electricity, taxi fares, haircuts",
+      "body": "The funeral policy is R180 and the stokvel is R300. Those two I got right."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R700",
+      "body": "Out of R12 300. On paper I planned to have about R3 300 left. I had R700."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and put my budget next to what I actually spent.\n\nI had planned R400 for eating out.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

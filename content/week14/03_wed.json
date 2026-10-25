@@ -1,0 +1,86 @@
+{
+  "income": 30600,
+  "audio": "bed_03.wav",
+  "caption": "A tin of formula every five days adds up fast. What did the baby cost that you didn't see coming?",
+  "hashtags": [
+    "#southafrica",
+    "#householdbudget",
+    "#spendingbreakdown",
+    "#money",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What our baby\nreally costs us on\nR30 600 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Midrand",
+      "body": "Him 32, her 30\nMarried, baby girl (5 months)\nJobs: Logistics coordinator & bank call centre agent\nHousehold net income: R30 600 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R8 800 p/m",
+      "includes": "2 bed flat, water, refuse",
+      "body": "We looked at cheaper. We wanted a second bedroom with a door that shuts."
+    },
+    {
+      "kind": "line",
+      "title": "Baby costs",
+      "amount": "R4 300 p/m",
+      "includes": "Nappies R1 400, formula R1 650, wipes, clothes, creche deposit saving",
+      "body": "Formula was the shock. She goes through a tin in five days."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 600 p/m",
+      "includes": "Mostly home cooking now",
+      "body": "We used to eat out on Fridays. Now Friday is a pot of pap and a baby asleep on someone."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 400 p/m",
+      "includes": "Her Suzuki Swift, 38 months left",
+      "body": "His car is paid off. Hers is the one we both regret a bit."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R3 200 p/m",
+      "includes": "Hospital plan for the three of us",
+      "body": "We pay it every month hoping not to use it. The birth used it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 000 p/m",
+      "includes": "Petrol, electricity, phone, funeral policy, black tax, stokvel, takeaway coffee",
+      "body": "Takeaway coffee is R450 of that. I won't say whose."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 300",
+      "body": "Out of R30 600. We thought we budgeted for a baby. We budgeted for a baby's first month."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded our statements to Beyond Horizon and it sorted every transaction for us.\n\nFormula, nappies and wipes were three separate lines we had always lumped together.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

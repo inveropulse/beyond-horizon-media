@@ -1,0 +1,86 @@
+{
+  "income": 10400,
+  "audio": "bed_02.wav",
+  "caption": "I buy airtime R10 at a time and it came to R650. Does anyone else add up the small buys?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R10 400\np/m wages",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Ladybrand",
+      "body": "Male, 36\nMarried, two kids (7 and 3)\nJob: Petrol station attendant\nNet wages: R10 400 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R2 800 p/m",
+      "includes": "2 rooms in a backyard flat, water",
+      "body": "The landlady hasn't put it up in two years. I don't say anything in case that reminds her."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 600 p/m",
+      "includes": "Pap, chicken feet, nappies, the kids' milk",
+      "body": "My wife does the list. I do the paying. Neither of us enjoys the till."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R1 200 p/m",
+      "includes": "My father's medication, my brother's taxi money",
+      "body": "It goes by EFT on the 26th, before I can think about it."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R900 p/m",
+      "includes": "Home to the garage and back, 26 days",
+      "body": "I start at 5 am. The first taxi is the only one that's full of people like me."
+    },
+    {
+      "kind": "line",
+      "title": "Airtime & data",
+      "amount": "R650 p/m",
+      "includes": "Me and my wife, WhatsApp bundles",
+      "body": "I buy it R10 at a time. I've never added it up. It's more than I thought."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R1 630 p/m",
+      "includes": "Prepaid electricity, funeral policy, burial society, school stationery, haircuts",
+      "body": "The burial society is R150 and the funeral policy R280. I'd never go without either."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R620",
+      "body": "Out of R10 400. Tips are in there too, about R400 on a good month, and that's the part I never plan around."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and it sorted every transaction for me.\n\nThe airtime number was the one that surprised me.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

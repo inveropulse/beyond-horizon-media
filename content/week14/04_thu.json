@@ -1,0 +1,86 @@
+{
+  "income": 14900,
+  "audio": "bed_02.wav",
+  "caption": "Three taxis each way is R2 700 a month for me. What does your commute cost?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#salarybreakdown",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What getting to work\ncosts me on\nR14 900 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Mabopane",
+      "body": "Female, 31\nSingle, one son (6) stays with her mother\nJob: Admin clerk, government department in Pretoria\nNet salary: R14 900 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Commute",
+      "amount": "R2 700 p/m",
+      "includes": "Taxi to the rank, train when it runs, second taxi in town",
+      "body": "Three legs each way. When the train is cancelled the day costs R40 more."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R2 500 p/m",
+      "includes": "Room and bathroom in a yard",
+      "body": "It's close to my sister, who fetches my son from school."
+    },
+    {
+      "kind": "line",
+      "title": "Support for my mom & son",
+      "amount": "R2 400 p/m",
+      "includes": "Son's school fees, aftercare, my mom's groceries",
+      "body": "My son stays with her during the week because the commute would eat his childhood."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R1 800 p/m",
+      "includes": "For me and the weekends my son comes",
+      "body": "Weekend food is more expensive because I overcompensate."
+    },
+    {
+      "kind": "line",
+      "title": "Lunch & snacks at work",
+      "amount": "R1 100 p/m",
+      "includes": "Vetkoek, a cooldrink, chips, the Friday kota",
+      "body": "R50 a day looks like nothing. It's the number I'm least proud of."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 500 p/m",
+      "includes": "Airtime, funeral policy, stokvel, electricity top-ups, clothes account, hair",
+      "body": "The stokvel is R400 and the clothes account is R600 I'm still paying off."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R900",
+      "body": "Out of R14 900. Transport and lunch together are a quarter of what I earn, just to be at a desk."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and it grouped every taxi and train payment into one transport total.\n\nI had been guessing R1 500.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
