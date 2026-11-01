@@ -1,0 +1,86 @@
+{
+  "income": 27000,
+  "audio": "bed_01.wav",
+  "caption": "The suit was R1 100 and nobody will remember it. What's the most you've spent on a day that wasn't about you?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#money",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What unveiling\nmy father's tombstone\ncosts on R27 000 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Bhisho",
+      "body": "Male, 36\nMarried, one daughter (4)\nJob: Accountant, provincial treasury\nNet salary: R27 000 p/m (this month, the unveiling)"
+    },
+    {
+      "kind": "line",
+      "title": "Tombstone",
+      "amount": "R6 000 p/m",
+      "includes": "Granite headstone and installation, second of three instalments",
+      "body": "My father said nothing about it while he was alive. The family expects it done properly."
+    },
+    {
+      "kind": "line",
+      "title": "Catering",
+      "amount": "R4 500 p/m",
+      "includes": "Food for about 120 guests, a sheep, cooks",
+      "body": "My uncles decide the numbers. I decide the bank balance."
+    },
+    {
+      "kind": "line",
+      "title": "Tent and sound",
+      "amount": "R1 800 p/m",
+      "includes": "Tent, chairs, sound system, generator hire",
+      "body": "Rented for one Saturday. It rains in Bhisho at the worst times."
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R5 200 p/m",
+      "includes": "Two bedroom townhouse",
+      "body": "Still due, unveiling or not."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 800 p/m",
+      "includes": "Our usual shop, not the unveiling food",
+      "body": "My wife keeps the two budgets apart on a sheet of paper. It helps a little."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 920 p/m",
+      "includes": "Petrol, electricity, aftercare, funeral policy, stokvel, black tax, a new suit",
+      "body": "I bought a suit for R1 100. I own three. The funeral policy is R420 and the stokvel is R500."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R780",
+      "body": "Out of R27 000. A tombstone isn't a want. It still has to come out of the same salary."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and it showed what this one month looked like.\n\nThe suit was the line I'd already forgotten.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

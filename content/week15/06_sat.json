@@ -1,0 +1,86 @@
+{
+  "income": 35600,
+  "audio": "bed_03.wav",
+  "caption": "Medical aid, meds and copayments take a third of what we earn. What does health cost your household?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#howispendmysalary",
+    "#livingcostsSA",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What staying healthy\ncosts us on\nR35 600 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Standerton",
+      "body": "Male, 49\nMarried, two teens (17 and 14)\nJob: Foreman, brickworks (his wife has type 2 diabetes)\nNet salary: R35 600 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R7 900 p/m",
+      "includes": "Family of four, mid-range plan",
+      "body": "I've had the plan for 22 years. It's the one thing I won't downgrade."
+    },
+    {
+      "kind": "line",
+      "title": "Out-of-pocket health",
+      "amount": "R2 300 p/m",
+      "includes": "Wife's diabetes supplies, my BP tablets, spectacles, dentist copayments",
+      "body": "The plan pays some of it. The rest comes at the pharmacy till."
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R8 200 p/m",
+      "includes": "Four bedroom house, Standerton",
+      "body": "Four years left. The house is the only thing on this list that ends."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R6 500 p/m",
+      "includes": "Family of four, diabetic-friendly food",
+      "body": "Brown bread and fresh vegetables cost more. She notices and I notice."
+    },
+    {
+      "kind": "line",
+      "title": "School",
+      "amount": "R1 800 p/m",
+      "includes": "Fees, uniforms, extra lessons for matric",
+      "body": "Maths tutor is R600 of it. My son asked for it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R8 600 p/m",
+      "includes": "Petrol, electricity, phones & TV, funeral policy, stokvel, black tax, the club",
+      "body": "The club is R900 on Fridays. That's the one my wife has opinions about."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R300",
+      "body": "Out of R35 600. Health, the bond and groceries alone are almost two thirds of it."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and it put the pharmacy, the doctor and the medical aid in one place.\n\nI had never added them up.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

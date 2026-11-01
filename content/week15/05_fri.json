@@ -1,0 +1,86 @@
+{
+  "income": 21300,
+  "audio": "bed_02.wav",
+  "caption": "One cancelled wedding and my whole month shifted. How do you budget when your income isn't the same twice?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#salarybreakdown",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend my\nR21 300 p/m\nfreelance income",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Plettenberg Bay",
+      "body": "Female, 29\nSingle, shares a two bedroom with a flatmate\nJob: Freelance wedding videographer\nNet income: R21 300 p/m (this month, one wedding cancelled)"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R5 200 p/m",
+      "includes": "Half of a two bedroom flat, water",
+      "body": "Cheaper than a one bedroom, and it means I can't ignore someone else's rent."
+    },
+    {
+      "kind": "line",
+      "title": "Equipment payments",
+      "amount": "R3 200 p/m",
+      "includes": "Camera body and drone on a store payment plan",
+      "body": "I'm paying for the drone that I used on two shoots."
+    },
+    {
+      "kind": "line",
+      "title": "Petrol",
+      "amount": "R2 600 p/m",
+      "includes": "Driving to venues across the Garden Route",
+      "body": "A wedding in Knysna and one in George in the same weekend is R900 of petrol."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 300 p/m",
+      "includes": "Spar, and what's left of a client's catering",
+      "body": "Leftover wedding food is a real line in my budget."
+    },
+    {
+      "kind": "line",
+      "title": "Tax set-aside",
+      "amount": "R2 100 p/m",
+      "includes": "A separate account for SARS provisional tax",
+      "body": "Moved over the day after a client pays. If I leave it, it gets spent."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R5 820 p/m",
+      "includes": "Editing software, electricity, phone, funeral policy, stokvel, black tax, eating out",
+      "body": "Eating out is R1 600 this month. I celebrated a booking that then cancelled."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R80",
+      "body": "Out of R21 300. Last month was R34 000. The rent doesn't know which month it is."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and it showed my income and spending side by side for the month.\n\nThe eating out line was after the cancellation.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

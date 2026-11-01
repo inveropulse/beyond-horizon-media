@@ -1,0 +1,86 @@
+{
+  "income": 16450,
+  "audio": "bed_01.wav",
+  "caption": "Every teacher I know says the first salary disappears in a week. Did yours?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#salarybreakdown",
+    "#spendingbreakdown",
+    "#howispendmysalary"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "My first year\nas a teacher\non R16 450 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Makhado",
+      "body": "Female, 23\nSingle, lives with her parents\nJob: Foundation phase teacher, first year\nNet salary: R16 450 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R3 500 p/m",
+      "includes": "My parents' bond contribution, my brother's varsity registration",
+      "body": "The first salary was never going to be only mine. I knew that on the way to the bank."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R2 900 p/m",
+      "includes": "Second-hand Swift, 4 years left",
+      "body": "The school is out of town, so I needed it before I earned it."
+    },
+    {
+      "kind": "line",
+      "title": "Petrol",
+      "amount": "R1 800 p/m",
+      "includes": "Daily drive to a rural school, 38 km each way",
+      "body": "Once a month the road to school is closed, and I go the long way."
+    },
+    {
+      "kind": "line",
+      "title": "Student loan",
+      "amount": "R1 600 p/m",
+      "includes": "Bank loan for my last two years of fees",
+      "body": "NSFAS didn't cover everything. I'll pay for another three years."
+    },
+    {
+      "kind": "line",
+      "title": "Clothes and hair",
+      "amount": "R1 800 p/m",
+      "includes": "Looking the part for Grade 2, hair every month, one dress",
+      "body": "I'm not proud of this line. Twenty seven children don't care what I wear."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 540 p/m",
+      "includes": "Groceries contribution, phone, funeral policy, stokvel, takeaways",
+      "body": "The teachers' stokvel is R800. It pays out in December and I've planned that money three times."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 310",
+      "body": "Out of R16 450. It's the most money I've ever had and I've still run out by the 22nd."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and it sorted my first full month into categories.\n\nBlack tax was the biggest line, and I wasn't surprised.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

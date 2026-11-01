@@ -1,0 +1,86 @@
+{
+  "income": 19000,
+  "audio": "bed_03.wav",
+  "caption": "R2 240 a month on things I don't use. How many of your debit orders can you name without looking?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#salarybreakdown",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "The R2 240 I\nforgot I was paying,\non R19 000 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Harrismith",
+      "body": "Female, 35\nSingle, no kids\nJob: Dental assistant\nNet salary: R19 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 800 p/m",
+      "includes": "One bedroom flat, water",
+      "body": "Quiet building, a short walk to the practice. I pay for that."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R3 300 p/m",
+      "includes": "2020 Suzuki Swift, 22 months left",
+      "body": "Almost done. I've already spent the R3 300 in my head."
+    },
+    {
+      "kind": "line",
+      "title": "Debit orders I forgot",
+      "amount": "R2 240 p/m",
+      "includes": "Gym R599, extra DStv R489, insurance on a phone I sold R389, meal box R640, apps R123",
+      "body": "I found these on one statement. The gym I last visited in March."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R1 500 p/m",
+      "includes": "My brother's school fees",
+      "body": "He's in Grade 11. This one I'd pay twice."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 900 p/m",
+      "includes": "Pick n Pay, plus lunch supplies for work",
+      "body": "Cheaper than the meal box, which I'm only now admitting."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 640 p/m",
+      "includes": "Petrol, electricity, phone, hospital plan, funeral policy, stokvel",
+      "body": "The hospital plan is R640 and the stokvel is R500. Those two are on purpose."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R620",
+      "body": "Out of R19 000. The forgotten debit orders alone are more than three times what's left."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and the recurring charges were listed in one place.\n\nThe phone insurance was the shock.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

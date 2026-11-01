@@ -1,0 +1,86 @@
+{
+  "income": 44500,
+  "audio": "bed_02.wav",
+  "caption": "Our medical aid claims back about half of what the therapy costs. Does yours cover the thing you actually need?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#spendingbreakdown",
+    "#livingcostsSA",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What our son's\ntherapy costs on\nR44 500 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Howick",
+      "body": "Him 40, her 37\nMarried, one son (7) in weekly therapy\nJobs: Dairy farm manager & remedial teacher\nHousehold net income: R44 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R9 800 p/m",
+      "includes": "Three bedroom house, rates",
+      "body": "We bought before the therapy bills. We could not buy this house now."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R6 200 p/m",
+      "includes": "Hospital plan, family of three",
+      "body": "Therapy sits outside the plan more than we expected, so this isn't the whole medical number."
+    },
+    {
+      "kind": "line",
+      "title": "Therapy",
+      "amount": "R5 400 p/m",
+      "includes": "Occupational and speech therapy, three sessions a week, after claims",
+      "body": "Before claims it's nearer R9 000. We stopped adding it up the first month."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 800 p/m",
+      "includes": "Checkers, farm shop for milk and eggs",
+      "body": "He eats the same six foods. Waste is low, price is not."
+    },
+    {
+      "kind": "line",
+      "title": "School",
+      "amount": "R3 600 p/m",
+      "includes": "Remedial school fees, aftercare, transport",
+      "body": "The school is 18 km away. The right one cost more than the closest one."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R11 380 p/m",
+      "includes": "Petrol, electricity, phones & fibre, car insurance, black tax, funeral policies, stokvel, takeaways",
+      "body": "Takeaways on therapy nights are R2 100. I'm not proud of it, we're simply too tired to cook by six."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R3 320",
+      "body": "Out of R44 500. It looks comfortable until the therapy invoice we only claim back in March."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded our statements to Beyond Horizon and it totalled every therapy payment in one place.\n\nWe had been guessing R5 000.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
