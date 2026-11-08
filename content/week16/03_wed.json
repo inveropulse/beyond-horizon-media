@@ -1,0 +1,86 @@
+{
+  "income": 15300,
+  "audio": "bed_03.wav",
+  "caption": "Four store accounts took six years to build. How long did yours take?",
+  "hashtags": [
+    "#southafrica",
+    "#debt",
+    "#debtfreesa",
+    "#howispendmysalary",
+    "#beyondhorizon"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I'm clearing\nR38 000 of store\ndebt on R15 300 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Cradock",
+      "body": "Female, 37\nSingle, one son (9)\nJob: Sales consultant, clothing store\nNet salary: R15 300 p/m\nDebt: R38 000 across four store accounts"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 800 p/m",
+      "includes": "2 bedroom flat, water, refuse",
+      "body": "A two bedroom because he needs his own room for homework. I will not trade that."
+    },
+    {
+      "kind": "line",
+      "title": "Store account payments",
+      "amount": "R3 400 p/m",
+      "includes": "Four accounts, highest interest first",
+      "body": "Three clothing accounts and one furniture account. I opened them one at a time, over six years."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 700 p/m",
+      "includes": "Monthly shop, school lunch things",
+      "body": "I buy the cheaper brand now. He has not noticed. I have."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R1 300 p/m",
+      "includes": "Taxi to the shop, taxi back, a lift on Sundays",
+      "body": "Twelve taxi rides a week. I counted once, then stopped counting."
+    },
+    {
+      "kind": "line",
+      "title": "Staff discount clothes",
+      "amount": "R600 p/m",
+      "includes": "Two tops and a pair of school shoes, plus one pair for me",
+      "body": "I work at a clothing store and still buy clothes. I know what that sounds like."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 880 p/m",
+      "includes": "black tax, prepaid electricity, funeral policy, stokvel, airtime, school costs",
+      "body": "Six small amounts, R2 880. The stokvel is the only line here that gives money back to me in December."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R620",
+      "body": "Out of R15 300. It is not a lot, but it is the first month I did not need to borrow from my cousin."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I put all four store accounts into Beyond Horizon's debt tracker and compared snowball with avalanche.\n\nThe interest cost was different between them.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

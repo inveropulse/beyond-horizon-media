@@ -1,0 +1,86 @@
+{
+  "income": 13200,
+  "audio": "bed_02.wav",
+  "caption": "I budgeted R400 for sneakers and spent R1 800. What is your budget-versus-actual gap?",
+  "hashtags": [
+    "#southafrica",
+    "#budgeting",
+    "#spendingbreakdown",
+    "#beyondhorizon",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "Where my R13 200\nreally went\nin October",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Hammanskraal",
+      "body": "Male, 29\nSingle, no kids\nJob: Owns a one-chair barbershop in a container\nNet income: R13 200 p/m (this month)"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R2 500 p/m",
+      "includes": "One room in a yard, shared bathroom",
+      "body": "I am saving to move out. The saving part is a work in progress."
+    },
+    {
+      "kind": "line",
+      "title": "Shop costs",
+      "amount": "R2 100 p/m",
+      "includes": "Container site fee, blades, products, a new clipper",
+      "body": "The clipper was R650 and it died after three weeks. I bought it again."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 200 p/m",
+      "includes": "Pap, mince, bread, eggs",
+      "body": "I cook on Sundays and eat the same thing until Thursday."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R900 p/m",
+      "includes": "Two taxis each way, thirty days",
+      "body": "The shop is the only place I go, so this one is honest."
+    },
+    {
+      "kind": "line",
+      "title": "Sneakers",
+      "amount": "R1 800 p/m",
+      "includes": "Two pairs, both on layby",
+      "body": "I budgeted R400. I did not budget for the second pair. The layby made it feel smaller."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 470 p/m",
+      "includes": "black tax, prepaid electricity, funeral policy, barbers' stokvel, airtime & data, savings",
+      "body": "Six quieter items, R3 470. The stokvel is the reason I have a December at all."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R230",
+      "body": "Out of R13 200. I planned on R1 800 left. This is what the October statement said instead."
+    },
+    {
+      "kind": "cta",
+      "title": "I checked",
+      "body": "I uploaded October's statement to Beyond Horizon and compared it with the budget I had made.\n\nThe sneakers were four times what I planned.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

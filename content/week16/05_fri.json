@@ -1,0 +1,86 @@
+{
+  "income": 29800,
+  "audio": "bed_01.wav",
+  "caption": "Six people, one salary, R6 400 groceries. Is that normal or are we eating too much?",
+  "hashtags": [
+    "#southafrica",
+    "#household",
+    "#money",
+    "#spendingbreakdown",
+    "#howispendmysalary"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend my R29 800\np/m with my in-laws\nunder our roof",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Volksrust",
+      "body": "Male, 44\nMarried, two kids (16 and 11), his wife's parents live with them\nJob: Train controller, Transnet\nNet salary: R29 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R5 500 p/m",
+      "includes": "4 bedroom house, so the in-laws have a room",
+      "body": "We rented the bigger house for them. I would do it again, but I did the sum first."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R6 400 p/m",
+      "includes": "Six people, three meals, lunch boxes",
+      "body": "Six people eat a lot. Pap and meat does not stretch like it used to."
+    },
+    {
+      "kind": "line",
+      "title": "Car",
+      "amount": "R4 100 p/m",
+      "includes": "Instalment and petrol, Hilux double cab",
+      "body": "I tell myself I need it for the long shifts. Half the time it sits at home."
+    },
+    {
+      "kind": "line",
+      "title": "Family support",
+      "amount": "R3 000 p/m",
+      "includes": "My mother's rent and my brother's school fees",
+      "body": "Black tax is not a line I can skip. It is the one my wife never questions."
+    },
+    {
+      "kind": "line",
+      "title": "Braai and drinks",
+      "amount": "R1 200 p/m",
+      "includes": "Meat, beer, ice, every Saturday",
+      "body": "I know the number. I still buy the extra ice every week."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R9 330 p/m",
+      "includes": "school costs, prepaid electricity, medical aid, funeral policies, stokvel, in-laws' medication, phone",
+      "body": "Seven line items, R9 330. The electricity is the one that surprised me after my father-in-law moved in with a heater."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R270",
+      "body": "Out of R29 800. A month with one unexpected bill and I am asking someone for a lift to payday."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded three months of statements to Beyond Horizon and it grouped every transaction.\n\nElectricity was higher than I had told anyone.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

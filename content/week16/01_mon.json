@@ -1,0 +1,86 @@
+{
+  "income": 11800,
+  "audio": "bed_02.wav",
+  "caption": "I put R900 on betting and told no one. Do you ever add yours up?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R11 800\np/m wages",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Mokopane",
+      "body": "Male, 33\nMarried, one son (2)\nJob: Broiler house worker, chicken farm\nNet wages: R11 800 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R2 600 p/m",
+      "includes": "Two room backyard unit, shared tap",
+      "body": "The landlord is my uncle's friend. That is the only reason it is R2 600."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 900 p/m",
+      "includes": "Pap, chicken feet, nappies, the odd braai pack",
+      "body": "My wife does the list. I do the extras at the till."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R1 500 p/m",
+      "includes": "My mother's household in Mahwelereng",
+      "body": "It goes the day I am paid. I have never once seen it as extra."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fare",
+      "amount": "R1 450 p/m",
+      "includes": "Two taxis each way to the farm, six days a week",
+      "body": "The second taxi is the one that gets me. It is R15 more every time they raise it."
+    },
+    {
+      "kind": "line",
+      "title": "Sports betting",
+      "amount": "R900 p/m",
+      "includes": "Weekend soccer slips, R50 or R100 at a time",
+      "body": "I would have said R300. It is R900. I have not told my wife the real number."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 320 p/m",
+      "includes": "prepaid electricity, funeral policy, stokvel, airtime & data, crèche",
+      "body": "Five small things I never add up. Together they are R2 320, and the funeral policy is the one I would never cancel."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R130",
+      "body": "Out of R11 800. That is about R4 a day until payday. One taxi fare increase and it is gone."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and the betting slips were sorted into one category.\n\nSeeing R900 on its own line was hard.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

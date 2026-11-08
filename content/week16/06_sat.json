@@ -1,0 +1,86 @@
+{
+  "income": 54000,
+  "audio": "bed_03.wav",
+  "caption": "R54 000 and R1 000 left. Does a bigger salary just come with bigger bills?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#salarybreakdown",
+    "#money",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend my\nR54 000 p/m\nsalary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Fourways",
+      "body": "Female, 34\nSingle, no kids\nJob: Senior actuarial analyst\nNet salary: R54 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R13 500 p/m",
+      "includes": "2 bedroom apartment, levy, parking bay",
+      "body": "I stay in Fourways for the commute. It is also why the rent is what it is."
+    },
+    {
+      "kind": "line",
+      "title": "Car",
+      "amount": "R7 800 p/m",
+      "includes": "Instalment, insurance, tracking device",
+      "body": "I upgraded last year. The old one was fine. I know."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out and delivery",
+      "amount": "R5 800 p/m",
+      "includes": "Dinners, Uber Eats, the weekend brunch",
+      "body": "I earn well and I do not cook. I checked this number twice because I did not believe it."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R5 000 p/m",
+      "includes": "My parents' home in Mthatha, my brother's university fees",
+      "body": "My salary is not only mine. It never was, and I never expected it to be."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R4 200 p/m",
+      "includes": "Mid-range plan, chronic medication cover",
+      "body": "I am on the better plan because of my mom's history. I stopped arguing with myself about it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R16 700 p/m",
+      "includes": "groceries, petrol, prepaid electricity, fibre & phone, funeral policy, stokvel, gym, online shopping & subscriptions, retirement top-up",
+      "body": "Nine line items, R16 700. The stokvel is my monthly reminder that other people are counting on me."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 000",
+      "body": "Out of R54 000. On a salary this size, R1 000 left over felt like the wrong answer."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon expecting a high salary to explain itself.\n\nThe eating out number was higher than my car.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

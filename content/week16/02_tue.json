@@ -1,0 +1,86 @@
+{
+  "income": 38200,
+  "audio": "bed_01.wav",
+  "caption": "We pay R9 400 for a house and R1 900 for Friday chicken. Which one surprises you more?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#costofliving",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What our bond\nreally costs us\non R38 200 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Bela-Bela",
+      "body": "Him 35, her 32\nMarried, two kids (4 and 1)\nJobs: Lodge maintenance supervisor & clinic nursing assistant\nHousehold net income: R38 200 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R9 400 p/m",
+      "includes": "3 bedroom house, bond over 20 years, home insurance, levies",
+      "body": "Nobody told us the bond is just the start. The geyser, the roof and the boundary wall are all ours now."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R5 600 p/m",
+      "includes": "Family shop, formula, nappies, school lunches",
+      "body": "A tin of formula lasts six days. I do not want to say what that adds up to."
+    },
+    {
+      "kind": "line",
+      "title": "Cars and petrol",
+      "amount": "R4 800 p/m",
+      "includes": "One Corsa Utility instalment, petrol for two commutes",
+      "body": "We need two cars because the clinic and the lodge are in opposite directions."
+    },
+    {
+      "kind": "line",
+      "title": "Childcare",
+      "amount": "R3 200 p/m",
+      "includes": "Crèche for the baby, Grade R fees and transport",
+      "body": "My wife's salary almost pays for it. We both know that and neither of us says it."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways",
+      "amount": "R1 900 p/m",
+      "includes": "Friday chicken, Sunday pizza, the odd Mugg & Bean",
+      "body": "Friday takeaways started as a treat. Now it is a tradition we pay R1 900 for."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R9 440 p/m",
+      "includes": "electricity & water, hospital plan, black tax, funeral policies, stokvel, phones",
+      "body": "Six line items, R9 440. The hospital plan is the one we argue about, and the one I would not drop."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R3 860",
+      "body": "Out of R38 200. It looks healthy until the geyser goes. It went in July."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "We uploaded three months of statements to Beyond Horizon and it sorted every transaction.\n\nThe takeaways were bigger than the baby's formula.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

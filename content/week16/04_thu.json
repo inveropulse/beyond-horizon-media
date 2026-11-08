@@ -1,0 +1,86 @@
+{
+  "income": 17400,
+  "audio": "bed_02.wav",
+  "caption": "R6 500 rent, R2 800 just to move in. Was your first month out as bad?",
+  "hashtags": [
+    "#southafrica",
+    "#movingout",
+    "#spendingbreakdown",
+    "#salarybreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What moving out cost\nme in month one\non R17 400 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Bellville",
+      "body": "Female, 25\nSingle, just moved out of her parents' house\nJob: Junior reporter, community newspaper\nNet salary: R17 400 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R6 500 p/m",
+      "includes": "Bachelor flat, water included",
+      "body": "I was paying my mother R1 500 board. This is the number she warned me about."
+    },
+    {
+      "kind": "line",
+      "title": "Move-in costs",
+      "amount": "R2 800 p/m",
+      "includes": "Second half of the deposit, bakkie hire, a mattress",
+      "body": "A second-hand mattress is R900. A new one is R3 400. I chose the one I will regret less."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 400 p/m",
+      "includes": "First proper shop, cooking things I did not know I needed",
+      "body": "Salt, oil, a pot. Nobody tells you the first shop is half equipment."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R1 500 p/m",
+      "includes": "MyCiTi bus, Uber when it is dark",
+      "body": "I take the bus in daylight and Uber at night. That second half is where it goes."
+    },
+    {
+      "kind": "line",
+      "title": "Eating out",
+      "amount": "R1 600 p/m",
+      "includes": "Takeaways, coffee, Friday with colleagues",
+      "body": "I eat at my mother's twice a week and I still spent R1 600. I do not know how."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 000 p/m",
+      "includes": "black tax, prepaid electricity, funeral policy, office stokvel, phone",
+      "body": "R2 000 of things I used to never see. My mom paid for electricity without telling me."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R600",
+      "body": "Out of R17 400. Month two should be easier because there is no mattress. I keep telling myself that."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my first month's statement to Beyond Horizon so I could see what moving out really cost.\n\nThe move-in costs were their own category.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
