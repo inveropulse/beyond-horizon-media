@@ -1,0 +1,86 @@
+{
+  "income": 23100,
+  "audio": "bed_03.wav",
+  "caption": "I owe R54 000 across five accounts and I know the order I should pay in. Do you pay the biggest one first or the smallest?",
+  "hashtags": [
+    "#southafrica",
+    "#debt",
+    "#debtfreesa",
+    "#howispendmysalary",
+    "#beyondhorizon"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I'm clearing\nR54 000 of debt\non R23 100 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Phuthaditjhaba",
+      "body": "Male, 38\nSingle, two daughters (13 and 9)\nJob: Truck driver, building supplies depot\nNet salary: R23 100 p/m\nDebt: R54 000 across five accounts"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 800 p/m",
+      "includes": "2 bedroom flat, water, refuse",
+      "body": "His girls come every second weekend, so two bedrooms isn't a luxury."
+    },
+    {
+      "kind": "line",
+      "title": "Debt payments",
+      "amount": "R6 200 p/m",
+      "includes": "Personal loan, two store accounts, a credit card, a clothing account",
+      "body": "The loan has the highest interest, the clothing account has the smallest balance. I'm still deciding which one gets the extra."
+    },
+    {
+      "kind": "line",
+      "title": "Child maintenance",
+      "amount": "R3 500 p/m",
+      "includes": "Both girls, paid on the 1st",
+      "body": "It's the first thing that leaves the account and I'm fine with that."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 900 p/m",
+      "includes": "Monthly shop, plus weekend food when the girls are here",
+      "body": "The girls' weekends add R600. I wouldn't change it."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel & transport",
+      "amount": "R1 700 p/m",
+      "includes": "Travel to the depot, the odd trip to see my mother",
+      "body": "The company truck is for work. My own bakkie is for everything else, and it drinks."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 050 p/m",
+      "includes": "black tax, prepaid electricity, funeral policy, stokvel, airtime, takeaways",
+      "body": "Six lines that came to R3 050. The takeaways are R950 of that and I'm not proud of it."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R950",
+      "body": "Out of R23 100. It's enough to pay off one small store account in about four months. I counted."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I put all five debts into Beyond Horizon's debt tracker and compared avalanche with snowball.\n\nThe total interest was different between the two. Seeing both side by side made the choice easier.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

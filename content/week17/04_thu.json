@@ -1,0 +1,86 @@
+{
+  "income": 22800,
+  "audio": "bed_01.wav",
+  "caption": "I told myself the car would cost R4 000 a month. Would you have guessed R9 900 with everything?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#salary",
+    "#livingcostsSA",
+    "#howispendmysalary"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What my first car\nreally costs me\non R22 800 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Barberton",
+      "body": "Male, 27\nSingle, no kids\nJob: Field ranger, private game reserve\nNet salary: R22 800 p/m\nCar: 2020 Suzuki Swift, bought four months ago"
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R4 200 p/m",
+      "includes": "2020 Suzuki Swift, 60 months",
+      "body": "I told the dealer R3 500. The final figure was R4 200 once the extras were added."
+    },
+    {
+      "kind": "line",
+      "title": "Car insurance & tracker",
+      "amount": "R1 450 p/m",
+      "includes": "Comprehensive cover, tracker, excess waiver",
+      "body": "I got three quotes. The cheapest was R300 less and had no tracker. I took the tracker."
+    },
+    {
+      "kind": "line",
+      "title": "Petrol",
+      "amount": "R2 300 p/m",
+      "includes": "Reserve gate to town and back, twice a week",
+      "body": "The reserve road is gravel for 22 km. My petrol bill knows it."
+    },
+    {
+      "kind": "line",
+      "title": "Maintenance & tyres",
+      "amount": "R1 950 p/m",
+      "includes": "Service plan, two tyres, a cracked windscreen",
+      "body": "The windscreen was a month in. A kudu did not cause it, a lorry did."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 600 p/m",
+      "includes": "Staff cottage, deducted by the reserve",
+      "body": "It's cheap because it's a cottage with a leaky roof. I am not complaining."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R8 100 p/m",
+      "includes": "groceries, black tax, prepaid electricity, funeral policy, stokvel, airtime, medical aid, takeaways",
+      "body": "Eight small lines, R8 100 together. The takeaways are R1 250 of it, mostly the town trips."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 200",
+      "body": "Out of R22 800. Before the car I had about R8 000 left each month. Now I notice every R50."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and tagged the car costs together.\n\nR9 900 was a long way from the R4 000 I'd told everyone.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

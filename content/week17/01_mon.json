@@ -1,0 +1,86 @@
+{
+  "income": 9300,
+  "audio": "bed_01.wav",
+  "caption": "I walk about 14 km a day for this job and still can't make the money last. Is R9 300 normal where you are?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R9 300\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Lusikisiki",
+      "body": "Female, 28\nSingle, one daughter (3)\nJob: Community health worker, home visits\nNet salary: R9 300 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R1 800 p/m",
+      "includes": "One room and a kitchenette, shared yard tap",
+      "body": "It's a five minute walk to my gogo, who watches my daughter while I do my rounds."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R1 500 p/m",
+      "includes": "My mother's medication, my brother's school fees",
+      "body": "It leaves on the 25th, the day I get paid. I stopped counting it as spending a long time ago."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R1 700 p/m",
+      "includes": "Maize meal, chicken feet, veg from the stall, nappies",
+      "body": "I buy in bulk at the wholesaler once a month. It's the only thing I've gotten good at."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi fares",
+      "amount": "R1 200 p/m",
+      "includes": "Villages on my route, clinic days, town trips",
+      "body": "I walk the short ones. The long ones are R38 each way and there are no short days."
+    },
+    {
+      "kind": "line",
+      "title": "Airtime & data",
+      "amount": "R650 p/m",
+      "includes": "Calling patients, WhatsApp, my daughter's gogo video calls",
+      "body": "I top up R50 at a time because it feels smaller. It is not smaller."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 000 p/m",
+      "includes": "prepaid electricity, funeral policy, stokvel, daycare snacks, daughter's clinic card, burial society",
+      "body": "Six small things, R2 000 together. The stokvel is R400 of that, and it's the one thing I look forward to in December."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R450",
+      "body": "Out of R9 300. It's about R15 a day until the 25th. Some months it's R0 by the 20th and I borrow from my gogo."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and it sorted every transaction into categories.\n\nThe airtime number was the one that surprised me.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

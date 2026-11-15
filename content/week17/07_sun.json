@@ -1,0 +1,86 @@
+{
+  "income": 14200,
+  "audio": "bed_01.wav",
+  "caption": "My income changes every month but the rent doesn't. How do you budget when you don't know what's coming?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#spendingbreakdown",
+    "#livingcostsSA",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend my\nR14 200 average\nmonth as a welder",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Eshowe",
+      "body": "Male, 32\nSingle, no kids\nJob: Freelance welder, gates and burglar bars\nAverage net income: R14 200 p/m (range R8 000 – R21 000)"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 400 p/m",
+      "includes": "Backroom with its own entrance, water",
+      "body": "The landlord is a customer. I fixed his gate and he dropped the rent by R300."
+    },
+    {
+      "kind": "line",
+      "title": "Welding supplies",
+      "amount": "R2 800 p/m",
+      "includes": "Rods, gas, cutting discs, a new helmet",
+      "body": "I cannot work without these. The helmet was R750 last month, no warning."
+    },
+    {
+      "kind": "line",
+      "title": "Bakkie petrol",
+      "amount": "R2 300 p/m",
+      "includes": "Quotes, deliveries, collecting steel",
+      "body": "A quote that I don't win still costs me petrol. That's the part nobody tells you."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R1 900 p/m",
+      "includes": "Cooking for one, lunch on the road",
+      "body": "Pap and chicken, mostly. Sometimes a Kota on a bad day."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R1 500 p/m",
+      "includes": "My parents' farm repairs, my sister's school costs",
+      "body": "It goes first even in a R8 000 month. My mother does not know that."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R2 000 p/m",
+      "includes": "airtime and data, funeral policy, stokvel, prepaid electricity, vehicle licence, takeaways",
+      "body": "Six lines, R2 000. The takeaways were R800 and it was a bad month, which is when I buy them."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R300",
+      "body": "Out of R14 200 in an average month. In a R8 000 month there is nothing left and I borrow from my stokvel."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded six months of statements to Beyond Horizon and saw my good and bad months side by side.\n\nThe bad months were the same costs on less money.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

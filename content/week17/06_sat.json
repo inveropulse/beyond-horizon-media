@@ -1,0 +1,86 @@
+{
+  "income": 68000,
+  "audio": "bed_03.wav",
+  "caption": "Is R68 000 a lot, or does it just disappear faster than it looks? What's your honest answer?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#salarybreakdown",
+    "#howispendmysalary",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we spend our\nR68 000 household\nincome",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Somerset West",
+      "body": "Him 45, her 43\nMarried, three kids (16, 13 and 8)\nJobs: Pharmacy manager & part-time physiotherapist\nCombined net: R68 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R16 500 p/m",
+      "includes": "4 bedroom house, rates, levies",
+      "body": "We bought in 2019. The house is worth more than we paid. It doesn't feel like it when the bond leaves."
+    },
+    {
+      "kind": "line",
+      "title": "School fees",
+      "amount": "R14 200 p/m",
+      "includes": "Two kids at a private school, one at a public school",
+      "body": "The private fees are R6 300 each. The public school is R1 600 a month. The gap is real."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R9 400 p/m",
+      "includes": "Family plan, two chronic scripts",
+      "body": "We'd drop to a cheaper plan if his scripts weren't what they are."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R9 200 p/m",
+      "includes": "Family of five, a teenager who eats a lot",
+      "body": "We shop twice a week. The teen shops with us. This is the rule."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalments & petrol",
+      "amount": "R8 100 p/m",
+      "includes": "His SUV, her hatchback, school run twice a day",
+      "body": "We've talked about selling one car a few times. We keep not doing it."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R9 400 p/m",
+      "includes": "domestic help, black tax, electricity and water, funeral policies, fibre and DStv, extra-murals, eating out",
+      "body": "Seven lines, R9 400. The eating out is R3 800 and I'd rather not defend it."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 200",
+      "body": "Out of R68 000. On paper a high income. In practice one bad month wipes the buffer."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "We uploaded three months of statements to Beyond Horizon and compared our budget with what we actually spent.\n\nThe gap was the school run and the eating out.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

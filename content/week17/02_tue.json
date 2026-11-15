@@ -1,0 +1,86 @@
+{
+  "income": 36400,
+  "audio": "bed_02.wav",
+  "caption": "We bought the inverter so the lights would stay on. Why is our electricity still our third biggest bill?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#spendingbreakdown",
+    "#livingcostsSA",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What keeping the\nlights on costs us\non R36 400 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Bronkhorstspruit",
+      "body": "Him 41, her 38\nMarried, two kids (11 and 7)\nJobs: Boilermaker & school bookkeeper\nCombined net: R36 400 p/m\nHome: a three bedroom with a small solar and battery setup"
+    },
+    {
+      "kind": "line",
+      "title": "Bond repayment",
+      "amount": "R8 900 p/m",
+      "includes": "3 bedroom house, rates and levies",
+      "body": "We bought before rates went up. If we bought today we'd be renting."
+    },
+    {
+      "kind": "line",
+      "title": "Solar & inverter instalment",
+      "amount": "R3 600 p/m",
+      "includes": "Panels, inverter, two batteries, 36 months",
+      "body": "It was R96 000 up front. I'm paying the finance on it, and I'd do it again, mostly."
+    },
+    {
+      "kind": "line",
+      "title": "Electricity & water",
+      "amount": "R2 300 p/m",
+      "includes": "Prepaid top-ups, borehole pump, municipal water",
+      "body": "We still buy prepaid on cloudy weeks. The solar did not make this line disappear."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R5 800 p/m",
+      "includes": "Family of four, school lunch boxes",
+      "body": "Two kids who eat like four. I've given up arguing with the receipt."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel & car instalment",
+      "amount": "R5 200 p/m",
+      "includes": "My bakkie to the plant, her Polo to school",
+      "body": "I drive 38 km each way. Nobody at the dinner table is allowed to bring this up."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R8 700 p/m",
+      "includes": "school fees and uniforms, medical aid, black tax, funeral policy, stokvel, DStv and fibre, airtime",
+      "body": "Seven lines I don't see individually. Together they're R8 700, and the black tax is R1 500 of it."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 900",
+      "body": "Out of R36 400. We had R3 000 left before the inverter. Now the buffer is gone and the lights are on."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "We uploaded three months of statements to Beyond Horizon and it picked out every electricity top-up.\n\nWe thought it was R900 a month. It was R2 300 with water.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

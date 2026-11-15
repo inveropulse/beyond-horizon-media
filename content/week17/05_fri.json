@@ -1,0 +1,86 @@
+{
+  "income": 18400,
+  "audio": "bed_02.wav",
+  "caption": "Three of these debit orders I forgot I ever signed. Do you check yours or just trust them?",
+  "hashtags": [
+    "#southafrica",
+    "#money",
+    "#budgeting",
+    "#spendingbreakdown",
+    "#howispendmysalary"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "The R2 980 in debit\norders I forgot about,\non R18 400 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Kariega",
+      "body": "Female, 36\nDivorced, one son (12)\nJob: Debtors clerk, motor dealership\nNet salary: R18 400 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 700 p/m",
+      "includes": "2 bedroom townhouse, water",
+      "body": "I moved here after the divorce. The complex has a gate and he likes the pool."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 100 p/m",
+      "includes": "Monthly shop at Shoprite, top-ups at the corner shop",
+      "body": "I plan the menu on Sunday. By Wednesday the plan is gone."
+    },
+    {
+      "kind": "line",
+      "title": "Car instalment",
+      "amount": "R2 400 p/m",
+      "includes": "2018 Kia Picanto, 14 months left",
+      "body": "A small car for a small salary. I did not argue with myself on this one."
+    },
+    {
+      "kind": "line",
+      "title": "Petrol",
+      "amount": "R1 400 p/m",
+      "includes": "Work and school run, no long trips",
+      "body": "I live four kilometres from work and still spend R1 400. The school run is the reason."
+    },
+    {
+      "kind": "line",
+      "title": "Forgotten debit orders",
+      "amount": "R2 980 p/m",
+      "includes": "A gym I last used in March, two apps, a magazine, an old insurance top-up, a cloud storage plan",
+      "body": "I added it up after I printed the statement. I had to sit down."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 030 p/m",
+      "includes": "prepaid electricity, school costs, funeral policy, stokvel, airtime, black tax",
+      "body": "Six lines that came to R3 030. Black tax is R1 000 of it, and it's the one I'd never cancel."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R790",
+      "body": "Out of R18 400. If I had cancelled the forgotten ones in March I'd have R2 980 more every month."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statement to Beyond Horizon and its recurring expense detection pulled out every debit order.\n\nThe gym was the one that hurt.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
