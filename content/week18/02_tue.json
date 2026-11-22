@@ -1,0 +1,86 @@
+{
+  "income": 18700,
+  "audio": "bed_02.wav",
+  "caption": "I've bought R3 150 of 'deals' and Black Friday hasn't even happened. Is anyone else spending the sale before the sale?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#money",
+    "#spendingbreakdown",
+    "#howispendmysalary"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "The R3 150\nof 'deals' I've bought\non R18 700 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Port Alfred",
+      "body": "Male, 30\nSingle, no kids\nJob: Marine fitter at a boatyard\nNet salary: R18 700 p/m\nIt's the week before Black Friday"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R4 600 p/m",
+      "includes": "1 bed flat near the harbour, water, refuse",
+      "body": "Cheaper than anything in Cape Town. Dearer than anyone here thinks it should be."
+    },
+    {
+      "kind": "line",
+      "title": "'Deals'",
+      "amount": "R3 150 p/m",
+      "includes": "A smart watch, running shoes, a pressure washer, a gaming headset",
+      "body": "Every one was 'R800 off'. I've spent R3 150 to save R2 900. I understand how that sounds."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 400 p/m",
+      "includes": "Pick n Pay, the braai pack on Fridays",
+      "body": "Meat is most of it. I'll defend that."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel",
+      "amount": "R2 200 p/m",
+      "includes": "Petrol to the yard and back, the odd drive to Gqeberha",
+      "body": "The yard is 14 km from my flat. I don't mind until the pump."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R1 500 p/m",
+      "includes": "My mom's rent top-up in Kenton-on-Sea",
+      "body": "She never asks. That's why I send it before she has to."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R3 130 p/m",
+      "includes": "Prepaid electricity, car insurance, phone, funeral policy, stokvel, gym",
+      "body": "The gym is R350. I've been twice since August. The shoes are for that."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 720",
+      "body": "Out of R18 700. And I haven't opened the actual Black Friday emails yet."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and it grouped everything by category.\n\nThe 'deals' number isn't a category, but the card swipes were all there.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

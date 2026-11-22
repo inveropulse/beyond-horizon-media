@@ -1,0 +1,86 @@
+{
+  "income": 47500,
+  "audio": "bed_03.wav",
+  "caption": "R6 400 left on paper and the horse still needs shoes. Does a bigger salary just come with a bigger hobby?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#salarybreakdown",
+    "#spendingbreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R47 500\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Hartbeespoort",
+      "body": "Female, 34\nSingle, no kids\nJob: Large-animal vet at a country practice\nNet salary: R47 500 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R9 500 p/m",
+      "includes": "A cottage on a smallholding, water and borehole",
+      "body": "I'm 12 minutes from the practice. It's the only reason I can answer calls at 3am."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R4 500 p/m",
+      "includes": "My parents' farm in the Free State, a drought and a bad season",
+      "body": "They didn't ask. My brother told me. I'd rather it was a conversation but it's easier as a debit order."
+    },
+    {
+      "kind": "line",
+      "title": "Horse",
+      "amount": "R3 900 p/m",
+      "includes": "Livery, feed, the farrier every six weeks",
+      "body": "He's been with me since I was 19. It's R3 900 a month and I've never once regretted it, which is the problem."
+    },
+    {
+      "kind": "line",
+      "title": "Student loan",
+      "amount": "R3 800 p/m",
+      "includes": "Repayment on my veterinary degree",
+      "body": "Six more years. It doesn't feel like debt, it feels like rent on the past."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 200 p/m",
+      "includes": "Woolies, a butcher, the dog's food (she eats better than I do)",
+      "body": "R3 200 for one person. I eat out of one pan."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R16 200 p/m",
+      "includes": "Petrol & car insurance, medical aid, electricity, phone & fibre, funeral policy, stokvel, savings",
+      "body": "R4 000 of that is savings. It's the one line where I'm not being honest about how often I skip it."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R6 400",
+      "body": "Out of R47 500. On paper I'm very fine. In practice a vet's income is feast and famine."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded three months of statements to Beyond Horizon and it sorted every transaction.\n\nThe horse is one number now. I can't unsee it.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

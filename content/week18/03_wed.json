@@ -1,0 +1,86 @@
+{
+  "income": 31000,
+  "audio": "bed_03.wav",
+  "caption": "She didn't qualify for NSFAS because we're just over the line. Would you have called the university or just paid?",
+  "hashtags": [
+    "#southafrica",
+    "#household",
+    "#budgetingforsouthafricans",
+    "#spendingbreakdown",
+    "#beyondhorizon"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "What our daughter's\nfirst year of varsity\ncosts us on R31 000 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Lebowakgomo",
+      "body": "Him 46, her 44\nMarried, daughter (18) starting first year\nJobs: Municipal roads inspector & Spar bakery supervisor\nCombined net: R31 000 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Bond",
+      "amount": "R6 800 p/m",
+      "includes": "Three bedroom house, rates and levies",
+      "body": "We bought before she was born. It's the one number that hasn't grown."
+    },
+    {
+      "kind": "line",
+      "title": "Varsity",
+      "amount": "R5 200 p/m",
+      "includes": "Residence R3 100, textbooks and laptop R700, pocket money R1 400",
+      "body": "I said R1 000 pocket money. With Uber Eats at 11pm it's R1 900 some months. Her mother doesn't know."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R4 800 p/m",
+      "includes": "Shoprite, the butcher, her bread from the bakery at cost",
+      "body": "It was R5 400 when she was home. I'm not saying she was the reason. She was the reason."
+    },
+    {
+      "kind": "line",
+      "title": "Fuel",
+      "amount": "R3 100 p/m",
+      "includes": "Two cars to two jobs, 30 km each way",
+      "body": "She drives the little Corsa. I drive the one that needs a service."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R2 000 p/m",
+      "includes": "My father's care, my sister's kids",
+      "body": "Nobody discusses the amount. It just goes."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R7 320 p/m",
+      "includes": "Medical aid, electricity, car insurance, funeral policies, stokvel, phone, church",
+      "body": "She doesn't know the stokvel pays out in December. That money is already spoken for."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R1 780",
+      "body": "Out of R31 000. Registration shortfalls aren't in there. Those come out of R1 780."
+    },
+    {
+      "kind": "cta",
+      "title": "We wrote it all down",
+      "body": "We uploaded our statements to Beyond Horizon and it sorted the transactions into categories.\n\nSeeing 'varsity' as one number was a lot.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

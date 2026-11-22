@@ -1,0 +1,86 @@
+{
+  "income": 6200,
+  "audio": "bed_01.wav",
+  "caption": "I sell braai plates to pay for my own degree. How much did you spend on varsity food?",
+  "hashtags": [
+    "#southafrica",
+    "#student",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans",
+    "#money"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R6 200 p/m\nas a student",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Alice",
+      "body": "Male, 20\nSingle, second year at Fort Hare\nIncome: NSFAS living allowance + braai plates on weekends\nNet income: R6 200 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R1 800 p/m",
+      "includes": "A room off campus, shared bathroom, wifi included",
+      "body": "It's R1 800 because the landlord is the aunt of a classmate. Without that it's R2 600."
+    },
+    {
+      "kind": "line",
+      "title": "Food",
+      "amount": "R1 400 p/m",
+      "includes": "Rice, eggs, cabbage, two braai plates a week I make for myself",
+      "body": "I buy the braai meat wholesale and sell eleven plates a weekend. I eat the twelfth."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R500 p/m",
+      "includes": "My mom, from the braai plate money",
+      "body": "She says don't. I send it anyway."
+    },
+    {
+      "kind": "line",
+      "title": "Sneakers lay-by",
+      "amount": "R450 p/m",
+      "includes": "One pair, nine months in",
+      "body": "I know. I know. They're white."
+    },
+    {
+      "kind": "line",
+      "title": "Taxi home",
+      "amount": "R400 p/m",
+      "includes": "Once a month to Cofimvaba",
+      "body": "It's the one trip I won't skip."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R1 470 p/m",
+      "includes": "Data, airtime, electricity, funeral policy, a varsity stokvel, laundry & toiletries",
+      "body": "R120 of that is a funeral policy my mom made me take at 18. I've never told her it's the best R120 I spend."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R180",
+      "body": "Out of R6 200. It's R6 a day. It's a lot more than it sounds like when you're twenty."
+    },
+    {
+      "kind": "cta",
+      "title": "I stopped guessing",
+      "body": "I uploaded my statements to Beyond Horizon and it sorted every transaction.\n\nThe sneakers were the shock.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

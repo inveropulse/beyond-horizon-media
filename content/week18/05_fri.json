@@ -1,0 +1,86 @@
+{
+  "income": 29600,
+  "audio": "bed_02.wav",
+  "caption": "Without the 13th cheque I'd have been R3 850 short. Do you also spend the bonus before it lands?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#money",
+    "#salarybreakdown",
+    "#howispendmysalary"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "Where my R29 600\nwent the month my\n13th cheque landed",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Vredendal",
+      "body": "Female, 53\nMarried, son (26) back home looking for work\nJob: Finance clerk, local municipality\nNet income: R29 600 p/m (this month, includes a R9 000 13th cheque)"
+    },
+    {
+      "kind": "line",
+      "title": "Christmas stock-up",
+      "amount": "R4 800 p/m",
+      "includes": "Meat, drinks, the big tin of biscuits, the family lunch",
+      "body": "Eleven people on the 25th. I've done this for thirty years and I still undercount."
+    },
+    {
+      "kind": "line",
+      "title": "Gifts & 'treats'",
+      "amount": "R4 200 p/m",
+      "includes": "An air fryer, a TV on special, presents for six grandchildren",
+      "body": "The air fryer was R1 800. I have a working oven. I won't be taking questions."
+    },
+    {
+      "kind": "line",
+      "title": "Medical aid",
+      "amount": "R3 400 p/m",
+      "includes": "Me and my husband, the hospital plan",
+      "body": "It goes up every January and every January I am surprised."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R3 000 p/m",
+      "includes": "My sister's three children's school fees, groceries for my aunt",
+      "body": "My sister works on the farms. In December there's no work. So it's more in December."
+    },
+    {
+      "kind": "line",
+      "title": "Car",
+      "amount": "R2 900 p/m",
+      "includes": "A service and two new tyres",
+      "body": "The tyres were not optional. The service was a bit optional."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 150 p/m",
+      "includes": "Petrol, electricity, funeral policy, Christmas stokvel, phone, church",
+      "body": "The stokvel is R1 500 a month. It pays out next month and I'm already spending it too."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R5 150",
+      "body": "Out of R29 600. My normal month is R20 600. So without the bonus I'd be R3 850 short."
+    },
+    {
+      "kind": "cta",
+      "title": "I wanted to see where it went",
+      "body": "I uploaded my statement to Beyond Horizon and it sorted every transaction.\n\nThe 'treats' category was a surprise.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

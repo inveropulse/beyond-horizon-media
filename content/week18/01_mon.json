@@ -1,0 +1,86 @@
+{
+  "income": 8200,
+  "audio": "bed_01.wav",
+  "caption": "Three Bolt rides a month I swore I wouldn't take. What's your 'only when it's dark' expense?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#howispendmysalary",
+    "#spendingbreakdown",
+    "#budgetingforsouthafricans"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How I spend\nmy R8 200\np/m salary",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Nongoma",
+      "body": "Female, 27\nSingle, one son (4)\nJob: Cashier at a hardware store\nNet salary: R8 200 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R2 000 p/m",
+      "includes": "Mealie meal, chicken feet, eggs, nappies, his Nestum",
+      "body": "I buy in bulk on the 25th and by the 20th of the next month it's tins and pap."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R1 800 p/m",
+      "includes": "Room and kitchen in a family yard, water included",
+      "body": "The landlord is my cousin's friend. That's the only reason it's not R2 400."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R1 000 p/m",
+      "includes": "My mother's electricity, my brother's school shoes",
+      "body": "I sent it the same day I got paid. If I wait I start doing sums and then I send less."
+    },
+    {
+      "kind": "line",
+      "title": "Transport",
+      "amount": "R950 p/m",
+      "includes": "Taxi to work and back, plus three Bolt rides home",
+      "body": "The Bolt rides are R240 a month. I told myself I'd stop after the first one. I did not."
+    },
+    {
+      "kind": "line",
+      "title": "Crèche",
+      "amount": "R900 p/m",
+      "includes": "Fees, a lunch tin, a Friday R20 for the ice cream lady",
+      "body": "He's four and he already negotiates the ice cream money."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R1 400 p/m",
+      "includes": "Prepaid electricity, data & airtime, funeral policy, stokvel, hair",
+      "body": "Five small ones. None of them feel like a decision, which is how they get away with R1 400."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R150",
+      "body": "Out of R8 200. That's R5 a day, so don't ask me about the 31st."
+    },
+    {
+      "kind": "cta",
+      "title": "I wanted to see it in rands",
+      "body": "I uploaded my last three statements to Beyond Horizon and it sorted every transaction into categories.\n\nThe Bolt rides were the shock.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}

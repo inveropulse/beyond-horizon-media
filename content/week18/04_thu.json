@@ -1,0 +1,86 @@
+{
+  "income": 25400,
+  "audio": "bed_01.wav",
+  "caption": "We're R5 000 a month into a deposit and R2 100 a month into takeaways. Which of those would you cut first?",
+  "hashtags": [
+    "#southafrica",
+    "#salary",
+    "#spendingbreakdown",
+    "#salarybreakdown",
+    "#livingcostsSA"
+  ],
+  "theme": {
+    "bg": "#0E1525",
+    "fg": "#FFFFFF",
+    "muted": "#93A4C0",
+    "accent": "#3DDC97",
+    "rule": "#22304A",
+    "wordmark": "Beyond Horizon"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "title": "How we're saving\na deposit on\nR25 400 p/m",
+      "footer": "South Africa"
+    },
+    {
+      "kind": "persona",
+      "title": "Living in Kuils River",
+      "body": "Him 28, her 27\nLiving together, in her parents' backyard room\nJobs: Warehouse picker & hairdresser at a salon\nCombined net: R25 400 p/m"
+    },
+    {
+      "kind": "line",
+      "title": "Deposit savings",
+      "amount": "R5 000 p/m",
+      "includes": "A separate savings account, debit order on payday",
+      "body": "It leaves the day we're paid. If it sits in the main account it's gone by the 12th."
+    },
+    {
+      "kind": "line",
+      "title": "Groceries",
+      "amount": "R3 800 p/m",
+      "includes": "Shoprite, Pick n Pay, a Saturday market for veg",
+      "body": "Her mom cooks on Sundays and we don't count it. We should."
+    },
+    {
+      "kind": "line",
+      "title": "Rent",
+      "amount": "R3 500 p/m",
+      "includes": "The backyard room, to her parents",
+      "body": "They offered free. We insisted on paying. It keeps it fair."
+    },
+    {
+      "kind": "line",
+      "title": "Takeaways",
+      "amount": "R2 100 p/m",
+      "includes": "Nando's, Uber Eats, the Friday kota",
+      "body": "This is the one we don't say out loud. It's R2 100. We checked."
+    },
+    {
+      "kind": "line",
+      "title": "Black tax",
+      "amount": "R2 000 p/m",
+      "includes": "His mother in Mthatha R1 200, her gran R800",
+      "body": "Neither of us ever discussed it. It's just in the budget."
+    },
+    {
+      "kind": "line",
+      "title": "Everything else",
+      "amount": "R6 630 p/m",
+      "includes": "Petrol & car insurance, cellphones, electricity share, funeral policy, stokvel, streaming",
+      "body": "The stokvel is R800 together. It pays out in December and has a name already: 'the couch'."
+    },
+    {
+      "kind": "reckoning",
+      "title": "What's left",
+      "amount": "R2 370",
+      "body": "Out of R25 400, after the R5 000 has already gone into the deposit account. It lasts us about a week."
+    },
+    {
+      "kind": "cta",
+      "title": "We stopped guessing",
+      "body": "We uploaded three months of statements to Beyond Horizon and it sorted every transaction.\n\nThe takeaways number was a bit rude.\n\nNo bank login needed.",
+      "footer": "beyondhorizon.app — free to start"
+    }
+  ]
+}
